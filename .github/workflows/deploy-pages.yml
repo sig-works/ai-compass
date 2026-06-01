@@ -20,8 +20,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-      SITE_URL: https://www.ai-compass.jp
-      BASE_PATH: "/"
     steps:
       - name: Checkout
         uses: actions/checkout@v5
