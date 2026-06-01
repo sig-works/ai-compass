@@ -9,7 +9,7 @@ const repository = process.env.GITHUB_REPOSITORY?.split('/')[1];
 const owner = process.env.GITHUB_REPOSITORY_OWNER;
 const isUserSite = Boolean(repository && owner && repository.toLowerCase() === `${owner.toLowerCase()}.github.io`);
 const base = process.env.BASE_PATH ?? (repository && !isUserSite ? `/${repository}` : '/');
-const site = process.env.SITE_URL ?? (owner ? `https://${owner}.github.io` : 'https://www.ai-compass.jp');
+const site = process.env.SITE_URL ?? (owner ? `https://${owner}.github.io` : 'https://example.com');
 
 // https://astro.build/config
 export default defineConfig({
