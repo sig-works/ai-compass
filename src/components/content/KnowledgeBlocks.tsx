@@ -67,7 +67,7 @@ function Icon({ name = 'sparkles' }: { name?: IconName }) {
 
 export function VisualGrid({ items }: { items: CardItem[] }) {
   return (
-    <div className="not-prose mt-4 grid grid-cols-2 gap-2 md:gap-3 lg:grid-cols-3">
+    <div className="not-prose mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2 md:gap-3 lg:grid-cols-3">
       {items.map((item) => {
         const body = (
           <div className="h-full rounded-md border border-border bg-card p-3 shadow-sm transition-colors hover:bg-muted sm:p-4">
@@ -93,9 +93,9 @@ export function VisualGrid({ items }: { items: CardItem[] }) {
 
 export function FlowLine({ items }: { items: FlowItem[] }) {
   return (
-    <div className="not-prose mt-4 flex gap-2 overflow-x-auto pb-1 lg:grid lg:grid-cols-[repeat(5,minmax(0,1fr))] lg:overflow-visible lg:pb-0">
+    <div className="not-prose mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-[repeat(5,minmax(0,1fr))]">
       {items.map((item, index) => (
-        <div key={item.title} className="relative w-44 shrink-0 rounded-md border border-border bg-card p-3 shadow-sm lg:w-auto">
+        <div key={item.title} className="relative min-w-0 rounded-md border border-border bg-card p-3 shadow-sm">
           <div className="flex items-center justify-between gap-2">
             <span className="flex h-7 w-7 items-center justify-center rounded-md bg-secondary text-xs font-semibold text-primary">
               {index + 1}
@@ -134,7 +134,7 @@ export function Callout({
 
 export function PromptIndex({ items }: { items: PromptItem[] }) {
   return (
-    <div className="not-prose mt-4 grid grid-cols-2 gap-2 xl:grid-cols-3">
+    <div className="not-prose mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-3">
       {items.map((item) => (
         <a
           key={item.id}
@@ -189,8 +189,8 @@ export function PromptCard({
           一覧へ
         </a>
       </div>
-      <div className="mt-3 grid gap-3 xl:grid-cols-[minmax(0,1.25fr)_minmax(260px,0.75fr)]">
-        <div>{children}</div>
+      <div className="mt-3 grid min-w-0 gap-3 xl:grid-cols-[minmax(0,1.25fr)_minmax(260px,0.75fr)]">
+        <div className="min-w-0">{children}</div>
         <dl className="grid content-start gap-2 text-sm">
           <div className="rounded-md border border-border bg-card p-3">
             <dt className="font-semibold text-foreground">用途</dt>

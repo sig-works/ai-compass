@@ -10,6 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "update:ai-news": "node scripts/update-ai-news.mjs",
     "update:llm-data": "node scripts/update-llm-data.mjs",
     "check:site": "node scripts/final-check.mjs"
   },

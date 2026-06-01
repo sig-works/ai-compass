@@ -440,9 +440,9 @@ export default function LlmComparison({ data: initialData = null }: Props) {
           </div>
         </div>
 
-        <div className="mt-3 flex gap-2 overflow-x-auto pb-1 lg:mt-4 lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0">
+        <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:mt-4 lg:grid-cols-3">
           {planPicks.map((plan) => (
-            <article key={plan.label} className="w-[82vw] shrink-0 rounded-md border border-border bg-background p-3 shadow-sm sm:w-[24rem] lg:w-auto">
+            <article key={plan.label} className="min-w-0 rounded-md border border-border bg-background p-3 shadow-sm">
               <div className="flex items-start gap-3">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-card text-primary">
                   <plan.icon className="h-4 w-4" />
@@ -479,12 +479,12 @@ export default function LlmComparison({ data: initialData = null }: Props) {
           </div>
         </div>
 
-        <div className="mt-3 flex gap-2 overflow-x-auto pb-1 xl:mt-4 xl:grid xl:grid-cols-3 xl:overflow-visible xl:pb-0">
+        <div className="mt-3 grid grid-cols-1 gap-2 lg:grid-cols-2 xl:mt-4 xl:grid-cols-3">
           {modelFamilies.map((family) => {
             const models = modelsByProvider.get(family.provider) ?? [];
 
             return (
-              <article key={family.provider} className="w-[86vw] shrink-0 rounded-md border border-border bg-background p-3 shadow-sm sm:w-[26rem] xl:w-auto">
+              <article key={family.provider} className="min-w-0 rounded-md border border-border bg-background p-3 shadow-sm">
                 <div className="flex items-start gap-3">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-border bg-card text-primary">
                     <family.icon className="h-5 w-5" />
@@ -580,7 +580,22 @@ export default function LlmComparison({ data: initialData = null }: Props) {
 
         <div className="mt-3 grid gap-3 lg:mt-4 lg:grid-cols-[280px_1fr]">
           <aside className="rounded-md border border-border bg-background p-2">
-            <div className="flex gap-1.5 overflow-x-auto pb-1 lg:grid lg:grid-cols-1 lg:overflow-visible lg:pb-0">
+            <label className="block lg:hidden">
+              <span className="sr-only">用途を選択</span>
+              <select
+                value={selectedUseCase}
+                onChange={(event) => setSelectedUseCase(event.target.value)}
+                className="h-10 w-full rounded-md border border-border bg-card px-3 text-sm font-medium text-foreground outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring"
+              >
+                {useCases.map((item) => (
+                  <option key={item.id} value={item.id}>
+                    {item.title}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <div className="hidden gap-1.5 lg:grid lg:grid-cols-1">
               {useCases.map((item) => (
                 <button
                   key={item.id}
@@ -599,23 +614,23 @@ export default function LlmComparison({ data: initialData = null }: Props) {
             </div>
           </aside>
 
-          <article className="rounded-md border border-border bg-background shadow-sm">
+          <article className="min-w-0 rounded-md border border-border bg-background shadow-sm">
             <header className="border-b border-border p-3 sm:p-4">
               <div className="flex flex-wrap items-start justify-between gap-3">
-                <div className="flex items-start gap-3">
+                <div className="flex min-w-0 items-start gap-3">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-border bg-card text-primary">
                     <selected.icon className="h-5 w-5" />
                   </span>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-[11px] font-semibold tracking-[0.08em] text-muted-foreground">選択中の用途</p>
                     <h3 className="mt-0.5 text-lg font-semibold tracking-tight text-foreground sm:text-xl">{selected.title}</h3>
-                    <p className="mt-1 line-clamp-3 text-sm leading-6 text-muted-foreground sm:mt-2 sm:line-clamp-none">{selected.scene}</p>
+                    <p className="mt-1 line-clamp-3 break-words text-sm leading-6 text-muted-foreground sm:mt-2 sm:line-clamp-none">{selected.scene}</p>
                   </div>
                 </div>
               </div>
             </header>
 
-            <div className="grid gap-2 p-3 sm:gap-3 sm:p-4 xl:grid-cols-[1fr_0.9fr]">
+            <div className="grid min-w-0 gap-2 p-3 sm:gap-3 sm:p-4 xl:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)]">
               <div className="space-y-3">
                 <section className="rounded-md border border-border bg-card px-3 py-2">
                   <h4 className="text-sm font-semibold text-foreground">候補モデル</h4>

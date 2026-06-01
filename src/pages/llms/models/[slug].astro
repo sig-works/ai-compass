@@ -2,6 +2,7 @@
 import { ArrowLeft, ArrowRight, CheckCircle2, CircleAlert, Fingerprint, Radar, UserRoundCheck } from 'lucide-react';
 import Layout from '@/layouts/Layout.astro';
 import { LLM_PROFILES, getLlmProfile } from '@/lib/llm-profiles';
+import { navUrl } from '@/lib/navigation';
 
 export function getStaticPaths() {
 	return LLM_PROFILES.map((profile) => ({
@@ -180,7 +181,7 @@ const radarLabels = RADAR_AXES.map((axis, index) => ({ ...axis, point: radarPoin
 
 <Layout title={`${profile.name} | LLM紹介 | AI Compass`} description={profile.summary} currentPath={`/llms/models/${profile.slug}/`}>
 	<section class="space-y-3">
-		<a href="/llms/catalog/" class="inline-flex items-center gap-2 rounded-md border border-border bg-card px-3 py-2 text-sm font-medium text-muted-foreground no-underline shadow-sm transition-colors hover:bg-muted hover:text-foreground">
+		<a href={navUrl('/llms/catalog/')} class="inline-flex items-center gap-2 rounded-md border border-border bg-card px-3 py-2 text-sm font-medium text-muted-foreground no-underline shadow-sm transition-colors hover:bg-muted hover:text-foreground">
 			<ArrowLeft className="h-4 w-4" />
 			LLM紹介へ戻る
 		</a>
@@ -355,7 +356,7 @@ const radarLabels = RADAR_AXES.map((axis, index) => ({ ...axis, point: radarPoin
 			<h2 class="text-lg font-semibold tracking-tight">関連モデル</h2>
 			<div class="mt-3 grid gap-2 md:grid-cols-3">
 				{relatedProfiles.map((related: any) => (
-					<a href={`/llms/models/${related.slug}/`} class="group rounded-md border border-border bg-background px-3 py-2 text-foreground no-underline transition-colors hover:bg-muted">
+					<a href={navUrl(`/llms/models/${related.slug}/`)} class="group rounded-md border border-border bg-background px-3 py-2 text-foreground no-underline transition-colors hover:bg-muted">
 						<div class="flex items-start justify-between gap-3">
 							<div>
 								<p class="text-[11px] font-semibold tracking-[0.12em] text-muted-foreground">{related.provider}</p>

@@ -2,6 +2,7 @@
 import { ArrowRight, Bot, Layers3, SearchCheck } from 'lucide-react';
 import Layout from '@/layouts/Layout.astro';
 import { LLM_PROFILE_GROUPS, profilesForGroup } from '@/lib/llm-profiles';
+import { navUrl } from '@/lib/navigation';
 
 const providerId = (label: string, provider: string) => `${provider.toLowerCase()}-${label.includes('Codex') ? 'codex' : 'series'}`;
 
@@ -32,12 +33,13 @@ const selectionTips = [
 		</section>
 
 		<section class="rounded-md border border-border bg-card p-4 shadow-sm">
-			<div class="flex items-start gap-3">
-				<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-background text-primary">
-					<SearchCheck className="h-4 w-4" />
-				</span>
-				<div>
-					<h2 class="text-lg font-semibold tracking-tight">このLLM紹介ページの目的と使い方</h2>
+			<div>
+				<h2 class="flex items-center gap-2 text-lg font-semibold tracking-tight">
+					<span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-border bg-background text-primary sm:h-9 sm:w-9">
+						<SearchCheck className="h-4 w-4" />
+					</span>
+					このLLM紹介ページの目的と使い方
+				</h2>
 					<div class="mt-3 grid gap-2 md:grid-cols-3">
 						<div class="rounded-md border border-border bg-background px-3 py-2">
 							<p class="text-sm font-semibold text-foreground">特徴を見る</p>
@@ -52,7 +54,6 @@ const selectionTips = [
 							<p class="mt-1 text-sm leading-6 text-muted-foreground">無料、有料、企業向け、API利用の違いを見て、導入前の確認点を押さえます。</p>
 						</div>
 					</div>
-				</div>
 			</div>
 		</section>
 
@@ -75,7 +76,7 @@ const selectionTips = [
 
 					<div class="mt-4 grid gap-3 lg:grid-cols-2 xl:grid-cols-3">
 						{profiles.map((profile) => (
-							<a href={`/llms/models/${profile.slug}/`} class="group rounded-md border border-border bg-background p-3 text-foreground no-underline transition-colors hover:bg-muted/60">
+							<a href={navUrl(`/llms/models/${profile.slug}/`)} class="group rounded-md border border-border bg-background p-3 text-foreground no-underline transition-colors hover:bg-muted/60">
 								<div class="flex items-start justify-between gap-3">
 									<div>
 										<p class="text-[11px] font-semibold tracking-[0.12em] text-muted-foreground">{profile.provider}</p>
@@ -97,12 +98,13 @@ const selectionTips = [
 		})}
 
 		<section class="rounded-md border border-border bg-card p-4 shadow-sm">
-			<div class="flex items-start gap-3">
-				<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-background text-primary">
-					<Layers3 className="h-4 w-4" />
-				</span>
-				<div>
-					<h2 class="text-lg font-semibold tracking-tight">LLMモデルを選ぶときのポイント</h2>
+			<div>
+				<h2 class="flex items-center gap-2 text-lg font-semibold tracking-tight">
+					<span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-border bg-background text-primary sm:h-9 sm:w-9">
+						<Layers3 className="h-4 w-4" />
+					</span>
+					LLMモデルを選ぶときのポイント
+				</h2>
 					<div class="mt-3 grid gap-2">
 						{selectionTips.map((tip, index) => (
 							<div class="flex gap-3 rounded-md border border-border bg-background px-3 py-2 text-sm leading-6 text-muted-foreground">
@@ -113,7 +115,6 @@ const selectionTips = [
 							</div>
 						))}
 					</div>
-				</div>
 			</div>
 		</section>
 	</section>

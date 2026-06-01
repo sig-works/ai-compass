@@ -867,7 +867,25 @@ export default function PromptPatternSwitcher() {
             />
           </div>
 
-          <div className="mt-2 flex gap-1.5 overflow-x-auto pb-1 lg:grid lg:grid-cols-1 lg:overflow-visible lg:pb-0">
+          <label className="mt-2 block lg:hidden">
+            <span className="sr-only">用途を選択</span>
+            <select
+              value={active.id}
+              onChange={(event) => {
+                startTransition(() => setActiveId(event.target.value));
+                setCopyLabel('Copy');
+              }}
+              className="h-10 w-full rounded-md border border-border bg-background px-3 text-sm font-medium text-foreground outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              {filteredPatterns.map((pattern) => (
+                <option key={pattern.id} value={pattern.id}>
+                  {pattern.title}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <div className="mt-2 hidden gap-1.5 lg:grid lg:grid-cols-1">
             {filteredPatterns.map((pattern) => {
               const PatternIcon = pattern.icon;
               const selected = active.id === pattern.id;
@@ -904,16 +922,16 @@ export default function PromptPatternSwitcher() {
           )}
         </aside>
 
-        <div className="overflow-hidden rounded-md border border-border bg-card shadow-sm">
+        <div className="min-w-0 overflow-hidden rounded-md border border-border bg-card shadow-sm">
           <header className="border-b border-border p-3 sm:p-4">
             <div className="flex min-w-0 items-start gap-2.5 sm:gap-3">
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-secondary text-primary sm:h-10 sm:w-10">
                 <Icon className="h-5 w-5" />
               </span>
-              <div className="min-w-0">
+              <div className="min-w-0 flex-1">
                 <p className="text-[10px] font-semibold tracking-[0.08em] text-muted-foreground">用途別プロンプト</p>
                 <h2 className="text-lg font-semibold tracking-tight sm:text-xl">{active.title}</h2>
-                <p className="mt-1 line-clamp-3 max-w-3xl text-sm leading-6 text-muted-foreground sm:line-clamp-none">{active.scene}</p>
+                <p className="mt-1 line-clamp-3 max-w-3xl break-words text-sm leading-6 text-muted-foreground sm:line-clamp-none">{active.scene}</p>
               </div>
             </div>
             <div className="mt-2 flex gap-1.5 overflow-x-auto pb-1 sm:mt-3 sm:flex-wrap sm:overflow-visible sm:pb-0">
@@ -926,7 +944,7 @@ export default function PromptPatternSwitcher() {
           </header>
 
           <div className="grid gap-2 p-2 sm:gap-3 sm:p-3 xl:grid-cols-[minmax(0,1.35fr)_minmax(320px,0.85fr)]">
-            <figure className="console-block console-block-prompt mt-0">
+            <figure className="console-block console-block-prompt mt-0 min-w-0">
               <figcaption className="console-header">
                 <span className="console-title">編集して使えるプロンプト</span>
                 <button type="button" className="console-copy ml-auto inline-flex items-center gap-1" onClick={() => void copyPrompt()}>
@@ -935,7 +953,7 @@ export default function PromptPatternSwitcher() {
                 </button>
               </figcaption>
               <pre className="m-0 max-h-[52dvh] overflow-auto rounded-b-md bg-card p-3 text-sm leading-6 text-foreground sm:max-h-[760px] sm:p-4">
-                <code className="whitespace-pre-wrap">{active.prompt}</code>
+                <code className="whitespace-pre-wrap break-words">{active.prompt}</code>
               </pre>
             </figure>
 

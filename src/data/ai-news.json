@@ -1,0 +1,373 @@
+{
+  "generatedAt": "2026-06-01T13:58:27.980Z",
+  "updateStatus": "ok",
+  "updateMessage": "日本語AI関連記事を更新しました。",
+  "policy": "japanese-sources-only",
+  "sources": [
+    {
+      "id": "itmedia-aiplus",
+      "name": "ITmedia AI+",
+      "type": "media",
+      "url": "https://rss.itmedia.co.jp/rss/2.0/aiplus.xml",
+      "keywords": []
+    },
+    {
+      "id": "aws-japan-ai",
+      "name": "AWS Japan Blog",
+      "type": "official",
+      "url": "https://aws.amazon.com/jp/blogs/news/category/artificial-intelligence/amazon-machine-learning/feed/",
+      "keywords": []
+    },
+    {
+      "id": "microsoft-japan",
+      "name": "Microsoft Japan",
+      "type": "official",
+      "url": "https://news.microsoft.com/ja-jp/feed/",
+      "keywords": [
+        "AI",
+        "生成AI",
+        "Copilot",
+        "Azure AI",
+        "人工知能",
+        "エージェント"
+      ]
+    },
+    {
+      "id": "impress-watch",
+      "name": "Impress Watch",
+      "type": "media",
+      "url": "https://www.watch.impress.co.jp/data/rss/1.0/ipw/feed.rdf",
+      "keywords": [
+        "AI",
+        "生成AI",
+        "LLM",
+        "ChatGPT",
+        "Gemini",
+        "Copilot",
+        "人工知能"
+      ]
+    }
+  ],
+  "items": [
+    {
+      "title": "NVIDIAで動くWindows PC「RTX Spark」登場 AIエージェントをローカル実行",
+      "url": "https://www.watch.impress.co.jp/docs/news/2113502.html",
+      "source": "Impress Watch",
+      "sourceId": "impress-watch",
+      "sourceType": "media",
+      "publishedAt": "2026-06-01T10:03:39.000Z",
+      "imageUrl": "https://www.watch.impress.co.jp/img/ipw/list/2113/502/01.jpg",
+      "excerpt": "MicrosoftとNVIDIAは5月31日、SoC「NVIDIA RTX Spark」搭載のWindows PCを発表した。開発者、クリエイター、パワーユーザー向けの薄型軽量PCで、AIエージェントのローカル実行や高…"
+    },
+    {
+      "title": "NVIDIA、フィジカルAIのための世界モデル「Cosmos 3」 エッジ用など3種類",
+      "url": "https://www.watch.impress.co.jp/docs/news/2113492.html",
+      "source": "Impress Watch",
+      "sourceId": "impress-watch",
+      "sourceType": "media",
+      "publishedAt": "2026-06-01T09:26:58.000Z",
+      "imageUrl": "https://www.watch.impress.co.jp/img/ipw/list/2113/492/nv1.jpg",
+      "excerpt": "NVIDIAは1日、ビジョン リーズニング、ワールド生成、アクション予測を単一のシステムに統合した、フィジカルAI用のオープンな世界基盤モデル「NVIDIA Cosmos 3」を発表した。"
+    },
+    {
+      "title": "Salesforceの「深謀遠慮」とは？ AIエージェント時代のオープンシステム、主導権争いの行方",
+      "url": "https://www.itmedia.co.jp/enterprise/articles/2606/01/news107.html",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-06-01T07:00:00.000Z",
+      "imageUrl": "https://image.itmedia.co.jp/enterprise/articles/2606/01/cover_news107.jpg",
+      "excerpt": "AIエージェントが多数動き回る企業の業務システムに向けて、Salesforceが新たなソリューションを打ち出した。そのソリューションの狙いを考察すると、そこには同社の深謀遠慮があるようだ。"
+    },
+    {
+      "title": "“VB.NET移行をAIで爆速化”した千葉銀行GのIT企業 「12.5人月→2.0人月」をどう実現？",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2606/01/news037.html",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-06-01T04:00:00.000Z",
+      "imageUrl": "https://image.itmedia.co.jp/ait/articles/2606/01/cover_news037.jpg",
+      "excerpt": "ちばぎんコンピューターサービスはAI駆動開発の仕組みを構築し、既存のVB.NETシステムのマイグレーション工数を12.5人月から2.0人月に削減した。どう実現したのか。"
+    },
+    {
+      "title": "インテルがロボット開発の課題を解決、オープンなロボティクスライブラリで",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2606/01/news082.html",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-06-01T03:45:00.000Z",
+      "imageUrl": "https://image.itmedia.co.jp/mn/articles/2606/01/cover_news082.jpg",
+      "excerpt": "インテルは、ロボット開発のための統合ソフトウェア開発キット「Robotics AI Suite」に、インテル製プロセッサに最適化された推論ランタイムを備えるオープンソースのロボティクスライブラリ「OpenVINO Ph…"
+    },
+    {
+      "title": "「AI×人事戦略」が加速？ メルカリやSansanが相次ぎ新体制に “AI前提の組織”目指す",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2606/01/2000000041/",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-06-01T00:36:52.000Z",
+      "imageUrl": "https://www.itmedia.co.jp/aiplus/article/ogp/2606/01/2000000041/10000223/2048",
+      "excerpt": "メルカリやSansanが新体制への移行を発表し、AIと人事戦略を連動させる動きが相次いだ。"
+    },
+    {
+      "title": "グーグル、米国外で初の直営店「Google Store 表参道」今夏オープン",
+      "url": "https://www.watch.impress.co.jp/docs/news/2113200.html",
+      "source": "Impress Watch",
+      "sourceId": "impress-watch",
+      "sourceType": "media",
+      "publishedAt": "2026-06-01T00:31:34.000Z",
+      "imageUrl": "https://www.watch.impress.co.jp/img/ipw/list/2113/200/g01.jpg",
+      "excerpt": "Googleは1日、今夏に米国外初となる直営店「Google Store 表参道」を東京・表参道にオープンする。Google Pixelの最新端末などを体験・購入できるほか、最新のAIなどのGoogle体験をリアル店舗…"
+    },
+    {
+      "title": "NVIDIAがWindows PCに再参入「RTX Spark」 最新のNVIDIA GPUと128GBユニファイドメモリを搭載【訂正あり】",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2606/01/2000000040/",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-06-01T00:10:30.000Z",
+      "imageUrl": "https://www.itmedia.co.jp/aiplus/article/ogp/2606/01/2000000040/10000216/2048",
+      "excerpt": "米NVIDIAは6月1日（現地時間）、コンピュータ関連の見本市「COMPUTEX TAIPEI 2026」に先駆けて開いたカンファレンス「NVIDIA GTC Taipei 2026」の中で、Microsoftと共同開…"
+    },
+    {
+      "title": "図面SaaSに高精度な3Dモデル生成とアセンブリ機能、CAE機能のβ版を追加",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2606/01/news013.html",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-06-01T00:00:00.000Z",
+      "imageUrl": "https://image.itmedia.co.jp/mn/articles/2606/01/cover_news013.jpg",
+      "excerpt": "renueは、図面SaaS「Drawing Agent」をアップデートした。高精度な3Dモデル生成機能や複数パーツの組み立てに対応するアセンブリ機能、構造解析を実行する「CAE機能 β版」を追加し、図面の読み取りから構…"
+    },
+    {
+      "title": "【西田宗千佳のイマトミライ】“OpenAI超え”したアンソロピック その成功と課題",
+      "url": "https://www.watch.impress.co.jp/docs/series/nishida/2113178.html",
+      "source": "Impress Watch",
+      "sourceId": "impress-watch",
+      "sourceType": "media",
+      "publishedAt": "2026-05-31T23:20:00.000Z",
+      "imageUrl": "https://www.watch.impress.co.jp/img/ipw/list/2113/178/m00.jpg",
+      "excerpt": "5月28日、Anthropic(アンソロピック)は、新たに650億ドルの資金調達を行なった。"
+    },
+    {
+      "title": "富士通が認めた「人月モデル」の限界 時田社長「労働集約型SIモデルからの転換を」",
+      "url": "https://www.itmedia.co.jp/business/articles/2606/01/news040.html",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-05-31T22:00:00.000Z",
+      "imageUrl": "https://image.itmedia.co.jp/business/articles/2606/01/cover_news040.jpg",
+      "excerpt": "富士通が「中長期経営ビジョン2035」を発表した。AI時代に突入した今、同社の時田隆仁社長CEOは、従来型の「人月モデル」には限界があると認めた。その真意とは。"
+    },
+    {
+      "title": "「ハーネス」って結局、何？ みんな使い方が違うAIエージェント用語をHugging Faceが整理",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2606/01/news016.html",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-05-31T20:00:00.000Z",
+      "imageUrl": "https://image.itmedia.co.jp/ait/articles/2606/01/cover_news016.jpg",
+      "excerpt": "AIエージェント分野で人によって意味が揺れる「ハーネス」「スキャフォールド」などの用語を、Hugging Faceが整理した。AIエージェントを正しく理解し議論するために押さえておきたい基本用語を初心者向けに解説する。"
+    },
+    {
+      "title": "「FDE」って結局、客先常駐SEのリブランディングじゃないの？ アクセンチュアに聞いてみた",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2606/01/2000000039/",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-05-31T14:00:00.000Z",
+      "imageUrl": "https://www.itmedia.co.jp/aiplus/article/ogp/2606/01/2000000039/10000213/2048",
+      "excerpt": "AIプラットフォーム企業が掲げる新職業「FDE」（フォワード・デプロイド・エンジニア）は、客先常駐SEの焼き直しなのか。Microsoftと共同でFDE組織を立ち上げ、独自の「RDE」も打ち出すアクセンチュアの保科学世…"
+    },
+    {
+      "title": "日立はAnthropicと組んで何を狙うのか 従業員29万人へのClaude導入で目指す姿",
+      "url": "https://www.itmedia.co.jp/enterprise/articles/2605/30/news010.html",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-05-30T23:00:00.000Z",
+      "imageUrl": "https://image.itmedia.co.jp/enterprise/articles/2605/30/cover_news010.jpg",
+      "excerpt": "ミッションクリティカル領域でのAI活用に向け、日立はAnthropicと戦略的パートナーシップを締結した。同社は今回の提携で何を実現しようとしているのか。"
+    },
+    {
+      "title": "OpenAIが生命科学推論AI「GPT-Rosalind」をバイオディフェンスに開放 デュアルユースリスクに懸念も",
+      "url": "https://www.itmedia.co.jp/news/articles/2605/30/news031.html",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-05-29T21:48:00.000Z",
+      "imageUrl": "https://image.itmedia.co.jp/news/articles/2605/30/cover_news031.jpg",
+      "excerpt": "OpenAIは、生命科学研究に特化したフロンティア推論モデル「GPT-Rosalind」を活用した「Rosalind Biodefense」プログラムを発表した。生物脅威の検知など防衛目的に限定し、審査済みの開発者や米…"
+    },
+    {
+      "title": "OpenAI、金融機関に「GPT-5.5-Cyber」提供 「日本サイバーアクションプラン」",
+      "url": "https://www.watch.impress.co.jp/docs/news/2113108.html",
+      "source": "Impress Watch",
+      "sourceId": "impress-watch",
+      "sourceType": "media",
+      "publishedAt": "2026-05-29T15:01:00.000Z",
+      "imageUrl": "https://www.watch.impress.co.jp/img/ipw/list/2113/108/openai1.jpg",
+      "excerpt": "OpenAIは29日、日本におけるサイバーセキュリティ協力を「実装」へと進める取り組み「日本サイバー・アクションプラン(Japan Cyber Action Plan)」を発表した。金融機関に対して、サイバーセキュリテ…"
+    },
+    {
+      "title": "満員御礼！ Claude Code による開発体験ワークショップ【イベントレポート】",
+      "url": "https://aws.amazon.com/jp/blogs/news/claude-code-hands-on-workshop-with-nhn-techorus-2026/",
+      "source": "AWS Japan Blog",
+      "sourceId": "aws-japan-ai",
+      "sourceType": "official",
+      "publishedAt": "2026-05-29T12:17:28.000Z",
+      "imageUrl": "",
+      "excerpt": "アマゾン ウェブ サービス ジャパンのソリューションアーキテクト、齋藤です。 NHN テコラス様が主催する「は […]"
+    },
+    {
+      "title": "「Nano Banana 2」「Nano Banana Pro」が一般提供開始 「2」は動画からの画像生成もサポート",
+      "url": "https://www.itmedia.co.jp/news/articles/2605/29/news146.html",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-05-29T11:30:00.000Z",
+      "imageUrl": "",
+      "excerpt": "米Googleは5月29日、「Nano Banana 2」（Gemini 3.1 Flash Image）と「Nano Banana Pro」（Gemini 3 Pro Image）の一般提供を開始すると発表した。加え…"
+    },
+    {
+      "title": "Chronos-2 の紹介：単変量予測の先へ — 多変量も共変量もゼロショットで",
+      "url": "https://aws.amazon.com/jp/blogs/news/introducing-chronos-2/",
+      "source": "AWS Japan Blog",
+      "sourceId": "aws-japan-ai",
+      "sourceType": "official",
+      "publishedAt": "2026-05-27T15:48:09.000Z",
+      "imageUrl": "",
+      "excerpt": "Chronos-2は、Amazonが開発した時系列予測の基盤モデルです。従来の単変量予測に加え、多変量予測や共変量を活用した予測をゼロショットで実現します。コンテキスト内学習により、追加学習なしで多様な予測タスクに対応…"
+    },
+    {
+      "title": "寄稿：生成 AI で“探せなかった開示情報”を見つけ出す 〜 JPX の AI 開示情報検索サービス J-LENS〜",
+      "url": "https://aws.amazon.com/jp/blogs/news/jpx-timely-disclosure-semantic-search/",
+      "source": "AWS Japan Blog",
+      "sourceId": "aws-japan-ai",
+      "sourceType": "official",
+      "publishedAt": "2026-05-26T07:37:47.000Z",
+      "imageUrl": "",
+      "excerpt": "本稿は、日本取引所（以下「JPX」）グループの戦略的なデータ・デジタル事業を担う株式会社 JPX 総研による「 […]"
+    },
+    {
+      "title": "AI ツールで実現する継続収益ビジネス​ 〜開発力を資産に変える〜 – AWS Local Executive Roadshow 名古屋編（#4/8）開催レポート",
+      "url": "https://aws.amazon.com/jp/blogs/news/local_executive_roadshow_4/",
+      "source": "AWS Japan Blog",
+      "sourceId": "aws-japan-ai",
+      "sourceType": "official",
+      "publishedAt": "2026-05-25T09:24:09.000Z",
+      "imageUrl": "",
+      "excerpt": "こんにちは。Amazon&nbsp;Web Services Japan&nbsp;のソリューションアーキテクト、田中&nbsp;里絵&nbsp;です […]"
+    },
+    {
+      "title": "3 か月で開発スピード 3 倍を達成：キヤノン IT ソリューションズ様が実践した AI Coding Agent 導入・普及の仕組みづくり",
+      "url": "https://aws.amazon.com/jp/blogs/news/genai-case-study-canon-its-ai-coding-agent-introduction/",
+      "source": "AWS Japan Blog",
+      "sourceId": "aws-japan-ai",
+      "sourceType": "official",
+      "publishedAt": "2026-05-22T03:40:09.000Z",
+      "imageUrl": "",
+      "excerpt": "本記事では、キヤノン IT ソリューションズ株式会社様が 、Amazon Q Developer を開発現場に導入し、3 か月間効果検証を実施した取り組みをご紹介します。コード生成やレビュー支援による効率化、現場での活…"
+    },
+    {
+      "title": "AWS における AI エージェント対応のデータ基盤 (1) — ツールを配る時代から、データを返す時代へ",
+      "url": "https://aws.amazon.com/jp/blogs/news/ai-agent-ready-data-platform-overview-and-demo/",
+      "source": "AWS Japan Blog",
+      "sourceId": "aws-japan-ai",
+      "sourceType": "official",
+      "publishedAt": "2026-05-21T23:55:17.000Z",
+      "imageUrl": "",
+      "excerpt": "AI エージェントに本番データを分析させるには、単にモデルと API をつなぐだけでは足りません。認可、ビジネ […]"
+    },
+    {
+      "title": "Sim-to-Real と Real-to-Sim: 高性能な Physical AI を支える原動力",
+      "url": "https://aws.amazon.com/jp/blogs/news/sim-to-real-and-real-to-sim-the-engine-behind-capable-physical-ai/",
+      "source": "AWS Japan Blog",
+      "sourceId": "aws-japan-ai",
+      "sourceType": "official",
+      "publishedAt": "2026-05-21T06:16:10.000Z",
+      "imageUrl": "",
+      "excerpt": "はじめに、物理 AI システム（現実世界で知覚・推論・行動するロボット）は急速に進化しています。この進歩の中心にあるのが Sim-to-Real パイプラインです。しかし、実験室の外でも安定して動作するモデルを構築する…"
+    },
+    {
+      "title": "AWS Weekly Roundup: 1 周年を迎えた AWS Transform、Claude Platform on AWS、EC2 M3 Ultra Mac インスタンスなど (2026 年 5 月 18 日)",
+      "url": "https://aws.amazon.com/jp/blogs/news/aws-weekly-roundup-aws-transform-at-1-year-claude-platform-on-aws-ec2-m3-ultra-mac-instances-and-more-may-18-2026/",
+      "source": "AWS Japan Blog",
+      "sourceId": "aws-japan-ai",
+      "sourceType": "official",
+      "publishedAt": "2026-05-19T23:50:42.000Z",
+      "imageUrl": "",
+      "excerpt": ".NET、メインフレーム、および VMware ワークロード向けの AWS Transform がリリースされ […]"
+    },
+    {
+      "title": "Amazon Bedrock が、新しい高度なプロンプト最適化および移行ツールを導入",
+      "url": "https://aws.amazon.com/jp/blogs/news/amazon-bedrock-introduces-new-advanced-prompt-optimization-and-migration-tool/",
+      "source": "AWS Japan Blog",
+      "sourceId": "aws-japan-ai",
+      "sourceType": "official",
+      "publishedAt": "2026-05-18T07:05:39.000Z",
+      "imageUrl": "",
+      "excerpt": "2026 年 5 月 14 日、Amazon Bedrock Advanced Prompt Optimiza […]"
+    },
+    {
+      "title": "「人がいない」を、AIが埋める ── 養鶏・防災・建設・化学の中堅・中小企業4社が示すDX最前線",
+      "url": "https://aws.amazon.com/jp/blogs/news/scale-customer-study-blog-2026/",
+      "source": "AWS Japan Blog",
+      "sourceId": "aws-japan-ai",
+      "sourceType": "official",
+      "publishedAt": "2026-05-14T02:21:59.000Z",
+      "imageUrl": "",
+      "excerpt": "少子高齢化、人口減少、労働力不足、地方における過疎化と地域経済の空洞化、医療・介護リソースの構造的逼迫、そして […]"
+    },
+    {
+      "title": "AI の未来を形づくる 2 つの独自モデル",
+      "url": "https://news.microsoft.com/ja-jp/2025/09/17/two-new-in-house-models/",
+      "source": "Microsoft Japan",
+      "sourceId": "microsoft-japan",
+      "sourceType": "official",
+      "publishedAt": "2025-09-17T05:06:07.000Z",
+      "imageUrl": "",
+      "excerpt": "Microsoft AI ※本ブログは、米国時間 2025 年 8 月 28 日に公開された “Two in-house models in support of our mission” の抄訳を基に掲載しています。…"
+    },
+    {
+      "title": "大阪府とマイクロソフト、AI エージェント活用で府民サービスの質向上へ",
+      "url": "https://news.microsoft.com/ja-jp/2025/09/10/osaka-and-microsoft-partner-to-improve-public-services-with-ai/",
+      "source": "Microsoft Japan",
+      "sourceId": "microsoft-japan",
+      "sourceType": "official",
+      "publishedAt": "2025-09-10T05:08:05.000Z",
+      "imageUrl": "",
+      "excerpt": "「AI Tour Osaka」で、生成 AI による経営革新の最前線を紹介 大阪 – 2025 年 9 月 10 日 – 本日、日本マイクロソフト株式会社（代表取締役 社長: 津坂 美樹、以下、マイクロソフト）は、大阪…"
+    },
+    {
+      "title": "マイクロソフト、OpenAI の GPT-5 を一般ユーザー、開発者、エンタープライズ向け製品に統合",
+      "url": "https://news.microsoft.com/ja-jp/2025/08/08/openai-gpt-5/",
+      "source": "Microsoft Japan",
+      "sourceId": "microsoft-japan",
+      "sourceType": "official",
+      "publishedAt": "2025-08-07T22:33:38.000Z",
+      "imageUrl": "",
+      "excerpt": "エリオット スミス (Elliott Smith) ※本ブログは、米国時間2025年8月7日（木）に公開された “Microsoft incorporates OpenAI’s GPT-5 into consumer,…"
+    },
+    {
+      "title": "Edge の Copilot Mode のご紹介：新しいウェブ閲覧体験",
+      "url": "https://news.microsoft.com/ja-jp/2025/07/31/introducing-copilot-mode-in-edge-a-new-way-to-browse-the-web/",
+      "source": "Microsoft Japan",
+      "sourceId": "microsoft-japan",
+      "sourceType": "official",
+      "publishedAt": "2025-07-31T11:22:41.000Z",
+      "imageUrl": "",
+      "excerpt": "ショーン リンダーセイ（Sean Lyndersay） ※本ブログは、米国時間 2025 年 7月 28 日に公開された “ Introducing Copilot Mode in Edge: A new way to…"
+    },
+    {
+      "title": "Microsoft Sentinel data lake : シグナルの統合、コスト削減、エージェンティック AI を強化する",
+      "url": "https://news.microsoft.com/ja-jp/2025/07/24/microsoft-sentinel-data-lake-unify-signals-cut-costs-and-power-agentic-ai/",
+      "source": "Microsoft Japan",
+      "sourceId": "microsoft-japan",
+      "sourceType": "official",
+      "publishedAt": "2025-07-24T05:51:39.000Z",
+      "imageUrl": "",
+      "excerpt": "Byスコット ウッドゲート (Scott Woodgate) 、クリシュナ クマール パルタサラティ (Krishna Kumar Parthasarathy) ※本ブログは、米国時間 2025 年 7月 22 日に公…"
+    }
+  ]
+}

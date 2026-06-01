@@ -89,7 +89,23 @@ export default function GlossaryExplorer({ sections }: Props) {
             />
           </div>
 
-          <div className="flex gap-1.5 overflow-x-auto pb-0.5 xl:max-w-[58%]">
+          <label className="block xl:hidden">
+            <span className="sr-only">カテゴリを選択</span>
+            <select
+              value={activeSectionId}
+              onChange={(event) => startTransition(() => setActiveSectionId(event.target.value))}
+              className="h-10 w-full rounded-md border border-border bg-background px-3 text-sm font-medium text-foreground outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              <option value={ALL_SECTIONS}>すべて {allTerms.length}</option>
+              {sections.map((section) => (
+                <option key={section.id} value={section.id}>
+                  {section.title} {section.terms.length}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <div className="hidden gap-1.5 overflow-x-auto pb-0.5 xl:flex xl:max-w-[58%]">
             <button
               type="button"
               onClick={() => startTransition(() => setActiveSectionId(ALL_SECTIONS))}
@@ -128,7 +144,24 @@ export default function GlossaryExplorer({ sections }: Props) {
             <p className="text-xs text-muted-foreground">{filteredTerms.length}語</p>
           </div>
           <div className="overflow-auto p-2 xl:max-h-[calc(100dvh-16.5rem)]">
-            <div className="flex gap-1.5 overflow-x-auto pb-1 xl:grid xl:overflow-visible xl:pb-0">
+            {filteredTerms.length > 0 && (
+              <label className="block xl:hidden">
+                <span className="sr-only">用語を選択</span>
+                <select
+                  value={activeTerm.term}
+                  onChange={(event) => selectTerm(event.target.value)}
+                  className="h-10 w-full rounded-md border border-border bg-background px-3 text-sm font-medium text-foreground outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  {filteredTerms.map((term) => (
+                    <option key={term.term} value={term.term}>
+                      {term.term}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            )}
+
+            <div className="hidden gap-1.5 xl:grid">
               {filteredTerms.length > 0 ? (
                 filteredTerms.map((term) => (
                   <button
@@ -160,18 +193,18 @@ export default function GlossaryExplorer({ sections }: Props) {
           </div>
         </aside>
 
-        <article className="grid min-h-0 overflow-hidden rounded-md border border-border bg-card shadow-sm xl:grid-cols-[minmax(0,1fr)_320px]">
+        <article className="grid min-h-0 min-w-0 overflow-hidden rounded-md border border-border bg-card shadow-sm xl:grid-cols-[minmax(0,1fr)_320px]">
           <div className="min-h-0 overflow-auto">
             <header className="border-b border-border px-3 py-3 sm:px-4">
               <div className="flex flex-wrap items-start justify-between gap-3">
-                <div className="min-w-0">
+                <div className="min-w-0 flex-1">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">{activeTerm.category}</p>
                   <h2 className="mt-1 text-xl font-semibold tracking-tight sm:text-2xl">{activeTerm.term}</h2>
                   {activeTerm.aliases && activeTerm.aliases.length > 0 && (
                     <p className="mt-1 text-sm text-muted-foreground">{activeTerm.aliases.join(' / ')}</p>
                   )}
                 </div>
-                <p className="line-clamp-3 max-w-md text-sm leading-6 text-foreground sm:line-clamp-none">{activeTerm.plainSummary}</p>
+                <p className="line-clamp-3 max-w-md break-words text-sm leading-6 text-foreground sm:line-clamp-none">{activeTerm.plainSummary}</p>
               </div>
             </header>
 
