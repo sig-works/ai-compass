@@ -1,0 +1,371 @@
+---
+import { ArrowLeft, ArrowRight, CheckCircle2, CircleAlert, Fingerprint, Radar, UserRoundCheck } from 'lucide-react';
+import Layout from '@/layouts/Layout.astro';
+import { LLM_PROFILES, getLlmProfile } from '@/lib/llm-profiles';
+
+export function getStaticPaths() {
+	return LLM_PROFILES.map((profile) => ({
+		params: { slug: profile.slug },
+		props: { profile }
+	}));
+}
+
+const { profile } = Astro.props;
+const relatedProfiles = profile.relatedSlugs.map((slug: string) => getLlmProfile(slug)).filter(Boolean);
+
+const MODEL_POSITIONING: Record<string, { lead: string; fit: string; tradeoff: string; sourceNote: string }> = {
+	'gpt-5-5': {
+		lead: '文章、調査、コード、ツール利用を広く任せやすい主力モデルです。公式評価ではコーディング、知識作業、コンピューター操作の複数ベンチでGPT-5.4から伸びています。',
+		fit: '企画の下書き、説明文、調査整理、軽い実装相談まで、1つのモデルで横断したい場面。',
+		tradeoff: '単純な大量処理では軽量モデル、最高難度の判断ではPro系と分けると扱いやすくなります。',
+		sourceNote: 'OpenAI GPT-5.5公式発表のSWE-Bench Pro、Terminal-Bench、GDPval、OSWorld、BrowseCompなどを参考にした相対目安。'
+	},
+	'gpt-5-5-pro': {
+		lead: '難しい判断や長い作業を、精度重視で詰めるための上位モデルです。公式発表ではGPT-5.5 Proが難問、長時間作業、BrowseCompやFrontierMath系で強い選択肢として示されています。',
+		fit: '設計、レビュー、長い資料の比較、重要な文書の最終整理。',
+		tradeoff: '短い変換や単純分類に使うと重く、運用効率は軽量モデルに劣ります。',
+		sourceNote: 'OpenAI GPT-5.5公式発表とChatGPT提供条件を参考にした相対目安。'
+	},
+	'gpt-5-4': {
+		lead: '日常業務と実務作業の標準候補です。GPT-5.5より控えめですが、文章、相談、コード、ツール利用を広く扱えます。',
+		fit: 'メール、要約、調査メモ、社内向け説明、標準的な実務相談。',
+		tradeoff: '複雑な設計や長いレビューでは、Pro系やGPT-5.5系を検討します。',
+		sourceNote: 'OpenAI GPT-5.5公式発表で比較対象として示されたGPT-5.4評価を参考にした相対目安。'
+	},
+	'gpt-5-4-pro': {
+		lead: '標準モデルより丁寧な検討に向く上位候補です。理由づけや比較を含む実務判断で使いやすい位置づけです。',
+		fit: 'コードレビュー、設計相談、判断材料の整理、長めの文章改善。',
+		tradeoff: '短い分類や大量の定型処理では、miniやnanoのほうが効率的です。',
+		sourceNote: 'OpenAI GPT-5.5公式発表のGPT-5.4 Pro比較表を参考にした相対目安。'
+	},
+	'gpt-5-4-mini': {
+		lead: '速度と費用を抑えながら、日常的な処理を回す小型モデルです。公式情報ではAPI、Codex、ChatGPTの補助タスク向けとして扱いやすいモデルです。',
+		fit: '要約、分類、整形、短い返信案、アプリ内の軽いAI機能。',
+		tradeoff: '曖昧な相談や難しい推論では、上位モデルより回答が浅くなりやすいです。',
+		sourceNote: 'OpenAIのmini/nano公式説明と提供面を参考にした相対目安。'
+	},
+	'gpt-5-4-nano': {
+		lead: '小さな処理を低コストで大量に回すための最軽量候補です。役割を絞った分類や抽出で使いやすいモデルです。',
+		fit: 'タグ付け、短文変換、単純チェック、大量リクエストの前処理。',
+		tradeoff: '文章品質や判断の深さを期待する場面には向きません。',
+		sourceNote: 'OpenAIのmini/nano公式説明とAPI向けの提供条件を参考にした相対目安。'
+	},
+	'gpt-5-3-codex': {
+		lead: '開発作業に寄せたモデルです。調査、修正、実装、検証までの流れで使うと強みが出ます。',
+		fit: 'リポジトリ調査、実装、バグ修正、レビュー観点の整理。',
+		tradeoff: '一般的な文章作成だけなら、標準GPTやClaudeのほうが自然に感じる場面があります。',
+		sourceNote: 'OpenAIのCodex向けモデル説明と開発用途の公式情報を参考にした相対目安。'
+	},
+	'claude-opus-4-8': {
+		lead: '複雑な推論、長文、レビューを深く扱うClaudeの上位候補です。Anthropic公式発表では、難しいエージェント作業や専門領域の評価で強みが示されています。',
+		fit: '長文レビュー、仕様書、議事録、複雑な相談、慎重な文章整理。',
+		tradeoff: '軽い会話や大量処理だけに使うと、速度や費用の面で重くなります。',
+		sourceNote: 'AnthropicのOpus 4.8公式発表、モデル説明、評価記述を参考にした相対目安。'
+	},
+	'claude-sonnet-4-6': {
+		lead: '文章、コード、レビューを実務で扱いやすいClaudeの中核モデルです。公式発表ではコーディング、コンピューター操作、長文文脈、業務文書での改善が説明されています。',
+		fit: 'コードレビュー、設計メモ、文章改善、要約と実装相談の往復。',
+		tradeoff: '最高難度の長文推論ではOpus、単純処理ではHaikuも候補になります。',
+		sourceNote: 'Anthropic Sonnet 4.6公式発表のcoding、computer use、OfficeQA、長文文脈の説明を参考にした相対目安。'
+	},
+	'claude-haiku-4-5': {
+		lead: '短い文章処理を速く返すClaudeの軽量候補です。自然な文章を保ちながら、補助的な作業を量で回しやすいモデルです。',
+		fit: '短文要約、分類、会話、軽い文章生成、大量処理。',
+		tradeoff: '複雑な設計や長文レビューでは、SonnetやOpusに分けるほうが安定します。',
+		sourceNote: 'Anthropicのモデル概要と軽量モデルの用途説明を参考にした相対目安。'
+	},
+	'gemini-3-1-pro': {
+		lead: 'Google環境と多様な入力を組み合わせやすい上位候補です。公式モデルページでは、テキスト、画像、動画、音声、PDF入力、thinking、コード実行、検索グラウンディングなどが示されています。',
+		fit: 'Google系ツール連携、画像やPDFを含む確認、調査、データ整理。',
+		tradeoff: '軽い大量処理ではFlash系のほうが速度と費用を合わせやすくなります。',
+		sourceNote: 'Google AI for DevelopersのGeminiモデルページの対応入力、thinking、コード実行、検索グラウンディングを参考にした相対目安。'
+	},
+	'gemini-3-5-flash': {
+		lead: '速度と費用のバランスを取りやすいGeminiの実務候補です。Google APIで大量処理や補助推論を組み込みたいときに使いやすいモデルです。',
+		fit: '要約、分類、調査補助、データ整理、試作アプリ。',
+		tradeoff: '重い判断や長い設計相談ではPro系に分ける構成が向いています。',
+		sourceNote: 'GoogleのGeminiモデルページにあるFlash系の速度、スケール、対応機能を参考にした相対目安。'
+	},
+	'gemini-3-flash': {
+		lead: '短い依頼をテンポよく返すGeminiの軽量寄り候補です。試作や定型処理に入れやすいモデルです。',
+		fit: '会話、要約、文章整形、分類、軽い大量処理。',
+		tradeoff: '深い理由づけや複雑な資料読解では、Pro系のほうが安定します。',
+		sourceNote: 'GoogleのGeminiモデルページにあるFlash系の対応機能と用途説明を参考にした相対目安。'
+	},
+	'gemini-3-1-flash-lite': {
+		lead: '費用を抑えて同じ形の処理を大量に回すための軽量候補です。役割を細く決めたときに使いやすくなります。',
+		fit: '分類、タグ付け、短文要約、データ整理、単純な会話。',
+		tradeoff: '広い相談や曖昧な文章生成では、出力が薄くなりやすいです。',
+		sourceNote: 'GoogleのGeminiモデルページにあるFlash-Lite系の低コスト、大量処理向け説明を参考にした相対目安。'
+	}
+};
+
+const RADAR_AXES = [
+	{
+		key: 'reasoning',
+		label: '推論力',
+		shortLabel: '推論',
+		tooltip: '複雑な条件、比較、設計判断を扱う力。数学・調査・長いタスク系の公式評価を参考にしています。'
+	},
+	{
+		key: 'implementation',
+		label: '実装支援',
+		shortLabel: '実装',
+		tooltip: 'コード生成、修正、レビュー、技術調査への向き不向き。SWE-Bench、Terminal-Bench、公式のcoding説明を参考にしています。'
+	},
+	{
+		key: 'writing',
+		label: '文章品質',
+		shortLabel: '文章',
+		tooltip: '説明、要約、編集、自然な日本語の作りやすさ。業務文書、知識作業、長文整理の公式説明を参考にしています。'
+	},
+	{
+		key: 'reliability',
+		label: '信頼性',
+		shortLabel: '信頼',
+		tooltip: '根拠確認のしやすさ、幻覚を抑えて使いやすいか。公式の安全性、評価、グラウンディング機能の説明を参考にしています。'
+	},
+	{
+		key: 'efficiency',
+		label: '運用効率',
+		shortLabel: '効率',
+		tooltip: '速度、費用、大量処理での使いやすさ。価格性能、軽量モデル、バッチ、キャッシュなどの公式情報を参考にしています。'
+	},
+	{
+		key: 'inputCoverage',
+		label: '入力対応',
+		shortLabel: '入力',
+		tooltip: '画像、PDF、音声、動画、ツール連携など入力・周辺機能の広さ。公式モデルページの対応データ型とツール機能を参考にしています。'
+	}
+] as const;
+
+type RadarKey = (typeof RADAR_AXES)[number]['key'];
+type RadarScores = Record<RadarKey, number>;
+
+const MODEL_RADAR: Record<string, RadarScores> = {
+	'gpt-5-5': { reasoning: 4.7, implementation: 4.8, writing: 4.6, reliability: 4.3, efficiency: 3.7, inputCoverage: 4.4 },
+	'gpt-5-5-pro': { reasoning: 5, implementation: 4.7, writing: 4.8, reliability: 4.6, efficiency: 2.6, inputCoverage: 4.2 },
+	'gpt-5-4': { reasoning: 4.2, implementation: 4.2, writing: 4.2, reliability: 4, efficiency: 3.6, inputCoverage: 4 },
+	'gpt-5-4-pro': { reasoning: 4.6, implementation: 4.4, writing: 4.4, reliability: 4.2, efficiency: 2.9, inputCoverage: 3.9 },
+	'gpt-5-4-mini': { reasoning: 3.2, implementation: 3.4, writing: 3.5, reliability: 3.2, efficiency: 4.6, inputCoverage: 3.6 },
+	'gpt-5-4-nano': { reasoning: 2.3, implementation: 2.5, writing: 2.6, reliability: 2.7, efficiency: 5, inputCoverage: 2.4 },
+	'gpt-5-3-codex': { reasoning: 4.3, implementation: 5, writing: 3.5, reliability: 4, efficiency: 3.3, inputCoverage: 3.1 },
+	'claude-opus-4-8': { reasoning: 4.9, implementation: 4.6, writing: 4.8, reliability: 4.6, efficiency: 2.5, inputCoverage: 3.8 },
+	'claude-sonnet-4-6': { reasoning: 4.5, implementation: 4.8, writing: 4.6, reliability: 4.4, efficiency: 3.6, inputCoverage: 3.7 },
+	'claude-haiku-4-5': { reasoning: 3.2, implementation: 3.3, writing: 3.8, reliability: 3.6, efficiency: 4.5, inputCoverage: 3.3 },
+	'gemini-3-1-pro': { reasoning: 4.6, implementation: 4.3, writing: 4.1, reliability: 4.1, efficiency: 3.4, inputCoverage: 5 },
+	'gemini-3-5-flash': { reasoning: 3.8, implementation: 3.8, writing: 3.7, reliability: 3.6, efficiency: 4.6, inputCoverage: 4.6 },
+	'gemini-3-flash': { reasoning: 3.4, implementation: 3.5, writing: 3.4, reliability: 3.4, efficiency: 4.7, inputCoverage: 4.4 },
+	'gemini-3-1-flash-lite': { reasoning: 2.9, implementation: 2.9, writing: 3, reliability: 3.1, efficiency: 5, inputCoverage: 4 }
+};
+
+const positioning = MODEL_POSITIONING[profile.slug] ?? {
+	lead: profile.summary,
+	fit: profile.bestFor.slice(0, 3).join('、'),
+	tradeoff: profile.weaknesses[0] ?? '重要な判断では、人が根拠を確認してください。',
+	sourceNote: '公式情報を参考にしたサイト内の相対目安です。'
+};
+const radarScores = MODEL_RADAR[profile.slug] ?? { reasoning: 3, implementation: 3, writing: 3, reliability: 3, efficiency: 3, inputCoverage: 3 };
+
+function radarPoint(index: number, value = 1) {
+	const angle = (-90 + (360 / RADAR_AXES.length) * index) * (Math.PI / 180);
+	const radius = 34 * value;
+	return `${50 + Math.cos(angle) * radius},${50 + Math.sin(angle) * radius}`;
+}
+
+const radarGrid = [0.25, 0.5, 0.75, 1].map((level) => RADAR_AXES.map((_, index) => radarPoint(index, level)).join(' '));
+const radarShape = RADAR_AXES.map((axis, index) => radarPoint(index, radarScores[axis.key] / 5)).join(' ');
+const radarLabels = RADAR_AXES.map((axis, index) => ({ ...axis, point: radarPoint(index, 1.18) }));
+---
+
+<Layout title={`${profile.name} | LLM紹介 | AI Compass`} description={profile.summary} currentPath={`/llms/models/${profile.slug}/`}>
+	<section class="space-y-3">
+		<a href="/llms/catalog/" class="inline-flex items-center gap-2 rounded-md border border-border bg-card px-3 py-2 text-sm font-medium text-muted-foreground no-underline shadow-sm transition-colors hover:bg-muted hover:text-foreground">
+			<ArrowLeft className="h-4 w-4" />
+			LLM紹介へ戻る
+		</a>
+
+		<section class="rounded-md border border-border bg-card p-4 shadow-sm">
+			<div class="flex flex-wrap items-start justify-between gap-3">
+				<div class="max-w-4xl">
+					<p class="text-[11px] font-semibold tracking-[0.12em] text-muted-foreground">{profile.series}</p>
+					<h1 class="mt-1 text-3xl font-semibold tracking-tight">{profile.name}</h1>
+					<p class="mt-3 text-base leading-7 text-foreground">{profile.summary}</p>
+				</div>
+				<a href={profile.officialUrl} target="_blank" rel="noreferrer" class="rounded-md border border-border bg-background px-3 py-2 text-xs font-medium text-muted-foreground no-underline transition-colors hover:bg-muted hover:text-foreground">
+					公式情報
+				</a>
+			</div>
+
+			<div class="mt-3 rounded-md border border-border bg-background p-3">
+				<div class="flex items-center gap-2">
+					<Fingerprint className="h-4 w-4 text-primary" />
+					<h2 class="text-lg font-semibold tracking-tight">モデルの立ち位置</h2>
+				</div>
+				<p class="mt-2 text-sm leading-6 text-muted-foreground">{positioning.lead}</p>
+				<div class="mt-2 grid gap-2 md:grid-cols-2">
+					<div class="rounded-md border border-border bg-card px-3 py-2">
+						<p class="text-xs font-semibold tracking-[0.08em] text-muted-foreground">向いている場面</p>
+						<p class="mt-1 text-sm leading-6 text-foreground">{positioning.fit}</p>
+					</div>
+					<div class="rounded-md border border-border bg-card px-3 py-2">
+						<p class="text-xs font-semibold tracking-[0.08em] text-muted-foreground">使い分けの目安</p>
+						<p class="mt-1 text-sm leading-6 text-foreground">{positioning.tradeoff}</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="rounded-md border border-primary/25 bg-card p-4 shadow-sm">
+			<div class="flex flex-wrap items-start justify-between gap-3">
+				<div>
+					<div class="flex items-center gap-2">
+						<Radar className="h-4 w-4 text-primary" />
+						<h2 class="text-lg font-semibold tracking-tight">モデル特性レーダー</h2>
+					</div>
+					<p class="mt-1 text-xs leading-5 text-muted-foreground">公式情報を参考にした相対目安</p>
+				</div>
+				<p class="max-w-xl rounded-md border border-border bg-background px-3 py-2 text-xs leading-5 text-muted-foreground">{positioning.sourceNote}</p>
+			</div>
+
+			<div class="mt-3 grid gap-3 lg:grid-cols-[340px_minmax(0,1fr)]">
+				<div class="rounded-md border border-border bg-background p-3">
+					<svg viewBox="0 0 100 100" class="mx-auto h-72 w-full max-w-[320px]" role="img" aria-label={`${profile.name} のモデル特性レーダー`}>
+						{radarGrid.map((points) => (
+							<polygon points={points} class="fill-none stroke-border" stroke-width="0.6"></polygon>
+						))}
+						{RADAR_AXES.map((_, index) => (
+							<line x1="50" y1="50" x2={radarPoint(index).split(',')[0]} y2={radarPoint(index).split(',')[1]} class="stroke-border" stroke-width="0.6"></line>
+						))}
+						<polygon points={radarShape} class="fill-primary/25 stroke-primary" stroke-width="1.8"></polygon>
+						{radarLabels.map((axis) => {
+							const [x, y] = axis.point.split(',');
+							return (
+								<text x={x} y={y} text-anchor="middle" dominant-baseline="middle" class="fill-foreground text-[4px] font-semibold">
+									{axis.shortLabel}
+								</text>
+							);
+						})}
+					</svg>
+				</div>
+
+				<div class="grid content-center gap-2">
+					{RADAR_AXES.map((axis) => (
+						<div class="rounded-md border border-border bg-background px-3 py-2">
+							<div class="flex items-center justify-between gap-2 text-xs">
+								<span class="term-chip text-muted-foreground" tabindex="0" data-tooltip={axis.tooltip} aria-label={axis.tooltip}>{axis.label}</span>
+								<span class="font-semibold text-foreground">{radarScores[axis.key].toFixed(1)}</span>
+							</div>
+							<span class="mt-2 block h-1.5 overflow-hidden rounded-full bg-muted">
+								<span class="block h-full rounded-full bg-primary" style={`width: ${(radarScores[axis.key] / 5) * 100}%`}></span>
+							</span>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<div class="grid gap-3 xl:grid-cols-[minmax(0,1fr)_330px]">
+			<div class="space-y-3">
+				<section class="rounded-md border border-border bg-card p-4 shadow-sm">
+					<div class="flex items-center gap-2">
+						<CheckCircle2 className="h-4 w-4 text-primary" />
+						<h2 class="text-lg font-semibold tracking-tight">主な特徴</h2>
+					</div>
+					<div class="mt-3 grid gap-2">
+						{profile.features.map((feature: string) => (
+							<p class="rounded-md border border-border bg-background px-3 py-2 text-sm leading-6 text-muted-foreground">{feature}</p>
+						))}
+					</div>
+				</section>
+
+				<section class="grid gap-3 md:grid-cols-2">
+					<div class="rounded-md border border-border bg-card p-4 shadow-sm">
+						<div class="flex items-center gap-2">
+							<CheckCircle2 className="h-4 w-4 text-primary" />
+							<h2 class="text-lg font-semibold tracking-tight">得意な作業</h2>
+						</div>
+						<ul class="mt-3 space-y-2 text-sm leading-6 text-muted-foreground">
+							{profile.bestFor.map((item: string) => (
+								<li class="flex gap-2">
+									<span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"></span>
+									<span>{item}</span>
+								</li>
+							))}
+						</ul>
+					</div>
+
+					<div class="rounded-md border border-border bg-card p-4 shadow-sm">
+						<div class="flex items-center gap-2">
+							<CircleAlert className="h-4 w-4 text-primary" />
+							<h2 class="text-lg font-semibold tracking-tight">注意したい点</h2>
+						</div>
+						<ul class="mt-3 space-y-2 text-sm leading-6 text-muted-foreground">
+							{profile.weaknesses.map((item: string) => (
+								<li class="flex gap-2">
+									<span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-muted-foreground"></span>
+									<span>{item}</span>
+								</li>
+							))}
+						</ul>
+					</div>
+				</section>
+			</div>
+
+			<aside class="space-y-3">
+				<section class="rounded-md border border-border bg-card p-4 shadow-sm">
+					<div class="flex items-center gap-2">
+						<UserRoundCheck className="h-4 w-4 text-primary" />
+						<h2 class="text-base font-semibold tracking-tight">使いどころ</h2>
+					</div>
+
+					<div class="mt-3 space-y-3">
+						<div>
+							<p class="text-xs font-semibold tracking-[0.08em] text-muted-foreground">向いている人</p>
+							<ul class="mt-2 space-y-1.5 text-sm leading-6 text-muted-foreground">
+								{profile.suitedFor.map((item: string) => (
+									<li>{item}</li>
+								))}
+							</ul>
+						</div>
+
+						<div>
+							<p class="text-xs font-semibold tracking-[0.08em] text-muted-foreground">主な用途</p>
+							<div class="mt-2 flex flex-wrap gap-1.5">
+								{profile.useCases.map((item: string) => (
+									<span class="rounded-md border border-border bg-background px-2.5 py-1.5 text-xs font-medium text-foreground">{item}</span>
+								))}
+							</div>
+						</div>
+
+						<div>
+							<p class="text-xs font-semibold tracking-[0.08em] text-muted-foreground">選ばれる理由</p>
+							<div class="mt-2 flex flex-wrap gap-1.5">
+								{profile.whyChosen.map((item: string) => (
+									<span class="rounded-md border border-border bg-background px-2.5 py-1.5 text-xs font-medium text-muted-foreground">{item}</span>
+								))}
+							</div>
+						</div>
+					</div>
+				</section>
+			</aside>
+		</div>
+
+		<section class="rounded-md border border-border bg-card p-4 shadow-sm">
+			<h2 class="text-lg font-semibold tracking-tight">関連モデル</h2>
+			<div class="mt-3 grid gap-2 md:grid-cols-3">
+				{relatedProfiles.map((related: any) => (
+					<a href={`/llms/models/${related.slug}/`} class="group rounded-md border border-border bg-background px-3 py-2 text-foreground no-underline transition-colors hover:bg-muted">
+						<div class="flex items-start justify-between gap-3">
+							<div>
+								<p class="text-[11px] font-semibold tracking-[0.12em] text-muted-foreground">{related.provider}</p>
+								<p class="mt-0.5 text-sm font-semibold">{related.name}</p>
+							</div>
+							<ArrowRight className="mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+						</div>
+					</a>
+				))}
+			</div>
+		</section>
+	</section>
+</Layout>

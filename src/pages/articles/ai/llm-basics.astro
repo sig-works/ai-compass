@@ -1,0 +1,154 @@
+---
+import CodeConsole from '@/components/common/CodeConsole.astro';
+import TermTooltip from '@/components/common/TermTooltip.astro';
+import Layout from '@/layouts/Layout.astro';
+import { BookOpen } from 'lucide-react';
+---
+
+<Layout
+	title="LLMとは？ | AI Compass"
+	description="言葉で頼むAIの使い方、モデルの選び方、依頼文の基本をまとめた記事。"
+	currentPath="/articles/ai/llm-basics/"
+>
+	<article class="article-shell">
+		<div class="article-prose">
+			<p class="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.08em] text-muted-foreground">
+				<BookOpen className="h-3.5 w-3.5" />
+				言葉で頼むAI
+			</p>
+			<h1>LLMとは？</h1>
+			<p class="article-lead">
+				LLMは、文章で依頼すると文章で返してくれるAIです。チャット、開発支援ツール、業務アプリ、APIなど、使う場所によって見え方は違いますが、
+				基本は「目的を伝える」「材料を渡す」「条件を決める」「人が確認する」の4つで考えると扱いやすくなります。
+			</p>
+
+			<div class="mt-4 rounded-md border border-border bg-background px-3 py-2 text-sm leading-6 text-muted-foreground">
+				<span class="font-medium text-foreground">先に見る順番:</span>
+				使う場所 → 頼む内容 → モデル → 確認方法
+			</div>
+
+			<h2>言葉で頼むAI</h2>
+			<p>
+				<TermTooltip term="LLM" /> は、大量の文章から言葉のつながり方を学び、質問や依頼に応じて返答を作る <TermTooltip term="AIモデル" /> です。
+				人が覚えるべき知識をすべて入れ替えるものではなく、調べる、下書きを作る、整理する、レビューする、といった作業を助ける道具として見ると使いやすくなります。
+			</p>
+			<p>
+				同じ「LLMを使う」でも、画面で会話する場合、自社アプリから <TermTooltip term="API" /> で呼び出す場合、コード編集ツールの中で使う場合では、できることや制限が変わります。
+				先に使う場所を決めると、どのモデルを選ぶか、どんな依頼文にするかも決めやすくなります。
+			</p>
+
+			<h2>まず決める4つ</h2>
+			<div class="mt-4 grid gap-3 md:grid-cols-2">
+				<div class="rounded-md border border-border bg-background p-3 shadow-sm">
+					<h3 class="mt-0 text-sm font-semibold text-foreground">使う場所</h3>
+					<p class="mt-2 text-sm leading-6 text-muted-foreground">
+						チャットで使うのか、開発ツールで使うのか、自社アプリに組み込むのかを決めます。場所が変わると、入力できる情報、保存される内容、料金の見え方が変わります。
+					</p>
+				</div>
+				<div class="rounded-md border border-border bg-background p-3 shadow-sm">
+					<h3 class="mt-0 text-sm font-semibold text-foreground">頼む内容</h3>
+					<p class="mt-2 text-sm leading-6 text-muted-foreground">
+						要約、下書き、分類、比較、レビュー、コード修正など、作業の種類を決めます。作業が具体的なほど、返答の確認もしやすくなります。
+					</p>
+				</div>
+				<div class="rounded-md border border-border bg-background p-3 shadow-sm">
+					<h3 class="mt-0 text-sm font-semibold text-foreground">モデル</h3>
+					<p class="mt-2 text-sm leading-6 text-muted-foreground">
+						重い判断や長い文章には強いモデル、短い分類や言い換えには軽いモデルが向きます。最初から一番強いものを選ぶより、用途に合わせて選ぶ方が続けやすくなります。
+					</p>
+				</div>
+				<div class="rounded-md border border-border bg-background p-3 shadow-sm">
+					<h3 class="mt-0 text-sm font-semibold text-foreground">確認方法</h3>
+					<p class="mt-2 text-sm leading-6 text-muted-foreground">
+						答えをどう確かめるかを先に決めます。数字、固有名詞、仕様、コードは、公式資料、社内資料、テストで確認してから使います。
+					</p>
+				</div>
+			</div>
+
+			<h2>頼み方の基本形</h2>
+			<p>
+				良い <TermTooltip term="プロンプト" /> は、長い文章ではなく、確認しやすい依頼文です。
+				最低限、目的、材料、条件、出力形式を分けて書くと、AIが勝手に補いすぎることを減らせます。
+			</p>
+
+			<CodeConsole title="依頼文の基本形" language="text" tone="prompt">
+{`目的:
+新機能の仕様メモを、開発チームが確認しやすい形に整理したい。
+
+材料:
+（仕様メモを貼る）
+
+条件:
+- 事実と推測を分ける
+- 未決事項を残す
+- 追加で確認すべき質問を出す
+- 断定できないことは「要確認」と書く
+
+出力:
+1. 要点
+2. 未決事項
+3. 確認質問
+4. リスク`}
+			</CodeConsole>
+
+			<h2>モデル選びの目安</h2>
+			<p>
+				モデル選びは「強いか弱いか」だけで決めると迷いやすくなります。軽い作業は速く安いモデル、複雑な判断や長い資料を扱う作業は強いモデル、と分けるのが現実的です。
+				迷ったら、まず軽いモデルで試し、品質が足りない場面だけ上位モデルに切り替えます。
+			</p>
+			<div class="note-box">
+				<ul>
+					<li>軽いモデル: 短い要約、分類、言い換え、形式変換。</li>
+					<li>標準的なモデル: 調査メモの整理、レビュー観点、仕様のたたき台。</li>
+					<li>強いモデル: 複数資料の比較、設計判断、複雑なコード変更の相談。</li>
+					<li>別途確認が必要なもの: 最新情報、料金、契約条件、権限、機密情報の扱い。</li>
+				</ul>
+			</div>
+
+			<h2>よくあるつまずき</h2>
+			<div class="space-y-3">
+				<div class="rounded-md border border-border bg-background p-3">
+					<h3 class="mt-0 text-sm font-semibold text-foreground">依頼が広すぎる</h3>
+					<p class="mt-1 text-sm leading-6 text-muted-foreground">
+						「いい感じにまとめて」だけだと、必要な形になりにくいです。誰が読むのか、何に使うのか、どの形式でほしいのかを加えます。
+					</p>
+				</div>
+				<div class="rounded-md border border-border bg-background p-3">
+					<h3 class="mt-0 text-sm font-semibold text-foreground">確認せずに採用する</h3>
+					<p class="mt-1 text-sm leading-6 text-muted-foreground">
+						自然な文章ほど正しく見えます。数字、引用、仕様、コードは、根拠やテストで確認してから使います。
+					</p>
+				</div>
+				<div class="rounded-md border border-border bg-background p-3">
+					<h3 class="mt-0 text-sm font-semibold text-foreground">最初から大きく任せる</h3>
+					<p class="mt-1 text-sm leading-6 text-muted-foreground">
+						業務全体を一度に任せるより、要約、分類、レビュー観点のような小さな単位で使う方が、品質を判断しやすくなります。
+					</p>
+				</div>
+			</div>
+
+			<h2>次に読むページ</h2>
+			<p>
+				最初の使いどころを整理したい場合は <a href="/articles/ai/ai-glossary/">AI入門</a>、
+				入力や確認のルールを決めたい場合は <a href="/articles/ai/safety-guide/">安全なAI活用</a>、
+				モデルを比較したい場合は <a href="/llms/">AIモデル選定ガイド</a> を確認します。
+			</p>
+
+			<h2>参考資料</h2>
+			<div class="source-list">
+				<a href="https://platform.openai.com/docs/guides/prompt-engineering" target="_blank" rel="noreferrer">
+					OpenAI: Prompt engineering
+				</a>
+				<a href="https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices" target="_blank" rel="noreferrer">
+					OpenAI Help: Prompt engineering best practices
+				</a>
+				<a href="https://ai.google.dev/gemini-api/docs/prompting-strategies?hl=ja" target="_blank" rel="noreferrer">
+					Google AI for Developers: Prompting strategies
+				</a>
+				<a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview" target="_blank" rel="noreferrer">
+					Anthropic: Prompt engineering overview
+				</a>
+			</div>
+		</div>
+	</article>
+</Layout>

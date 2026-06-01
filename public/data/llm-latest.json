@@ -1,0 +1,268 @@
+{
+  "generatedAt": "2026-05-31T03:50:07.745Z",
+  "sourcePolicy": "official-only",
+  "updateStatus": "manual-curated",
+  "updateMessage": "Curated from current official model and plan documentation.",
+  "models": [
+    {
+      "provider": "OpenAI",
+      "family": "GPT-5.5",
+      "model": "GPT-5.5",
+      "status": "released",
+      "releaseDate": "2026-04-23",
+      "bestFor": "普段使いの会話、深めの思考、ChatGPT での標準的な選定出発点。",
+      "strengths": "ChatGPT の全ティアで使える主力モデルで、Instant / Thinking の切り替えに対応します。",
+      "cautions": "Free tier は 5 時間あたり 10 messages までで、上限後は mini にフォールバックします。",
+      "useCases": ["日常の対話", "相談", "長文の整理"],
+      "surfaces": ["ChatGPT"],
+      "plans": ["Free", "Go", "Plus", "Pro", "Business", "Enterprise", "Edu"],
+      "notes": [
+        "paid tiers では model picker が使える",
+        "Instant / Thinking を手動で切り替えやすい",
+        "プロ用途では GPT-5.5 Pro へ上げる選択肢がある"
+      ],
+      "officialUrl": "https://help.openai.com/en/articles/11909943-gpt",
+      "lastCheckedAt": "2026-05-31T00:00:00+09:00"
+    },
+    {
+      "provider": "OpenAI",
+      "family": "GPT-5.5",
+      "model": "GPT-5.5 Pro",
+      "status": "released",
+      "releaseDate": "2026-04-23",
+      "bestFor": "研究寄りの難問、重いレビュー、最大性能を取りにいく場面。",
+      "strengths": "GPT-5.5 の中でも高性能側で、複雑な作業を一段深く詰めたいときに使いやすいです。",
+      "cautions": "Apps、Memory、Canvas、image generation は Pro では使えません。",
+      "useCases": ["高難度推論", "レビュー", "大きな設計判断"],
+      "surfaces": ["ChatGPT"],
+      "plans": ["Pro", "Business", "Enterprise", "Edu"],
+      "notes": [
+        "model picker の Pro モードで使う",
+        "最大性能を求めるときの選択肢",
+        "大量処理より精度重視に向く"
+      ],
+      "officialUrl": "https://help.openai.com/en/articles/11909943-gpt",
+      "lastCheckedAt": "2026-05-31T00:00:00+09:00"
+    },
+    {
+      "provider": "OpenAI",
+      "family": "GPT-5.4",
+      "model": "GPT-5.4",
+      "status": "released",
+      "releaseDate": "2026-03-05",
+      "bestFor": "プロ向けの実務、computer use、長いタスク、ツールを使うエージェント作業。",
+      "strengths": "API と Codex にまたがる主力モデルで、実務の中心に置きやすいです。",
+      "cautions": "重いタスク向けなので、短い分類や大量処理では mini / nano の方が経済的です。",
+      "useCases": ["実務", "エージェント", "コード", "資料作成"],
+      "surfaces": ["API", "Codex"],
+      "plans": ["API", "Codex"],
+      "notes": [
+        "ChatGPT では GPT-5.4 Thinking として提供",
+        "Codex と API では computer use を含む実務ワークフローに強い",
+        "長いコンテキストとツール利用をまとめたいときに向く"
+      ],
+      "officialUrl": "https://openai.com/index/introducing-gpt-5-4/",
+      "lastCheckedAt": "2026-05-31T00:00:00+09:00"
+    },
+    {
+      "provider": "OpenAI",
+      "family": "GPT-5.4",
+      "model": "GPT-5.4 Pro",
+      "status": "released",
+      "releaseDate": "2026-03-05",
+      "bestFor": "最大性能を取りにいく複雑なタスク、重い判断、専門業務の精度重視ワークフロー。",
+      "strengths": "GPT-5.4 の上位版として、複雑な業務や長い作業で精度を取りにいけます。",
+      "cautions": "用途が明確でない軽作業にはオーバースペックになりやすいです。",
+      "useCases": ["専門業務", "長時間の思考", "最終判断"],
+      "surfaces": ["ChatGPT", "API"],
+      "plans": ["Pro", "Business", "Enterprise", "Edu", "API"],
+      "notes": [
+        "ChatGPT と API で使える",
+        "最大性能の選択肢として使う",
+        "複雑な検討や高い精度が必要な案件向け"
+      ],
+      "officialUrl": "https://openai.com/index/introducing-gpt-5-4/",
+      "lastCheckedAt": "2026-05-31T00:00:00+09:00"
+    },
+    {
+      "provider": "OpenAI",
+      "family": "GPT-5.4",
+      "model": "GPT-5.4 mini",
+      "status": "released",
+      "releaseDate": "2026-03-17",
+      "bestFor": "コード補助、サブエージェント、軽量な multimodal 処理、コストを抑えた運用。",
+      "strengths": "API、Codex、ChatGPT で使えて、速度とコストのバランスがよいです。",
+      "cautions": "重い推論を一発で任せるより、上位モデルのサブタスク向きです。",
+      "useCases": ["サブエージェント", "分類", "抽出", "軽いコード修正"],
+      "surfaces": ["ChatGPT", "API", "Codex"],
+      "plans": ["Free", "Go", "Plus", "Pro", "Business", "Enterprise", "Edu", "API", "Codex"],
+      "notes": [
+        "API / Codex / ChatGPT で使える",
+        "Free と Go では Thinking で利用できる",
+        "他の ChatGPT tiers では GPT-5.4 Thinking の fallback になる"
+      ],
+      "officialUrl": "https://openai.com/index/introducing-gpt-5-4-mini-and-nano/",
+      "lastCheckedAt": "2026-05-31T00:00:00+09:00"
+    },
+    {
+      "provider": "OpenAI",
+      "family": "GPT-5.4",
+      "model": "GPT-5.4 nano",
+      "status": "released",
+      "releaseDate": "2026-03-17",
+      "bestFor": "超大量の分類、抽出、ランキング、低コストの補助タスク。",
+      "strengths": "GPT-5.4 系で最も安く、速度とコストが重要な高ボリューム処理に向いています。",
+      "cautions": "API 専用なので、ChatGPT や Codex の主役にはしにくいです。",
+      "useCases": ["分類", "抽出", "ランキング", "小さな補助タスク"],
+      "surfaces": ["API"],
+      "plans": ["API"],
+      "notes": [
+        "API のみで利用可能",
+        "簡単な高ボリューム処理に向く",
+        "小さな sub-agent や前処理で使いやすい"
+      ],
+      "officialUrl": "https://openai.com/index/introducing-gpt-5-4-mini-and-nano/",
+      "lastCheckedAt": "2026-05-31T00:00:00+09:00"
+    },
+    {
+      "provider": "Anthropic",
+      "family": "Claude 4",
+      "model": "Claude Opus 4.8",
+      "status": "released",
+      "releaseDate": "2026-05",
+      "bestFor": "最難度の推論、長い agentic coding、複雑な判断が必要な仕事。",
+      "strengths": "Anthropic の最上位候補で、複雑な reasoning と長いタスクに強いです。",
+      "cautions": "高性能なぶん、軽い相談や大量処理には重すぎることがあります。",
+      "useCases": ["深い推論", "agentic coding", "複雑なレビュー"],
+      "surfaces": ["Claude API", "Claude.ai", "Claude Code", "Amazon Bedrock", "Vertex AI"],
+      "plans": ["API", "Claude.ai", "Claude Code", "Bedrock", "Vertex AI"],
+      "notes": [
+        "all current Claude models support text and image input",
+        "model overview では最も complex reasoning 向けとされる",
+        "partner surfaces でも同じモデル系列を使える"
+      ],
+      "officialUrl": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "lastCheckedAt": "2026-05-31T03:50:07.745Z"
+    },
+    {
+      "provider": "Anthropic",
+      "family": "Claude 4",
+      "model": "Claude Sonnet 4.6",
+      "status": "released",
+      "releaseDate": "2026-05",
+      "bestFor": "スピードと知性のバランス、日常の開発作業、文章編集、レビュー。",
+      "strengths": "速度と精度のバランスがよく、一般的な実務で扱いやすい中核モデルです。",
+      "cautions": "Opus ほどの重い推論には向きません。",
+      "useCases": ["文章編集", "コードレビュー", "一般業務", "調査のまとめ"],
+      "surfaces": ["Claude API", "Claude.ai", "Claude Code", "Amazon Bedrock", "Vertex AI"],
+      "plans": ["API", "Claude.ai", "Claude Code", "Bedrock", "Vertex AI"],
+      "notes": [
+        "Claude 4 系で最もバランスが良い選択肢",
+        "Team / Enterprise の標準席でも扱いやすい",
+        "高速すぎず遅すぎない中核候補"
+      ],
+      "officialUrl": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "lastCheckedAt": "2026-05-31T03:50:07.745Z"
+    },
+    {
+      "provider": "Anthropic",
+      "family": "Claude 4",
+      "model": "Claude Haiku 4.5",
+      "status": "released",
+      "releaseDate": "2025-10-01",
+      "bestFor": "高速応答、補助作業、軽量な分類や要約、サブタスク。",
+      "strengths": "最速寄りで、近い性能を保ちながら軽いタスクを量で回せます。",
+      "cautions": "難しい推論や長文の精密なレビューでは上位モデルに劣ります。",
+      "useCases": ["軽い分類", "要約", "補助生成", "サブタスク"],
+      "surfaces": ["Claude API", "Claude.ai", "Claude Code", "Amazon Bedrock", "Vertex AI"],
+      "plans": ["API", "Claude.ai", "Claude Code", "Bedrock", "Vertex AI"],
+      "notes": [
+        "最速モデルとして扱いやすい",
+        "大きな判断より小さな補助に向く",
+        "コストと速度を抑えたいワークロード向け"
+      ],
+      "officialUrl": "https://docs.anthropic.com/en/docs/about-claude/models",
+      "lastCheckedAt": "2026-05-31T03:50:07.745Z"
+    },
+    {
+      "provider": "Google",
+      "family": "Gemini 2.5",
+      "model": "Gemini 2.5 Pro",
+      "status": "stable",
+      "releaseDate": "2025-02-05",
+      "bestFor": "複雑な推論、コード、長文資料の理解、マルチモーダルな本命選択。",
+      "strengths": "Google の最上位寄りモデルで、複雑な問題解決と coding に強いです。",
+      "cautions": "軽作業には重く、Flash 系のほうがコスト効率が良い場面があります。",
+      "useCases": ["複雑な推論", "コード", "資料読解", "マルチモーダル理解"],
+      "surfaces": ["Google AI Studio", "Gemini API", "Vertex AI"],
+      "plans": ["AI Studio", "Free tier", "Paid tier", "Vertex AI"],
+      "notes": [
+        "Gemini API と Vertex AI の両方で中心候補になる",
+        "難しいタスクを一段深く詰めたいときの起点",
+        "Google AI Studio でも試しやすい"
+      ],
+      "officialUrl": "https://ai.google.dev/gemini-api/docs/models?hl=ja",
+      "lastCheckedAt": "2026-05-31T03:50:07.745Z"
+    },
+    {
+      "provider": "Google",
+      "family": "Gemini 2.5",
+      "model": "Gemini 2.5 Flash",
+      "status": "stable",
+      "releaseDate": "2025-04-09",
+      "bestFor": "低遅延の対話、高ボリューム処理、価格性能を意識した実務フロー。",
+      "strengths": "価格性能と速度のバランスが良く、日常の開発やエージェント補助に使いやすいです。",
+      "cautions": "最高難度の推論は Pro の方が安定します。",
+      "useCases": ["高速生成", "軽いエージェント", "大量処理", "補助推論"],
+      "surfaces": ["Google AI Studio", "Gemini API", "Vertex AI"],
+      "plans": ["AI Studio", "Free tier", "Paid tier", "Vertex AI"],
+      "notes": [
+        "フラグシップ寄りの価格性能モデル",
+        "サブタスクや反復処理に向く",
+        "API と Vertex で実運用しやすい"
+      ],
+      "officialUrl": "https://ai.google.dev/gemini-api/docs/models?hl=ja",
+      "lastCheckedAt": "2026-05-31T03:50:07.745Z"
+    },
+    {
+      "provider": "Google",
+      "family": "Gemini 2.5",
+      "model": "Gemini 2.5 Flash-Lite",
+      "status": "stable",
+      "releaseDate": "2025-07-01",
+      "bestFor": "低コストの大量処理、分類、抽出、前処理。",
+      "strengths": "最もコスト効率の良い系統で、free / paid tier の両方の設計に合わせやすいです。",
+      "cautions": "重い reasoning や複雑な資料読解には上位モデルの方が向きます。",
+      "useCases": ["分類", "抽出", "短文生成", "前処理"],
+      "surfaces": ["Google AI Studio", "Gemini API", "Vertex AI"],
+      "plans": ["AI Studio", "Free tier", "Paid tier", "Vertex AI"],
+      "notes": [
+        "高ボリューム処理の第一候補",
+        "一番安い系統から試すときの起点",
+        "前処理とサブタスクで使いやすい"
+      ],
+      "officialUrl": "https://ai.google.dev/gemini-api/docs/models?hl=ja",
+      "lastCheckedAt": "2026-05-31T03:50:07.745Z"
+    },
+    {
+      "provider": "Google",
+      "family": "Gemini 2.5",
+      "model": "Gemini 2.5 Flash Image",
+      "status": "stable",
+      "releaseDate": "2025-05",
+      "bestFor": "画像生成と会話的な編集、創作ワークフロー。",
+      "strengths": "創作向けの画像生成と対話的な編集が一つの流れで扱えます。",
+      "cautions": "純テキストの推論は Pro / Flash 系の方が扱いやすいです。",
+      "useCases": ["画像生成", "画像編集", "クリエイティブ作業"],
+      "surfaces": ["Google AI Studio", "Gemini API", "Vertex AI"],
+      "plans": ["AI Studio", "Free tier", "Paid tier", "Vertex AI"],
+      "notes": [
+        "創作ワークフロー向けのモデル",
+        "対話的な画像編集に便利",
+        "text only ではなくビジュアル中心の作業向け"
+      ],
+      "officialUrl": "https://ai.google.dev/gemini-api/docs/models?hl=ja",
+      "lastCheckedAt": "2026-05-31T03:50:07.745Z"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+---
+interface Props {
+  title?: string;
+  language?: string;
+  tone?: 'code' | 'prompt';
+}
+
+const { title = 'Snippet', language = '', tone = 'code' } = Astro.props;
+---
+
+<figure class:list={['console-block', tone === 'prompt' && 'console-block-prompt']}>
+	<figcaption class="console-header">
+		<span class="console-title">{title}</span>
+		{language && <span class="console-language">{language}</span>}
+		<button type="button" class="console-copy">Copy</button>
+	</figcaption>
+	<pre><code><slot /></code></pre>
+</figure>
+
+<script is:inline>
+(() => {
+  if (window.__knowledgeConsoleCopyReady) return;
+  window.__knowledgeConsoleCopyReady = true;
+
+  document.addEventListener('click', async (event) => {
+    const button = event.target.closest('.console-copy');
+    if (!button) return;
+
+    const block = button.closest('.console-block');
+    const code = block?.querySelector('code')?.innerText ?? '';
+    if (!code.trim()) return;
+
+    try {
+      await navigator.clipboard.writeText(code.trim());
+      const previous = button.textContent;
+      button.textContent = 'Copied';
+      window.setTimeout(() => {
+        button.textContent = previous;
+      }, 1200);
+    } catch {
+      button.textContent = 'Copy failed';
+      window.setTimeout(() => {
+        button.textContent = 'Copy';
+      }, 1200);
+    }
+  });
+})();
+</script>

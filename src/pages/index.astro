@@ -1,0 +1,148 @@
+---
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import Layout from '@/layouts/Layout.astro';
+import { SITE_DESCRIPTION, SITE_NAME } from '@/lib/content';
+import { navUrl } from '@/lib/navigation';
+import { CONTENT_ITEMS } from '@/lib/site-content';
+import { BookOpen, BrainCircuit, Library, Route, ShieldCheck, Sparkles } from 'lucide-react';
+
+const featuredRead = [
+  {
+    title: 'AI入門',
+    description: 'AIでできること、苦手なこと、最初に試しやすい作業をまとめています。',
+    href: '/articles/ai/ai-glossary/',
+    icon: BookOpen
+  },
+  {
+    title: 'LLMとは？',
+    description: '言葉で頼むAIの仕組み、使う場所、頼み方の基本をまとめています。',
+    href: '/articles/ai/llm-basics/',
+    icon: BookOpen
+  },
+  {
+    title: '安全なAI活用',
+    description: '入力してよい情報、答えの確認、共有前チェックを扱います。',
+    href: '/articles/ai/safety-guide/',
+    icon: ShieldCheck
+  }
+];
+
+const featuredUse = [
+  {
+    title: '用途別プロンプト集',
+    description: '調査、実装、レビュー、文書化で使う依頼文の型を収録しています。',
+    href: '/articles/ai/prompt-patterns/',
+    icon: BrainCircuit
+  },
+  {
+    title: 'AI用語集',
+    description: '重要なAI用語を、意味、使われ方、具体例で確認します。',
+    href: '/glossary/',
+    icon: Library
+  },
+  {
+    title: 'AIモデル選定ガイド',
+    description: '主要モデルを用途に合わせて比較し、選び方の目安をまとめています。',
+    href: '/llms/',
+    icon: Route
+  }
+];
+
+const tracks = [
+  { label: 'AIの基本', icon: BookOpen },
+  { label: 'LLMの使い方', icon: BrainCircuit },
+  { label: 'プロンプト', icon: Library },
+  { label: '安全な活用', icon: ShieldCheck }
+];
+---
+
+<Layout title={SITE_NAME} description={SITE_DESCRIPTION} currentPath="/">
+	<section class="space-y-3">
+		<Card>
+			<CardContent className="p-5">
+				<p class="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+					<Sparkles className="h-3.5 w-3.5" />
+					AI Knowledge Hub
+				</p>
+				<h2 class="mt-1 text-3xl font-semibold tracking-tight">AI Compass</h2>
+				<p class="mt-2 max-w-4xl text-sm leading-6 text-muted-foreground">
+					AIを選び、使いこなすための実務知識をまとめた公開サイトです。
+					基礎、プロンプト、用語、モデル選定を短い導線で確認できます。
+				</p>
+				<div class="mt-3 flex flex-wrap gap-1.5">
+					{tracks.map((track) => (
+						<Badge variant="outline">
+							<track.icon className="h-3.5 w-3.5 text-primary" />
+							{track.label}
+						</Badge>
+					))}
+				</div>
+			</CardContent>
+		</Card>
+
+		<Card>
+			<CardHeader className="pb-2">
+				<CardTitle className="flex items-center gap-2 text-base">
+					<BookOpen className="h-4 w-4 text-primary" />
+					まず読む
+				</CardTitle>
+			</CardHeader>
+			<CardContent className="grid gap-2 lg:grid-cols-3">
+				{featuredRead.map((item) => (
+					<a href={navUrl(item.href)} class="rounded-md border border-border bg-card p-3 no-underline transition-colors hover:bg-muted">
+						<div class="flex items-center gap-2">
+							<span class="flex h-8 w-8 items-center justify-center rounded-md border border-border bg-secondary text-primary">
+								<item.icon className="h-4 w-4" />
+							</span>
+							<h3 class="text-sm font-semibold text-foreground">{item.title}</h3>
+						</div>
+						<p class="mt-2 text-sm leading-6 text-muted-foreground">{item.description}</p>
+					</a>
+				))}
+			</CardContent>
+		</Card>
+
+		<Card>
+			<CardHeader className="pb-2">
+				<CardTitle className="flex items-center gap-2 text-base">
+					<Library className="h-4 w-4 text-primary" />
+					すぐ使う
+				</CardTitle>
+			</CardHeader>
+			<CardContent className="grid gap-2 lg:grid-cols-3">
+				{featuredUse.map((item) => (
+					<a href={navUrl(item.href)} class="rounded-md border border-border bg-card p-3 no-underline transition-colors hover:bg-muted">
+						<div class="flex items-center gap-2">
+							<span class="flex h-8 w-8 items-center justify-center rounded-md border border-border bg-secondary text-primary">
+								<item.icon className="h-4 w-4" />
+							</span>
+							<h3 class="text-sm font-semibold text-foreground">{item.title}</h3>
+						</div>
+						<p class="mt-2 text-sm leading-6 text-muted-foreground">{item.description}</p>
+					</a>
+				))}
+			</CardContent>
+		</Card>
+
+		<Card>
+			<CardHeader className="pb-2">
+				<CardTitle className="flex items-center gap-2 text-base">
+					<Library className="h-4 w-4 text-primary" />
+					全コンテンツ
+				</CardTitle>
+			</CardHeader>
+			<CardContent className="grid gap-2 xl:grid-cols-2">
+				{CONTENT_ITEMS.map((item) => (
+					<a href={navUrl(item.href)} class="rounded-md border border-border bg-card p-3 no-underline transition-colors hover:bg-muted">
+						<div class="flex flex-wrap items-center justify-between gap-2">
+							<h3 class="text-sm font-semibold text-foreground">{item.title}</h3>
+							<Badge variant="secondary">{item.category}</Badge>
+						</div>
+						<p class="mt-1 line-clamp-2 text-sm leading-6 text-muted-foreground">{item.description}</p>
+					</a>
+				))}
+			</CardContent>
+		</Card>
+	</section>
+</Layout>

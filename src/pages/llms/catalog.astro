@@ -1,0 +1,120 @@
+---
+import { ArrowRight, Bot, Layers3, SearchCheck } from 'lucide-react';
+import Layout from '@/layouts/Layout.astro';
+import { LLM_PROFILE_GROUPS, profilesForGroup } from '@/lib/llm-profiles';
+
+const providerId = (label: string, provider: string) => `${provider.toLowerCase()}-${label.includes('Codex') ? 'codex' : 'series'}`;
+
+const selectionTips = [
+  'まず用途を決める。文章、コード、調査、画像を含む確認では向くモデルが変わります。',
+  '料金は金額より先に、無料プラン、有料プラン、企業向け、API利用の違いを見ると整理しやすくなります。',
+  '重い判断は上位モデル、決まった処理や大量処理は軽量モデルに分けると無理がありません。',
+  'AIの答えは下書きとして扱い、重要な成果物は人が確認します。',
+  '最新の提供範囲、価格、利用条件は公式情報で確認します。'
+];
+---
+
+<Layout title="LLM紹介 | AI Compass" description="主要なLLMの特徴、用途、料金プランの見方をモデル別に確認できます。" currentPath="/llms/catalog/">
+	<section class="space-y-3">
+		<section class="rounded-md border border-border bg-card p-4 shadow-sm">
+			<div class="flex flex-wrap items-start justify-between gap-3">
+				<div class="max-w-3xl">
+					<p class="text-[11px] font-semibold tracking-[0.12em] text-muted-foreground">モデルを読む</p>
+					<h1 class="mt-1 text-2xl font-semibold tracking-tight">LLM紹介</h1>
+					<p class="mt-2 text-sm leading-6 text-muted-foreground">
+						主要なLLMを、特徴、得意な作業、注意点、プランの見方から確認できます。モデル名だけで選ぶのではなく、使う場面と確認方法を合わせて見るためのページです。
+					</p>
+				</div>
+				<span class="rounded-md border border-border bg-background px-3 py-2 text-xs text-muted-foreground">
+					{LLM_PROFILE_GROUPS.reduce((count, group) => count + group.slugs.length, 0)}モデル
+				</span>
+			</div>
+		</section>
+
+		<section class="rounded-md border border-border bg-card p-4 shadow-sm">
+			<div class="flex items-start gap-3">
+				<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-background text-primary">
+					<SearchCheck className="h-4 w-4" />
+				</span>
+				<div>
+					<h2 class="text-lg font-semibold tracking-tight">このLLM紹介ページの目的と使い方</h2>
+					<div class="mt-3 grid gap-2 md:grid-cols-3">
+						<div class="rounded-md border border-border bg-background px-3 py-2">
+							<p class="text-sm font-semibold text-foreground">特徴を見る</p>
+							<p class="mt-1 text-sm leading-6 text-muted-foreground">モデルごとに、何が得意でどこに注意するかを短く確認します。</p>
+						</div>
+						<div class="rounded-md border border-border bg-background px-3 py-2">
+							<p class="text-sm font-semibold text-foreground">用途で比べる</p>
+							<p class="mt-1 text-sm leading-6 text-muted-foreground">コーディング、要約、調査、会話など、使う場面から候補を絞ります。</p>
+						</div>
+						<div class="rounded-md border border-border bg-background px-3 py-2">
+							<p class="text-sm font-semibold text-foreground">プランを確認する</p>
+							<p class="mt-1 text-sm leading-6 text-muted-foreground">無料、有料、企業向け、API利用の違いを見て、導入前の確認点を押さえます。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		{LLM_PROFILE_GROUPS.map((group) => {
+			const profiles = profilesForGroup(group.slugs);
+			const id = providerId(group.label, group.provider);
+
+			return (
+				<section id={id} class="scroll-mt-24 rounded-md border border-border bg-card p-4 shadow-sm">
+					<div class="flex items-start gap-3">
+						<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-background text-primary">
+							<Bot className="h-4 w-4" />
+						</span>
+						<div>
+							<p class="text-[11px] font-semibold tracking-[0.12em] text-muted-foreground">{group.provider}</p>
+							<h2 class="text-xl font-semibold tracking-tight">{group.label}</h2>
+							<p class="mt-1 text-sm leading-6 text-muted-foreground">{group.description}</p>
+						</div>
+					</div>
+
+					<div class="mt-4 grid gap-3 lg:grid-cols-2 xl:grid-cols-3">
+						{profiles.map((profile) => (
+							<a href={`/llms/models/${profile.slug}/`} class="group rounded-md border border-border bg-background p-3 text-foreground no-underline transition-colors hover:bg-muted/60">
+								<div class="flex items-start justify-between gap-3">
+									<div>
+										<p class="text-[11px] font-semibold tracking-[0.12em] text-muted-foreground">{profile.provider}</p>
+										<h3 class="mt-0.5 text-base font-semibold tracking-tight">{profile.name}</h3>
+									</div>
+									<ArrowRight className="mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+								</div>
+								<p class="mt-2 text-sm leading-6 text-muted-foreground">{profile.summary}</p>
+								<div class="mt-3 flex flex-wrap gap-1.5">
+									{profile.useCases.slice(0, 4).map((useCase) => (
+										<span class="rounded-md border border-border bg-card px-2 py-1 text-xs text-muted-foreground">{useCase}</span>
+									))}
+								</div>
+							</a>
+						))}
+					</div>
+				</section>
+			);
+		})}
+
+		<section class="rounded-md border border-border bg-card p-4 shadow-sm">
+			<div class="flex items-start gap-3">
+				<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-background text-primary">
+					<Layers3 className="h-4 w-4" />
+				</span>
+				<div>
+					<h2 class="text-lg font-semibold tracking-tight">LLMモデルを選ぶときのポイント</h2>
+					<div class="mt-3 grid gap-2">
+						{selectionTips.map((tip, index) => (
+							<div class="flex gap-3 rounded-md border border-border bg-background px-3 py-2 text-sm leading-6 text-muted-foreground">
+								<span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-primary/10 text-xs font-semibold text-primary">
+									{index + 1}
+								</span>
+								<span>{tip}</span>
+							</div>
+						))}
+					</div>
+				</div>
+			</div>
+		</section>
+	</section>
+</Layout>

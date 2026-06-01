@@ -1,0 +1,76 @@
+---
+import CodeConsole from '@/components/common/CodeConsole.astro';
+import Layout from '@/layouts/Layout.astro';
+import TermTooltip from '@/components/common/TermTooltip.astro';
+import { Workflow } from 'lucide-react';
+---
+
+<Layout title="AIエージェント入門 | AI Compass" description="AIエージェントとツール連携の基本" currentPath="/articles/ai/agent-guide/">
+	<article class="article-shell">
+		<div class="article-prose">
+			<p class="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+				<Workflow className="h-3.5 w-3.5" />
+				Workflow design
+			</p>
+			<h1>AIエージェント入門</h1>
+			<p class="article-lead">
+				<TermTooltip term="AIエージェント" /> は、ただ会話するだけのAIより一歩進んで、必要な手順を考えたり、<TermTooltip term="Tool Calling" /> で外部機能を使ったりしながら、
+				目的達成まで進める形です。便利ですが、自由度が上がるぶん設計と監督が重要になります。
+			</p>
+
+			<h2>チャットAIとの違い</h2>
+			<p>
+				普通のチャットAIは、入力に対して一回の応答を返すのが中心です。エージェントは、その場で検索する、データを取る、別の手順を挟む、
+				結果を見てもう一段やり直す、といった流れを持ちます。つまり、回答そのものより、仕事の進め方まで持たせる設計です。
+			</p>
+
+			<h2>何が必要になるか</h2>
+			<p>
+				エージェント化するときに必要なのは、強いモデルより先に、どのツールを使わせるか、どの順序で進めるか、どこで人が止めるかです。
+				特に更新系操作や本番操作を含む場合は、<TermTooltip term="Human-in-the-loop" /> を前提にすべきです。
+			</p>
+
+			<CodeConsole title="Agent loop" language="text">
+{`目的を受け取る
+  -> 状況を確認する
+  -> 必要なツールを選ぶ
+  -> 実行する
+  -> 結果を確認する
+  -> 必要なら追加実行する
+  -> 人の確認を経て完了する`}
+			</CodeConsole>
+
+			<h2>ツール連携の考え方</h2>
+			<p>
+				<TermTooltip term="Tool Calling" /> を使うと、AIは検索、取得、更新、計算などをモデル外で実行できます。ここで大事なのは、
+				AIに自由を与えすぎないことです。使えるツールを絞る、引数を制限する、危険操作の前に確認を入れる、ログを残す。このあたりが基本になります。
+			</p>
+			<p>
+				複数ツールを整理して扱いたいときに、<TermTooltip term="MCP" /> のような共通の接続ルールを使います。道具を増やすこと自体より、
+				どの道具をどこまで触らせるかを明確にするほうが重要です。
+			</p>
+
+			<h2>最初のユースケース</h2>
+			<p>
+				いきなり全部自動で動くエージェントを作る必要はありません。最初は、調査、文書整理、コードの影響範囲確認、問い合わせ一次回答の下書きなど、
+				失敗しても人が戻せる仕事から始めるのが安定します。目的は、AIに全部任せることではなく、人の判断速度を上げることです。
+			</p>
+
+			<div class="note-box">
+				<ul>
+					<li>外部更新や削除は必ず人の確認を入れる</li>
+					<li>使えるツールは最小限から始める</li>
+					<li>ログと再現性を残す</li>
+					<li>プロンプトよりワークフロー設計を重視する</li>
+				</ul>
+			</div>
+
+			<h2>参考</h2>
+			<div class="source-list">
+				<a href="https://platform.openai.com/docs/guides/function-calling" target="_blank" rel="noreferrer">OpenAI: Function calling</a>
+				<a href="https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview" target="_blank" rel="noreferrer">Anthropic: Tool use overview</a>
+				<a href="https://ai.google.dev/gemini-api/docs/function-calling" target="_blank" rel="noreferrer">Google AI for Developers: Function calling</a>
+			</div>
+		</div>
+	</article>
+</Layout>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="28" fill="#f8fafc" />
+  <circle cx="64" cy="64" r="44" stroke="#0e7490" stroke-width="8" opacity=".35" />
+  <path d="M77 51 49 79l9-22 28-28-9 22Z" fill="#0e7490" />
+  <path d="M51 77 79 49l-9 22-28 28 9-22Z" fill="#134e5e" opacity=".55" />
+  <circle cx="64" cy="64" r="7" fill="#0e7490" />
+  <path d="M26 64h15M87 64h15M64 26v15M64 87v15" stroke="#134e5e" stroke-width="7" stroke-linecap="round" />
+  <circle cx="26" cy="64" r="7" fill="#134e5e" />
+  <circle cx="102" cy="64" r="7" fill="#134e5e" />
+  <circle cx="64" cy="26" r="7" fill="#134e5e" />
+  <circle cx="64" cy="102" r="7" fill="#134e5e" />
+  <style>
+    @media (prefers-color-scheme: dark) {
+      rect { fill: #0f172a; }
+      circle:first-of-type { opacity: .5; }
+    }
+  </style>
+</svg>

@@ -1,0 +1,126 @@
+---
+import TermTooltip from '@/components/common/TermTooltip.astro';
+import Layout from '@/layouts/Layout.astro';
+import { ShieldCheck } from 'lucide-react';
+---
+
+<Layout title="安全なAI活用 | AI Compass" description="入力してよい情報、答えの確認、共有前チェックを実務で使う形にまとめた記事。" currentPath="/articles/ai/safety-guide/">
+	<article class="article-shell">
+		<div class="article-prose">
+			<p class="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.08em] text-muted-foreground">
+				<ShieldCheck className="h-3.5 w-3.5" />
+				確認と情報管理
+			</p>
+			<h1>安全なAI活用</h1>
+			<p class="article-lead">
+				AIを仕事で使うときは、便利さより先に「入力してよい情報」「答えの確かめ方」「共有前の確認」を決めておくと失敗しにくくなります。
+				ルールは大きく作りすぎず、毎日の作業で守れる形にすることが大切です。
+			</p>
+
+			<div class="note-box">
+				<p class="mt-0 font-medium text-foreground">先に決める3つ</p>
+				<ul>
+					<li>入力: 入れてよい情報と、入れない情報を分ける。</li>
+					<li>確認: 数字、固有名詞、仕様、コードは根拠で確かめる。</li>
+					<li>共有: 社外送信、公開、更新、削除の前に人が確認する。</li>
+				</ul>
+			</div>
+
+			<h2>入れてよい情報を決める</h2>
+			<p>
+				AIに入力した内容は、利用するサービス、契約、設定によって扱われ方が変わります。
+				そのため、まず「入力してよいもの」「確認してから入れるもの」「入れないもの」を分けます。
+				迷ったら、公開済みの情報、マスク済みの情報、一般化した説明だけを使うのが安全です。
+			</p>
+			<div class="mt-4 grid gap-3 md:grid-cols-3">
+				<div class="rounded-md border border-border bg-background p-3 shadow-sm">
+					<h3 class="mt-0 text-sm font-semibold text-foreground">入れやすい</h3>
+					<p class="mt-2 text-sm leading-6 text-muted-foreground">
+						公開ドキュメント、一般的な質問、個人や顧客が特定されない例文。
+					</p>
+				</div>
+				<div class="rounded-md border border-border bg-background p-3 shadow-sm">
+					<h3 class="mt-0 text-sm font-semibold text-foreground">確認してから</h3>
+					<p class="mt-2 text-sm leading-6 text-muted-foreground">
+						社内資料、議事録、問い合わせ履歴、未公開の仕様。必要に応じて伏せ字にします。
+					</p>
+				</div>
+				<div class="rounded-md border border-border bg-background p-3 shadow-sm">
+					<h3 class="mt-0 text-sm font-semibold text-foreground">入れない</h3>
+					<p class="mt-2 text-sm leading-6 text-muted-foreground">
+						APIキー、パスワード、秘密鍵、個人情報、顧客情報、未公開の売上や契約情報。
+					</p>
+				</div>
+			</div>
+
+			<h2>答えをそのまま採用しない</h2>
+			<p>
+				AIは自然な文章で返すため、間違いも正しそうに見えることがあります。
+				特に <TermTooltip term="幻覚" label="ハルシネーション" /> は、文章の自然さと正しさが別物だと理解しておく必要があります。
+				確認が必要な答えには、最初から「根拠を分ける」「不明点を残す」「自信が低い点を書く」と依頼します。
+			</p>
+			<div class="note-box">
+				<ul>
+					<li>数字は元資料と照合する。</li>
+					<li>引用や出典はリンク先を開いて確認する。</li>
+					<li>コードは実行し、テストとレビューを通す。</li>
+					<li>仕様や契約の判断は、担当者や公式資料で確認する。</li>
+				</ul>
+			</div>
+
+			<h2>共有前に見るポイント</h2>
+			<p>
+				AIで作った文章やコードを共有する前に、内容、情報、責任の3点を確認します。
+				下書きとして使うだけなら軽い確認で済むこともありますが、社外に送る、公開する、本番に反映する場合は必ず人が見ます。
+			</p>
+			<div class="space-y-3">
+				<div class="rounded-md border border-border bg-background p-3">
+					<h3 class="mt-0 text-sm font-semibold text-foreground">内容</h3>
+					<p class="mt-1 text-sm leading-6 text-muted-foreground">
+						目的に合っているか、断定しすぎていないか、不要な表現が混ざっていないかを確認します。
+					</p>
+				</div>
+				<div class="rounded-md border border-border bg-background p-3">
+					<h3 class="mt-0 text-sm font-semibold text-foreground">情報</h3>
+					<p class="mt-1 text-sm leading-6 text-muted-foreground">
+						個人情報、顧客名、未公開情報、社内だけの表現が残っていないかを確認します。
+					</p>
+				</div>
+				<div class="rounded-md border border-border bg-background p-3">
+					<h3 class="mt-0 text-sm font-semibold text-foreground">責任</h3>
+					<p class="mt-1 text-sm leading-6 text-muted-foreground">
+						誰が最終判断をしたのか、どの資料を根拠にしたのか、あとから説明できる状態にします。
+					</p>
+				</div>
+			</div>
+
+			<h2>小さく始める運用ルール</h2>
+			<p>
+				安全対策は、長い規程を作るより、守れる最小ルールから始める方が定着しやすいです。
+				最初は、使ってよい用途、入れてはいけない情報、共有前チェック、困ったときの相談先だけを決めます。
+			</p>
+			<div class="note-box">
+				<ul>
+					<li>許可する用途: 要約、下書き、観点出し、文章の言い換えなど。</li>
+					<li>禁止する入力: 秘密情報、個人情報、認証情報、未公開の重要情報。</li>
+					<li>確認が必要な操作: 公開、送信、本番反映、削除、外部連携。</li>
+					<li>記録すること: 重要な判断に使った資料、確認者、変更内容。</li>
+				</ul>
+			</div>
+
+			<h2>次に読むページ</h2>
+			<p>
+				AIの使いどころを整理したい場合は <a href="/articles/ai/ai-glossary/">AI入門</a>、
+				言葉で頼むAIの基本を押さえたい場合は <a href="/articles/ai/llm-basics/">LLMとは？</a>、
+				実務で使う依頼文を探したい場合は <a href="/articles/ai/prompt-patterns/">用途別プロンプト集</a> を確認します。
+			</p>
+
+			<h2>参考資料</h2>
+			<div class="source-list">
+				<a href="https://platform.openai.com/docs/guides/safety-best-practices" target="_blank" rel="noreferrer">OpenAI: Safety best practices</a>
+				<a href="https://ai.google.dev/gemini-api/docs/safety-settings" target="_blank" rel="noreferrer">Google AI for Developers: Safety settings</a>
+				<a href="https://learn.microsoft.com/en-us/azure/ai-foundry/responsible-use-of-ai-overview" target="_blank" rel="noreferrer">Microsoft Learn: Responsible AI</a>
+			</div>
+		</div>
+	</article>
+</Layout>

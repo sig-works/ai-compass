@@ -1,0 +1,30 @@
+---
+import GlossaryExplorer from '@/components/common/GlossaryExplorer';
+import Layout from '@/layouts/Layout.astro';
+import { GLOSSARY_SECTIONS } from '@/lib/glossary';
+
+const termCount = GLOSSARY_SECTIONS.reduce((sum, section) => sum + section.terms.length, 0);
+---
+
+<Layout title="AI用語集 | AI Compass" description="AIに関する重要な用語を日常的な言葉と具体例で確認できる用語集" currentPath="/glossary/">
+	<section class="grid min-h-[calc(100dvh-7rem)] grid-rows-[auto_minmax(0,1fr)] gap-3">
+		<header class="rounded-md border border-border bg-card px-4 py-3 shadow-sm">
+			<div class="flex flex-wrap items-center justify-between gap-3">
+				<div class="min-w-0">
+					<p class="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Glossary</p>
+					<div class="mt-1 flex flex-wrap items-end gap-2">
+						<h1 class="text-2xl font-semibold tracking-tight">AI用語集</h1>
+						<span class="rounded-md border border-border bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground">
+							{termCount}語
+						</span>
+					</div>
+				</div>
+				<p class="max-w-2xl text-sm leading-6 text-muted-foreground">
+					AIに関する重要な言葉を、意味、使われ方、具体例、注意点で確認します。
+				</p>
+			</div>
+		</header>
+
+		<GlossaryExplorer client:load sections={GLOSSARY_SECTIONS} />
+	</section>
+</Layout>

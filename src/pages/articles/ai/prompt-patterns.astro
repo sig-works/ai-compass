@@ -1,0 +1,39 @@
+---
+import PromptPatternSwitcher from '@/components/common/PromptPatternSwitcher';
+import Layout from '@/layouts/Layout.astro';
+import { ClipboardList, Sparkles } from 'lucide-react';
+---
+
+<Layout
+	title="用途別プロンプト集 | AI Compass"
+	description="開発、調査、レビュー、文書作成で使う依頼文の型を用途別にまとめたプロンプト集"
+	currentPath="/articles/ai/prompt-patterns/"
+>
+	<article class="space-y-3">
+		<header class="rounded-md border border-border bg-card px-4 py-4 shadow-sm">
+			<div class="flex flex-wrap items-start justify-between gap-4">
+				<div class="max-w-4xl">
+					<p class="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+						<Sparkles className="h-3.5 w-3.5" />
+						プロンプト集
+					</p>
+					<h1 class="mt-1 text-2xl font-semibold tracking-tight">用途別プロンプト集</h1>
+					<p class="mt-2 text-sm leading-6 text-muted-foreground">
+						要件定義、設計、レビュー、調査、テスト、文書作成まで、実務で編集して使える依頼文の型をまとめています。
+					</p>
+				</div>
+				<div class="rounded-md border border-border bg-secondary px-3 py-2 text-xs leading-5 text-secondary-foreground">
+					<div class="flex items-center gap-2 font-semibold text-foreground">
+						<ClipboardList className="h-3.5 w-3.5 text-primary" />
+						使い方
+					</div>
+					<p class="mt-1 text-muted-foreground">
+						用途を選び、角括弧の項目を自分の案件情報に置き換えて使います。
+					</p>
+				</div>
+			</div>
+		</header>
+
+		<PromptPatternSwitcher client:load />
+	</article>
+</Layout>

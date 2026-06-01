@@ -1,0 +1,105 @@
+---
+import CodeConsole from '@/components/common/CodeConsole.astro';
+import Layout from '@/layouts/Layout.astro';
+import TermTooltip from '@/components/common/TermTooltip.astro';
+import { Database } from 'lucide-react';
+---
+
+<Layout title="RAG入門 | AI Compass" description="RAGと文書検索の基本" currentPath="/articles/ai/rag-guide/">
+	<article class="article-shell">
+		<div class="article-prose">
+			<p class="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+				<Database className="h-3.5 w-3.5" />
+				Knowledge architecture
+			</p>
+			<h1>RAG入門</h1>
+			<p class="article-lead">
+				<TermTooltip term="RAG" /> は、<TermTooltip term="LLM" /> に足りない情報を検索で補うための仕組みです。モデルに全部を覚えさせるのではなく、
+				必要な文書を探してから答えさせるので、社内文書や最新情報との相性がよくなります。
+			</p>
+
+			<h2>RAGとは何か</h2>
+			<p>
+				素の <TermTooltip term="LLM" /> は、学習済みの知識をもとに回答します。そのままだと、最新仕様や自社ドキュメントの内容までは保証できません。
+				そこで、質問に関連する文書を先に探し、その内容を根拠として渡してから回答させる方法が <TermTooltip term="RAG" /> です。
+			</p>
+			<p>
+				要するに、「AIに全部覚えさせる」のではなく、「必要なときに正しい資料を読ませる」発想です。FAQ、マニュアル、仕様書、議事録、
+				運用手順書など、文書を根拠に答えたい場面で特に効きます。
+			</p>
+
+			<h2>どんなときに向いているか</h2>
+			<p>
+				RAGは、文書の場所はあるが探すのが大変、という状況で強いです。たとえば社内Wiki、仕様書、議事録、問い合わせ履歴が散らばっているとき、
+				人が毎回検索して読み解くより、AIに候補文書を集めさせて要点を返させたほうが早くなります。
+			</p>
+			<p>
+				ただし、検索対象が古い、断片的、誤っている場合は、RAGでも答えは良くなりません。RAGは魔法ではなく、根拠文書の質を増幅する仕組みです。
+			</p>
+
+			<h2>基本の流れ</h2>
+			<CodeConsole title="RAG flow" language="text">
+{`ユーザーの質問
+  -> 関連文書を検索
+  -> 上位の文書を抽出
+  -> 根拠としてAIに渡す
+  -> 回答を生成
+  -> 可能なら参照文書も返す`}
+			</CodeConsole>
+
+			<p>
+				この途中で重要になるのが、<TermTooltip term="チャンク" /> の切り方、<TermTooltip term="ベクトル検索" /> の使い方、
+				必要なら <TermTooltip term="リランキング" /> を挟むことです。ここが雑だと、関係の薄い文書が上に来てしまいます。
+			</p>
+
+			<h2>精度を上げるための見どころ</h2>
+			<p>
+				まず見るべきなのは、検索結果に質問の答えが本当に含まれているかです。ここが外れているなら、プロンプト以前に検索設計の問題です。
+				そのうえで、文書の分割が粗すぎないか、キーワード検索だけに偏っていないか、文書の鮮度は足りているかを確認します。
+			</p>
+			<div class="note-box">
+				<ul>
+					<li>検索上位に正しい文書が来ているか</li>
+					<li>文書分割が細かすぎる、または粗すぎないか</li>
+					<li>古い資料が上位に残っていないか</li>
+					<li>参照根拠をユーザーへ返せるか</li>
+				</ul>
+			</div>
+
+			<h2>回答プロンプトの考え方</h2>
+			<p>
+				RAGでは、検索結果にないことを書かせない制約が重要です。足りない情報は不足と書かせる、根拠文書を示させる、推測を分ける、
+				こうしたルールを最初から決めておくと事故が減ります。
+			</p>
+
+			<CodeConsole title="RAG answer prompt" language="text" tone="prompt">
+{`目的:
+検索結果だけを根拠に、質問へ回答する
+
+制約:
+- 根拠にない内容は書かない
+- 足りない情報は不足と書く
+- 回答の最後に参照文書を短く示す
+
+入力:
+質問:
+<質問>
+
+検索結果:
+<検索結果>
+
+出力形式:
+- 回答
+- 根拠
+- 不足情報`}
+			</CodeConsole>
+
+			<h2>参考</h2>
+			<div class="source-list">
+				<a href="https://platform.openai.com/docs/guides/tools-file-search" target="_blank" rel="noreferrer">OpenAI: File search</a>
+				<a href="https://ai.google.dev/gemini-api/docs/document-processing" target="_blank" rel="noreferrer">Google AI for Developers: Document processing</a>
+				<a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/long-context-tips" target="_blank" rel="noreferrer">Anthropic: Long context tips</a>
+			</div>
+		</div>
+	</article>
+</Layout>

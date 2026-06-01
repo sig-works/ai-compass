@@ -1,0 +1,16 @@
+---
+import { findGlossaryTerm } from '@/lib/glossary';
+
+interface Props {
+  term: string;
+  label?: string;
+}
+
+const { term, label = term } = Astro.props;
+const entry = findGlossaryTerm(term);
+const tooltip = entry ? `${entry.plainSummary} ${entry.meaning}` : '';
+---
+
+<span class="term-chip" tabindex="0" data-tooltip={tooltip} aria-label={tooltip || undefined}>
+	{label}
+</span>

@@ -1,0 +1,117 @@
+---
+import CodeConsole from '@/components/common/CodeConsole.astro';
+import TermTooltip from '@/components/common/TermTooltip.astro';
+import Layout from '@/layouts/Layout.astro';
+import { BookOpen } from 'lucide-react';
+---
+
+<Layout title="AI入門 | AI Compass" description="AIでできること、苦手なこと、最初の試し方をまとめた記事。" currentPath="/articles/ai/ai-glossary/">
+	<article class="article-shell">
+		<div class="article-prose">
+			<p class="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.08em] text-muted-foreground">
+				<BookOpen className="h-3.5 w-3.5" />
+				基礎ガイド
+			</p>
+			<h1>AI入門</h1>
+			<p class="article-lead">
+				AIは、人の代わりにすべてを決めるものではなく、調べる、整理する、書き出す、見直す作業を速くするための道具です。
+				まずは「何を任せやすいか」「どこで間違いやすいか」「どう確かめるか」を押さえると、使い始めやすくなります。
+			</p>
+
+			<div class="note-box">
+				<p class="mt-0 font-medium text-foreground">このページで押さえること</p>
+				<ul>
+					<li>AIは、文章や画像などをもとに答えを作る道具であること。</li>
+					<li>得意なのは、下書き、要約、比較、観点出し、言い換えなどの作業。</li>
+					<li>苦手なのは、正確な事実確認、最新情報、責任ある最終判断。</li>
+					<li>最初は小さな作業から試し、人が確認してから使うこと。</li>
+				</ul>
+			</div>
+
+			<h2>AIは何を助けるものか</h2>
+			<p>
+				いま実務でよく使われるAIの中心は、文章を読んで返答を作る <TermTooltip term="LLM" /> です。
+				人が依頼文を書き、AIがその内容に沿って文章、表、手順、コードの下書きなどを返します。
+				重要なのは、AIを「答えをそのまま出す機械」ではなく、「考える材料を早く出す相手」と見ることです。
+			</p>
+			<p>
+				たとえば、議事録を要点にまとめる、長い仕様書から確認点を出す、文章を読みやすく直す、レビュー観点を洗い出す、といった場面では効果が出やすいです。
+				一方で、法務判断、医療判断、契約条件、売上数値、セキュリティ設定のように間違いの影響が大きいものは、人の確認を前提にします。
+			</p>
+
+			<h2>最初に任せやすい作業</h2>
+			<div class="mt-4 grid gap-3 md:grid-cols-2">
+				<div class="rounded-md border border-border bg-background p-3 shadow-sm">
+					<h3 class="mt-0 text-sm font-semibold text-foreground">読む量を減らす</h3>
+					<p class="mt-2 text-sm leading-6 text-muted-foreground">
+						長い文章を要約し、重要な点、未決事項、次の作業に分けてもらいます。全部を読まないためではなく、読む順番を決めるために使います。
+					</p>
+				</div>
+				<div class="rounded-md border border-border bg-background p-3 shadow-sm">
+					<h3 class="mt-0 text-sm font-semibold text-foreground">書き出しを作る</h3>
+					<p class="mt-2 text-sm leading-6 text-muted-foreground">
+						メール、説明文、README、提案書のたたき台を作ります。最初の空白を埋める用途に向いています。
+					</p>
+				</div>
+				<div class="rounded-md border border-border bg-background p-3 shadow-sm">
+					<h3 class="mt-0 text-sm font-semibold text-foreground">観点を増やす</h3>
+					<p class="mt-2 text-sm leading-6 text-muted-foreground">
+						テスト観点、レビュー観点、リスク、確認質問を出してもらいます。抜け漏れを減らす補助として使えます。
+					</p>
+				</div>
+				<div class="rounded-md border border-border bg-background p-3 shadow-sm">
+					<h3 class="mt-0 text-sm font-semibold text-foreground">言い換える</h3>
+					<p class="mt-2 text-sm leading-6 text-muted-foreground">
+						硬い文章を読みやすくする、短くする、相手に合わせた表現に直す、といった文章調整に向いています。
+					</p>
+				</div>
+			</div>
+
+			<h2>苦手なことと確認方法</h2>
+			<p>
+				AIは自然な文章を作れるため、正しそうに見える誤りを出すことがあります。これは <TermTooltip term="幻覚" label="ハルシネーション" /> と呼ばれます。
+				特に、最新情報、数字、引用、仕様、固有名詞はそのまま採用せず、一次情報や手元の資料で確認します。
+			</p>
+			<div class="note-box">
+				<ul>
+					<li>数字や固有名詞は、公式ページや社内資料で照合する。</li>
+					<li>コードは実行し、テストやレビューを通してから使う。</li>
+					<li>重要な判断は、AIの答えではなく確認済みの根拠で決める。</li>
+					<li>不明点は「何を根拠にしたか」「自信が低い点はどこか」と聞き返す。</li>
+				</ul>
+			</div>
+
+			<h2>最初の試し方</h2>
+			<p>
+				最初から大きな業務を任せるより、失敗しても戻しやすい作業で試すのが安全です。
+				まずは、すでに自分が内容を理解している文章を使い、要約、観点出し、言い換えを比べるのが安全です。
+			</p>
+
+			<CodeConsole title="最初に試す依頼文" language="text" tone="prompt">
+{`次の文章を、仕事で確認しやすい形に整理してください。
+
+やってほしいこと:
+- 要点を3つにまとめる
+- 未決のことを分ける
+- 次に確認すべき質問を出す
+- 断定できないことは「要確認」と書く
+
+文章:
+（ここにメール、議事録、仕様メモを貼る）`}
+			</CodeConsole>
+
+			<h2>次に読むページ</h2>
+			<p>
+				言葉で頼むAIの仕組みと選び方を知りたい場合は <a href="/articles/ai/llm-basics/">LLMとは？</a>、
+				入力してよい情報や確認ルールを決めたい場合は <a href="/articles/ai/safety-guide/">安全なAI活用</a> を先に読むとつながります。
+			</p>
+
+			<h2>参考資料</h2>
+			<div class="source-list">
+				<a href="https://platform.openai.com/docs/guides/prompt-engineering" target="_blank" rel="noreferrer">OpenAI: Prompt engineering</a>
+				<a href="https://ai.google.dev/gemini-api/docs/prompting-strategies?hl=ja" target="_blank" rel="noreferrer">Google AI for Developers: Prompting strategies</a>
+				<a href="https://support.microsoft.com/ja-jp/copilot" target="_blank" rel="noreferrer">Microsoft Copilot</a>
+			</div>
+		</div>
+	</article>
+</Layout>
