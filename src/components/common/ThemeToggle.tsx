@@ -49,7 +49,7 @@ export default function ThemeToggle() {
   }, []);
 
   return (
-    <div className="inline-flex items-center gap-1 rounded-md border border-border bg-card p-1 shadow-sm">
+    <div className="inline-flex items-center gap-0.5 rounded-md border border-border bg-card p-0.5 shadow-sm sm:gap-1 sm:p-1">
       {options.map((option) => {
         const Icon = option.icon;
 
@@ -60,7 +60,7 @@ export default function ThemeToggle() {
             variant={preference === option.value ? 'secondary' : 'ghost'}
             size="sm"
             className={cn(
-              'rounded-md px-3 text-xs',
+              'h-7 rounded-md px-1.5 text-xs sm:px-3',
               preference === option.value && 'bg-secondary'
             )}
             onClick={() => {
@@ -69,7 +69,7 @@ export default function ThemeToggle() {
             }}
           >
             <Icon className="size-3.5" />
-            {option.label}
+            <span className="sr-only sm:not-sr-only">{option.label}</span>
           </Button>
         );
       })}

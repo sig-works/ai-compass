@@ -67,15 +67,15 @@ function Icon({ name = 'sparkles' }: { name?: IconName }) {
 
 export function VisualGrid({ items }: { items: CardItem[] }) {
   return (
-    <div className="not-prose mt-4 grid gap-3 md:grid-cols-3">
+    <div className="not-prose mt-4 grid grid-cols-2 gap-2 md:gap-3 lg:grid-cols-3">
       {items.map((item) => {
         const body = (
-          <div className="h-full rounded-md border border-border bg-card p-4 shadow-sm transition-colors hover:bg-muted">
-            <div className="flex h-8 w-8 items-center justify-center rounded-md border border-border bg-secondary text-primary">
+          <div className="h-full rounded-md border border-border bg-card p-3 shadow-sm transition-colors hover:bg-muted sm:p-4">
+            <div className="flex h-7 w-7 items-center justify-center rounded-md border border-border bg-secondary text-primary sm:h-8 sm:w-8">
               <Icon name={item.icon} />
             </div>
-            <h3 className="mt-3 text-sm font-semibold tracking-tight text-foreground">{item.title}</h3>
-            <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.text}</p>
+            <h3 className="mt-2 text-sm font-semibold leading-5 tracking-tight text-foreground sm:mt-3">{item.title}</h3>
+            <p className="mt-1.5 line-clamp-3 text-xs leading-5 text-muted-foreground sm:mt-2 sm:text-sm sm:leading-6">{item.text}</p>
           </div>
         );
 
@@ -93,9 +93,9 @@ export function VisualGrid({ items }: { items: CardItem[] }) {
 
 export function FlowLine({ items }: { items: FlowItem[] }) {
   return (
-    <div className="not-prose mt-4 grid gap-2 lg:grid-cols-[repeat(5,minmax(0,1fr))]">
+    <div className="not-prose mt-4 flex gap-2 overflow-x-auto pb-1 lg:grid lg:grid-cols-[repeat(5,minmax(0,1fr))] lg:overflow-visible lg:pb-0">
       {items.map((item, index) => (
-        <div key={item.title} className="relative rounded-md border border-border bg-card p-3 shadow-sm">
+        <div key={item.title} className="relative w-44 shrink-0 rounded-md border border-border bg-card p-3 shadow-sm lg:w-auto">
           <div className="flex items-center justify-between gap-2">
             <span className="flex h-7 w-7 items-center justify-center rounded-md bg-secondary text-xs font-semibold text-primary">
               {index + 1}
@@ -103,7 +103,7 @@ export function FlowLine({ items }: { items: FlowItem[] }) {
             {index < items.length - 1 && <ArrowRight className="hidden h-4 w-4 text-muted-foreground lg:block" />}
           </div>
           <h3 className="mt-3 text-sm font-semibold text-foreground">{item.title}</h3>
-          <p className="mt-1 text-xs leading-5 text-muted-foreground">{item.text}</p>
+          <p className="mt-1 line-clamp-3 text-xs leading-5 text-muted-foreground lg:line-clamp-none">{item.text}</p>
         </div>
       ))}
     </div>
@@ -134,7 +134,7 @@ export function Callout({
 
 export function PromptIndex({ items }: { items: PromptItem[] }) {
   return (
-    <div className="not-prose mt-4 grid gap-2 sm:grid-cols-2 xl:grid-cols-3">
+    <div className="not-prose mt-4 grid grid-cols-2 gap-2 xl:grid-cols-3">
       {items.map((item) => (
         <a
           key={item.id}
@@ -147,7 +147,7 @@ export function PromptIndex({ items }: { items: PromptItem[] }) {
             </span>
             <h3 className="text-sm font-semibold text-foreground">{item.title}</h3>
           </div>
-          <p className="mt-2 text-xs leading-5 text-muted-foreground">{item.summary}</p>
+          <p className="mt-2 line-clamp-3 text-xs leading-5 text-muted-foreground sm:line-clamp-none">{item.summary}</p>
         </a>
       ))}
     </div>

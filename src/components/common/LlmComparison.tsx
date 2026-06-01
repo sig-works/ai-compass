@@ -24,6 +24,7 @@ import {
 } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import { getLlmProfileByName } from '@/lib/llm-profiles';
+import { withBase } from '@/lib/content';
 
 type ProviderName = 'OpenAI' | 'Anthropic' | 'Google';
 
@@ -439,20 +440,20 @@ export default function LlmComparison({ data: initialData = null }: Props) {
           </div>
         </div>
 
-        <div className="mt-4 grid gap-3 lg:grid-cols-3">
+        <div className="mt-3 flex gap-2 overflow-x-auto pb-1 lg:mt-4 lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0">
           {planPicks.map((plan) => (
-            <article key={plan.label} className="rounded-md border border-border bg-background p-3 shadow-sm">
+            <article key={plan.label} className="w-[82vw] shrink-0 rounded-md border border-border bg-background p-3 shadow-sm sm:w-[24rem] lg:w-auto">
               <div className="flex items-start gap-3">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-card text-primary">
                   <plan.icon className="h-4 w-4" />
                 </span>
-                <div>
+                <div className="min-w-0">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">{plan.label}</p>
                   <h3 className="mt-0.5 text-sm font-semibold text-foreground">{plan.title}</h3>
-                  <p className="mt-1 text-sm leading-6 text-muted-foreground">{plan.summary}</p>
+                  <p className="mt-1 line-clamp-3 text-sm leading-6 text-muted-foreground lg:line-clamp-none">{plan.summary}</p>
                 </div>
               </div>
-              <ul className="mt-3 space-y-2 text-sm leading-6 text-foreground">
+              <ul className="mt-3 space-y-1.5 text-sm leading-6 text-foreground">
                 {plan.recommendations.map((recommendation) => (
                   <li key={recommendation} className="flex gap-2">
                     <CheckCircle2 className="mt-1 h-3.5 w-3.5 shrink-0 text-primary" />
@@ -460,7 +461,7 @@ export default function LlmComparison({ data: initialData = null }: Props) {
                   </li>
                 ))}
               </ul>
-              <p className="mt-3 rounded-md border border-border bg-card px-3 py-2 text-sm leading-6 text-muted-foreground">{plan.caution}</p>
+              <p className="mt-3 line-clamp-3 rounded-md border border-border bg-card px-3 py-2 text-sm leading-6 text-muted-foreground lg:line-clamp-none">{plan.caution}</p>
             </article>
           ))}
         </div>
@@ -478,12 +479,12 @@ export default function LlmComparison({ data: initialData = null }: Props) {
           </div>
         </div>
 
-        <div className="mt-4 grid gap-3 xl:grid-cols-3">
+        <div className="mt-3 flex gap-2 overflow-x-auto pb-1 xl:mt-4 xl:grid xl:grid-cols-3 xl:overflow-visible xl:pb-0">
           {modelFamilies.map((family) => {
             const models = modelsByProvider.get(family.provider) ?? [];
 
             return (
-              <article key={family.provider} className="rounded-md border border-border bg-background p-3 shadow-sm">
+              <article key={family.provider} className="w-[86vw] shrink-0 rounded-md border border-border bg-background p-3 shadow-sm sm:w-[26rem] xl:w-auto">
                 <div className="flex items-start gap-3">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-border bg-card text-primary">
                     <family.icon className="h-5 w-5" />
@@ -495,7 +496,7 @@ export default function LlmComparison({ data: initialData = null }: Props) {
                   </div>
                 </div>
 
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">{family.feature}</p>
+                <p className="mt-3 line-clamp-4 text-sm leading-6 text-muted-foreground xl:line-clamp-none">{family.feature}</p>
 
                 <div className="mt-3 grid gap-2">
                   <details className="group rounded-md border border-border bg-card px-3 py-2" open>
@@ -543,7 +544,7 @@ export default function LlmComparison({ data: initialData = null }: Props) {
                         return (
                           <a
                             key={`${model.provider}-${model.model}`}
-                            href={profile ? `/llms/models/${profile.slug}/` : model.officialUrl}
+                            href={profile ? withBase(`/llms/models/${profile.slug}/`) : model.officialUrl}
                             target={profile ? undefined : '_blank'}
                             rel={profile ? undefined : 'noreferrer'}
                             className="inline-flex items-center gap-1 rounded-md border border-border bg-card px-2.5 py-1.5 text-xs font-medium text-foreground no-underline hover:bg-muted"
@@ -577,15 +578,15 @@ export default function LlmComparison({ data: initialData = null }: Props) {
           </span>
         </div>
 
-        <div className="mt-4 grid gap-3 lg:grid-cols-[280px_1fr]">
+        <div className="mt-3 grid gap-3 lg:mt-4 lg:grid-cols-[280px_1fr]">
           <aside className="rounded-md border border-border bg-background p-2">
-            <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-1">
+            <div className="flex gap-1.5 overflow-x-auto pb-1 lg:grid lg:grid-cols-1 lg:overflow-visible lg:pb-0">
               {useCases.map((item) => (
                 <button
                   key={item.id}
                   type="button"
                   onClick={() => setSelectedUseCase(item.id)}
-                  className={`flex w-full items-center gap-2 rounded-md border px-3 py-2 text-left text-sm transition-colors ${
+                  className={`flex w-40 shrink-0 items-center gap-2 rounded-md border px-3 py-2 text-left text-sm transition-colors lg:w-full ${
                     selected.id === item.id
                       ? 'border-primary bg-primary/10 text-foreground shadow-sm'
                       : 'border-border bg-card text-muted-foreground hover:bg-muted hover:text-foreground'
@@ -599,7 +600,7 @@ export default function LlmComparison({ data: initialData = null }: Props) {
           </aside>
 
           <article className="rounded-md border border-border bg-background shadow-sm">
-            <header className="border-b border-border p-4">
+            <header className="border-b border-border p-3 sm:p-4">
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div className="flex items-start gap-3">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-border bg-card text-primary">
@@ -607,14 +608,14 @@ export default function LlmComparison({ data: initialData = null }: Props) {
                   </span>
                   <div>
                     <p className="text-[11px] font-semibold tracking-[0.08em] text-muted-foreground">選択中の用途</p>
-                    <h3 className="mt-0.5 text-xl font-semibold tracking-tight text-foreground">{selected.title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-muted-foreground">{selected.scene}</p>
+                    <h3 className="mt-0.5 text-lg font-semibold tracking-tight text-foreground sm:text-xl">{selected.title}</h3>
+                    <p className="mt-1 line-clamp-3 text-sm leading-6 text-muted-foreground sm:mt-2 sm:line-clamp-none">{selected.scene}</p>
                   </div>
                 </div>
               </div>
             </header>
 
-            <div className="grid gap-3 p-4 xl:grid-cols-[1fr_0.9fr]">
+            <div className="grid gap-2 p-3 sm:gap-3 sm:p-4 xl:grid-cols-[1fr_0.9fr]">
               <div className="space-y-3">
                 <section className="rounded-md border border-border bg-card px-3 py-2">
                   <h4 className="text-sm font-semibold text-foreground">候補モデル</h4>
@@ -748,7 +749,7 @@ export default function LlmComparison({ data: initialData = null }: Props) {
                       return (
                         <a
                           key={`${provider}-${model.model}-compact`}
-                          href={`/llms/models/${profile.slug}/`}
+                          href={withBase(`/llms/models/${profile.slug}/`)}
                           className="rounded-md border border-border bg-background px-2 py-1 text-xs text-muted-foreground no-underline hover:bg-muted hover:text-foreground"
                         >
                           {model.model}

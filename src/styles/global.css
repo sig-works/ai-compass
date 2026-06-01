@@ -134,6 +134,9 @@
   a {
     @apply transition-colors;
   }
+  summary::-webkit-details-marker {
+    display: none;
+  }
 }
 
 @layer components {
@@ -208,7 +211,7 @@
   }
 
   .article-shell {
-    @apply rounded-md border border-border bg-card px-5 py-5 shadow-sm sm:px-7 lg:px-9;
+    @apply rounded-md border border-border bg-card px-4 py-4 shadow-sm sm:px-7 sm:py-5 lg:px-9;
   }
 
   .article-prose {
@@ -216,7 +219,7 @@
   }
 
   .article-prose h1 {
-    @apply text-3xl font-semibold tracking-tight text-foreground;
+    @apply text-2xl font-semibold tracking-tight text-foreground sm:text-3xl;
   }
 
   .article-prose h2 {

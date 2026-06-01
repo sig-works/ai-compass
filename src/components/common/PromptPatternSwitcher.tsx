@@ -867,7 +867,7 @@ export default function PromptPatternSwitcher() {
             />
           </div>
 
-          <div className="mt-2 grid grid-cols-2 gap-1.5 lg:grid-cols-1">
+          <div className="mt-2 flex gap-1.5 overflow-x-auto pb-1 lg:grid lg:grid-cols-1 lg:overflow-visible lg:pb-0">
             {filteredPatterns.map((pattern) => {
               const PatternIcon = pattern.icon;
               const selected = active.id === pattern.id;
@@ -881,7 +881,7 @@ export default function PromptPatternSwitcher() {
                     setCopyLabel('Copy');
                   }}
                   className={[
-                    'flex min-h-12 items-start gap-2 rounded-md border px-2.5 py-2 text-left transition-colors',
+                    'flex min-h-10 w-40 shrink-0 items-start gap-2 rounded-md border px-2.5 py-2 text-left transition-colors lg:w-auto',
                     selected
                       ? 'border-primary/40 bg-secondary text-secondary-foreground'
                       : 'border-border bg-background text-muted-foreground hover:bg-muted hover:text-foreground'
@@ -905,27 +905,27 @@ export default function PromptPatternSwitcher() {
         </aside>
 
         <div className="overflow-hidden rounded-md border border-border bg-card shadow-sm">
-          <header className="border-b border-border p-4">
-            <div className="flex min-w-0 items-start gap-3">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-border bg-secondary text-primary">
+          <header className="border-b border-border p-3 sm:p-4">
+            <div className="flex min-w-0 items-start gap-2.5 sm:gap-3">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-secondary text-primary sm:h-10 sm:w-10">
                 <Icon className="h-5 w-5" />
               </span>
               <div className="min-w-0">
                 <p className="text-[10px] font-semibold tracking-[0.08em] text-muted-foreground">用途別プロンプト</p>
-                <h2 className="text-xl font-semibold tracking-tight">{active.title}</h2>
-                <p className="mt-1 max-w-3xl text-sm leading-6 text-muted-foreground">{active.scene}</p>
+                <h2 className="text-lg font-semibold tracking-tight sm:text-xl">{active.title}</h2>
+                <p className="mt-1 line-clamp-3 max-w-3xl text-sm leading-6 text-muted-foreground sm:line-clamp-none">{active.scene}</p>
               </div>
             </div>
-            <div className="mt-3 flex flex-wrap gap-1.5">
+            <div className="mt-2 flex gap-1.5 overflow-x-auto pb-1 sm:mt-3 sm:flex-wrap sm:overflow-visible sm:pb-0">
               {active.tags.map((tag) => (
-                <span key={tag} className="rounded-md border border-border bg-background px-2 py-0.5 text-xs text-muted-foreground">
+                <span key={tag} className="shrink-0 rounded-md border border-border bg-background px-2 py-0.5 text-xs text-muted-foreground">
                   {tag}
                 </span>
               ))}
             </div>
           </header>
 
-          <div className="grid gap-3 p-3 xl:grid-cols-[minmax(0,1.35fr)_minmax(320px,0.85fr)]">
+          <div className="grid gap-2 p-2 sm:gap-3 sm:p-3 xl:grid-cols-[minmax(0,1.35fr)_minmax(320px,0.85fr)]">
             <figure className="console-block console-block-prompt mt-0">
               <figcaption className="console-header">
                 <span className="console-title">編集して使えるプロンプト</span>
@@ -934,7 +934,7 @@ export default function PromptPatternSwitcher() {
                   {copyLabel}
                 </button>
               </figcaption>
-              <pre className="m-0 max-h-[760px] overflow-auto rounded-b-md bg-card p-4 text-sm leading-6 text-foreground">
+              <pre className="m-0 max-h-[52dvh] overflow-auto rounded-b-md bg-card p-3 text-sm leading-6 text-foreground sm:max-h-[760px] sm:p-4">
                 <code className="whitespace-pre-wrap">{active.prompt}</code>
               </pre>
             </figure>

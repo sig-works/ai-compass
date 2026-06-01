@@ -122,13 +122,13 @@ export default function GlossaryExplorer({ sections }: Props) {
       </div>
 
       <div className="grid min-h-0 gap-3 xl:grid-cols-[300px_minmax(0,1fr)]">
-        <aside className="min-h-[220px] overflow-hidden rounded-md border border-border bg-card shadow-sm xl:min-h-0">
+        <aside className="overflow-hidden rounded-md border border-border bg-card shadow-sm xl:min-h-0">
           <div className="flex items-center justify-between border-b border-border px-3 py-2">
             <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Terms</p>
             <p className="text-xs text-muted-foreground">{filteredTerms.length}語</p>
           </div>
-          <div className="max-h-[320px] overflow-auto p-2 xl:max-h-[calc(100dvh-16.5rem)]">
-            <div className="grid gap-1.5">
+          <div className="overflow-auto p-2 xl:max-h-[calc(100dvh-16.5rem)]">
+            <div className="flex gap-1.5 overflow-x-auto pb-1 xl:grid xl:overflow-visible xl:pb-0">
               {filteredTerms.length > 0 ? (
                 filteredTerms.map((term) => (
                   <button
@@ -136,7 +136,7 @@ export default function GlossaryExplorer({ sections }: Props) {
                     type="button"
                     onClick={() => selectTerm(term.term)}
                     className={[
-                      'rounded-md border px-3 py-2 text-left transition-colors',
+                      'w-44 shrink-0 rounded-md border px-3 py-2 text-left transition-colors xl:w-auto',
                       term.term === activeTerm.term
                         ? 'border-primary/40 bg-secondary text-secondary-foreground'
                         : 'border-border bg-background hover:bg-muted'
@@ -148,7 +148,7 @@ export default function GlossaryExplorer({ sections }: Props) {
                         {term.category}
                       </span>
                     </span>
-                    <span className="mt-1 line-clamp-2 block text-xs leading-5 text-muted-foreground">{term.plainSummary}</span>
+                    <span className="mt-1 line-clamp-1 block text-xs leading-5 text-muted-foreground xl:line-clamp-2">{term.plainSummary}</span>
                   </button>
                 ))
               ) : (
@@ -162,21 +162,21 @@ export default function GlossaryExplorer({ sections }: Props) {
 
         <article className="grid min-h-0 overflow-hidden rounded-md border border-border bg-card shadow-sm xl:grid-cols-[minmax(0,1fr)_320px]">
           <div className="min-h-0 overflow-auto">
-            <header className="border-b border-border px-4 py-3">
+            <header className="border-b border-border px-3 py-3 sm:px-4">
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div className="min-w-0">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">{activeTerm.category}</p>
-                  <h2 className="mt-1 text-2xl font-semibold tracking-tight">{activeTerm.term}</h2>
+                  <h2 className="mt-1 text-xl font-semibold tracking-tight sm:text-2xl">{activeTerm.term}</h2>
                   {activeTerm.aliases && activeTerm.aliases.length > 0 && (
                     <p className="mt-1 text-sm text-muted-foreground">{activeTerm.aliases.join(' / ')}</p>
                   )}
                 </div>
-                <p className="max-w-md text-sm leading-6 text-foreground">{activeTerm.plainSummary}</p>
+                <p className="line-clamp-3 max-w-md text-sm leading-6 text-foreground sm:line-clamp-none">{activeTerm.plainSummary}</p>
               </div>
             </header>
 
-            <div className="grid gap-3 p-4">
-              <section className="rounded-md border border-border bg-background p-4">
+            <div className="grid gap-2 p-3 sm:gap-3 sm:p-4">
+              <section className="rounded-md border border-border bg-background p-3 sm:p-4">
                 <h3 className="flex items-center gap-2 text-sm font-semibold">
                   <BookOpenText className="h-4 w-4 text-primary" />
                   意味
@@ -184,7 +184,7 @@ export default function GlossaryExplorer({ sections }: Props) {
                 <p className="mt-2 text-sm leading-7 text-muted-foreground">{activeTerm.meaning}</p>
               </section>
 
-              <section className="rounded-md border border-border bg-background p-4">
+              <section className="rounded-md border border-border bg-background p-3 sm:p-4">
                 <h3 className="flex items-center gap-2 text-sm font-semibold">
                   <AlertTriangle className="h-4 w-4 text-primary" />
                   注意点
@@ -194,7 +194,7 @@ export default function GlossaryExplorer({ sections }: Props) {
             </div>
           </div>
 
-          <aside className="grid content-start gap-3 border-t border-border bg-muted/40 p-4 xl:border-l xl:border-t-0">
+          <aside className="grid content-start gap-3 border-t border-border bg-muted/40 p-3 sm:p-4 xl:border-l xl:border-t-0">
             <section>
               <h3 className="flex items-center gap-2 text-sm font-semibold">
                 <Workflow className="h-4 w-4 text-primary" />

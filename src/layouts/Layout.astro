@@ -4,7 +4,8 @@ import { Card } from '@/components/ui/card';
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from '@/components/ui/navigation-menu';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { SITE_DESCRIPTION, SITE_NAME } from '@/lib/content';
-import { CORE_PAGES, GUIDE_PAGES, REFERENCE_PAGES, STATIC_PAGES, navUrl } from '@/lib/navigation';
+import { CORE_PAGES, GUIDE_PAGES, REFERENCE_PAGES, navUrl } from '@/lib/navigation';
+import { Menu } from 'lucide-react';
 import '../styles/global.css';
 
 interface Props {
@@ -69,9 +70,9 @@ const isActive = (href: string) => {
 	</head>
 	<body>
 		<div class="min-h-screen overflow-x-clip">
-			<header class="sticky top-0 z-40 border-b border-border bg-background">
-				<div class="mx-auto flex w-full max-w-[1500px] items-center justify-between gap-3 px-3 py-3 lg:px-5">
-					<a href={navUrl('/')} class="flex min-w-0 items-center gap-3">
+			<header class="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/86">
+				<div class="mx-auto flex w-full max-w-[1500px] items-center justify-between gap-2 px-3 py-2.5 lg:px-5 lg:py-3">
+					<a href={navUrl('/')} class="flex min-w-0 flex-1 items-center gap-2.5 lg:gap-3">
 						<div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-border bg-card text-primary shadow-sm">
 							<svg viewBox="0 0 32 32" role="img" aria-label="AI Compass logo" class="h-6 w-6">
 								<circle cx="16" cy="16" r="12" fill="none" stroke="currentColor" stroke-width="1.6" opacity="0.45" />
@@ -86,33 +87,126 @@ const isActive = (href: string) => {
 							</svg>
 						</div>
 						<div class="min-w-0">
-							<p class="text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground">AI Knowledge Hub</p>
+							<p class="truncate text-[10px] font-medium uppercase tracking-[0.1em] text-muted-foreground sm:text-[11px] sm:tracking-[0.12em]">AI Knowledge Hub</p>
 							<h1 class="truncate text-sm font-semibold tracking-tight sm:text-base">{SITE_NAME}</h1>
 						</div>
 					</a>
 
-					<ThemeToggle client:load />
+					<div class="flex shrink-0 items-center gap-1.5">
+						<details class="group relative lg:hidden">
+							<summary
+								class="flex h-8 w-8 cursor-pointer list-none items-center justify-center rounded-md border border-border bg-card text-foreground shadow-sm transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+								aria-label="ナビゲーションメニュー"
+							>
+								<Menu className="h-4 w-4" />
+							</summary>
+							<div class="fixed left-3 right-3 top-[3.75rem] z-50 overflow-hidden rounded-md border border-border bg-popover text-popover-foreground shadow-lg">
+								<nav class="max-h-[min(34rem,calc(100dvh-4.5rem))] overflow-y-auto p-2" aria-label="Mobile navigation">
+									<div class="px-2 py-1.5">
+										<p class="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Navigation</p>
+									</div>
+
+									<div class="grid gap-2">
+										<div>
+											<p class="px-2 pb-1 text-[11px] font-semibold tracking-[0.08em] text-muted-foreground">主要</p>
+											<div class="grid gap-0.5">
+												{CORE_PAGES.map((item) => (
+													<a
+														href={navUrl(item.href)}
+														class={[
+															'rounded-md px-3 py-2 text-sm no-underline transition-colors hover:bg-muted hover:text-foreground',
+															isActive(item.href) ? 'bg-secondary text-secondary-foreground' : 'text-muted-foreground'
+														].filter(Boolean).join(' ')}
+													>
+														<span class="block font-medium">{item.label}</span>
+														<span class="mt-0.5 block text-xs text-muted-foreground">{item.description}</span>
+													</a>
+												))}
+											</div>
+										</div>
+
+										<div class="border-t border-border pt-2">
+											<p class="px-2 pb-1 text-[11px] font-semibold tracking-[0.08em] text-muted-foreground">はじめに読む</p>
+											<div class="grid gap-0.5">
+												{GUIDE_PAGES.map((item) => (
+													<a
+														href={navUrl(item.href)}
+														class={[
+															'rounded-md px-3 py-2 text-sm no-underline transition-colors hover:bg-muted hover:text-foreground',
+															isActive(item.href) ? 'bg-secondary text-secondary-foreground' : 'text-muted-foreground'
+														].filter(Boolean).join(' ')}
+													>
+														<span class="block font-medium">{item.label}</span>
+														<span class="mt-0.5 block text-xs text-muted-foreground">{item.description}</span>
+													</a>
+												))}
+											</div>
+										</div>
+
+										<div class="border-t border-border pt-2">
+											<p class="px-2 pb-1 text-[11px] font-semibold tracking-[0.08em] text-muted-foreground">調べる・使う</p>
+											<div class="grid gap-0.5">
+												{REFERENCE_PAGES.map((item) => (
+													<div>
+														<a
+															href={navUrl(item.href)}
+															class={[
+																'block rounded-md px-3 py-2 text-sm no-underline transition-colors hover:bg-muted hover:text-foreground',
+																isActive(item.href) ? 'bg-secondary text-secondary-foreground' : 'text-muted-foreground'
+															].filter(Boolean).join(' ')}
+														>
+															<span class="block font-medium">{item.label}</span>
+															<span class="mt-0.5 block text-xs text-muted-foreground">{item.description}</span>
+														</a>
+														{item.children && (
+															<details
+																class="ml-3 mt-1 border-l border-border pl-2"
+																open={item.children.some((group) => isActive(group.href) || group.children?.some((child) => isActive(child.href)))}
+															>
+																<summary class="cursor-pointer rounded-md px-2 py-1 text-xs font-semibold text-muted-foreground hover:bg-muted hover:text-foreground">
+																	モデル一覧
+																</summary>
+																<div class="mt-1 grid gap-1">
+																	{item.children.map((group) => (
+																		<div>
+																			<a href={navUrl(group.href)} class="block rounded-md px-2 py-1 text-xs font-semibold text-muted-foreground no-underline hover:bg-muted hover:text-foreground">
+																				{group.label}
+																			</a>
+																			{group.children && (
+																				<div class="mt-0.5 flex gap-1 overflow-x-auto pb-1">
+																					{group.children.map((child) => (
+																						<a
+																							href={navUrl(child.href)}
+																							class={[
+																								'shrink-0 rounded-md border border-border bg-background px-2 py-1 text-xs text-muted-foreground no-underline hover:bg-muted hover:text-foreground',
+																								isActive(child.href) ? 'bg-secondary text-foreground' : ''
+																							].filter(Boolean).join(' ')}
+																						>
+																							{child.label}
+																						</a>
+																					))}
+																				</div>
+																			)}
+																		</div>
+																	))}
+																</div>
+															</details>
+														)}
+													</div>
+												))}
+											</div>
+										</div>
+									</div>
+								</nav>
+							</div>
+						</details>
+
+						<ThemeToggle client:load />
+					</div>
 				</div>
-				<NavigationMenu className="overflow-x-auto border-t border-border px-3 py-2 lg:hidden">
-					<NavigationMenuList className="flex-row gap-1">
-						{STATIC_PAGES.map((item) => (
-							<NavigationMenuItem>
-								<NavigationMenuLink
-									href={navUrl(item.href)}
-									className={[
-										'whitespace-nowrap px-2.5 py-1.5 text-xs font-medium',
-										isActive(item.href) ? 'bg-secondary text-secondary-foreground' : ''
-									].filter(Boolean).join(' ')}
-								>
-									{item.label}
-								</NavigationMenuLink>
-							</NavigationMenuItem>
-						))}
-					</NavigationMenuList>
-				</NavigationMenu>
 			</header>
 
-			<div class="mx-auto grid w-full max-w-[1500px] grid-cols-1 gap-4 px-3 py-4 lg:grid-cols-[250px_minmax(0,1fr)] lg:px-5">
+			<div class="mx-auto grid w-full max-w-[1500px] grid-cols-1 gap-3 px-3 py-3 lg:grid-cols-[250px_minmax(0,1fr)] lg:gap-4 lg:px-5 lg:py-4">
 				<aside class="hidden lg:block">
 					<Card className="sticky top-16">
 						<ScrollArea className="max-h-[calc(100dvh-5rem)] p-2">
