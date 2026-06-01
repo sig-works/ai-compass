@@ -38,6 +38,41 @@ const themeBootScript = `(function () {
   document.documentElement.dataset.themePreference = stored;
 })();`;
 
+const termTooltipScript = `(function () {
+  const isTouchLike = window.matchMedia('(hover: none), (pointer: coarse)');
+  const closeAll = () => {
+    document.querySelectorAll('.term-chip.is-open').forEach((chip) => {
+      chip.classList.remove('is-open');
+      chip.setAttribute('aria-expanded', 'false');
+    });
+  };
+
+  document.addEventListener('click', (event) => {
+    if (!isTouchLike.matches) return;
+    const chip = event.target.closest && event.target.closest('.term-chip');
+
+    if (!chip) {
+      closeAll();
+      return;
+    }
+
+    event.preventDefault();
+    const wasOpen = chip.classList.contains('is-open');
+    closeAll();
+
+    if (!wasOpen) {
+      chip.classList.add('is-open');
+      chip.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeAll();
+  });
+
+  window.addEventListener('scroll', closeAll, { passive: true });
+})();`;
+
 const normalizePath = (path: string) => (path.endsWith('/') ? path : `${path}/`);
 const isActive = (href: string) => {
   if (href === '/') return currentPath === '/';
@@ -67,6 +102,7 @@ const isActive = (href: string) => {
 		<title>{title}</title>
 		<script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
 		<script is:inline set:html={themeBootScript}></script>
+		<script is:inline set:html={termTooltipScript}></script>
 	</head>
 	<body>
 		<div class="min-h-screen overflow-x-clip">

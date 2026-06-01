@@ -321,6 +321,7 @@
   .term-chip {
     @apply inline cursor-help border-0 bg-transparent px-0 py-0 text-[0.92em] font-medium text-foreground underline decoration-dotted underline-offset-3 transition-colors;
     position: relative;
+    touch-action: manipulation;
   }
 
   .term-chip::after {
@@ -333,6 +334,7 @@
     transform: translateX(-50%) translateY(0.25rem);
     z-index: 50;
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
     @apply rounded-md border border-border bg-popover px-3 py-2 text-left text-xs leading-5 text-popover-foreground shadow-lg;
     transition:
@@ -343,21 +345,32 @@
   .term-chip:hover::after,
   .term-chip:focus-visible::after {
     opacity: 1;
+    visibility: visible;
     transform: translateX(-50%) translateY(0);
   }
 
-  @media (max-width: 640px) {
+  @media (hover: none), (pointer: coarse) {
     .term-chip::after {
       position: fixed;
-      inset: auto 1rem auto 1rem;
-      top: 4.75rem;
+      inset: auto 1rem 1rem 1rem;
       width: auto;
       max-width: none;
-      transform: translateY(0.25rem);
+      max-height: min(40dvh, 16rem);
+      overflow-y: auto;
+      transform: translateY(0.5rem);
+      z-index: 80;
     }
 
     .term-chip:hover::after,
     .term-chip:focus-visible::after {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(0.5rem);
+    }
+
+    .term-chip.is-open::after {
+      opacity: 1;
+      visibility: visible;
       transform: translateY(0);
     }
   }
