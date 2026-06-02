@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-02T04:35:48.833Z",
+  "generatedAt": "2026-06-02T10:38:29.115Z",
   "updateStatus": "ok",
   "updateMessage": "日本語AI関連記事を更新しました。",
   "policy": "japanese-sources-only",
@@ -49,6 +49,16 @@
     }
   ],
   "items": [
+    {
+      "title": "SBI HDとアンソロピック、金融AIエージェント共同開発などで協力",
+      "url": "https://www.watch.impress.co.jp/docs/news/2113830.html",
+      "source": "Impress Watch",
+      "sourceId": "impress-watch",
+      "sourceType": "media",
+      "publishedAt": "2026-06-02T08:35:50.000Z",
+      "imageUrl": "https://www.watch.impress.co.jp/img/ipw/list/2113/830/sbiant1.jpg",
+      "excerpt": "SBIホールディングスは、米Anthropic(アンソロピック)との間で、生成AIプラットフォーム「Claude」を活用した全社的なAIトランスフォーメーション(AX)を推進することに合意した。"
+    },
     {
       "title": "バイブコーディングの“プロトタイプで止まりがち”問題に「バイブ清書」が切り込む",
       "url": "https://atmarkit.itmedia.co.jp/ait/articles/2606/02/news047.html",
@@ -110,6 +120,16 @@
       "excerpt": "NVIDIAは、工場を自律的に管理するAIエージェントのレファレンスデザイン「NVIDIA Factory Operations Blueprint（FOX）」を発表した。FOXを用いれば、工場内のさまざまなデータをリ…"
     },
     {
+      "title": "「生成AIの回答、口コミより信頼できる」 買い物の情報源として……博報堂調査",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2606/02/2000000046/",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-06-01T22:14:30.000Z",
+      "imageUrl": "https://www.itmedia.co.jp/aiplus/article/ogp/2606/02/2000000046/10000254/2048",
+      "excerpt": "買い物で生成AIを活用する人は全体の24.6％と、約4人に1人まで広がっている。"
+    },
+    {
       "title": "製造現場の「AIアレルギー」をどう払拭？ 日立・新卒デジタル人材「3カ月奮闘記」",
       "url": "https://www.itmedia.co.jp/business/articles/2606/02/news023.html",
       "source": "ITmedia AI+",
@@ -128,6 +148,16 @@
       "publishedAt": "2026-06-01T21:45:00.000Z",
       "imageUrl": "https://image.itmedia.co.jp/mn/articles/2606/02/cover_news057.jpg",
       "excerpt": "アドバンテックは、パートナー向けイベント「2026 Advantech World Partner Conference（WPC）」において、エッジAIの開発から導入、運用までを統合的に管理するソリューション「WEDA…"
+    },
+    {
+      "title": "SBIグループ、米Anthropicと提携 Claudeを全役職員に展開 セキュリティツール「Claude Security」共同検証も",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2606/02/2000000045/",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-06-01T20:32:46.000Z",
+      "imageUrl": "https://www.itmedia.co.jp/aiplus/article/ogp/2606/02/2000000045/10000237/2048",
+      "excerpt": "自動で脆弱性スキャン・パッチ生成を行える「Claude Security」導入に向け、日本の金融機関として初めて共同検証を実施する。"
     },
     {
       "title": "「楽天スーパーSALE」にAIコンシェルジュ 対話で商品検索、“買い回り攻略法”も",
@@ -186,7 +216,7 @@
       "sourceId": "impress-watch",
       "sourceType": "media",
       "publishedAt": "2026-06-01T09:26:58.000Z",
-      "imageUrl": "https://www.watch.impress.co.jp/img/ipw/list/2113/492/nv1.jpg",
+      "imageUrl": "",
       "excerpt": "NVIDIAは1日、ビジョン リーズニング、ワールド生成、アクション予測を単一のシステムに統合した、フィジカルAI用のオープンな世界基盤モデル「NVIDIA Cosmos 3」を発表した。"
     },
     {
@@ -196,28 +226,8 @@
       "sourceId": "itmedia-aiplus",
       "sourceType": "media",
       "publishedAt": "2026-06-01T07:00:00.000Z",
-      "imageUrl": "https://image.itmedia.co.jp/enterprise/articles/2606/01/cover_news107.jpg",
-      "excerpt": "AIエージェントが多数動き回る企業の業務システムに向けて、Salesforceが新たなソリューションを打ち出した。そのソリューションの狙いを考察すると、そこには同社の深謀遠慮があるようだ。"
-    },
-    {
-      "title": "“VB.NET移行をAIで爆速化”した千葉銀行GのIT企業 「12.5人月→2.0人月」をどう実現？",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2606/01/news037.html",
-      "source": "ITmedia AI+",
-      "sourceId": "itmedia-aiplus",
-      "sourceType": "media",
-      "publishedAt": "2026-06-01T04:00:00.000Z",
-      "imageUrl": "https://image.itmedia.co.jp/ait/articles/2606/01/cover_news037.jpg",
-      "excerpt": "ちばぎんコンピューターサービスはAI駆動開発の仕組みを構築し、既存のVB.NETシステムのマイグレーション工数を12.5人月から2.0人月に削減した。どう実現したのか。"
-    },
-    {
-      "title": "インテルがロボット開発の課題を解決、オープンなロボティクスライブラリで",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2606/01/news082.html",
-      "source": "ITmedia AI+",
-      "sourceId": "itmedia-aiplus",
-      "sourceType": "media",
-      "publishedAt": "2026-06-01T03:45:00.000Z",
       "imageUrl": "",
-      "excerpt": "インテルは、ロボット開発のための統合ソフトウェア開発キット「Robotics AI Suite」に、インテル製プロセッサに最適化された推論ランタイムを備えるオープンソースのロボティクスライブラリ「OpenVINO Ph…"
+      "excerpt": "AIエージェントが多数動き回る企業の業務システムに向けて、Salesforceが新たなソリューションを打ち出した。そのソリューションの狙いを考察すると、そこには同社の深謀遠慮があるようだ。"
     },
     {
       "title": "満員御礼！ Claude Code による開発体験ワークショップ【イベントレポート】",
@@ -358,16 +368,6 @@
       "publishedAt": "2025-07-31T11:22:41.000Z",
       "imageUrl": "",
       "excerpt": "ショーン リンダーセイ（Sean Lyndersay） ※本ブログは、米国時間 2025 年 7月 28 日に公開された “ Introducing Copilot Mode in Edge: A new way to…"
-    },
-    {
-      "title": "Microsoft Sentinel data lake : シグナルの統合、コスト削減、エージェンティック AI を強化する",
-      "url": "https://news.microsoft.com/ja-jp/2025/07/24/microsoft-sentinel-data-lake-unify-signals-cut-costs-and-power-agentic-ai/",
-      "source": "Microsoft Japan",
-      "sourceId": "microsoft-japan",
-      "sourceType": "official",
-      "publishedAt": "2025-07-24T05:51:39.000Z",
-      "imageUrl": "",
-      "excerpt": "Byスコット ウッドゲート (Scott Woodgate) 、クリシュナ クマール パルタサラティ (Krishna Kumar Parthasarathy) ※本ブログは、米国時間 2025 年 7月 22 日に公…"
     }
   ]
 }
