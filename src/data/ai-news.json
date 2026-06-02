@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-02T10:38:29.115Z",
+  "generatedAt": "2026-06-02T22:00:24.066Z",
   "updateStatus": "ok",
   "updateMessage": "日本語AI関連記事を更新しました。",
   "policy": "japanese-sources-only",
@@ -50,6 +50,66 @@
   ],
   "items": [
     {
+      "title": "NVIDIAの「RTX Spark」と搭載ノートPCがCOMUPTEX TAIPEIのMediaTekブースに集結",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2606/03/news062.html",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-06-02T21:15:00.000Z",
+      "imageUrl": "https://image.itmedia.co.jp/mn/articles/2606/03/cover_news062.jpg",
+      "excerpt": "MediaTek（メディアテック）は、「COMPUTEX TAIPEI 2026」において、NVIDIAが発表したAIスーパーチップ「NVIDIA RTX Spark」と、同チップを搭載する各社のWindowsノートP…"
+    },
+    {
+      "title": "【Pythonで学ぶデータ分析】ベイズ統計の考え方をやさしく学ぶ ～ 初めてでも流れが分かる入門編",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2606/03/news002.html",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-06-02T20:00:00.000Z",
+      "imageUrl": "https://image.itmedia.co.jp/ait/articles/2606/03/cover_news002.jpg",
+      "excerpt": "初歩から応用までステップアップしながら学んでいく『やさしいデータ分析』シリーズ第5弾はベイズ統計編。今回は、二項分布の確率についてベイズ的な手法で母数の推定や検定を行います。"
+    },
+    {
+      "title": "Microsoft、NVIDIAのSoC搭載でAI特化のミニPC「Surface RTX Spark Dev Box」披露",
+      "url": "https://www.itmedia.co.jp/news/articles/2606/03/news063.html",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-06-02T19:50:00.000Z",
+      "imageUrl": "https://image.itmedia.co.jp/news/articles/2606/03/cover_news063.jpg",
+      "excerpt": "Microsoftは「Build 2026」で、AI特化型デスクトップPC「Surface RTX Spark Dev Box」を発表した。NVIDIAの「RTX Spark」を搭載し、最大1ペタフロップスの演算性能と…"
+    },
+    {
+      "title": "アンソロピック、ミュトス利用を150組織に拡大 社会インフラを防御",
+      "url": "https://www.watch.impress.co.jp/docs/news/2113911.html",
+      "source": "Impress Watch",
+      "sourceId": "impress-watch",
+      "sourceType": "media",
+      "publishedAt": "2026-06-02T14:24:37.000Z",
+      "imageUrl": "https://www.watch.impress.co.jp/img/ipw/list/2113/911/gw1.jpg",
+      "excerpt": "Anthropic(アンソロピック)は2日、ソフトウェアのセキュリティを確保するための共同プロジェクト「Project Glasswing」拡大を発表した。同プロジェクト参加組織により、強力なサイバー能力を持つAIモデ…"
+    },
+    {
+      "title": "Microsoft、初の自社推論モデル「MAI-Thinking-1」発表 蒸留なしでゼロから学習",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2606/03/2000000050/",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-06-02T12:45:55.000Z",
+      "imageUrl": "https://www.itmedia.co.jp/aiplus/article/ogp/2606/03/2000000050/10000281/2048",
+      "excerpt": "Microsoftは「Build 2026」で、自社開発AI「MAI」の新モデル群を発表した。中核となる初の推論モデル「MAI-Thinking-1」は350億パラメータを持ち、他モデルからの蒸留を行わないクリーンなデ…"
+    },
+    {
+      "title": "Microsoft、自律エージェント「Scout」発表 OpenClawベースでMCP対応",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2606/03/2000000049/",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-06-02T11:50:46.000Z",
+      "imageUrl": "https://www.itmedia.co.jp/aiplus/article/ogp/2606/03/2000000049/10000277/2048",
+      "excerpt": "Microsoftは「Build 2026」で、自律型AIエージェントの新カテゴリ「Autopilots」と、その第一弾「Microsoft Scout」を発表した。Scoutは「OpenClaw」基盤で構築され、常時…"
+    },
+    {
       "title": "SBI HDとアンソロピック、金融AIエージェント共同開発などで協力",
       "url": "https://www.watch.impress.co.jp/docs/news/2113830.html",
       "source": "Impress Watch",
@@ -58,6 +118,16 @@
       "publishedAt": "2026-06-02T08:35:50.000Z",
       "imageUrl": "https://www.watch.impress.co.jp/img/ipw/list/2113/830/sbiant1.jpg",
       "excerpt": "SBIホールディングスは、米Anthropic(アンソロピック)との間で、生成AIプラットフォーム「Claude」を活用した全社的なAIトランスフォーメーション(AX)を推進することに合意した。"
+    },
+    {
+      "title": "AIモデル「ミュトス」のアクセス権拡大 新たに150組織が利用へ Anthropic",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2606/02/2000000048/",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-06-02T05:56:37.000Z",
+      "imageUrl": "https://www.itmedia.co.jp/aiplus/article/ogp/2606/02/2000000048/10000228/2048",
+      "excerpt": "米Anthropicは、サイバーセキュリティプロジェクト「Project Glasswing」を拡大し、AIモデル「Claude Mythos Preview」のアクセス権を新たに約150の組織に与えると発表した。"
     },
     {
       "title": "バイブコーディングの“プロトタイプで止まりがち”問題に「バイブ清書」が切り込む",
@@ -88,6 +158,16 @@
       "publishedAt": "2026-06-02T03:00:01.000Z",
       "imageUrl": "https://www.watch.impress.co.jp/img/ipw/list/2113/625/sh1.jpg",
       "excerpt": "シャープは、人に寄り添う心地よいAI会話技術を開発した。テレビ「AQUOS」向けのサービス「AQUOS AI」に応用し、応答内容の評価が向上し、今後愛着を持ってもらえるAI会話機能搭載製品の拡大を目指す。"
+    },
+    {
+      "title": "三菱重工とPFNが「国産AI技術」共同開発、安全保障などで活用 年度内に資本業務提携へ",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2606/02/2000000047/",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-06-02T02:14:04.000Z",
+      "imageUrl": "https://www.itmedia.co.jp/aiplus/article/ogp/2606/02/2000000047/10000273/2048",
+      "excerpt": "Preferred Networksは、三菱重工業と国産AI技術の共同開発で業務提携すると発表した。国家安全保障分野などにおける機械やシステムの高度化を図る。"
     },
     {
       "title": "生成AIを「悩み相談」に使う10代女性たち 阿部前監督事件を招いた「AI正論」の波紋",
@@ -136,98 +216,8 @@
       "sourceId": "itmedia-aiplus",
       "sourceType": "media",
       "publishedAt": "2026-06-01T22:00:00.000Z",
-      "imageUrl": "https://image.itmedia.co.jp/business/articles/2606/02/cover_news023.jpg",
+      "imageUrl": "",
       "excerpt": "日立製作所は、AIやデータ解析の専門スキルを持つ新人データサイエンティストを、製造現場へと送り込んでいる。いかにして現場の「AIアレルギー」を払拭し、現場とのコミュニケーションを通じて業務時間を短縮する生成AIツールを…"
-    },
-    {
-      "title": "NVIDIAの「NemoClaw」でエッジAIを統合管理、アドバンテックが「WEDA」を発表",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2606/02/news057.html",
-      "source": "ITmedia AI+",
-      "sourceId": "itmedia-aiplus",
-      "sourceType": "media",
-      "publishedAt": "2026-06-01T21:45:00.000Z",
-      "imageUrl": "https://image.itmedia.co.jp/mn/articles/2606/02/cover_news057.jpg",
-      "excerpt": "アドバンテックは、パートナー向けイベント「2026 Advantech World Partner Conference（WPC）」において、エッジAIの開発から導入、運用までを統合的に管理するソリューション「WEDA…"
-    },
-    {
-      "title": "SBIグループ、米Anthropicと提携 Claudeを全役職員に展開 セキュリティツール「Claude Security」共同検証も",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2606/02/2000000045/",
-      "source": "ITmedia AI+",
-      "sourceId": "itmedia-aiplus",
-      "sourceType": "media",
-      "publishedAt": "2026-06-01T20:32:46.000Z",
-      "imageUrl": "https://www.itmedia.co.jp/aiplus/article/ogp/2606/02/2000000045/10000237/2048",
-      "excerpt": "自動で脆弱性スキャン・パッチ生成を行える「Claude Security」導入に向け、日本の金融機関として初めて共同検証を実施する。"
-    },
-    {
-      "title": "「楽天スーパーSALE」にAIコンシェルジュ 対話で商品検索、“買い回り攻略法”も",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2606/02/2000000044/",
-      "source": "ITmedia AI+",
-      "sourceId": "itmedia-aiplus",
-      "sourceType": "media",
-      "publishedAt": "2026-06-01T17:50:50.000Z",
-      "imageUrl": "https://www.itmedia.co.jp/aiplus/article/ogp/2606/02/2000000044/10000234/2048",
-      "excerpt": "用途や予算をテキストか音声で伝えると、セール対象商品から条件に合った商品を探し出せる。"
-    },
-    {
-      "title": "Anthropicが上場準備 直近の評価額は約154兆円",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2606/02/2000000043/",
-      "source": "ITmedia AI+",
-      "sourceId": "itmedia-aiplus",
-      "sourceType": "media",
-      "publishedAt": "2026-06-01T17:27:23.000Z",
-      "imageUrl": "https://www.itmedia.co.jp/aiplus/article/ogp/2606/02/2000000043/10000231/2048",
-      "excerpt": "AnthropicがIPOに向け、SECに登録書類「S-1」のドラフトを非公開で提出した。直近のシリーズH資金調達での評価額は約9650億ドル（約154兆円）に達している。"
-    },
-    {
-      "title": "Claudeのレート制限を“詫びリセット”、ProとMaxプラン向け 一部で「想定より速く使用量消費」",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2606/02/2000000042/",
-      "source": "ITmedia AI+",
-      "sourceId": "itmedia-aiplus",
-      "sourceType": "media",
-      "publishedAt": "2026-06-01T17:07:19.000Z",
-      "imageUrl": "https://www.itmedia.co.jp/aiplus/article/ogp/2606/02/2000000042/10000228/2048",
-      "excerpt": "米Anthropicは、チャットAI「Claude」の有料プラン「Pro」「Max」のユーザーを対象に、5時間および週次のレート制限をリセットしたと発表した。"
-    },
-    {
-      "title": "「FDE」って結局、客先常駐SEのリブランディングじゃないの？ アクセンチュアに聞いてみた",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2606/01/2000000039/",
-      "source": "ITmedia AI+",
-      "sourceId": "itmedia-aiplus",
-      "sourceType": "media",
-      "publishedAt": "2026-06-01T14:27:17.000Z",
-      "imageUrl": "https://www.itmedia.co.jp/aiplus/article/ogp/2606/01/2000000039/10000213/2048",
-      "excerpt": "AIプラットフォーム企業が掲げる新職業「FDE」（フォワード・デプロイド・エンジニア）は、客先常駐SEの焼き直しなのか。Microsoftと共同でFDE組織を立ち上げ、独自の「RDE」も打ち出すアクセンチュアの保科学世…"
-    },
-    {
-      "title": "NVIDIAで動くWindows PC「RTX Spark」登場 AIエージェントをローカル実行",
-      "url": "https://www.watch.impress.co.jp/docs/news/2113502.html",
-      "source": "Impress Watch",
-      "sourceId": "impress-watch",
-      "sourceType": "media",
-      "publishedAt": "2026-06-01T10:03:39.000Z",
-      "imageUrl": "https://www.watch.impress.co.jp/img/ipw/list/2113/502/01.jpg",
-      "excerpt": "MicrosoftとNVIDIAは5月31日、SoC「NVIDIA RTX Spark」搭載のWindows PCを発表した。開発者、クリエイター、パワーユーザー向けの薄型軽量PCで、AIエージェントのローカル実行や高…"
-    },
-    {
-      "title": "NVIDIA、フィジカルAIのための世界モデル「Cosmos 3」 エッジ用など3種類",
-      "url": "https://www.watch.impress.co.jp/docs/news/2113492.html",
-      "source": "Impress Watch",
-      "sourceId": "impress-watch",
-      "sourceType": "media",
-      "publishedAt": "2026-06-01T09:26:58.000Z",
-      "imageUrl": "",
-      "excerpt": "NVIDIAは1日、ビジョン リーズニング、ワールド生成、アクション予測を単一のシステムに統合した、フィジカルAI用のオープンな世界基盤モデル「NVIDIA Cosmos 3」を発表した。"
-    },
-    {
-      "title": "Salesforceの「深謀遠慮」とは？ AIエージェント時代のオープンシステム、主導権争いの行方",
-      "url": "https://www.itmedia.co.jp/enterprise/articles/2606/01/news107.html",
-      "source": "ITmedia AI+",
-      "sourceId": "itmedia-aiplus",
-      "sourceType": "media",
-      "publishedAt": "2026-06-01T07:00:00.000Z",
-      "imageUrl": "",
-      "excerpt": "AIエージェントが多数動き回る企業の業務システムに向けて、Salesforceが新たなソリューションを打ち出した。そのソリューションの狙いを考察すると、そこには同社の深謀遠慮があるようだ。"
     },
     {
       "title": "満員御礼！ Claude Code による開発体験ワークショップ【イベントレポート】",
@@ -368,6 +358,16 @@
       "publishedAt": "2025-07-31T11:22:41.000Z",
       "imageUrl": "",
       "excerpt": "ショーン リンダーセイ（Sean Lyndersay） ※本ブログは、米国時間 2025 年 7月 28 日に公開された “ Introducing Copilot Mode in Edge: A new way to…"
+    },
+    {
+      "title": "Microsoft Sentinel data lake : シグナルの統合、コスト削減、エージェンティック AI を強化する",
+      "url": "https://news.microsoft.com/ja-jp/2025/07/24/microsoft-sentinel-data-lake-unify-signals-cut-costs-and-power-agentic-ai/",
+      "source": "Microsoft Japan",
+      "sourceId": "microsoft-japan",
+      "sourceType": "official",
+      "publishedAt": "2025-07-24T05:51:39.000Z",
+      "imageUrl": "",
+      "excerpt": "Byスコット ウッドゲート (Scott Woodgate) 、クリシュナ クマール パルタサラティ (Krishna Kumar Parthasarathy) ※本ブログは、米国時間 2025 年 7月 22 日に公…"
     }
   ]
 }
