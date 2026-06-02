@@ -5,8 +5,6 @@ import {
   BookOpen,
   Bot,
   Bug,
-  Building2,
-  CheckCircle2,
   Code2,
   ExternalLink,
   FileText,
@@ -18,7 +16,6 @@ import {
   ShieldCheck,
   Sparkles,
   TestTube2,
-  Users,
   Wrench,
   Zap
 } from 'lucide-react';
@@ -57,15 +54,6 @@ interface Props {
   data?: LlmData | null;
 }
 
-interface PlanPick {
-  label: string;
-  icon: typeof Sparkles;
-  title: string;
-  summary: string;
-  recommendations: string[];
-  caution: string;
-}
-
 interface ModelFamily {
   provider: ProviderName;
   icon: typeof Sparkles;
@@ -95,45 +83,6 @@ interface UseCase {
 }
 
 const providerOrder: ProviderName[] = ['OpenAI', 'Anthropic', 'Google'];
-
-const planPicks: PlanPick[] = [
-  {
-    label: '無料',
-    icon: Sparkles,
-    title: 'まず試すなら無料プラン',
-    summary: '学校の課題、個人学習、軽い文章整理なら無料枠からで十分です。',
-    recommendations: [
-      'ChatGPT Free: 日常相談、文章整理、軽いコード確認',
-      'Claude Free: 長めの文章確認、要約、言い換え',
-      'Google AI Studio / Gemini: 調査、Google連携、画像を含む確認'
-    ],
-    caution: '利用回数、使えるモデル、ファイル分析、画像生成には制限があります。重要な判断は必ず人が確認します。'
-  },
-  {
-    label: 'Pro / Team',
-    icon: Users,
-    title: '実務で毎日使うなら有料プラン',
-    summary: '要件定義、設計、レビュー、資料作成を継続的に使うなら有料プランが安定します。',
-    recommendations: [
-      'OpenAI: 推論、コード、データ分析まで広く使いたい場合',
-      'Claude: 長文読解、レビュー、文章化、設計相談を重視する場合',
-      'Gemini: Google Workspaceや長い資料、コスト効率を重視する場合'
-    ],
-    caution: '上位モデルほど精度は上がりやすい一方、速度やコストは重くなります。軽い作業は小型モデルも使い分けます。'
-  },
-  {
-    label: '企業利用',
-    icon: Building2,
-    title: '会社で使うなら管理機能を優先',
-    summary: '個人契約よりも、権限、監査、データ保護、社内ルールとの整合を優先します。',
-    recommendations: [
-      'ChatGPT Business / Enterprise / Edu: 社内利用と管理をまとめたい場合',
-      'Claude Team / Enterprise、またはBedrock / Vertex AI: 文書レビューや開発支援を安全に使いたい場合',
-      'Vertex AI / Gemini API paid tier: Google Cloud上で運用、権限、請求を管理したい場合'
-    ],
-    caution: '機密情報、個人情報、ログ、顧客データは会社の利用ルールに従い、入力前にマスキングします。'
-  }
-];
 
 const modelFamilies: ModelFamily[] = [
   {
@@ -364,19 +313,6 @@ const sources = [
   { label: 'Gemini API Billing', href: 'https://ai.google.dev/gemini-api/docs/billing' }
 ];
 
-function formatDate(value?: string) {
-  if (!value) return '未確認';
-
-  const date = new Date(value);
-  if (Number.isNaN(date.getTime())) return value;
-
-  return new Intl.DateTimeFormat('ja-JP', {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit'
-  }).format(date);
-}
-
 function providerLabel(provider: ProviderName) {
   if (provider === 'Anthropic') return 'Claude';
   if (provider === 'Google') return 'Gemini';
@@ -410,8 +346,6 @@ export default function LlmComparison({ data: initialData = null }: Props) {
   }, []);
 
   const selected = useCases.find((item) => item.id === selectedUseCase) ?? useCases[0];
-  const checkedAt = data ? formatDate(data.generatedAt) : '読み込み中';
-
   const modelsByProvider = useMemo(() => {
     const grouped = new Map<ProviderName, LlmModel[]>();
     for (const provider of providerOrder) grouped.set(provider, []);
@@ -425,48 +359,6 @@ export default function LlmComparison({ data: initialData = null }: Props) {
 
   return (
     <section className="space-y-4">
-      <section className="rounded-md border border-border bg-card p-4 shadow-sm">
-        <div className="flex flex-wrap items-start justify-between gap-3">
-          <div className="max-w-3xl">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Quick start</p>
-            <h2 className="mt-1 text-xl font-semibold tracking-tight">まずは契約プランから選ぶ</h2>
-            <p className="mt-2 text-sm leading-6 text-muted-foreground">
-              AIモデル選びで最初に見るのは、細かい性能表ではなく「無料で試すのか」「毎日使うのか」「会社で安全に使うのか」です。
-              そのうえで、用途に合わせて精度、速度、コストのバランスを決めます。
-            </p>
-          </div>
-          <div className="rounded-md border border-border bg-background px-3 py-2 text-xs text-muted-foreground">
-            公式情報確認: {checkedAt}
-          </div>
-        </div>
-
-        <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:mt-4 lg:grid-cols-3">
-          {planPicks.map((plan) => (
-            <article key={plan.label} className="min-w-0 rounded-md border border-border bg-background p-3 shadow-sm">
-              <div className="flex items-start gap-3">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-card text-primary">
-                  <plan.icon className="h-4 w-4" />
-                </span>
-                <div className="min-w-0">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">{plan.label}</p>
-                  <h3 className="mt-0.5 text-sm font-semibold text-foreground">{plan.title}</h3>
-                  <p className="mt-1 line-clamp-3 text-sm leading-6 text-muted-foreground lg:line-clamp-none">{plan.summary}</p>
-                </div>
-              </div>
-              <ul className="mt-3 space-y-1.5 text-sm leading-6 text-foreground">
-                {plan.recommendations.map((recommendation) => (
-                  <li key={recommendation} className="flex gap-2">
-                    <CheckCircle2 className="mt-1 h-3.5 w-3.5 shrink-0 text-primary" />
-                    <span>{recommendation}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-3 line-clamp-3 rounded-md border border-border bg-card px-3 py-2 text-sm leading-6 text-muted-foreground lg:line-clamp-none">{plan.caution}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section className="rounded-md border border-border bg-card p-4 shadow-sm">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div className="max-w-3xl">

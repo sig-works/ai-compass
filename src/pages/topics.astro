@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Layout from '@/layouts/Layout.astro';
 import aiNews from '@/data/ai-news.json';
 import { navUrl } from '@/lib/navigation';
-import { ExternalLink, Newspaper, Radio, Sparkles } from 'lucide-react';
+import { ExternalLink, Newspaper, Sparkles } from 'lucide-react';
 
 const title = 'トピック';
 const description = '日本語のAI関連記事を、公式ブログと国内メディアのRSSから自動取得してまとめます。';
@@ -12,16 +12,6 @@ const items = aiNews.items;
 const leadItem = items[0];
 const subItems = items.slice(1, 4);
 const listItems = items.slice(4);
-const updatedAt = aiNews.generatedAt
-  ? new Intl.DateTimeFormat('ja-JP', {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit'
-    }).format(new Date(aiNews.generatedAt))
-  : '初回更新前';
-
 const sourceSummary = aiNews.sources.map((source) => ({
   ...source,
   count: items.filter((item) => item.sourceId === source.id).length
@@ -40,22 +30,6 @@ function formatDate(value: string) {
 
 <Layout title={`${title} | AI Compass`} description={description} currentPath="/topics/">
 	<section class="space-y-3">
-		<header class="rounded-md border border-border bg-card p-4 shadow-sm sm:p-5">
-			<div class="flex flex-wrap items-start justify-between gap-3">
-				<div class="min-w-0">
-					<p class="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-						<Radio className="h-3.5 w-3.5" />
-						AI関連記事
-					</p>
-					<h1 class="mt-1 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">トピック</h1>
-					<p class="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
-						国内メディアと公式ブログから、AIに関する新着記事をまとめて確認できます。
-					</p>
-				</div>
-				<Badge variant="outline" className="h-7 text-xs">更新: {updatedAt}</Badge>
-			</div>
-		</header>
-
 		{leadItem ? (
 			<section class="grid gap-3 xl:grid-cols-[minmax(0,1.35fr)_minmax(18rem,0.65fr)]">
 				<a href={leadItem.url} target="_blank" rel="noreferrer" class="group rounded-md border border-border bg-card p-4 no-underline shadow-sm transition-colors hover:bg-muted sm:p-5">

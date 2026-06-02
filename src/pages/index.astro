@@ -5,7 +5,7 @@ import Layout from '@/layouts/Layout.astro';
 import aiNews from '@/data/ai-news.json';
 import { SITE_NAME } from '@/lib/content';
 import { navUrl } from '@/lib/navigation';
-import { BookOpen, BrainCircuit, ExternalLink, Library, Newspaper, Route, ShieldCheck, Sparkles } from 'lucide-react';
+import { BookOpen, BrainCircuit, ExternalLink, Library, Newspaper, Route, ShieldCheck } from 'lucide-react';
 
 const featuredRead = [
   {
@@ -85,19 +85,6 @@ function formatNewsDate(value: string) {
 
 <Layout title={SITE_NAME} description="AIに関する日本語記事と実務ガイドをまとめた公開サイト。" currentPath="/">
 	<section class="space-y-3">
-		<Card>
-			<CardContent className="p-4 sm:p-5">
-				<p class="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-					<Sparkles className="h-3.5 w-3.5" />
-					AI Knowledge Hub
-				</p>
-				<h2 class="mt-1 text-2xl font-semibold tracking-tight sm:text-3xl">AI Compass</h2>
-				<p class="mt-2 max-w-4xl text-sm leading-6 text-muted-foreground">
-					AIの基礎、使い方、モデル選定、関連トピックをまとめて確認できます。
-				</p>
-			</CardContent>
-		</Card>
-
 		<Card>
 			<CardHeader className="pb-2">
 				<div class="flex flex-wrap items-center justify-between gap-2">

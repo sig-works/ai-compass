@@ -857,7 +857,7 @@ export default function PromptPatternSwitcher() {
     <section className="min-h-[calc(100dvh-12rem)] space-y-3">
       <div className="grid gap-3 lg:grid-cols-[280px_minmax(0,1fr)]">
         <aside className="rounded-md border border-border bg-card p-2 shadow-sm">
-          <div className="relative">
+          <div className="relative hidden lg:block">
             <Search className="pointer-events-none absolute left-2.5 top-2.5 h-3.5 w-3.5 text-muted-foreground" />
             <input
               value={query}
@@ -867,7 +867,7 @@ export default function PromptPatternSwitcher() {
             />
           </div>
 
-          <label className="mt-2 block lg:hidden">
+          <label className="block lg:hidden">
             <span className="sr-only">用途を選択</span>
             <select
               value={active.id}
@@ -875,7 +875,7 @@ export default function PromptPatternSwitcher() {
                 startTransition(() => setActiveId(event.target.value));
                 setCopyLabel('Copy');
               }}
-              className="h-10 w-full rounded-md border border-border bg-background px-3 text-sm font-medium text-foreground outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring"
+              className="h-11 w-full rounded-md border border-border bg-background px-3 text-sm font-semibold text-foreground shadow-sm outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring"
             >
               {filteredPatterns.map((pattern) => (
                 <option key={pattern.id} value={pattern.id}>

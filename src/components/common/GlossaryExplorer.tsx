@@ -79,7 +79,7 @@ export default function GlossaryExplorer({ sections }: Props) {
     <section className="grid min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-3">
       <div className="rounded-md border border-border bg-card p-3 shadow-sm">
         <div className="flex flex-col gap-3 xl:flex-row xl:items-center">
-          <div className="flex min-w-0 flex-1 items-center gap-2 rounded-md border border-border bg-background px-3 py-2">
+          <div className="hidden min-w-0 flex-1 items-center gap-2 rounded-md border border-border bg-background px-3 py-2 xl:flex">
             <Search className="h-4 w-4 shrink-0 text-muted-foreground" />
             <input
               value={query}
@@ -89,21 +89,40 @@ export default function GlossaryExplorer({ sections }: Props) {
             />
           </div>
 
-          <label className="block xl:hidden">
-            <span className="sr-only">カテゴリを選択</span>
-            <select
-              value={activeSectionId}
-              onChange={(event) => startTransition(() => setActiveSectionId(event.target.value))}
-              className="h-10 w-full rounded-md border border-border bg-background px-3 text-sm font-medium text-foreground outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring"
-            >
-              <option value={ALL_SECTIONS}>すべて {allTerms.length}</option>
-              {sections.map((section) => (
-                <option key={section.id} value={section.id}>
-                  {section.title} {section.terms.length}
-                </option>
-              ))}
-            </select>
-          </label>
+          <div className="grid grid-cols-2 gap-2 xl:hidden">
+            <label className="block min-w-0">
+              <span className="sr-only">カテゴリを選択</span>
+              <select
+                value={activeSectionId}
+                onChange={(event) => startTransition(() => setActiveSectionId(event.target.value))}
+                className="h-11 w-full rounded-md border border-border bg-background px-3 text-sm font-semibold text-foreground shadow-sm outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring"
+              >
+                <option value={ALL_SECTIONS}>すべて {allTerms.length}</option>
+                {sections.map((section) => (
+                  <option key={section.id} value={section.id}>
+                    {section.title} {section.terms.length}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            {filteredTerms.length > 0 && (
+              <label className="block min-w-0">
+                <span className="sr-only">用語を選択</span>
+                <select
+                  value={activeTerm.term}
+                  onChange={(event) => selectTerm(event.target.value)}
+                  className="h-11 w-full rounded-md border border-border bg-background px-3 text-sm font-semibold text-foreground shadow-sm outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  {filteredTerms.map((term) => (
+                    <option key={term.term} value={term.term}>
+                      {term.term}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            )}
+          </div>
 
           <div className="hidden gap-1.5 overflow-x-auto pb-0.5 xl:flex xl:max-w-[58%]">
             <button
@@ -138,7 +157,7 @@ export default function GlossaryExplorer({ sections }: Props) {
       </div>
 
       <div className="grid min-h-0 gap-3 xl:grid-cols-[300px_minmax(0,1fr)]">
-        <aside className="overflow-hidden rounded-md border border-border bg-card shadow-sm xl:min-h-0">
+        <aside className="hidden overflow-hidden rounded-md border border-border bg-card shadow-sm xl:block xl:min-h-0">
           <div className="flex items-center justify-between border-b border-border px-3 py-2">
             <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Terms</p>
             <p className="text-xs text-muted-foreground">{filteredTerms.length}語</p>
