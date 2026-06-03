@@ -69,7 +69,7 @@ const tabEntries = categories
     if (globalCount > 0) return { category, regionId: 'global', count: globalCount };
     return null;
   })
-  .filter(Boolean);
+  .filter((item): item is NonNullable<typeof item> => item !== null);
 const initialTab = tabEntries[0] ?? { category: categories[0], regionId: defaultRegion, count: 0 };
 const initialCategory = initialTab.category.id;
 const initialRegion = initialTab.regionId;

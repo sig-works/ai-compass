@@ -112,7 +112,7 @@ const homeNewsTabs = newsCategories
     if (globalCount > 0) return { category, regionId: 'global', count: globalCount };
     return null;
   })
-  .filter(Boolean);
+  .filter((item): item is NonNullable<typeof item> => item !== null);
 const initialNewsTab = homeNewsTabs[0] ?? { category: newsCategories[0], regionId: 'domestic', count: 0 };
 const initialNewsCategory = initialNewsTab.category?.id ?? 'ai-news';
 const initialNewsRegion = initialNewsTab.regionId;

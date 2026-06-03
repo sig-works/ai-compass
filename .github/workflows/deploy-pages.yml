@@ -39,6 +39,8 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          BASE_PATH: /${{ github.event.repository.name }}
 
       - name: Check site
         run: npm run check:site
