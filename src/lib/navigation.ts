@@ -17,7 +17,7 @@ export interface NavItem {
 
 export const CORE_PAGES: NavItem[] = [
   { href: '/', label: 'ホーム', description: 'トップページ' },
-  { href: '/topics/', label: 'トピック', description: 'AI関連記事をまとめて確認' }
+  { href: '/topics/', label: 'AI News', description: '国内ニュースと海外公式を確認' }
 ];
 
 export const GUIDE_PAGES: NavItem[] = [

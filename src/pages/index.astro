@@ -5,7 +5,7 @@ import Layout from '@/layouts/Layout.astro';
 import aiNews from '@/data/ai-news.json';
 import { SITE_NAME } from '@/lib/content';
 import { navUrl } from '@/lib/navigation';
-import { BookOpen, BrainCircuit, ExternalLink, Library, Newspaper, Route, ShieldCheck } from 'lucide-react';
+import { BookOpen, BrainCircuit, Library, Newspaper, Route, ShieldCheck } from 'lucide-react';
 
 const featuredRead = [
   {
@@ -58,11 +58,12 @@ const featuredUse = [
 const tracks = [
   { label: 'AIの基本', icon: BookOpen },
   { label: 'LLMの使い方', icon: BrainCircuit },
-  { label: 'プロンプト', icon: Library },
   { label: '安全な活用', icon: ShieldCheck }
 ];
 
-const newsItems = aiNews.items.slice(0, 3);
+const newsItems = aiNews.items ?? [];
+const newsCategories = aiNews.categories ?? [];
+const newsRegions = aiNews.regions ?? [];
 const newsUpdatedAt = aiNews.generatedAt
   ? new Intl.DateTimeFormat('ja-JP', {
       year: 'numeric',
@@ -81,65 +82,144 @@ function formatNewsDate(value: string) {
     day: '2-digit'
   }).format(new Date(value));
 }
+
+function newsPanelId(regionId: string, categoryId: string) {
+  return `home:${regionId}:${categoryId}`;
+}
+
+function newsItemCount(regionId: string, categoryId: string) {
+  return newsItems.filter((item) => item.regionId === regionId && item.categoryId === categoryId).length;
+}
+
+function sourceTypeLabel(value: string) {
+  if (value === 'official') return '公式';
+  if (value === 'domestic-media') return '国内メディア';
+  return '準公式';
+}
+
+const homeNewsTabs = newsCategories
+  .map((category) => {
+    const domesticCount = newsItemCount('domestic', category.id);
+    const globalCount = newsItemCount('global', category.id);
+    if (domesticCount > 0) return { category, regionId: 'domestic', count: domesticCount };
+    if (globalCount > 0) return { category, regionId: 'global', count: globalCount };
+    return null;
+  })
+  .filter(Boolean);
+const initialNewsTab = homeNewsTabs[0] ?? { category: newsCategories[0], regionId: 'domestic', count: 0 };
+const initialNewsCategory = initialNewsTab.category?.id ?? 'ai-news';
+const initialNewsRegion = initialNewsTab.regionId;
+const domesticNewsTotal = newsItems.filter((item) => item.regionId === 'domestic').length;
+const globalNewsTotal = newsItems.filter((item) => item.regionId === 'global').length;
 ---
 
 <Layout title={SITE_NAME} description="AIに関する日本語記事と実務ガイドをまとめた公開サイト。" currentPath="/">
 	<section class="space-y-3">
-		<Card>
-			<CardHeader className="pb-2">
-				<div class="flex flex-wrap items-center justify-between gap-2">
-					<div>
-						<CardTitle className="flex items-center gap-2 text-base">
-							<Newspaper className="h-4 w-4 text-primary" />
-							<a href={navUrl('/topics/')} class="text-foreground no-underline hover:text-primary">トピック</a>
-						</CardTitle>
-						<p class="mt-1 text-xs leading-5 text-muted-foreground">AI関連記事をまとめて確認</p>
-					</div>
-					<p class="text-[11px] leading-5 text-muted-foreground">更新: {newsUpdatedAt}</p>
-				</div>
-			</CardHeader>
-			<CardContent className="grid gap-2">
-				{newsItems.length > 0 ? (
-					<>
-						<div class="grid gap-1.5">
-							{newsItems.map((item) => (
-								<a href={item.url} target="_blank" rel="noreferrer" class="group rounded-md border border-border bg-background p-3 no-underline transition-colors hover:bg-muted">
-									<div class="grid gap-3 sm:grid-cols-[12rem_minmax(0,1fr)] lg:grid-cols-[14rem_minmax(0,1fr)]">
-										{item.imageUrl ? (
-											<img src={item.imageUrl} alt="" loading="lazy" referrerpolicy="no-referrer" class="aspect-[16/10] w-full rounded-md border border-border object-cover" />
-										) : null}
-										<div class="min-w-0">
-											<div class="flex flex-wrap items-center gap-2 text-[11px] text-muted-foreground">
-												<Badge variant={item.sourceType === 'official' ? 'default' : 'secondary'} className="h-5 px-1.5 text-[10px]">
-													{item.sourceType === 'official' ? '公式' : '記事'}
-												</Badge>
-												<span>{item.source}</span>
-												{item.publishedAt && <span>{formatNewsDate(item.publishedAt)}</span>}
-											</div>
-											<h3 class="mt-2 line-clamp-2 text-base font-semibold leading-6 text-foreground">
-												{item.title}
-												<ExternalLink className="ml-1 inline h-3 w-3 text-muted-foreground transition-colors group-hover:text-primary" />
-											</h3>
-											{item.excerpt && <p class="mt-1 line-clamp-2 text-xs leading-5 text-muted-foreground sm:text-sm sm:leading-6">{item.excerpt}</p>}
-										</div>
-									</div>
-								</a>
-							))}
+		<section class="grid gap-2">
+			<div class="overflow-hidden rounded-lg border border-border bg-[linear-gradient(135deg,hsl(var(--card))_0%,hsl(var(--muted))_58%,hsl(var(--background))_100%)] p-3 shadow-sm sm:p-4">
+				<div class="flex items-start justify-between gap-3 pb-3">
+					<div class="min-w-0">
+						<div class="flex items-center gap-2">
+							<span class="rounded-md border border-primary/25 bg-primary/10 p-1.5 text-primary">
+								<Newspaper className="h-4 w-4" />
+							</span>
+							<h2 class="text-lg font-bold leading-7 text-foreground sm:text-2xl sm:leading-9">
+								<a href={navUrl('/topics/')} class="text-foreground no-underline hover:text-primary">AI News</a>
+							</h2>
 						</div>
-					</>
-				) : (
-					<div class="rounded-md border border-dashed border-border bg-background p-3 text-sm leading-6 text-muted-foreground">
-						日本語のAI関連記事は、GitHub Actionsまたは <code>npm run update:ai-news</code> で自動取得されます。
+						<p class="mt-1 line-clamp-2 text-xs leading-5 text-muted-foreground sm:text-sm sm:leading-6">
+							国内ニュースと海外公式アップデートを、短時間で流し読みできる一覧に整理しています。
+						</p>
 					</div>
-				)}
-
-				<div class="flex justify-end">
-					<a href={navUrl('/topics/')} class="inline-flex h-8 items-center rounded-md border border-border bg-background px-3 text-xs font-medium text-foreground no-underline transition-colors hover:bg-muted">
-						トピックをもっと見る
-					</a>
+					<div class="shrink-0 text-right">
+						<p class="text-[10px] leading-4 text-muted-foreground sm:text-[11px]">更新<br />{newsUpdatedAt}</p>
+						<div class="mt-2 hidden gap-1.5 sm:flex">
+							<span class="rounded-full border border-border bg-background/70 px-2 py-0.5 text-[11px] font-semibold text-muted-foreground">国内 {domesticNewsTotal}</span>
+							<span class="rounded-full border border-border bg-background/70 px-2 py-0.5 text-[11px] font-semibold text-muted-foreground">公式 {globalNewsTotal}</span>
+						</div>
+					</div>
 				</div>
-			</CardContent>
-		</Card>
+
+				<div class="-mx-3 overflow-x-auto overscroll-x-contain px-3 pb-1 sm:mx-0 sm:px-0 sm:pb-0" role="tablist" aria-label="ホームAIニュースカテゴリ">
+					<div class="flex w-max min-w-full gap-1.5">
+						{homeNewsTabs.map(({ category, regionId, count }) => (
+							<button
+								type="button"
+								class={[
+									'home-news-tab h-7 shrink-0 rounded-full border px-2.5 text-[11px] font-semibold leading-none shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:h-8 sm:px-3 sm:text-xs',
+									category.id === initialNewsCategory
+										? 'border-primary bg-primary text-primary-foreground shadow-primary/20'
+										: 'border-border/80 bg-card/90 text-muted-foreground hover:border-primary/40 hover:bg-muted hover:text-foreground'
+								].join(' ')}
+								data-home-news-region={regionId}
+								data-home-news-tab={category.id}
+								aria-selected={category.id === initialNewsCategory ? 'true' : 'false'}
+								role="tab"
+							>
+								{category.label}
+								<span class="ml-1 rounded-full bg-background/75 px-1.5 py-0.5 text-[9px] font-bold text-muted-foreground opacity-90">
+									{count}
+								</span>
+							</button>
+						))}
+					</div>
+				</div>
+			</div>
+
+			{newsItems.length > 0 && (
+				<>
+					<div class="grid gap-2">
+						{newsRegions.map((region) =>
+							newsCategories.map((category) => {
+								const panelItems = newsItems.filter((item) => item.regionId === region.id && item.categoryId === category.id).slice(0, 6);
+								const active = region.id === initialNewsRegion && category.id === initialNewsCategory;
+								return (
+									<div
+										class={['home-news-panel grid gap-2 lg:grid-cols-2', active ? '' : 'hidden'].filter(Boolean).join(' ')}
+										data-home-news-panel={newsPanelId(region.id, category.id)}
+										data-home-panel-region={region.id}
+										data-home-panel-category={category.id}
+									>
+										{panelItems.map((item) => (
+											<a href={item.url} target="_blank" rel="noreferrer" class="flex min-h-[6.25rem] items-center gap-2.5 rounded-md border border-border bg-card p-2.5 no-underline shadow-sm transition-colors hover:bg-muted/45 sm:min-h-[8.25rem] sm:gap-3 sm:p-3 lg:min-h-[9rem]">
+												{item.imageUrl ? (
+													<img src={item.imageUrl} alt="" loading="lazy" referrerpolicy="no-referrer" class="h-20 w-24 shrink-0 rounded-md border border-border object-cover sm:h-[6.75rem] sm:w-36 lg:h-28 lg:w-40" />
+												) : (
+													<span class="flex h-20 w-24 shrink-0 items-center justify-center rounded-md border border-border bg-muted text-muted-foreground sm:h-[6.75rem] sm:w-36 lg:h-28 lg:w-40">
+														<Newspaper className="h-5 w-5 opacity-70" />
+													</span>
+												)}
+												<div class="min-w-0 flex-1">
+													<div class="flex min-w-0 flex-wrap items-center gap-x-1.5 gap-y-1 text-[10px] leading-4 text-muted-foreground sm:text-[11px]">
+														<span class="truncate font-medium text-foreground">{item.source}</span>
+														{item.publishedAt && <span>{formatNewsDate(item.publishedAt)}</span>}
+														<Badge variant={item.sourceType === 'official' ? 'default' : 'secondary'} className="h-4 px-1 text-[9px] leading-none sm:h-5 sm:text-[10px]">
+															{sourceTypeLabel(item.sourceType)}
+														</Badge>
+														<Badge variant="outline" className="h-4 px-1 text-[9px] leading-none sm:h-5 sm:text-[10px]">
+															{item.language === 'ja' ? '日本語' : '英語'}
+														</Badge>
+													</div>
+													<h3 class="mt-1 line-clamp-2 text-[13px] font-bold leading-5 text-foreground sm:text-base sm:leading-6">
+														{item.title}
+													</h3>
+												</div>
+											</a>
+										))}
+									</div>
+								);
+							})
+						)}
+					</div>
+
+					<div class="flex justify-end">
+						<a href={navUrl('/topics/')} class="inline-flex h-8 items-center rounded-md border border-border bg-background px-3 text-xs font-medium text-foreground no-underline transition-colors hover:bg-muted">
+							AI Newsをもっと見る
+						</a>
+					</div>
+				</>
+			)}
+		</section>
 
 		<Card>
 			<CardHeader className="pb-2">
@@ -173,4 +253,38 @@ function formatNewsDate(value: string) {
 			</CardContent>
 		</Card>
 	</section>
+
+	<script is:inline define:vars={{ defaultHomeNewsCategory: initialNewsCategory, defaultHomeNewsRegion: initialNewsRegion }}>
+		(() => {
+			const tabs = [...document.querySelectorAll('[data-home-news-tab]')];
+			const panels = [...document.querySelectorAll('[data-home-news-panel]')];
+
+			function setHomeNewsActive(regionId, categoryId) {
+				tabs.forEach((tab) => {
+					const active = tab.dataset.homeNewsRegion === regionId && tab.dataset.homeNewsTab === categoryId;
+					tab.setAttribute('aria-selected', String(active));
+					tab.classList.toggle('border-primary', active);
+					tab.classList.toggle('bg-primary', active);
+					tab.classList.toggle('text-primary-foreground', active);
+					tab.classList.toggle('border-border', !active);
+					tab.classList.toggle('bg-card/90', !active);
+					tab.classList.toggle('text-muted-foreground', !active);
+					tab.classList.toggle('hover:bg-muted', !active);
+					tab.classList.toggle('hover:text-foreground', !active);
+				});
+
+				panels.forEach((panel) => {
+					panel.classList.toggle('hidden', panel.dataset.homeNewsPanel !== `home:${regionId}:${categoryId}`);
+				});
+			}
+
+			tabs.forEach((tab) => {
+				tab.addEventListener('click', () => {
+					setHomeNewsActive(tab.dataset.homeNewsRegion || defaultHomeNewsRegion, tab.dataset.homeNewsTab || defaultHomeNewsCategory);
+				});
+			});
+
+			setHomeNewsActive(defaultHomeNewsRegion, defaultHomeNewsCategory);
+		})();
+	</script>
 </Layout>
