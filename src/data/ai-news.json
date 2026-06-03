@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-03T04:36:30.270Z",
+  "generatedAt": "2026-06-03T10:39:23.927Z",
   "updateStatus": "ok",
   "updateMessage": "日本語AI関連記事を更新しました。",
   "policy": "japanese-sources-only",
@@ -49,6 +49,26 @@
     }
   ],
   "items": [
+    {
+      "title": "Microsoft、AIエージェント時代の新デバイス「Project Solara」",
+      "url": "https://www.watch.impress.co.jp/docs/news/2114074.html",
+      "source": "Impress Watch",
+      "sourceId": "impress-watch",
+      "sourceType": "media",
+      "publishedAt": "2026-06-03T04:38:26.000Z",
+      "imageUrl": "https://www.watch.impress.co.jp/img/ipw/list/2114/074/so00.jpg",
+      "excerpt": "Microsoftは2日(米国時間)、開発者会議「Build」において、AIエージェント時代に対応した新たな「エージェントファーストデバイス」として、「Project Solara」を発表した。"
+    },
+    {
+      "title": "マイクロソフト、翻訳“コストゼロ”も可能 EdgeのローカルAI強化",
+      "url": "https://www.watch.impress.co.jp/docs/news/2114069.html",
+      "source": "Impress Watch",
+      "sourceId": "impress-watch",
+      "sourceType": "media",
+      "publishedAt": "2026-06-03T04:30:20.000Z",
+      "imageUrl": "https://www.watch.impress.co.jp/img/ipw/list/2114/069/00.jpg",
+      "excerpt": "米Microsoftは、Microsoft Edgeに導入するオンデバイス動作の生成AIについて3つのアップデートを発表した。"
+    },
     {
       "title": "レンズに翻訳や原稿表示、76言語対応のAIスマートグラス「AiLENS V1」",
       "url": "https://www.watch.impress.co.jp/docs/news/2114028.html",
@@ -170,6 +190,16 @@
       "excerpt": "MediaTek（メディアテック）は、「COMPUTEX TAIPEI 2026」において、NVIDIAが発表したAIスーパーチップ「NVIDIA RTX Spark」と、同チップを搭載する各社のWindowsノートP…"
     },
     {
+      "title": "Amazon Bedrockで「GPT-5.5」解禁、Codexでも利用可能 USリージョンのみ、日本リージョンは未定",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2606/03/2000000051/",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-06-02T20:38:42.000Z",
+      "imageUrl": "https://www.itmedia.co.jp/aiplus/article/ogp/2606/03/2000000051/10000289/2048",
+      "excerpt": "OpenAIがフロンティアモデルをAWS経由で一般提供する。Amazon BedrockからGPT-5.5などを使え、コーディングエージェント「Codex」でもBedrockのAPIキーを利用できる。当初は米国リージョ…"
+    },
+    {
       "title": "【Pythonで学ぶデータ分析】ベイズ統計の考え方をやさしく学ぶ ～ 初めてでも流れが分かる入門編",
       "url": "https://atmarkit.itmedia.co.jp/ait/articles/2606/03/news002.html",
       "source": "ITmedia AI+",
@@ -186,7 +216,7 @@
       "sourceId": "itmedia-aiplus",
       "sourceType": "media",
       "publishedAt": "2026-06-02T19:50:00.000Z",
-      "imageUrl": "https://image.itmedia.co.jp/news/articles/2606/03/cover_news063.jpg",
+      "imageUrl": "",
       "excerpt": "Microsoftは「Build 2026」で、AI特化型デスクトップPC「Surface RTX Spark Dev Box」を発表した。NVIDIAの「RTX Spark」を搭載し、最大1ペタフロップスの演算性能と…"
     },
     {
@@ -196,7 +226,7 @@
       "sourceId": "impress-watch",
       "sourceType": "media",
       "publishedAt": "2026-06-02T14:24:37.000Z",
-      "imageUrl": "https://www.watch.impress.co.jp/img/ipw/list/2113/911/gw1.jpg",
+      "imageUrl": "",
       "excerpt": "Anthropic(アンソロピック)は2日、ソフトウェアのセキュリティを確保するための共同プロジェクト「Project Glasswing」拡大を発表した。同プロジェクト参加組織により、強力なサイバー能力を持つAIモデ…"
     },
     {
@@ -206,28 +236,8 @@
       "sourceId": "itmedia-aiplus",
       "sourceType": "media",
       "publishedAt": "2026-06-02T12:45:55.000Z",
-      "imageUrl": "https://www.itmedia.co.jp/aiplus/article/ogp/2606/03/2000000050/10000281/2048",
+      "imageUrl": "",
       "excerpt": "Microsoftは「Build 2026」で、自社開発AI「MAI」の新モデル群を発表した。中核となる初の推論モデル「MAI-Thinking-1」は350億パラメータを持ち、他モデルからの蒸留を行わないクリーンなデ…"
-    },
-    {
-      "title": "Microsoft、自律エージェント「Scout」発表 OpenClawベースでMCP対応",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2606/03/2000000049/",
-      "source": "ITmedia AI+",
-      "sourceId": "itmedia-aiplus",
-      "sourceType": "media",
-      "publishedAt": "2026-06-02T11:50:46.000Z",
-      "imageUrl": "",
-      "excerpt": "Microsoftは「Build 2026」で、自律型AIエージェントの新カテゴリ「Autopilots」と、その第一弾「Microsoft Scout」を発表した。Scoutは「OpenClaw」基盤で構築され、常時…"
-    },
-    {
-      "title": "SBI HDとアンソロピック、金融AIエージェント共同開発などで協力",
-      "url": "https://www.watch.impress.co.jp/docs/news/2113830.html",
-      "source": "Impress Watch",
-      "sourceId": "impress-watch",
-      "sourceType": "media",
-      "publishedAt": "2026-06-02T08:35:50.000Z",
-      "imageUrl": "",
-      "excerpt": "SBIホールディングスは、米Anthropic(アンソロピック)との間で、生成AIプラットフォーム「Claude」を活用した全社的なAIトランスフォーメーション(AX)を推進することに合意した。"
     },
     {
       "title": "満員御礼！ Claude Code による開発体験ワークショップ【イベントレポート】",
@@ -358,16 +368,6 @@
       "publishedAt": "2025-08-07T22:33:38.000Z",
       "imageUrl": "",
       "excerpt": "エリオット スミス (Elliott Smith) ※本ブログは、米国時間2025年8月7日（木）に公開された “Microsoft incorporates OpenAI’s GPT-5 into consumer,…"
-    },
-    {
-      "title": "Edge の Copilot Mode のご紹介：新しいウェブ閲覧体験",
-      "url": "https://news.microsoft.com/ja-jp/2025/07/31/introducing-copilot-mode-in-edge-a-new-way-to-browse-the-web/",
-      "source": "Microsoft Japan",
-      "sourceId": "microsoft-japan",
-      "sourceType": "official",
-      "publishedAt": "2025-07-31T11:22:41.000Z",
-      "imageUrl": "",
-      "excerpt": "ショーン リンダーセイ（Sean Lyndersay） ※本ブログは、米国時間 2025 年 7月 28 日に公開された “ Introducing Copilot Mode in Edge: A new way to…"
     }
   ]
 }
