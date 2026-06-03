@@ -54,10 +54,10 @@ function sourceTypeLabel(value: string) {
   return '準公式';
 }
 
-const base = import.meta.env.BASE_URL;
-const fallbackImage = `${base}images/news-fallback.png`;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const fallbackImage = `${base}/images/news-fallback.png`;
 function resolveImageUrl(url: string): string {
-  if (url.startsWith('/images/')) return `${base}${url.slice(1)}`;
+  if (url.startsWith('/images/')) return `${base}${url}`;
   return url;
 }
 
