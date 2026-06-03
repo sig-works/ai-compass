@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-02T22:00:24.066Z",
+  "generatedAt": "2026-06-03T04:36:30.270Z",
   "updateStatus": "ok",
   "updateMessage": "日本語AI関連記事を更新しました。",
   "policy": "japanese-sources-only",
@@ -49,6 +49,116 @@
     }
   ],
   "items": [
+    {
+      "title": "レンズに翻訳や原稿表示、76言語対応のAIスマートグラス「AiLENS V1」",
+      "url": "https://www.watch.impress.co.jp/docs/news/2114028.html",
+      "source": "Impress Watch",
+      "sourceId": "impress-watch",
+      "sourceType": "media",
+      "publishedAt": "2026-06-03T03:23:38.000Z",
+      "imageUrl": "https://www.watch.impress.co.jp/img/ipw/list/2114/028/01.jpg",
+      "excerpt": "SB C&Sは、ThinkAR JapanのAIスマートグラス「AiLENS V1(エーアイレンズ ヴイワン)」を6月5日より順次発売する。市場想定価格は87,780円。"
+    },
+    {
+      "title": "Microsoft、自社開発した7つのAIモデル発表 画像編集や音声認識も",
+      "url": "https://www.itmedia.co.jp/news/articles/2606/03/news077.html",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-06-03T02:03:00.000Z",
+      "imageUrl": "https://image.itmedia.co.jp/news/articles/2606/03/cover_news077.png",
+      "excerpt": "米Microsoftが自社開発した7つのAIモデル群「Microsoft AI Models」を発表しました。"
+    },
+    {
+      "title": "Microsoft、AIエージェント用のカスタマイズ可能な分離環境「Microsoft Execution Containers」発表 OpenClawも動作",
+      "url": "https://www.itmedia.co.jp/news/articles/2606/03/news074.html",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-06-03T02:02:00.000Z",
+      "imageUrl": "https://image.itmedia.co.jp/news/articles/2606/03/cover_news074.png",
+      "excerpt": "米MicrosoftがAIエージェントのためのカスタマイズ可能な分離環境「Microsoft Execution Containers」（MXC）を発表しました。"
+    },
+    {
+      "title": "OpenAI、「Codex」にサイトを共有できる新機能「Sites」 役割プラグインも",
+      "url": "https://www.watch.impress.co.jp/docs/news/2113964.html",
+      "source": "Impress Watch",
+      "sourceId": "impress-watch",
+      "sourceType": "media",
+      "publishedAt": "2026-06-03T01:56:30.000Z",
+      "imageUrl": "https://www.watch.impress.co.jp/img/ipw/list/2113/964/c01.jpg",
+      "excerpt": "OpenAIは2日(米国時間)、AIコーディングツールの「Codex」に新機能「Sites」を追加した。Codexから簡単にチームダッシュボードやイベントカレンダーなどのアプリを生成して、プライベートURLで共有できる…"
+    },
+    {
+      "title": "トランプ米大統領、AI安全保障に関する大統領令に署名 最先端モデルを公開30日前に政府が検査可能に",
+      "url": "https://www.itmedia.co.jp/news/articles/2606/03/news068.html",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-06-03T00:42:00.000Z",
+      "imageUrl": "https://image.itmedia.co.jp/news/articles/2606/03/cover_news068.jpg",
+      "excerpt": "トランプ米大統領は、先進的AIのイノベーションと安全保障の促進に関する大統領令に署名した。戦争省やCISAによるサイバー防衛強化に加え、主要企業の最先端AIモデルを政府が事前検証する任意の枠組みを構築する。政府は全面的…"
+    },
+    {
+      "title": "シーメンス、AIでCFD設計探索を高速化 「Simcenter PhysicsAI」を発表",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2606/03/news013.html",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-06-03T00:00:00.000Z",
+      "imageUrl": "https://image.itmedia.co.jp/mn/articles/2606/03/cover_news013.jpg",
+      "excerpt": "シーメンスは「Simcenter」の新機能として、AIを活用した設計空間探索向けソフトウェア「Simcenter PhysicsAI」を発表した。CFDのシミュレーション結果からAIサロゲートモデルを構築し、数千もの設…"
+    },
+    {
+      "title": "Microsoft、Copilotに統合する常時稼働エージェント「Scout」",
+      "url": "https://www.watch.impress.co.jp/docs/news/2113945.html",
+      "source": "Impress Watch",
+      "sourceId": "impress-watch",
+      "sourceType": "media",
+      "publishedAt": "2026-06-02T23:38:09.000Z",
+      "imageUrl": "https://www.watch.impress.co.jp/img/ipw/list/2113/945/ms07.jpg",
+      "excerpt": "Microsoftは2日、開発者会議「Build」において、新たな常時稼働エージェント「Microsoft Scout」を発表した。Microsoft 365アプリ全体に統合され、業務フローに密着したエージェントとして…"
+    },
+    {
+      "title": "シャドーAIに「ログイン情報」を渡している割合は？ Oktaの実態調査で判明",
+      "url": "https://www.itmedia.co.jp/enterprise/articles/2606/03/news043.html",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-06-02T23:00:00.000Z",
+      "imageUrl": "https://image.itmedia.co.jp/enterprise/articles/2606/03/cover_news043.jpg",
+      "excerpt": "ある調査によると、経営幹部の95％は「従業員は責任を持ってAIを利用している」と確信しているが、シャドーAIを使っている従業員は過半数に上るという。さらに、シャドーAIを利用している従業員の中には情報漏えいにつながりか…"
+    },
+    {
+      "title": "GeminiのチャットやCanvas、Googleドライブ経由で共有可能に",
+      "url": "https://www.watch.impress.co.jp/docs/news/2113878.html",
+      "source": "Impress Watch",
+      "sourceId": "impress-watch",
+      "sourceType": "media",
+      "publishedAt": "2026-06-02T23:00:00.000Z",
+      "imageUrl": "https://www.watch.impress.co.jp/img/ipw/list/2113/878/01.jpg",
+      "excerpt": "Googleは、Google WorkspaceのWeb版ユーザーに向けて、Geminiアプリ内でのチャット、Canvas、生成メディアのスナップショットを、Googleドライブ経由で共有できる新機能を発表した。エンド…"
+    },
+    {
+      "title": "Microsoft、AndroidベースのAIエージェント基盤「Solara」発表 Snapdragon搭載のバッジ型端末も披露",
+      "url": "https://www.itmedia.co.jp/news/articles/2606/03/news066.html",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-06-02T22:49:00.000Z",
+      "imageUrl": "https://image.itmedia.co.jp/news/articles/2606/03/cover_news066.jpg",
+      "excerpt": "Microsoftは「Build 2026」で、AIエージェントの実行に特化した新プラットフォーム「Project Solara」を発表した。OSにはWindowsではなくAOSPベースのOSを採用。Qualcommと…"
+    },
+    {
+      "title": "AI需要で半導体不足は「しばらく続く」 PCメーカー、デルの対応策は？",
+      "url": "https://www.itmedia.co.jp/business/articles/2606/03/news017.html",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-aiplus",
+      "sourceType": "media",
+      "publishedAt": "2026-06-02T22:00:00.000Z",
+      "imageUrl": "https://image.itmedia.co.jp/business/articles/2606/03/cover_news017.jpg",
+      "excerpt": "AI需要による半導体不足は「しばらく続く」――PCメーカーのデル・テクノロジーズはこう予測する。同社はこの難局をどう乗り切るのか。"
+    },
     {
       "title": "NVIDIAの「RTX Spark」と搭載ノートPCがCOMUPTEX TAIPEIのMediaTekブースに集結",
       "url": "https://monoist.itmedia.co.jp/mn/articles/2606/03/news062.html",
@@ -106,7 +216,7 @@
       "sourceId": "itmedia-aiplus",
       "sourceType": "media",
       "publishedAt": "2026-06-02T11:50:46.000Z",
-      "imageUrl": "https://www.itmedia.co.jp/aiplus/article/ogp/2606/03/2000000049/10000277/2048",
+      "imageUrl": "",
       "excerpt": "Microsoftは「Build 2026」で、自律型AIエージェントの新カテゴリ「Autopilots」と、その第一弾「Microsoft Scout」を発表した。Scoutは「OpenClaw」基盤で構築され、常時…"
     },
     {
@@ -116,108 +226,8 @@
       "sourceId": "impress-watch",
       "sourceType": "media",
       "publishedAt": "2026-06-02T08:35:50.000Z",
-      "imageUrl": "https://www.watch.impress.co.jp/img/ipw/list/2113/830/sbiant1.jpg",
-      "excerpt": "SBIホールディングスは、米Anthropic(アンソロピック)との間で、生成AIプラットフォーム「Claude」を活用した全社的なAIトランスフォーメーション(AX)を推進することに合意した。"
-    },
-    {
-      "title": "AIモデル「ミュトス」のアクセス権拡大 新たに150組織が利用へ Anthropic",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2606/02/2000000048/",
-      "source": "ITmedia AI+",
-      "sourceId": "itmedia-aiplus",
-      "sourceType": "media",
-      "publishedAt": "2026-06-02T05:56:37.000Z",
-      "imageUrl": "https://www.itmedia.co.jp/aiplus/article/ogp/2606/02/2000000048/10000228/2048",
-      "excerpt": "米Anthropicは、サイバーセキュリティプロジェクト「Project Glasswing」を拡大し、AIモデル「Claude Mythos Preview」のアクセス権を新たに約150の組織に与えると発表した。"
-    },
-    {
-      "title": "バイブコーディングの“プロトタイプで止まりがち”問題に「バイブ清書」が切り込む",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2606/02/news047.html",
-      "source": "ITmedia AI+",
-      "sourceId": "itmedia-aiplus",
-      "sourceType": "media",
-      "publishedAt": "2026-06-02T04:00:00.000Z",
-      "imageUrl": "https://image.itmedia.co.jp/ait/articles/2606/02/cover_news047.jpg",
-      "excerpt": "バイブコーディングの普及で社内ソフトウェアの開発は身近になった。一方でプロトタイプから本番利用へ移行する際の品質やセキュリティの確保に悩む企業もある。その課題に着目し、解決を図るのが「バイブ清書」だ。"
-    },
-    {
-      "title": "6月4日開催の「楽天スーパーSALE」、AIで商品を探す新機能",
-      "url": "https://www.watch.impress.co.jp/docs/news/2113650.html",
-      "source": "Impress Watch",
-      "sourceId": "impress-watch",
-      "sourceType": "media",
-      "publishedAt": "2026-06-02T03:36:54.000Z",
-      "imageUrl": "https://www.watch.impress.co.jp/img/ipw/list/2113/650/raku02.jpg",
-      "excerpt": "楽天市場は、6月4日20時から開催する大型セールイベント「楽天スーパーSALE」で、AIを活用した買い物体験を強化する。"
-    },
-    {
-      "title": "シャープ、人に寄り添うAI会話技術 テレビやサービスに応用",
-      "url": "https://www.watch.impress.co.jp/docs/news/2113625.html",
-      "source": "Impress Watch",
-      "sourceId": "impress-watch",
-      "sourceType": "media",
-      "publishedAt": "2026-06-02T03:00:01.000Z",
-      "imageUrl": "https://www.watch.impress.co.jp/img/ipw/list/2113/625/sh1.jpg",
-      "excerpt": "シャープは、人に寄り添う心地よいAI会話技術を開発した。テレビ「AQUOS」向けのサービス「AQUOS AI」に応用し、応答内容の評価が向上し、今後愛着を持ってもらえるAI会話機能搭載製品の拡大を目指す。"
-    },
-    {
-      "title": "三菱重工とPFNが「国産AI技術」共同開発、安全保障などで活用 年度内に資本業務提携へ",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2606/02/2000000047/",
-      "source": "ITmedia AI+",
-      "sourceId": "itmedia-aiplus",
-      "sourceType": "media",
-      "publishedAt": "2026-06-02T02:14:04.000Z",
-      "imageUrl": "https://www.itmedia.co.jp/aiplus/article/ogp/2606/02/2000000047/10000273/2048",
-      "excerpt": "Preferred Networksは、三菱重工業と国産AI技術の共同開発で業務提携すると発表した。国家安全保障分野などにおける機械やシステムの高度化を図る。"
-    },
-    {
-      "title": "生成AIを「悩み相談」に使う10代女性たち 阿部前監督事件を招いた「AI正論」の波紋",
-      "url": "https://www.itmedia.co.jp/news/articles/2606/02/news070.html",
-      "source": "ITmedia AI+",
-      "sourceId": "itmedia-aiplus",
-      "sourceType": "media",
-      "publishedAt": "2026-06-02T01:31:00.000Z",
-      "imageUrl": "https://image.itmedia.co.jp/news/articles/2606/02/cover_news070.jpg",
-      "excerpt": "長女（18）への暴行容疑で、プロ野球巨人の監督だった阿部慎之助さん（47）が逮捕された。きっかけは、長女が対話型の生成AI「ChatGPT」に被害を相談し、回答に基づき児童相談所へ連絡したことだった。長女の行動の是非（…"
-    },
-    {
-      "title": "ChatGPTの「やさしさ」の危うさ 10代に伝えたいAI利用法",
-      "url": "https://www.watch.impress.co.jp/docs/topic/2113048.html",
-      "source": "Impress Watch",
-      "sourceId": "impress-watch",
-      "sourceType": "media",
-      "publishedAt": "2026-06-01T23:20:00.000Z",
-      "imageUrl": "https://www.watch.impress.co.jp/img/ipw/list/2113/048/s04.jpg",
-      "excerpt": "このところソーシャルメディア上では、若者が相談相手として生成AIを使うことの是非をめぐり、議論が続いています。"
-    },
-    {
-      "title": "NVIDIAの“狐”は工場自律管理AIエージェント、台湾メーカーが導入効果を確認",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2606/02/news058.html",
-      "source": "ITmedia AI+",
-      "sourceId": "itmedia-aiplus",
-      "sourceType": "media",
-      "publishedAt": "2026-06-01T22:45:00.000Z",
-      "imageUrl": "https://image.itmedia.co.jp/mn/articles/2606/02/cover_news058.jpg",
-      "excerpt": "NVIDIAは、工場を自律的に管理するAIエージェントのレファレンスデザイン「NVIDIA Factory Operations Blueprint（FOX）」を発表した。FOXを用いれば、工場内のさまざまなデータをリ…"
-    },
-    {
-      "title": "「生成AIの回答、口コミより信頼できる」 買い物の情報源として……博報堂調査",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2606/02/2000000046/",
-      "source": "ITmedia AI+",
-      "sourceId": "itmedia-aiplus",
-      "sourceType": "media",
-      "publishedAt": "2026-06-01T22:14:30.000Z",
-      "imageUrl": "https://www.itmedia.co.jp/aiplus/article/ogp/2606/02/2000000046/10000254/2048",
-      "excerpt": "買い物で生成AIを活用する人は全体の24.6％と、約4人に1人まで広がっている。"
-    },
-    {
-      "title": "製造現場の「AIアレルギー」をどう払拭？ 日立・新卒デジタル人材「3カ月奮闘記」",
-      "url": "https://www.itmedia.co.jp/business/articles/2606/02/news023.html",
-      "source": "ITmedia AI+",
-      "sourceId": "itmedia-aiplus",
-      "sourceType": "media",
-      "publishedAt": "2026-06-01T22:00:00.000Z",
       "imageUrl": "",
-      "excerpt": "日立製作所は、AIやデータ解析の専門スキルを持つ新人データサイエンティストを、製造現場へと送り込んでいる。いかにして現場の「AIアレルギー」を払拭し、現場とのコミュニケーションを通じて業務時間を短縮する生成AIツールを…"
+      "excerpt": "SBIホールディングスは、米Anthropic(アンソロピック)との間で、生成AIプラットフォーム「Claude」を活用した全社的なAIトランスフォーメーション(AX)を推進することに合意した。"
     },
     {
       "title": "満員御礼！ Claude Code による開発体験ワークショップ【イベントレポート】",
@@ -358,16 +368,6 @@
       "publishedAt": "2025-07-31T11:22:41.000Z",
       "imageUrl": "",
       "excerpt": "ショーン リンダーセイ（Sean Lyndersay） ※本ブログは、米国時間 2025 年 7月 28 日に公開された “ Introducing Copilot Mode in Edge: A new way to…"
-    },
-    {
-      "title": "Microsoft Sentinel data lake : シグナルの統合、コスト削減、エージェンティック AI を強化する",
-      "url": "https://news.microsoft.com/ja-jp/2025/07/24/microsoft-sentinel-data-lake-unify-signals-cut-costs-and-power-agentic-ai/",
-      "source": "Microsoft Japan",
-      "sourceId": "microsoft-japan",
-      "sourceType": "official",
-      "publishedAt": "2025-07-24T05:51:39.000Z",
-      "imageUrl": "",
-      "excerpt": "Byスコット ウッドゲート (Scott Woodgate) 、クリシュナ クマール パルタサラティ (Krishna Kumar Parthasarathy) ※本ブログは、米国時間 2025 年 7月 22 日に公…"
     }
   ]
 }
