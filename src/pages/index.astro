@@ -97,6 +97,13 @@ function sourceTypeLabel(value: string) {
   return '準公式';
 }
 
+const base = import.meta.env.BASE_URL;
+const fallbackImage = `${base}images/news-fallback.png`;
+function resolveImageUrl(url: string): string {
+  if (url.startsWith('/images/')) return `${base}${url.slice(1)}`;
+  return url;
+}
+
 const homeNewsTabs = newsCategories
   .map((category) => {
     const domesticCount = newsItemCount('domestic', category.id);
@@ -182,13 +189,7 @@ const globalNewsTotal = newsItems.filter((item) => item.regionId === 'global').l
 									>
 										{panelItems.map((item) => (
 											<a href={item.url} target="_blank" rel="noreferrer" class="flex min-h-[6.25rem] items-center gap-2.5 rounded-md border border-border bg-card p-2.5 no-underline shadow-sm transition-colors hover:bg-muted/45 sm:min-h-[8.25rem] sm:gap-3 sm:p-3 lg:min-h-[9rem]">
-												{item.imageUrl ? (
-													<img src={item.imageUrl} alt="" loading="lazy" referrerpolicy="no-referrer" class="h-20 w-24 shrink-0 rounded-md border border-border object-cover sm:h-[6.75rem] sm:w-36 lg:h-28 lg:w-40" />
-												) : (
-													<span class="flex h-20 w-24 shrink-0 items-center justify-center rounded-md border border-border bg-muted text-muted-foreground sm:h-[6.75rem] sm:w-36 lg:h-28 lg:w-40">
-														<Newspaper className="h-5 w-5 opacity-70" />
-													</span>
-												)}
+												<img src={item.imageUrl ? resolveImageUrl(item.imageUrl) : fallbackImage} alt="" loading="lazy" referrerpolicy="no-referrer" class="h-20 w-24 shrink-0 rounded-md border border-border object-cover sm:h-[6.75rem] sm:w-36 lg:h-28 lg:w-40" onerror={`this.onerror=null;this.src='${fallbackImage}'`} />
 												<div class="min-w-0 flex-1">
 													<div class="flex min-w-0 flex-wrap items-center gap-x-1.5 gap-y-1 text-[10px] leading-4 text-muted-foreground sm:text-[11px]">
 														<span class="truncate font-medium text-foreground">{item.source}</span>
