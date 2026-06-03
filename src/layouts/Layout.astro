@@ -103,6 +103,14 @@ const isActive = (href: string) => {
 		<script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
 		<script is:inline set:html={themeBootScript}></script>
 		<script is:inline set:html={termTooltipScript}></script>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-4SDN3T6L16"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-4SDN3T6L16');
+		</script>
 	</head>
 	<body>
 		<div class="min-h-screen overflow-x-clip">
