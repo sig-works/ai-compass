@@ -2,6 +2,8 @@ import {
   AlertTriangle,
   BookOpenCheck,
   Bot,
+  ChevronLeft,
+  ChevronRight,
   ClipboardCheck,
   Copy,
   FileCheck2,
@@ -836,6 +838,9 @@ export default function PromptPatternSwitcher() {
   });
   const active = patterns.find((pattern) => pattern.id === activeId) ?? filteredPatterns[0] ?? patterns[0];
   const Icon = active.icon;
+  const activePatternIndex = filteredPatterns.findIndex((pattern) => pattern.id === active.id);
+  const canSelectPrevious = activePatternIndex > 0;
+  const canSelectNext = activePatternIndex >= 0 && activePatternIndex < filteredPatterns.length - 1;
 
   useEffect(() => {
     if (!filteredPatterns.length) return;
@@ -967,6 +972,28 @@ export default function PromptPatternSwitcher() {
                 <p className="text-[10px] font-semibold tracking-[0.08em] text-muted-foreground">用途別プロンプト</p>
                 <h2 className="text-lg font-semibold tracking-tight sm:text-xl">{active.title}</h2>
                 <p className="mt-1 line-clamp-3 max-w-3xl break-words text-sm leading-6 text-muted-foreground sm:line-clamp-none">{active.scene}</p>
+              </div>
+              <div className="flex shrink-0 items-center gap-1">
+                <button
+                  type="button"
+                  onClick={() => selectPatternByOffset(-1)}
+                  disabled={!canSelectPrevious}
+                  aria-label="前のプロンプト"
+                  title="前のプロンプト"
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-border bg-background text-foreground transition-colors hover:bg-muted disabled:pointer-events-none disabled:opacity-40"
+                >
+                  <ChevronLeft className="h-4 w-4" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => selectPatternByOffset(1)}
+                  disabled={!canSelectNext}
+                  aria-label="次のプロンプト"
+                  title="次のプロンプト"
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-border bg-background text-foreground transition-colors hover:bg-muted disabled:pointer-events-none disabled:opacity-40"
+                >
+                  <ChevronRight className="h-4 w-4" />
+                </button>
               </div>
             </div>
             <div className="mt-2 flex gap-1.5 overflow-x-auto pb-1 sm:mt-3 sm:flex-wrap sm:overflow-visible sm:pb-0">

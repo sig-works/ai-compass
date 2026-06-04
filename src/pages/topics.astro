@@ -12,10 +12,8 @@ const regions = aiNews.regions ?? [
 ];
 const categories = aiNews.categories ?? [
   { id: 'ai-news', label: '国内ニュース', description: '国内向けの日本語AIニュースと日本語公式情報。' },
-  { id: 'openai', label: 'OpenAI公式', description: 'OpenAI News と OpenAI 日本語ニュース。' },
-  { id: 'anthropic', label: 'Anthropic公式', description: 'Anthropic / Claude の公式・準公式ニュース。' },
-  { id: 'google', label: 'Google公式', description: 'Google AI、Gemini、Google Japan Blog のAI関連情報。' },
-  { id: 'copilot', label: 'Copilot公式', description: 'GitHub Copilot と Microsoft Copilot 関連ニュース。' }
+  { id: 'tech-articles', label: '技術記事', description: '実装者向けの日本語AI技術記事。' },
+  { id: 'official', label: '公式', description: 'OpenAI、Anthropic、Google、Copilot 関連の公式・準公式ニュース。' }
 ];
 const items = aiNews.items ?? [];
 const defaultRegion = regions.some((region) => region.id === 'domestic') ? 'domestic' : regions[0]?.id ?? 'global';
@@ -87,9 +85,9 @@ const globalTotal = items.filter((item) => item.regionId === 'global').length;
 							<Newspaper className="h-5 w-5" />
 						</span>
 						<Newspaper className="h-4 w-4 text-primary lg:hidden" />
-						<h1 class="text-lg font-bold leading-7 text-foreground lg:text-3xl lg:leading-10">AI News</h1>
+						<h1 class="text-lg font-bold leading-7 text-foreground lg:text-2xl lg:leading-9">AI News</h1>
 					</div>
-					<p class="mt-0.5 line-clamp-1 text-[11px] leading-5 text-muted-foreground sm:text-xs lg:mt-1 lg:line-clamp-none lg:max-w-2xl lg:text-sm lg:leading-6">
+					<p class="mt-0.5 line-clamp-1 text-[11px] leading-5 text-muted-foreground sm:text-xs lg:mt-1 lg:line-clamp-none lg:text-sm lg:leading-6">
 						国内ニュースと海外公式アップデートを、短時間で流し読みできる一覧に整理しています。
 					</p>
 				</div>
@@ -197,7 +195,7 @@ const globalTotal = items.filter((item) => item.regionId === 'global').length;
 			const tabs = [...document.querySelectorAll('[data-news-tab]')];
 			const panels = [...document.querySelectorAll('[data-news-panel]')];
 			const counts = [...document.querySelectorAll('[data-tab-count]')];
-			const categoryAliases = { claude: 'anthropic', gemini: 'google' };
+			const categoryAliases = { anthropic: 'official', claude: 'official', copilot: 'official', gemini: 'official', google: 'official', openai: 'official' };
 			let activeRegion = defaultRegion;
 			let activeCategory = defaultCategory;
 

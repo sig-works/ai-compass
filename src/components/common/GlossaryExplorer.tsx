@@ -1,4 +1,4 @@
-import { AlertTriangle, ArrowRight, BookOpenText, CircleDot, Search, Workflow } from 'lucide-react';
+import { AlertTriangle, ArrowRight, BookOpenText, ChevronLeft, ChevronRight, CircleDot, Search, Workflow } from 'lucide-react';
 import { startTransition, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 
 import type { GlossarySection, GlossaryTerm } from '@/lib/glossary';
@@ -59,6 +59,9 @@ export default function GlossaryExplorer({ sections }: Props) {
   }, [activeTermName, filteredTerms]);
 
   const activeTerm = allTerms.find((term) => term.term === activeTermName) ?? filteredTerms[0] ?? allTerms[0];
+  const activeTermIndex = filteredTerms.findIndex((term) => term.term === activeTerm?.term);
+  const canSelectPrevious = activeTermIndex > 0;
+  const canSelectNext = activeTermIndex >= 0 && activeTermIndex < filteredTerms.length - 1;
 
   const selectTerm = (termName: string) => {
     startTransition(() => setActiveTermName(termName));
@@ -256,7 +259,31 @@ export default function GlossaryExplorer({ sections }: Props) {
                     <p className="mt-1 break-keep text-sm text-muted-foreground">{activeTerm.aliases.join(' / ')}</p>
                   )}
                 </div>
-                <p className="line-clamp-3 min-w-0 break-words text-sm leading-6 text-foreground sm:max-w-md sm:line-clamp-none">{activeTerm.plainSummary}</p>
+                <div className="flex min-w-0 items-start gap-2 sm:max-w-md">
+                  <p className="line-clamp-3 min-w-0 flex-1 break-words text-sm leading-6 text-foreground sm:line-clamp-none">{activeTerm.plainSummary}</p>
+                  <div className="flex shrink-0 items-center gap-1">
+                    <button
+                      type="button"
+                      onClick={() => selectTermByOffset(-1)}
+                      disabled={!canSelectPrevious}
+                      aria-label="前の用語"
+                      title="前の用語"
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-border bg-background text-foreground transition-colors hover:bg-muted disabled:pointer-events-none disabled:opacity-40"
+                    >
+                      <ChevronLeft className="h-4 w-4" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => selectTermByOffset(1)}
+                      disabled={!canSelectNext}
+                      aria-label="次の用語"
+                      title="次の用語"
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-border bg-background text-foreground transition-colors hover:bg-muted disabled:pointer-events-none disabled:opacity-40"
+                    >
+                      <ChevronRight className="h-4 w-4" />
+                    </button>
+                  </div>
+                </div>
               </div>
             </header>
 

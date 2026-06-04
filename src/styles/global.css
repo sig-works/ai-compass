@@ -225,7 +225,7 @@
   }
 
   .article-prose {
-    @apply mx-auto max-w-[880px] text-base leading-7 text-foreground/90 sm:leading-8;
+    @apply mx-auto max-w-[880px] text-sm leading-6 text-foreground/90 sm:text-[15px] sm:leading-7;
     font-family: var(--font-ja);
     font-feature-settings: normal;
   }
@@ -246,7 +246,7 @@
   }
 
   .article-prose p {
-    @apply mt-4;
+    @apply mt-3 sm:mt-4;
   }
 
   .article-prose ul,
@@ -263,15 +263,15 @@
   }
 
   .article-prose li {
-    @apply mt-1.5;
+    @apply mt-1;
   }
 
   .article-lead {
-    @apply mt-3 text-base leading-8 text-muted-foreground;
+    @apply mt-3 text-sm leading-7 text-muted-foreground sm:text-[15px];
   }
 
   .note-box {
-    @apply mt-5 rounded-md border border-border bg-card p-4 text-sm leading-7 shadow-sm;
+    @apply mt-5 rounded-md border border-border bg-card p-4 text-sm leading-6 shadow-sm;
   }
 
   .source-list {

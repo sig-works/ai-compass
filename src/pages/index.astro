@@ -122,38 +122,39 @@ const globalNewsTotal = newsItems.filter((item) => item.regionId === 'global').l
 
 <Layout title={SITE_NAME} description="AIに関する日本語記事と実務ガイドをまとめた公開サイト。" currentPath="/">
 	<section class="space-y-3">
-		<section class="grid gap-2">
-			<div class="overflow-hidden rounded-lg border border-border bg-[linear-gradient(135deg,hsl(var(--card))_0%,hsl(var(--muted))_58%,hsl(var(--background))_100%)] p-3 shadow-sm sm:p-4">
-				<div class="flex items-start justify-between gap-3 pb-3">
+		<section class="mx-auto grid max-w-[760px] gap-2 lg:mx-0 lg:max-w-none">
+			<div class="-mx-3 border-b border-border bg-background/95 px-3 pt-2 backdrop-blur supports-[backdrop-filter]:bg-background/86 lg:mx-0 lg:overflow-hidden lg:rounded-lg lg:border lg:bg-[linear-gradient(135deg,hsl(var(--card))_0%,hsl(var(--muted))_58%,hsl(var(--background))_100%)] lg:p-4 lg:shadow-sm">
+				<div class="flex items-end justify-between gap-3 pb-2 lg:items-start lg:pb-4">
 					<div class="min-w-0">
-						<div class="flex items-center gap-2">
-							<span class="rounded-md border border-primary/25 bg-primary/10 p-1.5 text-primary">
-								<Newspaper className="h-4 w-4" />
+						<div class="flex items-center gap-2 lg:gap-3">
+							<span class="hidden rounded-md border border-primary/25 bg-primary/10 p-2 text-primary lg:inline-flex">
+								<Newspaper className="h-5 w-5" />
 							</span>
-							<h2 class="text-lg font-bold leading-7 text-foreground sm:text-2xl sm:leading-9">
+							<Newspaper className="h-4 w-4 text-primary lg:hidden" />
+							<h2 class="text-lg font-bold leading-7 text-foreground lg:text-2xl lg:leading-9">
 								<a href={navUrl('/topics/')} class="text-foreground no-underline hover:text-primary">AI News</a>
 							</h2>
 						</div>
-						<p class="mt-1 line-clamp-2 text-xs leading-5 text-muted-foreground sm:text-sm sm:leading-6">
+						<p class="mt-0.5 line-clamp-1 text-[11px] leading-5 text-muted-foreground sm:text-xs lg:mt-1 lg:line-clamp-none lg:text-sm lg:leading-6">
 							国内ニュースと海外公式アップデートを、短時間で流し読みできる一覧に整理しています。
 						</p>
 					</div>
 					<div class="shrink-0 text-right">
 						<p class="text-[10px] leading-4 text-muted-foreground sm:text-[11px]">更新<br />{newsUpdatedAt}</p>
-						<div class="mt-2 hidden gap-1.5 sm:flex">
-							<span class="rounded-full border border-border bg-background/70 px-2 py-0.5 text-[11px] font-semibold text-muted-foreground">国内 {domesticNewsTotal}</span>
-							<span class="rounded-full border border-border bg-background/70 px-2 py-0.5 text-[11px] font-semibold text-muted-foreground">公式 {globalNewsTotal}</span>
+						<div class="mt-2 hidden gap-1.5 lg:flex">
+							<span class="rounded-full border border-border bg-background/70 px-2.5 py-1 text-xs font-semibold text-muted-foreground">国内 {domesticNewsTotal}</span>
+							<span class="rounded-full border border-border bg-background/70 px-2.5 py-1 text-xs font-semibold text-muted-foreground">公式 {globalNewsTotal}</span>
 						</div>
 					</div>
 				</div>
 
-				<div class="-mx-3 overflow-x-auto overscroll-x-contain px-3 pb-1 sm:mx-0 sm:px-0 sm:pb-0" role="tablist" aria-label="ホームAIニュースカテゴリ">
-					<div class="flex w-max min-w-full gap-1.5">
+				<div class="-mx-3 overflow-x-auto overscroll-x-contain px-3 pb-1.5 lg:mx-0 lg:px-0 lg:pb-0" role="tablist" aria-label="ホームAIニュースカテゴリ">
+					<div class="flex w-max min-w-full gap-1.5 lg:gap-2">
 						{homeNewsTabs.map(({ category, regionId, count }) => (
 							<button
 								type="button"
 								class={[
-									'home-news-tab h-7 shrink-0 rounded-full border px-2.5 text-[11px] font-semibold leading-none shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:h-8 sm:px-3 sm:text-xs',
+									'home-news-tab h-7 shrink-0 rounded-full border px-2.5 text-[11px] font-semibold leading-none shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:h-8 sm:px-3 sm:text-xs lg:h-9 lg:px-4 lg:text-sm',
 									category.id === initialNewsCategory
 										? 'border-primary bg-primary text-primary-foreground shadow-primary/20'
 										: 'border-border/80 bg-card/90 text-muted-foreground hover:border-primary/40 hover:bg-muted hover:text-foreground'
@@ -175,37 +176,41 @@ const globalNewsTotal = newsItems.filter((item) => item.regionId === 'global').l
 
 			{newsItems.length > 0 && (
 				<>
-					<div class="grid gap-2 touch-pan-y" data-home-news-swipe>
+					<div class="mt-1 grid gap-3 touch-pan-y lg:mt-0" data-home-news-swipe>
 						{newsRegions.map((region) =>
 							newsCategories.map((category) => {
 								const panelItems = newsItems.filter((item) => item.regionId === region.id && item.categoryId === category.id).slice(0, 6);
 								const active = region.id === initialNewsRegion && category.id === initialNewsCategory;
 								return (
 									<div
-										class={['home-news-panel grid gap-2 lg:grid-cols-2', active ? '' : 'hidden'].filter(Boolean).join(' ')}
+										class={['home-news-panel grid gap-2.5 lg:grid-cols-2 lg:gap-3', active ? '' : 'hidden'].filter(Boolean).join(' ')}
 										data-home-news-panel={newsPanelId(region.id, category.id)}
 										data-home-panel-region={region.id}
 										data-home-panel-category={category.id}
 									>
 										{panelItems.map((item) => (
-											<a href={item.url} target="_blank" rel="noreferrer" class="flex min-h-[6.25rem] items-center gap-2.5 rounded-md border border-border bg-card p-2.5 no-underline shadow-sm transition-colors hover:bg-muted/45 sm:min-h-[8.25rem] sm:gap-3 sm:p-3 lg:min-h-[9rem]">
-												<img src={item.imageUrl ? resolveImageUrl(item.imageUrl) : fallbackImage} alt="" loading="lazy" referrerpolicy="no-referrer" class="h-20 w-24 shrink-0 rounded-md border border-border object-cover sm:h-[6.75rem] sm:w-36 lg:h-28 lg:w-40" onerror={`this.onerror=null;this.src='${fallbackImage}'`} />
-												<div class="min-w-0 flex-1">
-													<div class="flex min-w-0 flex-wrap items-center gap-x-1.5 gap-y-1 text-[10px] leading-4 text-muted-foreground sm:text-[11px]">
-														<span class="truncate font-medium text-foreground">{item.source}</span>
-														{item.publishedAt && <span>{formatNewsDate(item.publishedAt)}</span>}
-														<Badge variant={item.sourceType === 'official' ? 'default' : 'secondary'} className="h-4 px-1 text-[9px] leading-none sm:h-5 sm:text-[10px]">
-															{sourceTypeLabel(item.sourceType)}
-														</Badge>
-														<Badge variant="outline" className="h-4 px-1 text-[9px] leading-none sm:h-5 sm:text-[10px]">
-															{item.language === 'ja' ? '日本語' : '英語'}
-														</Badge>
+											<article class="overflow-hidden rounded-md border border-border bg-card shadow-sm transition-colors hover:-translate-y-0.5 hover:bg-muted/45 hover:shadow-md lg:rounded-lg">
+												<a href={item.url} target="_blank" rel="noreferrer" class="flex min-h-[6.25rem] items-center gap-2.5 p-2.5 no-underline sm:min-h-[8.25rem] sm:gap-3 sm:p-3 lg:min-h-[9rem]">
+													<div class="relative h-20 w-24 shrink-0 overflow-hidden rounded-md border border-border bg-secondary sm:h-[6.75rem] sm:w-36 lg:h-28 lg:w-40">
+														<img src={item.imageUrl ? resolveImageUrl(item.imageUrl) : fallbackImage} alt="" loading="lazy" referrerpolicy="no-referrer" class="h-full w-full object-cover" onerror={`this.onerror=null;this.src='${fallbackImage}'`} />
 													</div>
-													<h3 class="mt-1 line-clamp-2 text-[13px] font-bold leading-5 text-foreground sm:text-base sm:leading-6">
-														{item.title}
-													</h3>
-												</div>
-											</a>
+													<div class="min-w-0 flex-1 self-center">
+														<div class="flex min-w-0 flex-wrap items-center gap-x-1.5 gap-y-1 text-[10px] leading-4 text-muted-foreground sm:text-[11px]">
+															<span class="truncate font-medium text-foreground">{item.source}</span>
+															{item.publishedAt && <span>{formatNewsDate(item.publishedAt)}</span>}
+															<Badge variant={item.sourceType === 'official' ? 'default' : 'secondary'} className="h-4 px-1 text-[9px] leading-none sm:h-5 sm:text-[10px]">
+																{sourceTypeLabel(item.sourceType)}
+															</Badge>
+															<Badge variant="outline" className="h-4 px-1 text-[9px] leading-none sm:h-5 sm:text-[10px]">
+																{item.language === 'ja' ? '日本語' : '英語'}
+															</Badge>
+														</div>
+														<h3 class="mt-1 line-clamp-2 text-[13px] font-bold leading-5 text-foreground sm:text-base sm:leading-6 lg:text-[17px] lg:leading-7">
+															{item.title}
+														</h3>
+													</div>
+												</a>
+											</article>
 										))}
 									</div>
 								);
