@@ -1,13 +1,51 @@
 import { Bot, Check, ClipboardCopy, CornerDownLeft, RotateCcw, Send, UserRound } from 'lucide-react';
 import { useMemo, useRef, useState } from 'react';
 
+import aiNews from '@/data/ai-news.json';
 import type { GlossarySection, GlossaryTerm } from '@/lib/glossary';
 import { GLOSSARY_SECTIONS } from '@/lib/glossary';
 import { PROMPT_PATTERNS, type PromptPattern } from '@/lib/prompt-patterns';
 
-type FlowMode = 'root' | 'prompt-list' | 'prompt-detail' | 'glossary-sections' | 'glossary-terms' | 'glossary-detail';
+type FlowMode = 'root' | 'today-topic' | 'prompt-list' | 'prompt-detail' | 'glossary-sections' | 'glossary-terms' | 'glossary-detail';
+
+type AiNewsItem = {
+  title: string;
+  url: string;
+  category?: string;
+  region?: string;
+  source: string;
+  sourceType: string;
+  language: string;
+  publishedAt?: string;
+  excerpt?: string;
+  imageUrl?: string;
+};
 
 const featuredPromptIds = ['requirements', 'design', 'review', 'bug-investigation', 'test-cases', 'docs'];
+const newsItems = (aiNews.items as AiNewsItem[] | undefined) ?? [];
+const todayTopic =
+  newsItems.find((item) => item.language === 'ja' && item.imageUrl && !item.imageUrl.includes('news-fallback')) ??
+  newsItems.find((item) => item.language === 'ja') ??
+  newsItems[0];
+const fallbackNewsImage = '/images/news-fallback.png';
+
+function formatNewsDate(value?: string) {
+  if (!value) return '日付未確認';
+
+  return new Intl.DateTimeFormat('ja-JP', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit'
+  }).format(new Date(value));
+}
+
+function sourceTypeLabel(value: string) {
+  if (value === 'official') return '公式';
+  if (value === 'domestic-media') return '国内メディア';
+  return '準公式';
+}
 
 function ChatMessage({
   role,
@@ -222,6 +260,62 @@ function GlossaryResult({ term }: { term: GlossaryTerm }) {
   );
 }
 
+function TodayTopicResult({ item }: { item: AiNewsItem }) {
+  const sourceInfo = [item.source, item.category, item.region, sourceTypeLabel(item.sourceType), item.language === 'ja' ? '日本語' : '英語']
+    .filter(Boolean)
+    .join(' / ');
+  const imageUrl = item.imageUrl || fallbackNewsImage;
+
+  return (
+    <div className="grid gap-3">
+      <div>
+        <p className="text-[10px] font-semibold tracking-[0.08em] text-muted-foreground">今日のトピック</p>
+        <h2 className="mt-1 text-base font-bold leading-6 text-foreground">{item.title}</h2>
+        <p className="mt-1 text-xs leading-5 text-muted-foreground">{formatNewsDate(item.publishedAt)} / {sourceInfo}</p>
+      </div>
+
+      <img
+        src={imageUrl}
+        alt=""
+        loading="lazy"
+        referrerPolicy="no-referrer"
+        className="aspect-[16/9] w-full rounded-md border border-border bg-card object-cover"
+        onError={(event) => {
+          event.currentTarget.src = fallbackNewsImage;
+        }}
+      />
+
+      <section className="rounded-md border border-border bg-card p-3">
+        <h3 className="text-sm font-semibold text-foreground">概要</h3>
+        <p className="mt-1 text-sm leading-7 text-muted-foreground">
+          {item.excerpt || 'AI Compass のニュース一覧に登録されている最新トピックです。詳しい本文は元記事で確認できます。'}
+        </p>
+      </section>
+
+      <section className="rounded-md border border-border bg-card p-3">
+        <h3 className="text-sm font-semibold text-foreground">記事情報</h3>
+        <dl className="mt-2 grid gap-1.5 text-sm leading-6 text-muted-foreground sm:grid-cols-[5rem_minmax(0,1fr)]">
+          <dt className="font-medium text-foreground">出典</dt>
+          <dd>{item.source}</dd>
+          <dt className="font-medium text-foreground">分類</dt>
+          <dd>{[item.category, item.region, sourceTypeLabel(item.sourceType)].filter(Boolean).join(' / ')}</dd>
+          <dt className="font-medium text-foreground">公開日</dt>
+          <dd>{formatNewsDate(item.publishedAt)}</dd>
+        </dl>
+      </section>
+
+      <a
+        href={item.url}
+        target="_blank"
+        rel="noreferrer"
+        className="inline-flex w-fit items-center rounded-md border border-border bg-background px-3 py-1.5 text-xs font-semibold text-foreground no-underline transition-colors hover:bg-muted"
+      >
+        元記事を開く
+      </a>
+    </div>
+  );
+}
+
 export default function ChatbotGuide() {
   const shellRef = useRef<HTMLDivElement>(null);
   const sendButtonRef = useRef<HTMLButtonElement>(null);
@@ -317,6 +411,10 @@ export default function ChatbotGuide() {
     setSelectedPromptId('');
   }
 
+  function selectTodayTopic() {
+    setMode('today-topic');
+  }
+
   function selectPrompt(pattern: PromptPattern) {
     setSelectedPromptId(pattern.id);
     setMode('prompt-detail');
@@ -363,11 +461,24 @@ export default function ChatbotGuide() {
           <div className="grid gap-2">
             <p>こんにちは。気になることを選ぶか、そのまま相談してください。</p>
             <div className="flex flex-wrap gap-1.5">
+              {todayTopic && <ChoiceButton onClick={selectTodayTopic}>今日のトピック</ChoiceButton>}
               <ChoiceButton onClick={selectPromptRoot}>用途別プロンプト</ChoiceButton>
               <ChoiceButton onClick={selectGlossaryRoot}>AI用語</ChoiceButton>
             </div>
           </div>
         </ChatMessage>
+
+        {mode === 'today-topic' && todayTopic && (
+          <>
+            <ChatMessage role="user" label="You">今日のトピック</ChatMessage>
+            <ChatMessage role="bot" label="AI Compass" delayMs={260}>
+              <div className="grid gap-3">
+                <TodayTopicResult item={todayTopic} />
+                <ResetButton onClick={reset} />
+              </div>
+            </ChatMessage>
+          </>
+        )}
 
         {(mode === 'prompt-list' || mode === 'prompt-detail') && (
           <ChatMessage role="user" label="You">用途別プロンプト</ChatMessage>
@@ -471,6 +582,7 @@ export default function ChatbotGuide() {
             <div className="grid gap-2">
               <p>いまは候補選択を中心に案内しています。下の候補から、プロンプト集か用語集を選んでください。</p>
               <div className="flex flex-wrap gap-1.5">
+                {todayTopic && <ChoiceButton onClick={selectTodayTopic}>今日のトピック</ChoiceButton>}
                 <ChoiceButton onClick={selectPromptRoot}>用途別プロンプト</ChoiceButton>
                 <ChoiceButton onClick={selectGlossaryRoot}>AI用語</ChoiceButton>
               </div>
