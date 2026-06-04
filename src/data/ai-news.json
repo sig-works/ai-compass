@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-03T14:12:42.243Z",
+  "generatedAt": "2026-06-04T04:36:10.039Z",
   "updateStatus": "ok",
   "updateMessage": "AIニュースを更新しました。",
   "policy": "link-summary-only-with-official-and-trusted-japanese-sources",
@@ -276,8 +276,8 @@
   ],
   "items": [
     {
-      "title": "Microsoft、自社開発した7つのAIモデル発表 画像編集や音声認識も",
-      "url": "https://www.itmedia.co.jp/news/articles/2606/03/news077.html",
+      "title": "Google Chromeの新機能「Skills」 AIプロンプトの“毎回手打ち”を不要に",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2606/04/news042.html",
       "categoryId": "ai-news",
       "category": "国内ニュース",
       "regionId": "domestic",
@@ -286,13 +286,13 @@
       "sourceId": "itmedia-ai-plus",
       "sourceType": "domestic-media",
       "language": "ja",
-      "publishedAt": "2026-06-03T02:03:00.000Z",
-      "imageUrl": "https://image.itmedia.co.jp/news/articles/2606/03/cover_news077.png",
-      "excerpt": "米Microsoftが自社開発した7つのAIモデル群「Microsoft AI Models」を発表しました。"
+      "publishedAt": "2026-06-04T04:00:00.000Z",
+      "imageUrl": "https://image.itmedia.co.jp/ait/articles/2606/04/cover_news042.jpg",
+      "excerpt": "GoogleはChrome向けのAI新機能「Skills in Chrome」を発表した。AIプロンプトを保存してワンクリックで再利用可能にするという。"
     },
     {
-      "title": "Microsoft、AIエージェント用のカスタマイズ可能な分離環境「Microsoft Execution Containers」発表 OpenClawも動作",
-      "url": "https://www.itmedia.co.jp/news/articles/2606/03/news074.html",
+      "title": "日本政府、AI「Mythos」アクセス権を取得 サイバー防衛強化に活用",
+      "url": "https://www.itmedia.co.jp/news/articles/2606/04/news073.html",
       "categoryId": "ai-news",
       "category": "国内ニュース",
       "regionId": "domestic",
@@ -301,13 +301,13 @@
       "sourceId": "itmedia-ai-plus",
       "sourceType": "domestic-media",
       "language": "ja",
-      "publishedAt": "2026-06-03T02:02:00.000Z",
-      "imageUrl": "https://image.itmedia.co.jp/news/articles/2606/03/cover_news074.png",
-      "excerpt": "米MicrosoftがAIエージェントのためのカスタマイズ可能な分離環境「Microsoft Execution Containers」（MXC）を発表しました。"
+      "publishedAt": "2026-06-04T01:27:00.000Z",
+      "imageUrl": "https://image.itmedia.co.jp/news/articles/2606/04/cover_news073.png",
+      "excerpt": "三菱UFJ銀行、三井住友銀行、みずほ銀行もアクセス権を得たとみられている。"
     },
     {
-      "title": "トランプ米大統領、AI安全保障に関する大統領令に署名 最先端モデルを公開30日前に政府が検査可能に",
-      "url": "https://www.itmedia.co.jp/news/articles/2606/03/news068.html",
+      "title": "オートデスク、主要製品向けにAIアシスタント機能を展開 Fusion向けMCPも",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2606/04/news037.html",
       "categoryId": "ai-news",
       "category": "国内ニュース",
       "regionId": "domestic",
@@ -316,9 +316,129 @@
       "sourceId": "itmedia-ai-plus",
       "sourceType": "domestic-media",
       "language": "ja",
-      "publishedAt": "2026-06-03T00:42:00.000Z",
-      "imageUrl": "https://image.itmedia.co.jp/news/articles/2606/03/cover_news068.jpg",
-      "excerpt": "トランプ米大統領は、先進的AIのイノベーションと安全保障の促進に関する大統領令に署名した。戦争省やCISAによるサイバー防衛強化に加え、主要企業の最先端AIモデルを政府が事前検証する任意の枠組みを構築する。政府は全面的な監視を否定しており、民間の開発自由度を維持しつつ安全保障の確保を目指すとしてい..."
+      "publishedAt": "2026-06-04T00:00:00.000Z",
+      "imageUrl": "https://image.itmedia.co.jp/mn/articles/2606/04/cover_news037.jpg",
+      "excerpt": "Autodeskは、主要製品向けに「Autodesk Assistant」のテックプレビュー版を提供する他、Fusion向けのMCPを公開した。設計データや業務コンテキストを理解するAIアシスタントに加え、外部AIとの連携を可能にする機能も提供し、設計／製造業務におけるAI活用の拡大を図る。"
+    },
+    {
+      "title": "ServiceNowとAccenture、エージェント型AIを全社展開する「FDE」を開始",
+      "url": "https://www.itmedia.co.jp/enterprise/articles/2606/04/news024.html",
+      "categoryId": "ai-news",
+      "category": "国内ニュース",
+      "regionId": "domestic",
+      "region": "国内",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-ai-plus",
+      "sourceType": "domestic-media",
+      "language": "ja",
+      "publishedAt": "2026-06-03T23:00:00.000Z",
+      "imageUrl": "https://image.itmedia.co.jp/enterprise/articles/2606/04/cover_news024.jpg",
+      "excerpt": "ServiceNowとAccentureが新たなプログラムを立ち上げた。エージェント型AIの導入が実証実験の段階で止まり、全社規模の成果につながらないといった課題をどのように解決するのか。"
+    },
+    {
+      "title": "「WEDA」を前面に押し出すアドバンテック、エッジAIモデルの開発期間を86％削減",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2606/04/news059.html",
+      "categoryId": "ai-news",
+      "category": "国内ニュース",
+      "regionId": "domestic",
+      "region": "国内",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-ai-plus",
+      "sourceType": "domestic-media",
+      "language": "ja",
+      "publishedAt": "2026-06-03T22:30:00.000Z",
+      "imageUrl": "https://image.itmedia.co.jp/mn/articles/2606/04/cover_news059.jpg",
+      "excerpt": "アドバンテックは、「COMPUTEX TAIPEI 2026」において、同社のハードウェアを用いてエッジAIの開発から導入、運用までを統合的に管理するソリューション「WEDA」のデモを披露した。"
+    },
+    {
+      "title": "2年間で「1万時間」削減 「1円の誤りも許されない」ソニー経理が“まず試してみる”DX集団に化けたワケ",
+      "url": "https://www.itmedia.co.jp/business/articles/2606/04/news023.html",
+      "categoryId": "ai-news",
+      "category": "国内ニュース",
+      "regionId": "domestic",
+      "region": "国内",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-ai-plus",
+      "sourceType": "domestic-media",
+      "language": "ja",
+      "publishedAt": "2026-06-03T22:00:00.000Z",
+      "imageUrl": "https://image.itmedia.co.jp/business/articles/2606/04/cover_news023.jpg",
+      "excerpt": "「経理DXを進めたいが、現場の抵抗が強い」「ツールを導入しても活用が広がらない」――こうした悩みを抱える企業は少なくない。経理部門は正確性や継続性が求められるため、変革が難しい領域とされてきた。ソニーグループの経理部門は、約2年間で150件を超えるDXプロジェクトを推進し、累積1万時間以上の業務時..."
+    },
+    {
+      "title": "GitHub Copilot in Visual Studio Code, May releases",
+      "url": "https://github.blog/changelog/2026-06-03-github-copilot-in-visual-studio-code-may-releases",
+      "categoryId": "copilot",
+      "category": "Copilot公式",
+      "regionId": "global",
+      "region": "海外",
+      "source": "GitHub Changelog Copilot",
+      "sourceId": "github-changelog-copilot",
+      "sourceType": "official",
+      "language": "en",
+      "publishedAt": "2026-06-03T13:30:58.000Z",
+      "imageUrl": "https://github.blog/wp-content/uploads/2026/05/4b429841cab00e3ce8210f658ce77067892bf5dc0b7d81a1f8c21bcd533ada61-2400x1260-1.jpeg",
+      "excerpt": "VS Code continues with weekly stable releases. This changelog covers releases v1.120 through v1.123, the releases we shipped throughout May and early..."
+    },
+    {
+      "title": "Introducing new capabilities to GPT-Rosalind",
+      "url": "https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind",
+      "categoryId": "openai",
+      "category": "OpenAI公式",
+      "regionId": "global",
+      "region": "海外",
+      "source": "OpenAI News",
+      "sourceId": "openai-news",
+      "sourceType": "official",
+      "language": "en",
+      "publishedAt": "2026-06-03T13:15:00.000Z",
+      "imageUrl": "/images/news-fallback.png",
+      "excerpt": "GPT-Rosalind advances life sciences research with enhanced biological reasoning, medicinal chemistry expertise, genomics analysis, and experimental w..."
+    },
+    {
+      "title": "How Wasmer used Codex to build a Node.js runtime for the edge",
+      "url": "https://openai.com/index/wasmer",
+      "categoryId": "openai",
+      "category": "OpenAI公式",
+      "regionId": "global",
+      "region": "海外",
+      "source": "OpenAI News",
+      "sourceId": "openai-news",
+      "sourceType": "official",
+      "language": "en",
+      "publishedAt": "2026-06-03T12:00:00.000Z",
+      "imageUrl": "/images/news-fallback.png",
+      "excerpt": "See how Wasmer used Codex with GPT-5.5 to build a Node.js runtime for the edge, accelerating development 10x to 20x and shipping in weeks instead of ..."
+    },
+    {
+      "title": "A blueprint for democratic governance of frontier AI",
+      "url": "https://openai.com/index/frontier-safety-blueprint",
+      "categoryId": "openai",
+      "category": "OpenAI公式",
+      "regionId": "global",
+      "region": "海外",
+      "source": "OpenAI News",
+      "sourceId": "openai-news",
+      "sourceType": "official",
+      "language": "en",
+      "publishedAt": "2026-06-03T10:00:00.000Z",
+      "imageUrl": "/images/news-fallback.png",
+      "excerpt": "OpenAI outlines a blueprint for U.S. governance of frontier AI, proposing a federal framework for safety, resilience, and national security."
+    },
+    {
+      "title": "OpenAI public policy agenda",
+      "url": "https://openai.com/index/public-policy-agenda",
+      "categoryId": "openai",
+      "category": "OpenAI公式",
+      "regionId": "global",
+      "region": "海外",
+      "source": "OpenAI News",
+      "sourceId": "openai-news",
+      "sourceType": "official",
+      "language": "en",
+      "publishedAt": "2026-06-03T10:00:00.000Z",
+      "imageUrl": "/images/news-fallback.png",
+      "excerpt": "OpenAI outlines its public policy agenda for AI, including safety, youth protection, workforce transition, and global standards to ensure AI benefits..."
     },
     {
       "title": "What we learned mapping a year’s worth of AI-enabled cyber threats",
@@ -336,19 +456,19 @@
       "excerpt": "What we learned mapping a year’s worth of AI-enabled cyber threats"
     },
     {
-      "title": "シーメンス、AIでCFD設計探索を高速化 「Simcenter PhysicsAI」を発表",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2606/03/news013.html",
-      "categoryId": "ai-news",
-      "category": "国内ニュース",
-      "regionId": "domestic",
-      "region": "国内",
-      "source": "ITmedia AI+",
-      "sourceId": "itmedia-ai-plus",
-      "sourceType": "domestic-media",
-      "language": "ja",
+      "title": "Introducing the Services Track and Partner Hub of the Claude Partner Network",
+      "url": "https://www.anthropic.com/news/services-track-partner-hub",
+      "categoryId": "anthropic",
+      "category": "Anthropic公式",
+      "regionId": "global",
+      "region": "海外",
+      "source": "Anthropic News mirror",
+      "sourceId": "anthropic-news-mirror",
+      "sourceType": "semi-official",
+      "language": "en",
       "publishedAt": "2026-06-03T00:00:00.000Z",
-      "imageUrl": "https://image.itmedia.co.jp/mn/articles/2606/03/cover_news013.jpg",
-      "excerpt": "シーメンスは「Simcenter」の新機能として、AIを活用した設計空間探索向けソフトウェア「Simcenter PhysicsAI」を発表した。CFDのシミュレーション結果からAIサロゲートモデルを構築し、数千もの設計バリエーションを短時間で評価できる。従来は数日を要していた設計空間探索を数分に..."
+      "imageUrl": "https://www.anthropic.com/api/opengraph-illustration?name=Hand%20ShapeBuild&backgroundColor=fig",
+      "excerpt": "Introducing the Services Track and Partner Hub of the Claude Partner Network"
     },
     {
       "title": "Hugging Face、AIエージェント用語を整理 「ハーネス」「スキャフォールド」など混同されやすい概念に実用的な見取り図",
@@ -379,36 +499,6 @@
       "publishedAt": "2026-06-02T23:58:52.000Z",
       "imageUrl": "https://github.blog/wp-content/uploads/2026/06/601025857-364fc300-ae67-4fda-94f2-e8c55dbc17c8.jpg",
       "excerpt": "We have deprecated GPT-4.1 across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions), J..."
-    },
-    {
-      "title": "シャドーAIに「ログイン情報」を渡している割合は？ Oktaの実態調査で判明",
-      "url": "https://www.itmedia.co.jp/enterprise/articles/2606/03/news043.html",
-      "categoryId": "ai-news",
-      "category": "国内ニュース",
-      "regionId": "domestic",
-      "region": "国内",
-      "source": "ITmedia AI+",
-      "sourceId": "itmedia-ai-plus",
-      "sourceType": "domestic-media",
-      "language": "ja",
-      "publishedAt": "2026-06-02T23:00:00.000Z",
-      "imageUrl": "https://image.itmedia.co.jp/enterprise/articles/2606/03/cover_news043.jpg",
-      "excerpt": "ある調査によると、経営幹部の95％は「従業員は責任を持ってAIを利用している」と確信しているが、シャドーAIを使っている従業員は過半数に上るという。さらに、シャドーAIを利用している従業員の中には情報漏えいにつながりかねない「危険な使い方」をしている人も一定数いる。"
-    },
-    {
-      "title": "Microsoft、AndroidベースのAIエージェント基盤「Solara」発表 Snapdragon搭載のバッジ型端末も披露",
-      "url": "https://www.itmedia.co.jp/news/articles/2606/03/news066.html",
-      "categoryId": "ai-news",
-      "category": "国内ニュース",
-      "regionId": "domestic",
-      "region": "国内",
-      "source": "ITmedia AI+",
-      "sourceId": "itmedia-ai-plus",
-      "sourceType": "domestic-media",
-      "language": "ja",
-      "publishedAt": "2026-06-02T22:49:00.000Z",
-      "imageUrl": "https://image.itmedia.co.jp/news/articles/2606/03/cover_news066.jpg",
-      "excerpt": "Microsoftは「Build 2026」で、AIエージェントの実行に特化した新プラットフォーム「Project Solara」を発表した。OSにはWindowsではなくAOSPベースのOSを採用。Qualcommと共同開発した社員証のようなデバイスと、MediaTekと共同開発した据え置き型デ..."
     },
     {
       "title": "Expanded technical preview availability for the GitHub Copilot app",
@@ -468,7 +558,7 @@
       "language": "en",
       "publishedAt": "2026-06-02T17:27:00.000Z",
       "imageUrl": "https://github.blog/wp-content/uploads/2026/07/600252157-a2b8a3b0-bdf8-499e-bf16-8101ee2ba9ef.png",
-      "excerpt": "GitHub Copilot CLI is getting a major refresh at Microsoft Build 2026. Rubber duck, prompt scheduling, and voice input are generally available today,..."
+      "excerpt": "GitHub Copilot CLI is getting a major refresh at Microsoft Build 2026. Rubber duck and voice input are generally available today, and both prompt sch..."
     },
     {
       "title": "Cloud and local sandboxes for GitHub Copilot now in public preview",
@@ -544,21 +634,6 @@
       "publishedAt": "2026-06-02T16:30:40.000Z",
       "imageUrl": "https://github.blog/wp-content/uploads/2026/05/598610607-ac0ec869-fab6-49e7-8104-faa1f3744681.png",
       "excerpt": "With Copilot CLI now available in GitHub Copilot for JetBrains IDEs, this update centers on new capabilities for Copilot CLI sessions, while also del..."
-    },
-    {
-      "title": "Gemini models in Copilot CLI, cloud agent, and the Copilot app",
-      "url": "https://github.blog/changelog/2026-06-02-gemini-models-in-copilot-cli-cloud-agent-and-the-copilot-app",
-      "categoryId": "copilot",
-      "category": "Copilot公式",
-      "regionId": "global",
-      "region": "海外",
-      "source": "GitHub Changelog Copilot",
-      "sourceId": "github-changelog-copilot",
-      "sourceType": "official",
-      "language": "en",
-      "publishedAt": "2026-06-02T16:30:04.000Z",
-      "imageUrl": "https://github.blog/wp-content/uploads/2026/05/github-copilot-social-card-1.png",
-      "excerpt": "Two Gemini models are now available across additional GitHub Copilot surfaces. Gemini 3.1 Pro (Preview) and Gemini 3.5 Flash can now be used in: Copi..."
     },
     {
       "title": "Travelers deploys AI-powered claims countrywide with OpenAI",
@@ -696,21 +771,6 @@
       "excerpt": "OpenAI breaks ground on a 1GW data center project in Michigan as part of Stargate, building AI infrastructure to expand access, create jobs, and supp..."
     },
     {
-      "title": "OpenAI frontier models and Codex are now available on AWS",
-      "url": "https://openai.com/index/openai-frontier-models-and-codex-are-now-available-on-aws",
-      "categoryId": "openai",
-      "category": "OpenAI公式",
-      "regionId": "global",
-      "region": "海外",
-      "source": "OpenAI News",
-      "sourceId": "openai-news",
-      "sourceType": "official",
-      "language": "en",
-      "publishedAt": "2026-06-01T10:00:00.000Z",
-      "imageUrl": "/images/news-fallback.png",
-      "excerpt": "OpenAI frontier models and Codex are now generally available on AWS, giving enterprises a new path to build with OpenAI through the AWS environments,..."
-    },
-    {
       "title": "Google Store を今年夏、東京・表参道にオープン",
       "url": "https://blog.google/intl/ja-jp/products/devices-services/google-store-tokyo/",
       "categoryId": "ai-news",
@@ -801,36 +861,6 @@
       "excerpt": "Watch 9 videos showing the capabilities of Gemini Omni and Gemini 3.5, announced at Google I/O 2026."
     },
     {
-      "title": "Boston Children’s uses AI to unlock new diagnoses",
-      "url": "https://openai.com/index/boston-childrens-hospital",
-      "categoryId": "openai",
-      "category": "OpenAI公式",
-      "regionId": "global",
-      "region": "海外",
-      "source": "OpenAI News",
-      "sourceId": "openai-news",
-      "sourceType": "official",
-      "language": "en",
-      "publishedAt": "2026-05-29T12:00:00.000Z",
-      "imageUrl": "/images/news-fallback.png",
-      "excerpt": "Boston Children’s Hospital uses OpenAI technology to improve patient care, reduce operational burden, and help diagnose more than 40 rare disease cas..."
-    },
-    {
-      "title": "How Braintrust turns customer requests into code with Codex",
-      "url": "https://openai.com/index/braintrust",
-      "categoryId": "openai",
-      "category": "OpenAI公式",
-      "regionId": "global",
-      "region": "海外",
-      "source": "OpenAI News",
-      "sourceId": "openai-news",
-      "sourceType": "official",
-      "language": "en",
-      "publishedAt": "2026-05-29T12:00:00.000Z",
-      "imageUrl": "/images/news-fallback.png",
-      "excerpt": "How Braintrust engineers use Codex with GPT-5.5 to run experiments and code faster."
-    },
-    {
       "title": "【重要】「AI-SCHOLAR」サービス終了のお知らせ",
       "url": "https://ai-scholar.tech/articles/others/closed",
       "categoryId": "ai-news",
@@ -841,24 +871,9 @@
       "sourceId": "ai-scholar",
       "sourceType": "domestic-media",
       "language": "ja",
-      "publishedAt": "2026-05-29T04:51:35.000Z",
+      "publishedAt": "2026-05-29T13:51:35.000Z",
       "imageUrl": "https://aisholar.s3.ap-northeast-1.amazonaws.com/media/May2026/ai-scholar-finished-520x300.png",
       "excerpt": "【重要】「AI-SCHOLAR」サービス終了のお知らせ"
-    },
-    {
-      "title": "Strengthening societal resilience with Rosalind Biodefense",
-      "url": "https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense",
-      "categoryId": "openai",
-      "category": "OpenAI公式",
-      "regionId": "global",
-      "region": "海外",
-      "source": "OpenAI News",
-      "sourceId": "openai-news",
-      "sourceType": "official",
-      "language": "en",
-      "publishedAt": "2026-05-29T03:00:00.000Z",
-      "imageUrl": "/images/news-fallback.png",
-      "excerpt": "OpenAI launches Rosalind Biodefense, expanding trusted access to GPT-Rosalind for vetted developers and U.S. government partners advancing biodefense..."
     },
     {
       "title": "Introducing Microsoft 365 Business with Copilot: The new standard for small business",
@@ -992,7 +1007,7 @@
       "sourceType": "semi-official",
       "language": "en",
       "publishedAt": "2026-05-25T00:00:00.000Z",
-      "imageUrl": "https://www.anthropic.com/api/opengraph-illustration?name=Hand%20Quill&backgroundColor=heather",
+      "imageUrl": "/images/news-fallback.png",
       "excerpt": "Anthropic co-founder Chris Olah's remarks on Pope Leo XIV's encyclical \"Magnifica humanitas\""
     },
     {
@@ -1189,21 +1204,6 @@
       "publishedAt": "2026-05-19T00:00:00.000Z",
       "imageUrl": "/images/news-fallback.png",
       "excerpt": "KPMG integrates Claude across its core business and workforce of more than 276,000 in strategic alliance"
-    },
-    {
-      "title": "Widening the conversation on frontier AI",
-      "url": "https://www.anthropic.com/news/widening-conversation-ai",
-      "categoryId": "anthropic",
-      "category": "Anthropic公式",
-      "regionId": "global",
-      "region": "海外",
-      "source": "Anthropic News mirror",
-      "sourceId": "anthropic-news-mirror",
-      "sourceType": "semi-official",
-      "language": "en",
-      "publishedAt": "2026-05-19T00:00:00.000Z",
-      "imageUrl": "/images/news-fallback.png",
-      "excerpt": "Widening the conversation on frontier AI"
     },
     {
       "title": "Take your local GitHub sessions anywhere",
@@ -1516,7 +1516,7 @@
       "sourceId": "ai-scholar",
       "sourceType": "domestic-media",
       "language": "ja",
-      "publishedAt": "2025-10-03T14:49:06.000Z",
+      "publishedAt": "2025-10-03T23:49:06.000Z",
       "imageUrl": "https://aisholar.s3.ap-northeast-1.amazonaws.com/media/October2025/vcrl-520x300.png",
       "excerpt": "VCRL: 報酬分散で学習難易度を制御するLLM強化学習の新アプローチ"
     },
@@ -1531,7 +1531,7 @@
       "sourceId": "ai-scholar",
       "sourceType": "domestic-media",
       "language": "ja",
-      "publishedAt": "2025-10-02T11:06:28.000Z",
+      "publishedAt": "2025-10-02T20:06:28.000Z",
       "imageUrl": "https://aisholar.s3.ap-northeast-1.amazonaws.com/media/September2025/social-mae-520x300.png",
       "excerpt": "自己教師あり学習で感情・笑い・性格を読み解く社会的AI『Social-MAE』の挑戦"
     },
@@ -1546,7 +1546,7 @@
       "sourceId": "ai-scholar",
       "sourceType": "domestic-media",
       "language": "ja",
-      "publishedAt": "2025-10-01T09:14:45.000Z",
+      "publishedAt": "2025-10-01T18:14:45.000Z",
       "imageUrl": "https://aisholar.s3.ap-northeast-1.amazonaws.com/media/September2025/ongoalongoal-520x300.png",
       "excerpt": "OnGoal: LLM対話の目標を可視化する新しいチャットインターフェース"
     },
@@ -1561,7 +1561,7 @@
       "sourceId": "ai-scholar",
       "sourceType": "domestic-media",
       "language": "ja",
-      "publishedAt": "2025-09-25T09:32:42.000Z",
+      "publishedAt": "2025-09-25T18:32:42.000Z",
       "imageUrl": "https://aisholar.s3.ap-northeast-1.amazonaws.com/media/September2025/in-tool-learning-520x300.png",
       "excerpt": "LLMは記憶より検索へ：インツール学習の理論的優位性と実証"
     },
@@ -1576,7 +1576,7 @@
       "sourceId": "ai-scholar",
       "sourceType": "domestic-media",
       "language": "ja",
-      "publishedAt": "2025-09-22T08:15:37.000Z",
+      "publishedAt": "2025-09-22T17:15:37.000Z",
       "imageUrl": "https://aisholar.s3.ap-northeast-1.amazonaws.com/media/September2025/duet-pd-holistic-dpo-520x300.png",
       "excerpt": "LLMの説得耐性と柔軟性を探る！DuET-PDとHolistic DPOによる新たな評価と訓練手法"
     },
