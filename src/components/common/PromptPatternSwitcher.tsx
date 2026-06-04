@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 import { startTransition, useDeferredValue, useEffect, useState } from 'react';
 
-type PromptPattern = {
+export type PromptPattern = {
   id: string;
   title: string;
   scene: string;
@@ -37,7 +37,7 @@ const commonRules = `# 必ず守ること
 - 根拠がない断定を避ける
 - 出力形式に従う`;
 
-const patterns: PromptPattern[] = [
+export const patterns: PromptPattern[] = [
   {
     id: 'requirements',
     title: '要件定義',

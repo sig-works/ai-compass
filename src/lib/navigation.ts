@@ -17,7 +17,8 @@ export interface NavItem {
 
 export const CORE_PAGES: NavItem[] = [
   { href: '/', label: 'ホーム', description: 'トップページ' },
-  { href: '/topics/', label: 'AI News', description: '国内ニュースと海外公式を確認' }
+  { href: '/topics/', label: 'AI News', description: '国内ニュースと海外公式を確認' },
+  { href: '/chatbot/', label: 'チャットボット', description: 'AIに相談する画面' }
 ];
 
 export const GUIDE_PAGES: NavItem[] = [
