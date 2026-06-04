@@ -16,7 +16,7 @@ import {
   TestTube2,
   Workflow
 } from 'lucide-react';
-import { startTransition, useDeferredValue, useEffect, useState } from 'react';
+import { startTransition, useDeferredValue, useEffect, useRef, useState } from 'react';
 
 export type PromptPattern = {
   id: string;
@@ -822,6 +822,8 @@ const sources = [
 ];
 
 export default function PromptPatternSwitcher() {
+  const touchStartRef = useRef({ x: 0, y: 0 });
+  const touchDeltaRef = useRef({ x: 0, y: 0 });
   const [activeId, setActiveId] = useState(patterns[0].id);
   const [query, setQuery] = useState('');
   const [copyLabel, setCopyLabel] = useState('Copy');
@@ -851,6 +853,17 @@ export default function PromptPatternSwitcher() {
       setCopyLabel('Copy failed');
       window.setTimeout(() => setCopyLabel('Copy'), 1200);
     }
+  }
+
+  function selectPatternByOffset(offset: number) {
+    if (filteredPatterns.length <= 1) return;
+    const activeIndex = filteredPatterns.findIndex((pattern) => pattern.id === active.id);
+    const nextIndex = Math.min(Math.max(activeIndex + offset, 0), filteredPatterns.length - 1);
+    const nextPattern = filteredPatterns[nextIndex];
+    if (!nextPattern || nextPattern.id === active.id) return;
+
+    startTransition(() => setActiveId(nextPattern.id));
+    setCopyLabel('Copy');
   }
 
   return (
@@ -922,7 +935,29 @@ export default function PromptPatternSwitcher() {
           )}
         </aside>
 
-        <div className="min-w-0 overflow-hidden rounded-md border border-border bg-card shadow-sm">
+        <div
+          className="min-w-0 touch-pan-y overflow-hidden rounded-md border border-border bg-card shadow-sm"
+          onTouchStart={(event) => {
+            const touch = event.touches[0];
+            if (!touch) return;
+            touchStartRef.current = { x: touch.clientX, y: touch.clientY };
+            touchDeltaRef.current = { x: 0, y: 0 };
+          }}
+          onTouchMove={(event) => {
+            const touch = event.touches[0];
+            if (!touch) return;
+            touchDeltaRef.current = {
+              x: touch.clientX - touchStartRef.current.x,
+              y: touch.clientY - touchStartRef.current.y
+            };
+          }}
+          onTouchEnd={() => {
+            const { x, y } = touchDeltaRef.current;
+            const isHorizontalSwipe = Math.abs(x) >= 56 && Math.abs(x) > Math.abs(y) * 1.25;
+            if (!isHorizontalSwipe) return;
+            selectPatternByOffset(x < 0 ? 1 : -1);
+          }}
+        >
           <header className="border-b border-border p-3 sm:p-4">
             <div className="flex min-w-0 items-start gap-2.5 sm:gap-3">
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-secondary text-primary sm:h-10 sm:w-10">

@@ -1,5 +1,5 @@
 import { AlertTriangle, ArrowRight, BookOpenText, CircleDot, Search, Workflow } from 'lucide-react';
-import { startTransition, useDeferredValue, useEffect, useMemo, useState } from 'react';
+import { startTransition, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 
 import type { GlossarySection, GlossaryTerm } from '@/lib/glossary';
 
@@ -33,6 +33,8 @@ function searchableText(term: GlossaryTerm) {
 
 export default function GlossaryExplorer({ sections }: Props) {
   const allTerms = useMemo(() => flattenTerms(sections), [sections]);
+  const touchStartRef = useRef({ x: 0, y: 0 });
+  const touchDeltaRef = useRef({ x: 0, y: 0 });
   const [activeSectionId, setActiveSectionId] = useState(ALL_SECTIONS);
   const [activeTermName, setActiveTermName] = useState(allTerms[0]?.term ?? '');
   const [query, setQuery] = useState('');
@@ -60,6 +62,15 @@ export default function GlossaryExplorer({ sections }: Props) {
 
   const selectTerm = (termName: string) => {
     startTransition(() => setActiveTermName(termName));
+  };
+
+  const selectTermByOffset = (offset: number) => {
+    if (filteredTerms.length <= 1) return;
+    const activeIndex = filteredTerms.findIndex((term) => term.term === activeTerm.term);
+    const nextIndex = Math.min(Math.max(activeIndex + offset, 0), filteredTerms.length - 1);
+    const nextTerm = filteredTerms[nextIndex];
+    if (!nextTerm || nextTerm.term === activeTerm.term) return;
+    selectTerm(nextTerm.term);
   };
 
   const selectRelatedTerm = (termName: string) => {
@@ -212,18 +223,40 @@ export default function GlossaryExplorer({ sections }: Props) {
           </div>
         </aside>
 
-        <article className="grid min-h-0 min-w-0 overflow-hidden rounded-md border border-border bg-card shadow-sm xl:grid-cols-[minmax(0,1fr)_320px]">
+        <article
+          className="grid min-h-0 min-w-0 touch-pan-y overflow-hidden rounded-md border border-border bg-card shadow-sm xl:grid-cols-[minmax(0,1fr)_320px]"
+          onTouchStart={(event) => {
+            const touch = event.touches[0];
+            if (!touch) return;
+            touchStartRef.current = { x: touch.clientX, y: touch.clientY };
+            touchDeltaRef.current = { x: 0, y: 0 };
+          }}
+          onTouchMove={(event) => {
+            const touch = event.touches[0];
+            if (!touch) return;
+            touchDeltaRef.current = {
+              x: touch.clientX - touchStartRef.current.x,
+              y: touch.clientY - touchStartRef.current.y
+            };
+          }}
+          onTouchEnd={() => {
+            const { x, y } = touchDeltaRef.current;
+            const isHorizontalSwipe = Math.abs(x) >= 56 && Math.abs(x) > Math.abs(y) * 1.25;
+            if (!isHorizontalSwipe) return;
+            selectTermByOffset(x < 0 ? 1 : -1);
+          }}
+        >
           <div className="min-h-0 overflow-auto">
             <header className="border-b border-border px-3 py-3 sm:px-4">
-              <div className="flex flex-wrap items-start justify-between gap-3">
-                <div className="min-w-0 flex-1">
+              <div className="grid gap-2 sm:flex sm:flex-wrap sm:items-start sm:justify-between sm:gap-3">
+                <div className="min-w-0 sm:flex-1">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">{activeTerm.category}</p>
-                  <h2 className="mt-1 text-xl font-semibold tracking-tight sm:text-2xl">{activeTerm.term}</h2>
+                  <h2 className="mt-1 break-keep text-xl font-semibold tracking-tight sm:text-2xl">{activeTerm.term}</h2>
                   {activeTerm.aliases && activeTerm.aliases.length > 0 && (
-                    <p className="mt-1 text-sm text-muted-foreground">{activeTerm.aliases.join(' / ')}</p>
+                    <p className="mt-1 break-keep text-sm text-muted-foreground">{activeTerm.aliases.join(' / ')}</p>
                   )}
                 </div>
-                <p className="line-clamp-3 max-w-md break-words text-sm leading-6 text-foreground sm:line-clamp-none">{activeTerm.plainSummary}</p>
+                <p className="line-clamp-3 min-w-0 break-words text-sm leading-6 text-foreground sm:max-w-md sm:line-clamp-none">{activeTerm.plainSummary}</p>
               </div>
             </header>
 

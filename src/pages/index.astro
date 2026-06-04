@@ -175,7 +175,7 @@ const globalNewsTotal = newsItems.filter((item) => item.regionId === 'global').l
 
 			{newsItems.length > 0 && (
 				<>
-					<div class="grid gap-2">
+					<div class="grid gap-2 touch-pan-y" data-home-news-swipe>
 						{newsRegions.map((region) =>
 							newsCategories.map((category) => {
 								const panelItems = newsItems.filter((item) => item.regionId === region.id && item.categoryId === category.id).slice(0, 6);
@@ -259,6 +259,15 @@ const globalNewsTotal = newsItems.filter((item) => item.regionId === 'global').l
 		(() => {
 			const tabs = [...document.querySelectorAll('[data-home-news-tab]')];
 			const panels = [...document.querySelectorAll('[data-home-news-panel]')];
+			const swipeTarget = document.querySelector('[data-home-news-swipe]');
+			let activeIndex = Math.max(
+				0,
+				tabs.findIndex((tab) => tab.dataset.homeNewsRegion === defaultHomeNewsRegion && tab.dataset.homeNewsTab === defaultHomeNewsCategory)
+			);
+			let touchStartX = 0;
+			let touchStartY = 0;
+			let touchDeltaX = 0;
+			let touchDeltaY = 0;
 
 			function setHomeNewsActive(regionId, categoryId) {
 				tabs.forEach((tab) => {
@@ -272,6 +281,10 @@ const globalNewsTotal = newsItems.filter((item) => item.regionId === 'global').l
 					tab.classList.toggle('text-muted-foreground', !active);
 					tab.classList.toggle('hover:bg-muted', !active);
 					tab.classList.toggle('hover:text-foreground', !active);
+					if (active) {
+						activeIndex = tabs.indexOf(tab);
+						tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+					}
 				});
 
 				panels.forEach((panel) => {
@@ -279,11 +292,54 @@ const globalNewsTotal = newsItems.filter((item) => item.regionId === 'global').l
 				});
 			}
 
+			function setHomeNewsActiveByIndex(index) {
+				const nextIndex = Math.min(Math.max(index, 0), tabs.length - 1);
+				const tab = tabs[nextIndex];
+				if (!tab || nextIndex === activeIndex) return;
+				setHomeNewsActive(tab.dataset.homeNewsRegion || defaultHomeNewsRegion, tab.dataset.homeNewsTab || defaultHomeNewsCategory);
+			}
+
 			tabs.forEach((tab) => {
 				tab.addEventListener('click', () => {
 					setHomeNewsActive(tab.dataset.homeNewsRegion || defaultHomeNewsRegion, tab.dataset.homeNewsTab || defaultHomeNewsCategory);
 				});
 			});
+
+			if (swipeTarget && tabs.length > 1) {
+				swipeTarget.addEventListener(
+					'touchstart',
+					(event) => {
+						const touch = event.touches[0];
+						if (!touch) return;
+						touchStartX = touch.clientX;
+						touchStartY = touch.clientY;
+						touchDeltaX = 0;
+						touchDeltaY = 0;
+					},
+					{ passive: true }
+				);
+
+				swipeTarget.addEventListener(
+					'touchmove',
+					(event) => {
+						const touch = event.touches[0];
+						if (!touch) return;
+						touchDeltaX = touch.clientX - touchStartX;
+						touchDeltaY = touch.clientY - touchStartY;
+						if (Math.abs(touchDeltaX) > 16 && Math.abs(touchDeltaX) > Math.abs(touchDeltaY) * 1.25) {
+							event.preventDefault();
+						}
+					},
+					{ passive: false }
+				);
+
+				swipeTarget.addEventListener('touchend', (event) => {
+					const isHorizontalSwipe = Math.abs(touchDeltaX) >= 56 && Math.abs(touchDeltaX) > Math.abs(touchDeltaY) * 1.25;
+					if (!isHorizontalSwipe) return;
+					event.preventDefault();
+					setHomeNewsActiveByIndex(activeIndex + (touchDeltaX < 0 ? 1 : -1));
+				});
+			}
 
 			setHomeNewsActive(defaultHomeNewsRegion, defaultHomeNewsCategory);
 		})();

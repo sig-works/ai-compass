@@ -12,10 +12,12 @@ const featuredPromptIds = ['requirements', 'design', 'review', 'bug-investigatio
 function ChatMessage({
   role,
   label,
+  delayMs = 0,
   children
 }: {
   role: 'bot' | 'user';
   label: string;
+  delayMs?: number;
   children: React.ReactNode;
 }) {
   const isUser = role === 'user';
@@ -34,11 +36,12 @@ function ChatMessage({
         </div>
         <div
           className={[
-            'rounded-2xl px-3.5 py-2.5 text-sm leading-6 shadow-sm sm:text-[15px]',
+            'chat-bubble-enter rounded-2xl px-3.5 py-2.5 text-sm leading-6 shadow-sm sm:text-[15px]',
             isUser
-              ? 'rounded-br-md border border-primary/25 bg-secondary text-secondary-foreground'
-              : 'rounded-bl-md border border-border/80 bg-background text-foreground'
+              ? 'chat-bubble-enter-user rounded-br-md border border-primary/25 bg-secondary text-secondary-foreground'
+              : 'chat-bubble-enter-bot rounded-bl-md border border-border/80 bg-background text-foreground'
           ].join(' ')}
+          style={{ animationDelay: `${delayMs}ms` }}
         >
           {children}
         </div>
@@ -133,7 +136,7 @@ function PromptResult({ pattern }: { pattern: PromptPattern }) {
         </ul>
       </details>
 
-      <div className="grid gap-2 md:grid-cols-2">
+      <div className="grid items-start gap-2 md:grid-cols-2">
         <details className="group rounded-md border border-border bg-card">
           <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-3 py-2 text-sm font-semibold text-foreground">
             入力例
@@ -371,7 +374,7 @@ export default function ChatbotGuide() {
         )}
 
         {mode === 'prompt-list' && (
-          <ChatMessage role="bot" label="AI Compass">
+          <ChatMessage role="bot" label="AI Compass" delayMs={240}>
             <div className="grid gap-3">
               <div>
                 <p>使いたいプロンプトの種類を選んでください。</p>
@@ -395,7 +398,7 @@ export default function ChatbotGuide() {
         {mode === 'prompt-detail' && selectedPrompt && (
           <>
             <ChatMessage role="user" label="You">{selectedPrompt.title}</ChatMessage>
-            <ChatMessage role="bot" label="AI Compass">
+            <ChatMessage role="bot" label="AI Compass" delayMs={260}>
               <div className="grid gap-3">
                 <PromptResult pattern={selectedPrompt} />
                 <ResetButton onClick={reset} />
@@ -409,7 +412,7 @@ export default function ChatbotGuide() {
         )}
 
         {mode === 'glossary-sections' && (
-          <ChatMessage role="bot" label="AI Compass">
+          <ChatMessage role="bot" label="AI Compass" delayMs={240}>
             <div className="grid gap-3">
               <p>知りたい用語のカテゴリを選んでください。</p>
               <div className="flex flex-wrap gap-1.5">
@@ -429,7 +432,7 @@ export default function ChatbotGuide() {
         )}
 
         {mode === 'glossary-terms' && selectedSection && (
-          <ChatMessage role="bot" label="AI Compass">
+          <ChatMessage role="bot" label="AI Compass" delayMs={240}>
             <div className="grid gap-3">
               <div>
                 <p>{selectedSection.title}の用語候補です。</p>
@@ -450,7 +453,7 @@ export default function ChatbotGuide() {
         {mode === 'glossary-detail' && selectedTerm && (
           <>
             <ChatMessage role="user" label="You">{selectedTerm.term}</ChatMessage>
-            <ChatMessage role="bot" label="AI Compass">
+            <ChatMessage role="bot" label="AI Compass" delayMs={260}>
               <div className="grid gap-3">
                 <GlossaryResult term={selectedTerm} />
                 <ResetButton onClick={reset} />
@@ -464,7 +467,7 @@ export default function ChatbotGuide() {
         ))}
 
         {sentMessages.length > 0 && (
-          <ChatMessage role="bot" label="AI Compass">
+          <ChatMessage role="bot" label="AI Compass" delayMs={260}>
             <div className="grid gap-2">
               <p>いまは候補選択を中心に案内しています。下の候補から、プロンプト集か用語集を選んでください。</p>
               <div className="flex flex-wrap gap-1.5">
