@@ -1,30 +1,14 @@
-# Repository Guidelines
+# エージェント指針
 
-## Project Purpose
-- Public-facing AI knowledge hub.
-- Collect information from official sites, GitHub, and trusted articles, then reorganize it into practical, readable pages.
-- Help readers understand AI, compare tools, and find useful prompts.
-
-## Editorial Rules
-- Prioritize readability, searchability, calm layout, and practical usefulness.
-- Keep pages compact and avoid repeated navigation or unnecessary vertical space.
-- Reframe source material instead of copying it.
-- Check official or current sources before changing content that can become outdated.
-- Avoid the old "8 categories" classification approach.
-
-## Information Architecture
-- Keep guide pages and utility/reference pages visually distinct.
-- Ship search pages only when they provide real value.
-- Use the glossary as the source of truth for specialized terms and tooltips.
-
-## UI Direction
-- Base the design on a shadcn dashboard/docs hybrid.
-- Keep the interface dense, scannable, calm, and polished.
-- Use restrained transparency, blur, border highlights, and layered surfaces.
-- Support both light and dark themes intentionally.
-- Treat code and prompt blocks as documentation blocks with copy support.
-
-## Operations
-- `npm run update:llm-data` is the manual update path for LLM data.
-- LLM update workflows must remain manual with `workflow_dispatch`.
-- `npm run check:site` is the strict final check before publishing.
+- 応答は日本語で簡潔にする。完了時は変更要約と英語の Conventional Commits 形式のコミットメッセージ案を出す。
+- AI Compass は公開向けの AI 知識ハブ。初心者から実務利用者が、AI を理解し、ツールを比較し、使えるプロンプトを見つけやすい内容にする。
+- 内容は公式サイト、GitHub、信頼できる記事で確認し、コピーせず実用的に再構成する。古くなり得る情報は更新前に最新ソースを確認する。
+- 読みやすさ、検索性、落ち着いた密度、実用性を優先する。不要な余白、重複ナビ、価値の薄い検索ページ、固定の説明文や埋め草文を増やさない。
+- 専門用語とツールチップは glossary を基準にする。
+- ガイドページと比較・用語集などの参照ページは、役割が分かる見た目と情報設計を保つ。
+- UI は shadcn の dashboard/docs 寄り。既存の透明感、ぼかし、境界、階層表現を維持し、PC/スマートフォン両対応と Light/Dark 両対応を崩さない。
+- コード・プロンプト例はドキュメントブロックとして扱い、コピーしやすさを保つ。
+- GitHub Pages で動く静的構成と base path 対応を壊さない。
+- LLM データ更新は手動運用を維持する。`npm run update:llm-data` と `workflow_dispatch` を自動実行へ変えない。
+- 公開前の厳格チェックは `npm run check:site`。
+- 不要な変更や指示のない大規模リファクタリングを避け、既存設計・デザイン方針に沿って局所的に変更する。
