@@ -164,7 +164,7 @@ export default function PromptPatternSwitcher() {
   return (
     <section className="min-h-[calc(100dvh-12rem)] space-y-2 lg:space-y-3">
       <div className="grid gap-2 lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-3">
-        <aside className="lg:rounded-md lg:border lg:border-border lg:bg-card lg:p-2 lg:shadow-sm">
+        <aside className="lg:rounded-md lg:border lg:border-border lg:bg-card lg:p-2 lg:shadow-sm lg:sticky lg:top-[5rem] lg:self-start">
           <div className="relative hidden lg:block">
             <Search className="pointer-events-none absolute left-2.5 top-2.5 h-3.5 w-3.5 text-muted-foreground" />
             <input
@@ -193,7 +193,7 @@ export default function PromptPatternSwitcher() {
             </select>
           </label>
 
-          <div className="mt-2 hidden gap-1.5 lg:grid lg:grid-cols-1">
+          <div className="mt-2 hidden gap-1.5 lg:grid lg:grid-cols-1 lg:max-h-[calc(100dvh-8.5rem)] lg:overflow-y-auto">
             {filteredPatterns.map((pattern) => {
               const PatternIcon = pattern.icon;
               const selected = active.id === pattern.id;
