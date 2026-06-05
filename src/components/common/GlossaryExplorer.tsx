@@ -90,8 +90,8 @@ export default function GlossaryExplorer({ sections }: Props) {
   if (!activeTerm) return null;
 
   return (
-    <section className="grid min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-3">
-      <div className="rounded-md border border-border bg-card p-3 shadow-sm">
+    <section className="grid min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2 xl:gap-3">
+      <div className="xl:rounded-md xl:border xl:border-border xl:bg-card xl:p-3 xl:shadow-sm">
         <div className="flex flex-col gap-3 xl:flex-row xl:items-center">
           <div className="hidden min-w-0 flex-1 items-center gap-2 rounded-md border border-border bg-background px-3 py-2 xl:flex">
             <Search className="h-4 w-4 shrink-0 text-muted-foreground" />
@@ -170,7 +170,7 @@ export default function GlossaryExplorer({ sections }: Props) {
         </div>
       </div>
 
-      <div className="grid min-h-0 gap-3 xl:grid-cols-[300px_minmax(0,1fr)]">
+      <div className="grid min-h-0 gap-2 xl:grid-cols-[300px_minmax(0,1fr)] xl:gap-3">
         <aside className="hidden overflow-hidden rounded-md border border-border bg-card shadow-sm xl:block xl:min-h-0">
           <div className="flex items-center justify-between border-b border-border px-3 py-2">
             <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Terms</p>
