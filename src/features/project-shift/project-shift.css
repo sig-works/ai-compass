@@ -41,22 +41,22 @@
 }
 
 :root:not(.dark) .ps-cell--floor .ps-tile-art {
-  filter: brightness(0.97) saturate(0.9) contrast(0.97);
+  filter: brightness(1) saturate(0.84) contrast(0.95);
 }
 
 :root:not(.dark) .ps-cell--wall .ps-tile-art {
-  filter: brightness(0.95) saturate(0.84) contrast(0.96);
+  filter: brightness(1.03) saturate(0.7) contrast(0.9);
 }
 
 :root:not(.dark) .ps-cell--target .ps-tile-art {
-  filter: brightness(0.96) saturate(0.88) contrast(0.97);
+  filter: brightness(1.01) saturate(0.8) contrast(0.93);
 }
 
 :root:not(.dark) .ps-entity--box .ps-entity-art,
 :root:not(.dark) .ps-entity--box .ps-entity-art img,
 :root:not(.dark) .ps-entity--player .ps-entity-art,
 :root:not(.dark) .ps-entity--player .ps-entity-art img {
-  filter: brightness(0.96) saturate(0.9) contrast(0.97);
+  filter: brightness(1) saturate(0.86) contrast(0.95);
 }
 
 .dark .ps-board {
@@ -1037,24 +1037,37 @@
   display: grid;
   place-items: center;
   border-radius: 10px;
-  background: color-mix(in oklch, var(--ps-panel) 92%, transparent);
+  border-color: color-mix(in oklch, var(--foreground) 22%, var(--border));
+  background:
+    linear-gradient(180deg, color-mix(in oklch, var(--card) 96%, white), color-mix(in oklch, var(--card) 88%, var(--background)));
+  box-shadow:
+    0 5px 12px color-mix(in oklch, var(--foreground) 10%, transparent),
+    inset 0 1px 0 color-mix(in oklch, white 75%, transparent),
+    inset 0 -1px 0 color-mix(in oklch, var(--foreground) 14%, transparent);
   touch-action: manipulation;
   user-select: none;
 }
 
 .ps-direction-button:hover {
-  border-color: color-mix(in oklch, var(--primary) 42%, var(--border));
-  background: color-mix(in oklch, var(--primary) 8%, var(--card));
+  border-color: color-mix(in oklch, var(--primary) 38%, var(--border));
+  background:
+    linear-gradient(180deg, color-mix(in oklch, var(--primary) 10%, var(--card)), color-mix(in oklch, var(--primary) 4%, var(--background)));
+  transform: translateY(-1px);
 }
 
 .ps-direction-button:active {
-  transform: scale(0.94);
-  background: color-mix(in oklch, var(--ps-cyan) 14%, var(--ps-panel));
+  transform: translateY(1px) scale(0.98);
+  background:
+    linear-gradient(180deg, color-mix(in oklch, var(--primary) 8%, var(--card)), color-mix(in oklch, var(--primary) 14%, var(--background)));
+  box-shadow:
+    inset 0 2px 6px color-mix(in oklch, var(--foreground) 16%, transparent),
+    0 1px 3px color-mix(in oklch, var(--foreground) 10%, transparent);
 }
 
 .ps-direction-button:disabled {
   cursor: default;
-  opacity: 0.28;
+  opacity: 0.42;
+  box-shadow: none;
 }
 
 .ps-direction-button--up {
@@ -1085,6 +1098,7 @@
   display: block;
   width: 19px;
   height: 19px;
+  color: color-mix(in oklch, var(--foreground) 78%, var(--primary));
 }
 
 .ps-overlay {
@@ -1923,9 +1937,9 @@
     width: min(440px, calc(100vw - 20px));
     margin: 8px auto max(8px, env(safe-area-inset-bottom));
     padding: 8px;
-    border: 1px solid var(--ps-line);
+    border: 1px solid color-mix(in oklch, var(--foreground) 14%, var(--ps-line));
     border-radius: 16px;
-    background: color-mix(in oklch, var(--card) 95%, transparent);
+    background: color-mix(in oklch, var(--card) 94%, var(--background));
     box-shadow: 0 10px 30px color-mix(in oklch, var(--background) 48%, transparent);
     backdrop-filter: blur(16px);
   }
@@ -1970,8 +1984,39 @@
     width: 100%;
     min-width: 0;
     min-height: 58px;
-    border-color: color-mix(in oklch, var(--foreground) 24%, var(--ps-line));
-    background: color-mix(in oklch, var(--card) 88%, var(--background));
+    border-color: color-mix(in oklch, var(--foreground) 18%, var(--border));
+    background:
+      linear-gradient(180deg, color-mix(in oklch, var(--card) 98%, white), color-mix(in oklch, var(--card) 90%, var(--background)));
+    box-shadow:
+      0 7px 16px color-mix(in oklch, var(--foreground) 11%, transparent),
+      inset 0 1px 0 color-mix(in oklch, white 72%, transparent),
+      inset 0 -1px 0 color-mix(in oklch, var(--foreground) 14%, transparent);
+  }
+
+  .dark .ps-mobile-control-dock {
+    border-color: color-mix(in oklch, var(--foreground) 18%, transparent);
+    background: color-mix(in oklch, #111d27 72%, var(--card));
+    box-shadow: 0 12px 28px color-mix(in oklch, #000 38%, transparent);
+  }
+
+  .dark .ps-direction-button {
+    border-color: color-mix(in oklch, var(--foreground) 18%, transparent);
+    background:
+      linear-gradient(180deg, color-mix(in oklch, #2a3d4b 58%, var(--card)), color-mix(in oklch, #17242f 70%, var(--background)));
+    box-shadow:
+      0 8px 18px color-mix(in oklch, #000 34%, transparent),
+      inset 0 1px 0 color-mix(in oklch, white 24%, transparent),
+      inset 0 -1px 0 color-mix(in oklch, #000 28%, transparent);
+  }
+
+  .dark .ps-direction-button:hover {
+    border-color: color-mix(in oklch, var(--primary) 36%, var(--border));
+    background:
+      linear-gradient(180deg, color-mix(in oklch, var(--primary) 19%, #253846), color-mix(in oklch, var(--primary) 12%, #17222d));
+  }
+
+  .dark .ps-direction-icon {
+    color: color-mix(in oklch, var(--foreground) 72%, var(--primary));
   }
 
   .ps-direction-icon {
