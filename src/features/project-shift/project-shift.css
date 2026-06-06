@@ -23,7 +23,7 @@
   border-radius: 0;
   background: transparent;
   color: var(--ps-ink);
-  isolation: isolate;
+  isolation: auto;
 }
 
 .dark .ps-shell {
@@ -1094,18 +1094,18 @@
 
 .ps-overlay {
   position: fixed;
-  z-index: 80;
+  z-index: 120;
   inset: 0;
   display: grid;
   place-items: center;
-  padding: 18px;
+  padding: clamp(12px, 2.2vw, 20px);
   background: var(--ps-overlay-bg);
   backdrop-filter: blur(18px) saturate(75%);
 }
 
 .ps-modal {
   width: min(100%, 450px);
-  max-height: calc(100dvh - 36px);
+  max-height: min(92dvh, calc(100dvh - 24px));
   overflow: auto;
   padding: 22px;
   border: 1px solid color-mix(in oklch, var(--ps-cyan) 26%, var(--ps-line));
@@ -1116,6 +1116,9 @@
 
 .ps-modal--wide {
   width: min(100%, 780px);
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr);
+  overflow: hidden;
   border-color: var(--border);
   background: color-mix(in oklab, var(--background) 95%, transparent);
   box-shadow: 0 1px 3px color-mix(in oklch, black 12%, transparent), 0 1px 2px color-mix(in oklch, black 10%, transparent);
@@ -1312,6 +1315,14 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 9px;
+}
+
+.ps-modal--wide .ps-stage-grid {
+  max-height: min(58dvh, calc(100dvh - 240px));
+  overflow-y: auto;
+  align-content: start;
+  padding-right: 4px;
+  scrollbar-gutter: stable;
 }
 
 .ps-tier-tabs {
@@ -1721,6 +1732,14 @@
 }
 
 @media (max-width: 760px) {
+  .ps-modal--wide {
+    grid-template-rows: auto auto minmax(0, 1fr);
+  }
+
+  .ps-modal--wide .ps-stage-grid {
+    max-height: min(62dvh, calc(100dvh - 220px));
+  }
+
   .ps-mechanic-guide {
     grid-template-columns: 1fr;
   }
