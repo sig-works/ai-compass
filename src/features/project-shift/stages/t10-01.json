@@ -1,0 +1,40 @@
+{
+  "id": "t10-01",
+  "tier": 10,
+  "number": 91,
+  "name": "最終試験 導入",
+  "briefing": "全ギミックを通した盤面読解を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
+  "difficulty": 10,
+  "mechanics": [
+    "push",
+    "switch",
+    "oneWay",
+    "warp",
+    "ice"
+  ],
+  "map": [
+    "#################",
+    "#P.CG..#...#...E#",
+    "#..C.S.D>..#....#",
+    "#......#..##....#",
+    "#......#.I1#1...#",
+    "#......#..##....#",
+    "#################"
+  ],
+  "legend": {
+    "1": {
+      "kind": "warp",
+      "channel": "alpha"
+    },
+    "S": {
+      "kind": "switch",
+      "channel": "alpha",
+      "goal": true
+    },
+    "D": {
+      "kind": "door",
+      "channel": "alpha"
+    }
+  },
+  "solution": "RRLDRRDRRURRRDLDRUUURRR"
+}

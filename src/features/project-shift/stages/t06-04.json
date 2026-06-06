@@ -1,0 +1,27 @@
+{
+  "id": "t06-04",
+  "tier": 6,
+  "number": 54,
+  "name": "空間転送 反転",
+  "briefing": "プレイヤーと箱の転送経路を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
+  "difficulty": 6,
+  "mechanics": [
+    "push",
+    "warp"
+  ],
+  "map": [
+    "##########",
+    "#........#",
+    "#...G.1P.#",
+    "#...##...#",
+    "#E..#1C..#",
+    "##########"
+  ],
+  "legend": {
+    "1": {
+      "kind": "warp",
+      "channel": "alpha"
+    }
+  },
+  "solution": "DDRLLURULRLLULLDDDLL"
+}

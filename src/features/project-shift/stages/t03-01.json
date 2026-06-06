@@ -1,0 +1,32 @@
+{
+  "id": "t03-01",
+  "tier": 3,
+  "number": 21,
+  "name": "圧力回路 導入",
+  "briefing": "スイッチでドアを維持する手順を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
+  "difficulty": 3,
+  "mechanics": [
+    "push",
+    "switch"
+  ],
+  "map": [
+    "##########",
+    "#P.CG#..E#",
+    "#..C.D...#",
+    "#....#...#",
+    "#..S.#...#",
+    "##########"
+  ],
+  "legend": {
+    "S": {
+      "kind": "switch",
+      "channel": "alpha",
+      "goal": true
+    },
+    "D": {
+      "kind": "door",
+      "channel": "alpha"
+    }
+  },
+  "solution": "RRDDURRRURR"
+}

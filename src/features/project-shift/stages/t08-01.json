@@ -1,0 +1,40 @@
+{
+  "id": "t08-01",
+  "tier": 8,
+  "number": 71,
+  "name": "二重機構 導入",
+  "briefing": "複数ギミックの接続関係を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
+  "difficulty": 8,
+  "mechanics": [
+    "push",
+    "switch",
+    "oneWay",
+    "warp",
+    "ice"
+  ],
+  "map": [
+    "#################",
+    "#P.CG..#...#...E#",
+    "#..C.S.D>..#....#",
+    "#......#..##....#",
+    "#......#.I1#1...#",
+    "#......#..##....#",
+    "#################"
+  ],
+  "legend": {
+    "1": {
+      "kind": "warp",
+      "channel": "alpha"
+    },
+    "S": {
+      "kind": "switch",
+      "channel": "alpha",
+      "goal": true
+    },
+    "D": {
+      "kind": "door",
+      "channel": "alpha"
+    }
+  },
+  "solution": "RRLDRRDRRURRRDLDRUUURRR"
+}

@@ -12,9 +12,10 @@ interface Props {
   title?: string;
   description?: string;
   currentPath?: string;
+  immersive?: boolean;
 }
 
-const { title = SITE_NAME, description = SITE_DESCRIPTION, currentPath = Astro.url.pathname } = Astro.props;
+const { title = SITE_NAME, description = SITE_DESCRIPTION, currentPath = Astro.url.pathname, immersive = false } = Astro.props;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined;
 const pageUrl = canonical ?? Astro.url.toString();
 const jsonLd = {
@@ -236,8 +237,11 @@ const isActive = (href: string) => {
 				</div>
 			</header>
 
-			<div class="mx-auto grid w-full max-w-[1500px] grid-cols-1 gap-3 px-3 py-3 lg:grid-cols-[250px_minmax(0,1fr)] lg:gap-4 lg:px-5 lg:py-4">
-				<aside class="hidden lg:block">
+			<div class:list={[
+				'mx-auto grid w-full grid-cols-1 gap-3 px-3 py-3 lg:gap-4 lg:px-5 lg:py-4',
+				immersive ? 'max-w-[1800px]' : 'max-w-[1500px] lg:grid-cols-[250px_minmax(0,1fr)]'
+			]}>
+				{!immersive && <aside class="hidden lg:block">
 					<Card className="sticky top-16">
 						<ScrollArea className="max-h-[calc(100dvh-5rem)] p-2">
 							<NavigationMenu>
@@ -338,7 +342,7 @@ const isActive = (href: string) => {
 							</NavigationMenu>
 						</ScrollArea>
 					</Card>
-				</aside>
+				</aside>}
 
 				<main class="min-w-0 pb-12">
 					<slot />

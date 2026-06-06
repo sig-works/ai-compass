@@ -1,0 +1,31 @@
+{
+  "id": "t04-04",
+  "tier": 4,
+  "number": 34,
+  "name": "連動制御 反転",
+  "briefing": "箱の役割分担とドア制御を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
+  "difficulty": 4,
+  "mechanics": [
+    "push",
+    "switch"
+  ],
+  "map": [
+    "###########",
+    "#..#......#",
+    "#E.D..S.C.#",
+    "#..#G.CP..#",
+    "###########"
+  ],
+  "legend": {
+    "S": {
+      "kind": "switch",
+      "channel": "alpha",
+      "goal": true
+    },
+    "D": {
+      "kind": "door",
+      "channel": "alpha"
+    }
+  },
+  "solution": "RRULLDLLULLLL"
+}

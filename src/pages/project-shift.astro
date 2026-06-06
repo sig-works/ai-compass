@@ -1,0 +1,14 @@
+---
+import ProjectShiftGame from '@/features/project-shift/ProjectShiftGame';
+import '@/features/project-shift/project-shift.css';
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout
+  title="Project SHIFT | AI Compass"
+  description="ボックスと空間ギミックを組み合わせて出口を目指す、近未来思考型パズルゲーム Project SHIFT。"
+  currentPath="/project-shift/"
+  immersive
+>
+  <ProjectShiftGame client:load />
+</Layout>

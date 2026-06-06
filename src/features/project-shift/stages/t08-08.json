@@ -1,0 +1,42 @@
+{
+  "id": "t08-08",
+  "tier": 8,
+  "number": 78,
+  "name": "二重機構 収束",
+  "briefing": "複数ギミックの接続関係を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
+  "difficulty": 8,
+  "mechanics": [
+    "push",
+    "switch",
+    "oneWay",
+    "warp",
+    "ice"
+  ],
+  "map": [
+    "#################",
+    "#################",
+    "#....##..#......#",
+    "#...1#1I.#......#",
+    "#....##..#P.....#",
+    "#....#..<D.S.C..#",
+    "#E...#...#..GC..#",
+    "#################",
+    "#################"
+  ],
+  "legend": {
+    "1": {
+      "kind": "warp",
+      "channel": "alpha"
+    },
+    "S": {
+      "kind": "switch",
+      "channel": "alpha",
+      "goal": true
+    },
+    "D": {
+      "kind": "door",
+      "channel": "alpha"
+    }
+  },
+  "solution": "RRRRDDRLLRULLULLDLLLURULDDDLLL"
+}

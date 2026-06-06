@@ -1,0 +1,27 @@
+{
+  "id": "t06-02",
+  "tier": 6,
+  "number": 52,
+  "name": "空間転送 確認",
+  "briefing": "プレイヤーと箱の転送経路を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
+  "difficulty": 6,
+  "mechanics": [
+    "push",
+    "warp"
+  ],
+  "map": [
+    "##########",
+    "#E..#1CP.#",
+    "#...##...#",
+    "#...G.1..#",
+    "#........#",
+    "##########"
+  ],
+  "legend": {
+    "1": {
+      "kind": "warp",
+      "channel": "alpha"
+    }
+  },
+  "solution": "RLLDRDLRLLDLLUUULL"
+}

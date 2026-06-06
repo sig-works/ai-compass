@@ -6,8 +6,13 @@
     "node": ">=22.12.0"
   },
   "scripts": {
+    "generate:game-stages": "node scripts/generate-project-shift-stages.mjs",
+    "predev": "npm run generate:game-stages",
     "dev": "astro dev --host 127.0.0.1 --port 4322 --strictPort",
+    "prebuild": "npm run generate:game-stages",
     "build": "astro build",
+    "pretest:game": "npm run generate:game-stages",
+    "test:game": "node --experimental-strip-types --test src/features/project-shift/project-shift.test.ts",
     "preview": "astro preview",
     "astro": "astro",
     "update:ai-news": "node scripts/update-ai-news.mjs",

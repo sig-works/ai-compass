@@ -17,6 +17,7 @@ export interface NavItem {
 
 export const CORE_PAGES: NavItem[] = [
   { href: '/', label: 'ホーム', description: 'トップページ' },
+  { href: '/project-shift/', label: 'Project SHIFT', description: '近未来パズルゲーム' },
   { href: '/topics/', label: 'AI News', description: '国内ニュースと海外公式を確認' },
   { href: '/videos/', label: 'AI動画', description: 'YouTubeでAIを学ぶ' },
   { href: '/chatbot/', label: 'チャットボット', description: 'AIに相談する画面' }

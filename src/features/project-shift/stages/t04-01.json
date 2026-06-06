@@ -1,0 +1,31 @@
+{
+  "id": "t04-01",
+  "tier": 4,
+  "number": 31,
+  "name": "連動制御 導入",
+  "briefing": "箱の役割分担とドア制御を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
+  "difficulty": 4,
+  "mechanics": [
+    "push",
+    "switch"
+  ],
+  "map": [
+    "###########",
+    "#P..C.G#..#",
+    "#.C.S..D.E#",
+    "#......#..#",
+    "###########"
+  ],
+  "legend": {
+    "S": {
+      "kind": "switch",
+      "channel": "alpha",
+      "goal": true
+    },
+    "D": {
+      "kind": "door",
+      "channel": "alpha"
+    }
+  },
+  "solution": "DRRURRDRRRR"
+}

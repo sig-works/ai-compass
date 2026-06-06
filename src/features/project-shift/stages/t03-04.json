@@ -1,0 +1,32 @@
+{
+  "id": "t03-04",
+  "tier": 3,
+  "number": 24,
+  "name": "圧力回路 反転",
+  "briefing": "スイッチでドアを維持する手順を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
+  "difficulty": 3,
+  "mechanics": [
+    "push",
+    "switch"
+  ],
+  "map": [
+    "##########",
+    "#...#.S..#",
+    "#...#...P#",
+    "#...D.C..#",
+    "#E..#GC..#",
+    "##########"
+  ],
+  "legend": {
+    "S": {
+      "kind": "switch",
+      "channel": "alpha",
+      "goal": true
+    },
+    "D": {
+      "kind": "door",
+      "channel": "alpha"
+    }
+  },
+  "solution": "DDLLUUDLLLDLL"
+}

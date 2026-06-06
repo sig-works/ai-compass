@@ -1,6 +1,9 @@
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
 
+import { validateProjectShiftAssets } from './check-project-shift-assets.mjs';
+import { validateProjectShiftStages } from './check-project-shift-stages.mjs';
+
 const root = process.cwd();
 const targets = ['src', 'public', '.github', 'scripts', 'AGENTS.md'];
 const errors = [];
@@ -37,10 +40,13 @@ if (existsSync(join(root, 'src/pages/search.astro'))) {
 }
 
 const files = targets.flatMap((target) => listFiles(target));
+const textExtensions = new Set(['.astro', '.css', '.html', '.js', '.json', '.jsx', '.md', '.mdx', '.mjs', '.ts', '.tsx', '.txt', '.yml', '.yaml']);
 
 for (const file of files) {
   const relativePath = relative(root, file).replaceAll('\\', '/');
   if (relativePath === 'scripts/final-check.mjs') continue;
+  const extension = relativePath.slice(relativePath.lastIndexOf('.'));
+  if (!textExtensions.has(extension)) continue;
 
   const text = readFileSync(file, 'utf8');
 
@@ -62,6 +68,9 @@ for (const file of files) {
     }
   }
 }
+
+errors.push(...validateProjectShiftAssets(root));
+errors.push(...validateProjectShiftStages(root));
 
 const navigation = readFileSync(join(root, 'src/lib/navigation.ts'), 'utf8');
 if (/search/i.test(navigation)) {
