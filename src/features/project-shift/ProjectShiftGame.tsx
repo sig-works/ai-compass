@@ -490,7 +490,7 @@ export default function ProjectShiftGame() {
         <aside className="ps-info-panel">
           <div className="ps-stage-index">
             <span className="ps-eyebrow">TIER {String(stage.tier).padStart(2, '0')} / STAGE</span>
-            <strong className="ps-stage-index-value">{String(stage.number).padStart(3, '0')}<span className="ps-stage-total">/30</span></strong>
+            <strong className="ps-stage-index-value">{stage.number}<span className="ps-stage-total">/30</span></strong>
           </div>
           <div className="ps-stage-copy"><h2 className="ps-stage-name">{stage.name}</h2><p className="ps-briefing">{stage.concept}</p></div>
           <button className="ps-player-select-button" type="button" onClick={() => setAvatarSelectOpen(true)}>
@@ -507,7 +507,7 @@ export default function ProjectShiftGame() {
 
         <main className="ps-play-area">
           <div className="ps-mobile-stage-bar">
-            <div className="ps-mobile-stage-head"><strong>{String(stage.number).padStart(3, '0')}<span>/30</span></strong><small>TIER {String(stage.tier).padStart(2, '0')}</small><span>{stage.name}</span></div>
+            <div className="ps-mobile-stage-head"><strong>{stage.number}<span>/30</span></strong><small>TIER {String(stage.tier).padStart(2, '0')}</small><span>{stage.name}</span></div>
             <div className="ps-mobile-stats">
               <span>MOVES <b>{history.present.moves}</b></span><span>PUSHES <b>{history.present.pushes}</b></span>
               <span>BEST <b>{bestMoves ?? '-'}/{bestPushes ?? '-'}</b></span>
