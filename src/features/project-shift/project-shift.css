@@ -20,7 +20,7 @@
   min-height: calc(100dvh - 5rem);
   overflow: hidden;
   border: 1px solid var(--ps-line);
-  border-radius: 18px;
+  border-radius: 0;
   background:
     radial-gradient(circle at 82% 8%, color-mix(in oklch, var(--primary) 10%, transparent), transparent 34%),
     linear-gradient(135deg, color-mix(in oklch, var(--card) 92%, var(--background)), var(--background));
@@ -1137,7 +1137,16 @@
 }
 
 .ps-mobile-avatar-button {
-  display: none;
+  display: grid;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  padding: 2px;
+  place-items: center;
+  border: 1px solid var(--ps-line);
+  border-radius: 8px;
+  background: color-mix(in oklch, var(--card) 86%, transparent);
+  color: var(--foreground);
   position: relative;
 }
 
@@ -1621,7 +1630,10 @@
 
   .ps-game-header {
     min-height: 48px;
-    padding: 6px 8px;
+    padding: 6px 10px;
+    border: 1px solid var(--ps-line);
+    border-radius: 0;
+    background: color-mix(in oklch, var(--card) 86%, transparent);
     backdrop-filter: none;
   }
 
@@ -1672,9 +1684,10 @@
     align-items: center;
     justify-content: space-between;
     gap: 10px;
-    padding: 6px 8px;
-    border-bottom: 1px solid var(--ps-line);
-    background: color-mix(in oklch, var(--card) 72%, transparent);
+    padding: 6px 10px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
   }
 
   .ps-mobile-avatar-button {
