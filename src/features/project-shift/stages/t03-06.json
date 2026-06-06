@@ -2,33 +2,24 @@
   "id": "t03-06",
   "tier": 3,
   "number": 26,
-  "name": "圧力回路 連鎖",
-  "briefing": "スイッチでドアを維持する手順を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-  "difficulty": 3,
-  "mechanics": [
-    "push",
-    "switch"
-  ],
+  "name": "箱を迂回させる",
+  "difficulty": 9,
   "map": [
-    "############",
-    "############",
-    "##E..#GC..##",
-    "##...D.C..##",
-    "##...#....##",
-    "##...#.S.P##",
-    "############",
-    "############"
+    "###########",
+    "# $    .  #",
+    "#     ## .#",
+    "# # ##    #",
+    "#   ##@ # #",
+    "# ## #$   #",
+    "#         #",
+    "# $##   . #",
+    "#         #",
+    "###########"
   ],
-  "legend": {
-    "S": {
-      "kind": "switch",
-      "channel": "alpha",
-      "goal": true
-    },
-    "D": {
-      "kind": "door",
-      "channel": "alpha"
-    }
-  },
-  "solution": "UUULLDDULLLULL"
+  "boxCount": 3,
+  "minMoves": null,
+  "minPushes": 21,
+  "concept": "箱を大きく迂回させる",
+  "solution": "URRUULLLDLLLLURRRRRLDLLDDLLDDDDRULURRRRRDRUUULURRLDDRRUULLDLDDLDRR",
+  "isValidated": true
 }

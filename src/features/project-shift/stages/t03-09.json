@@ -2,35 +2,24 @@
   "id": "t03-09",
   "tier": 3,
   "number": 29,
-  "name": "圧力回路 難問",
-  "briefing": "スイッチでドアを維持する手順を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-  "difficulty": 3,
-  "mechanics": [
-    "push",
-    "switch"
-  ],
+  "name": "依存関係",
+  "difficulty": 10,
   "map": [
-    "##############",
-    "##############",
-    "##############",
-    "###..CG#..E###",
-    "###..CPD...###",
-    "###....#...###",
-    "###..S.#...###",
-    "##############",
-    "##############",
-    "##############"
+    "###########",
+    "#         #",
+    "#     # $.#",
+    "# #   ##  #",
+    "# # $   # #",
+    "# # @#    #",
+    "#. #   ## #",
+    "#.#  $ ## #",
+    "#         #",
+    "###########"
   ],
-  "legend": {
-    "S": {
-      "kind": "switch",
-      "channel": "alpha",
-      "goal": true
-    },
-    "D": {
-      "kind": "door",
-      "channel": "alpha"
-    }
-  },
-  "solution": "DLLUULRRDDURRRURR"
+  "boxCount": 3,
+  "minMoves": null,
+  "minPushes": 24,
+  "concept": "三箱の押下順序を組み立てる",
+  "solution": "LUUUURRRRDRDRDDDDDLLLLURULDLURRUULLRRDDLLUUURULLLULDDDDDUUUURRDRDDLUURULLULDDDD",
+  "isValidated": true
 }

@@ -1,44 +1,37 @@
 export type Direction = 'up' | 'down' | 'left' | 'right';
-export type EntityKind = 'player' | 'cube';
 
 export interface Position {
   x: number;
   y: number;
 }
 
-export type Tile =
-  | { kind: 'floor' }
-  | { kind: 'wall' }
-  | { kind: 'goal' }
-  | { kind: 'exit' }
-  | { kind: 'ice' }
-  | { kind: 'oneWay'; direction: Direction }
-  | { kind: 'switch'; channel: string; goal?: boolean }
-  | { kind: 'door'; channel: string }
-  | { kind: 'warp'; channel: string };
+export type Tile = { kind: 'floor' } | { kind: 'wall' } | { kind: 'target' };
 
 export interface StageDefinition {
   id: string;
   tier: number;
   number: number;
   name: string;
-  briefing: string;
   difficulty: number;
+  concept: string;
   width: number;
   height: number;
   tiles: Tile[][];
   player: Position;
-  cubes: Position[];
-  par: number;
-  mechanics: Array<'push' | 'switch' | 'oneWay' | 'warp' | 'ice'>;
+  boxes: Position[];
+  boxCount: number;
+  minMoves: number | null;
+  minPushes: number | null;
   solution: Direction[];
+  isValidated: boolean;
 }
 
 export interface GameSnapshot {
   stageId: string;
   player: Position;
-  cubes: Position[];
+  boxes: Position[];
   moves: number;
+  pushes: number;
   completed: boolean;
 }
 
@@ -46,8 +39,6 @@ export interface MoveResult {
   state: GameSnapshot;
   changed: boolean;
   pushed: boolean;
-  teleported: boolean;
-  slid: boolean;
   completedNow: boolean;
 }
 
@@ -63,9 +54,10 @@ export interface SavedRun {
 }
 
 export interface ProjectShiftSave {
-  version: 3;
+  version: 4;
   unlocked: number;
   currentStageId: string;
   bestMoves: Record<string, number>;
+  bestPushes: Record<string, number>;
   run: SavedRun | null;
 }

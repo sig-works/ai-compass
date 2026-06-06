@@ -4,3096 +4,720 @@ export const STAGE_SOURCES = [
     "id": "t01-01",
     "tier": 1,
     "number": 1,
-    "name": "基礎搬送 導入",
-    "briefing": "箱を押す順序と回り込みを扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
+    "name": "最初の一押し",
     "difficulty": 1,
-    "mechanics": [
-      "push"
-    ],
     "map": [
-      "########",
-      "#...G.E#",
-      "#.C....#",
-      "#..P...#",
-      "#......#",
-      "########"
+      "#######",
+      "#     #",
+      "# # # #",
+      "#  #  #",
+      "# @$  #",
+      "#  .  #",
+      "#######"
     ],
-    "legend": {},
-    "solution": "LULURRDRRUR"
+    "boxCount": 1,
+    "minMoves": null,
+    "minPushes": 3,
+    "concept": "箱を押して指定位置へ置く",
+    "solution": "DRRULDLLUURDLDR",
+    "isValidated": true
   },
   {
     "id": "t01-02",
     "tier": 1,
     "number": 2,
-    "name": "基礎搬送 確認",
-    "briefing": "箱を押す順序と回り込みを扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
+    "name": "回り込む一箱",
     "difficulty": 1,
-    "mechanics": [
-      "push"
-    ],
     "map": [
       "########",
-      "#E.G...#",
-      "#...PC.#",
-      "#......#",
-      "#......#",
+      "#      #",
+      "# #  # #",
+      "# ###  #",
+      "#@$    #",
+      "#  .   #",
       "########"
     ],
-    "legend": {},
-    "solution": "DRURULLDLLUL"
+    "boxCount": 1,
+    "minMoves": null,
+    "minPushes": 6,
+    "concept": "箱の後ろへ回り込む",
+    "solution": "RRRDRRUULDRDLL",
+    "isValidated": true
   },
   {
     "id": "t01-03",
     "tier": 1,
     "number": 3,
-    "name": "基礎搬送 分岐",
-    "briefing": "箱を押す順序と回り込みを扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
+    "name": "角の手前",
     "difficulty": 1,
-    "mechanics": [
-      "push"
-    ],
     "map": [
       "########",
-      "#......#",
-      "#...P..#",
-      "#.C....#",
-      "#...G.E#",
+      "# .    #",
+      "#  #   #",
+      "# ##   #",
+      "#  ##  #",
+      "# #@$  #",
+      "#      #",
       "########"
     ],
-    "legend": {},
-    "solution": "LLDLDRRURRDR"
+    "boxCount": 1,
+    "minMoves": null,
+    "minPushes": 8,
+    "concept": "角へ押す前に停止位置を考える",
+    "solution": "RDRUUUURULLL",
+    "isValidated": true
   },
   {
     "id": "t01-04",
     "tier": 1,
     "number": 4,
-    "name": "基礎搬送 反転",
-    "briefing": "箱を押す順序と回り込みを扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 1,
-    "mechanics": [
-      "push"
-    ],
+    "name": "通路を空ける",
+    "difficulty": 2,
     "map": [
       "########",
-      "#....P.#",
-      "#......#",
-      "#....C.#",
-      "#E.G...#",
+      "# $  . #",
+      "# #@$  #",
+      "# ## # #",
+      "#  #   #",
+      "# # # .#",
+      "#      #",
       "########"
     ],
-    "legend": {},
-    "solution": "DLRDRDLLULLDL"
+    "boxCount": 2,
+    "minMoves": null,
+    "minPushes": 8,
+    "concept": "通路を塞ぐ箱を動かす",
+    "solution": "URRDRDDDDLLLLLUUUUURRDRRURDLLLURDRRDD",
+    "isValidated": true
   },
   {
     "id": "t01-05",
     "tier": 1,
     "number": 5,
-    "name": "基礎搬送 迂回",
-    "briefing": "箱を押す順序と回り込みを扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 1,
-    "mechanics": [
-      "push"
-    ],
+    "name": "奥へ運ぶ",
+    "difficulty": 2,
     "map": [
-      "##########",
-      "##########",
-      "##...G.E##",
-      "##.C....##",
-      "##....P.##",
-      "##......##",
-      "##########",
-      "##########"
+      "#########",
+      "#       #",
+      "#    ##$#",
+      "# #   #.#",
+      "# #    .#",
+      "# #$#   #",
+      "#  @    #",
+      "#########"
     ],
-    "legend": {},
-    "solution": "LLLULURRDRRUR"
+    "boxCount": 2,
+    "minMoves": null,
+    "minPushes": 10,
+    "concept": "押す向きを変えながら運ぶ",
+    "solution": "RRUUULUURRRDULLLDDDRDDLLUUURUULLDRURDDLDRRR",
+    "isValidated": true
   },
   {
     "id": "t01-06",
     "tier": 1,
     "number": 6,
-    "name": "基礎搬送 連鎖",
-    "briefing": "箱を押す順序と回り込みを扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 1,
-    "mechanics": [
-      "push"
-    ],
+    "name": "二箱の入口",
+    "difficulty": 2,
     "map": [
-      "##########",
-      "##########",
-      "##E.G.P.##",
-      "##....C.##",
-      "##......##",
-      "##......##",
-      "##########",
-      "##########"
+      "########",
+      "#      #",
+      "# #  $ #",
+      "#   #@ #",
+      "# #  $ #",
+      "# # #  #",
+      "# ..   #",
+      "########"
     ],
-    "legend": {},
-    "solution": "LDDRURULLDLLUL"
+    "boxCount": 2,
+    "minMoves": null,
+    "minPushes": 11,
+    "concept": "二つの箱を別々に運ぶ",
+    "solution": "RUULDRDDLRUULDDDRDLLLRRUULRUULLDDD",
+    "isValidated": true
   },
   {
     "id": "t01-07",
     "tier": 1,
     "number": 7,
-    "name": "基礎搬送 交差",
-    "briefing": "箱を押す順序と回り込みを扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 1,
-    "mechanics": [
-      "push"
-    ],
+    "name": "押す順序",
+    "difficulty": 3,
     "map": [
-      "##########",
-      "##########",
-      "##......##",
-      "##.....P##",
-      "##.C....##",
-      "##...G.E##",
-      "##########",
-      "##########"
+      "#########",
+      "#       #",
+      "# ####  #",
+      "# @$   .#",
+      "#  $ #  #",
+      "# # # #.#",
+      "#       #",
+      "#########"
     ],
-    "legend": {},
-    "solution": "LLLLDLDRRURRDR"
+    "boxCount": 2,
+    "minMoves": null,
+    "minPushes": 11,
+    "concept": "奥の指定位置から埋める",
+    "solution": "RRLLDLDDRRUURURRLLDLLURRRLLLLUURRRRRDRDDUUULLLLLLDDRRRRR",
+    "isValidated": true
   },
   {
     "id": "t01-08",
     "tier": 1,
     "number": 8,
-    "name": "基礎搬送 収束",
-    "briefing": "箱を押す順序と回り込みを扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 1,
-    "mechanics": [
-      "push"
-    ],
+    "name": "退路の確保",
+    "difficulty": 3,
     "map": [
-      "##########",
-      "##########",
-      "##......##",
-      "##......##",
-      "##....C.##",
-      "##E.G.P.##",
-      "##########",
-      "##########"
+      "#########",
+      "#     . #",
+      "#  # #  #",
+      "#   # # #",
+      "#       #",
+      "#  ###  #",
+      "# $## # #",
+      "# +  $  #",
+      "#########"
     ],
-    "legend": {},
-    "solution": "LUURDRDLLULLDL"
+    "boxCount": 2,
+    "minMoves": null,
+    "minPushes": 12,
+    "concept": "プレイヤーの退路を残す",
+    "solution": "LUUURRRRRDRDDLLLRRRUUULLLLLDLDDRULUURRRRRDRDDLLLLRRRRUUULLLLLLDDRUUUULURRRR",
+    "isValidated": true
   },
   {
     "id": "t01-09",
     "tier": 1,
     "number": 9,
-    "name": "基礎搬送 難問",
-    "briefing": "箱を押す順序と回り込みを扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 1,
-    "mechanics": [
-      "push"
-    ],
+    "name": "狭路の交換",
+    "difficulty": 3,
     "map": [
-      "############",
-      "############",
-      "############",
-      "###...GPE###",
-      "###.C....###",
-      "###......###",
-      "###......###",
-      "############",
-      "############",
-      "############"
+      "#########",
+      "#       #",
+      "#       #",
+      "#  #  # #",
+      "#  #    #",
+      "# #  ## #",
+      "#. #$## #",
+      "# . @$  #",
+      "#########"
     ],
-    "legend": {},
-    "solution": "DDLLLULURRDRRUR"
+    "boxCount": 2,
+    "minMoves": null,
+    "minPushes": 14,
+    "concept": "狭い通路で箱の順序を変える",
+    "solution": "UUUURULLLULDDDDUUURRRDDRRRDDDLLLL",
+    "isValidated": true
   },
   {
     "id": "t01-10",
     "tier": 1,
     "number": 10,
-    "name": "基礎搬送 総合",
-    "briefing": "箱を押す順序と回り込みを扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 1,
-    "mechanics": [
-      "push"
-    ],
+    "name": "基本の卒業",
+    "difficulty": 4,
     "map": [
-      "############",
-      "############",
-      "############",
-      "###E.G...###",
-      "###....C.###",
-      "###......###",
-      "###P.....###",
-      "############",
-      "############",
-      "############"
+      "#########",
+      "# .     #",
+      "# # #   #",
+      "#@   #  #",
+      "#$###   #",
+      "# $     #",
+      "#. ##   #",
+      "#       #",
+      "#########"
     ],
-    "legend": {},
-    "solution": "URRRRURULLDLLUL"
+    "boxCount": 2,
+    "minMoves": null,
+    "minPushes": 14,
+    "concept": "基本操作を組み合わせる",
+    "solution": "UURRRRDRDDDDDLLLLULURRRRDRUUUURULLLLDDLLDD",
+    "isValidated": true
   },
   {
     "id": "t02-01",
     "tier": 2,
     "number": 11,
-    "name": "複数搬送 導入",
-    "briefing": "複数の箱とデッドロック回避を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 2,
-    "mechanics": [
-      "push"
-    ],
+    "name": "奥から手前へ",
+    "difficulty": 4,
     "map": [
-      "########",
-      "#P.....#",
-      "#.C.G..#",
-      "#.C.G.E#",
-      "#......#",
-      "########"
+      "##########",
+      "#        #",
+      "#     $  #",
+      "#    ##  #",
+      "# ##$ #  #",
+      "# ##@##  #",
+      "#   # #. #",
+      "#    .   #",
+      "##########"
     ],
-    "legend": {},
-    "solution": "DRRLLDRRDRRUR"
+    "boxCount": 2,
+    "minMoves": null,
+    "minPushes": 17,
+    "concept": "奥側の箱を先に処理する",
+    "solution": "UULUURRDRURDDDDDRDLLRUUUUUULLLLDRRRURDDDD",
+    "isValidated": true
   },
   {
     "id": "t02-02",
     "tier": 2,
     "number": 12,
-    "name": "複数搬送 確認",
-    "briefing": "複数の箱とデッドロック回避を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 2,
-    "mechanics": [
-      "push"
-    ],
+    "name": "中央を空ける",
+    "difficulty": 4,
     "map": [
-      "########",
-      "#....P.#",
-      "#..G.C.#",
-      "#E.G.C.#",
-      "#......#",
-      "########"
+      "#########",
+      "# .   .@#",
+      "# #    $#",
+      "#     # #",
+      "# $  ##.#",
+      "#  #$## #",
+      "#       #",
+      "#########"
     ],
-    "legend": {},
-    "solution": "RDLLRRDLLDLLUL"
+    "boxCount": 3,
+    "minMoves": null,
+    "minPushes": 13,
+    "concept": "中央の作業場所を確保する",
+    "solution": "LDLDLLLLDDDRRRUUUULURDDDDDLLUULURDRUURULDRRRURDLLLURDRRD",
+    "isValidated": true
   },
   {
     "id": "t02-03",
     "tier": 2,
     "number": 13,
-    "name": "複数搬送 分岐",
-    "briefing": "複数の箱とデッドロック回避を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 2,
-    "mechanics": [
-      "push"
-    ],
+    "name": "一時退避",
+    "difficulty": 5,
     "map": [
-      "########",
-      "#......#",
-      "#PC.G.E#",
-      "#.C.G..#",
-      "#......#",
-      "########"
+      "##########",
+      "#        #",
+      "#  # ##  #",
+      "# @$  #  #",
+      "# ##  ## #",
+      "#    ##  #",
+      "#.  # $$ #",
+      "#  ..    #",
+      "##########"
     ],
-    "legend": {},
-    "solution": "DDURRLLURRURRDR"
+    "boxCount": 3,
+    "minMoves": null,
+    "minPushes": 15,
+    "concept": "箱を指定位置から遠ざけて退避する",
+    "solution": "UURRRRRDDRDDLDURUUUULLLLDDDDLDDRRURDLLLUURUUUURRRDDRDDDDLLRRUULDLDLURRRDLULLDLRURRDLLURRURUUUULLLLDDLLULDDD",
+    "isValidated": true
   },
   {
     "id": "t02-04",
     "tier": 2,
     "number": 14,
-    "name": "複数搬送 反転",
-    "briefing": "複数の箱とデッドロック回避を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 2,
-    "mechanics": [
-      "push"
-    ],
+    "name": "壁際の判断",
+    "difficulty": 5,
     "map": [
-      "########",
-      "#.....P#",
-      "#E.G.C.#",
-      "#..G.C.#",
-      "#......#",
-      "########"
+      "#########",
+      "#       #",
+      "# $ #  .#",
+      "# #  ## #",
+      "#   # # #",
+      "#@$     #",
+      "# # ##$ #",
+      "#  . .  #",
+      "#########"
     ],
-    "legend": {},
-    "solution": "DDDULLRRULLULLDL"
+    "boxCount": 3,
+    "minMoves": null,
+    "minPushes": 16,
+    "concept": "壁際で押せる方向を制限する",
+    "solution": "UUURURDDDDDUULLDDDRRRLUURRRRDDLURUUUUULLLLDDDDRRRDRUUUDDLLLLULLDRURDD",
+    "isValidated": true
   },
   {
     "id": "t02-05",
     "tier": 2,
     "number": 15,
-    "name": "複数搬送 迂回",
-    "briefing": "複数の箱とデッドロック回避を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 2,
-    "mechanics": [
-      "push"
-    ],
+    "name": "交差する搬送",
+    "difficulty": 5,
     "map": [
       "##########",
-      "##########",
-      "##......##",
-      "##.C.G..##",
-      "##.C.G.E##",
-      "##P.....##",
-      "##########",
+      "#        #",
+      "#@$    # #",
+      "# # # #  #",
+      "# #    $ #",
+      "#   ###  #",
+      "#  #  #  #",
+      "#    ..* #",
       "##########"
     ],
-    "legend": {},
-    "solution": "UUUDRRLLDRRDRRUR"
+    "boxCount": 3,
+    "minMoves": null,
+    "minPushes": 16,
+    "concept": "複数の搬送経路を交差させる",
+    "solution": "URRRRRRRDDDDDDLLRUURUULDDDRDLUUULLUUULLLLDRRRURDDULLDDRRRLUUURRRDDLDDD",
+    "isValidated": true
   },
   {
     "id": "t02-06",
     "tier": 2,
     "number": 16,
-    "name": "複数搬送 連鎖",
-    "briefing": "複数の箱とデッドロック回避を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 2,
-    "mechanics": [
-      "push"
-    ],
+    "name": "指定位置を空ける",
+    "difficulty": 6,
     "map": [
       "##########",
-      "##########",
-      "##......##",
-      "##..G.C.##",
-      "##E.G.C.##",
-      "##....P.##",
-      "##########",
+      "#        #",
+      "# ### #$ #",
+      "#    #   #",
+      "#     $@ #",
+      "#   #### #",
+      "#   .. * #",
       "##########"
     ],
-    "legend": {},
-    "solution": "RUUUDLLRRDLLDLLUL"
+    "boxCount": 3,
+    "minMoves": null,
+    "minPushes": 16,
+    "concept": "置いた箱を再び動かす",
+    "solution": "URUULDRDDLLRRUULDLDLLRRURRDLLLRURUULLLLLLDDRRDDUULLUURRRRRRDDDLLLULDLDDRRLLUURDLDR",
+    "isValidated": true
   },
   {
     "id": "t02-07",
     "tier": 2,
     "number": 17,
-    "name": "複数搬送 交差",
-    "briefing": "複数の箱とデッドロック回避を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 2,
-    "mechanics": [
-      "push"
-    ],
+    "name": "先に遠ざける",
+    "difficulty": 6,
     "map": [
       "##########",
-      "##########",
-      "##......##",
-      "##.C.G.E##",
-      "##.C.GP.##",
-      "##......##",
-      "##########",
+      "#        #",
+      "#.# $  . #",
+      "# # #  $ #",
+      "# #$#    #",
+      "# #@ # # #",
+      "#.   ### #",
+      "#        #",
       "##########"
     ],
-    "legend": {},
-    "solution": "DLLLLURRLLURRURRDR"
+    "boxCount": 3,
+    "minMoves": null,
+    "minPushes": 16,
+    "concept": "先に逆方向へ押して経路を作る",
+    "solution": "DDRRRRRUUULULUULLLDDDDUUUURRDLULDDDUUULLDDDDDDRRRULLDRRRRRRUUUULLULLLDDDRDLDLLUUUUDDDDRRUL",
+    "isValidated": true
   },
   {
     "id": "t02-08",
     "tier": 2,
     "number": 18,
-    "name": "複数搬送 収束",
-    "briefing": "複数の箱とデッドロック回避を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 2,
-    "mechanics": [
-      "push"
-    ],
+    "name": "通路の共有",
+    "difficulty": 6,
     "map": [
       "##########",
-      "##########",
-      "##..P...##",
-      "##E.G.C.##",
-      "##..G.C.##",
-      "##......##",
-      "##########",
+      "# @      #",
+      "# *      #",
+      "#    #   #",
+      "#  # ### #",
+      "#     ## #",
+      "# $##$ # #",
+      "#  .   #.#",
+      "#        #",
       "##########"
     ],
-    "legend": {},
-    "solution": "RDDDRRULLRRULLULLDL"
+    "boxCount": 3,
+    "minMoves": null,
+    "minPushes": 18,
+    "concept": "二つの箱で同じ通路を使う",
+    "solution": "LDDDDDDRUUULURRLDDRRUULURRRURDLDRURDDDDUUUULLLLDDDRDRDLL",
+    "isValidated": true
   },
   {
     "id": "t02-09",
     "tier": 2,
     "number": 19,
-    "name": "複数搬送 難問",
-    "briefing": "複数の箱とデッドロック回避を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 2,
-    "mechanics": [
-      "push"
-    ],
+    "name": "押し手の確保",
+    "difficulty": 7,
     "map": [
-      "############",
-      "############",
-      "############",
-      "###......###",
-      "###.C.G..###",
-      "###.C.G.E###",
-      "###...P..###",
-      "############",
-      "############",
-      "############"
+      "##########",
+      "#      @ #",
+      "#  ### $ #",
+      "#   #    #",
+      "# #      #",
+      "# #.  ## #",
+      "# #  #   #",
+      "# #.$# $ #",
+      "# .      #",
+      "##########"
     ],
-    "legend": {},
-    "solution": "LUUULLDRRLLDRRDRRUR"
+    "boxCount": 3,
+    "minMoves": null,
+    "minPushes": 18,
+    "concept": "箱の後ろへ立つ空間を先に作る",
+    "solution": "RDDDDDLDRDLLLLLRUULUURRDLULDDUURRURUURDDRDLLLLRURUULLLLDDRD",
+    "isValidated": true
   },
   {
     "id": "t02-10",
     "tier": 2,
     "number": 20,
-    "name": "複数搬送 総合",
-    "briefing": "複数の箱とデッドロック回避を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 2,
-    "mechanics": [
-      "push"
-    ],
+    "name": "箱同士の依存",
+    "difficulty": 7,
     "map": [
-      "############",
-      "############",
-      "############",
-      "###......###",
-      "###..G.C.###",
-      "###E.G.C.###",
-      "###P.....###",
-      "############",
-      "############",
-      "############"
+      "##########",
+      "#      @ #",
+      "#  ### $ #",
+      "#   #    #",
+      "# #      #",
+      "# #.  ## #",
+      "# #  #   #",
+      "# #.$# $ #",
+      "# .      #",
+      "##########"
     ],
-    "legend": {},
-    "solution": "RUUURRRRDLLRRDLLDLLUL"
+    "boxCount": 3,
+    "minMoves": null,
+    "minPushes": 18,
+    "concept": "箱同士の依存順序を解く",
+    "solution": "RDDDDDLDRDLLLLLRUULUURRDLULDDUURRURUURDDRDLLLLRURUULLLLDDRD",
+    "isValidated": true
   },
   {
     "id": "t03-01",
     "tier": 3,
     "number": 21,
-    "name": "圧力回路 導入",
-    "briefing": "スイッチでドアを維持する手順を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 3,
-    "mechanics": [
-      "push",
-      "switch"
-    ],
+    "name": "三箱の順序",
+    "difficulty": 7,
     "map": [
       "##########",
-      "#P.CG#..E#",
-      "#..C.D...#",
-      "#....#...#",
-      "#..S.#...#",
+      "#  .   . #",
+      "# # #    #",
+      "# ##     #",
+      "#  # ##  #",
+      "#    # $ #",
+      "# ## $ @ #",
+      "# .   $  #",
       "##########"
     ],
-    "legend": {
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "RRDDURRRURR"
+    "boxCount": 3,
+    "minMoves": null,
+    "minPushes": 19,
+    "concept": "三箱を正しい順序で運ぶ",
+    "solution": "RUUULLLLDDDRLUUURRRDRDDDLLLLLRRRRUUDDLLURURUDLDDRURUULUDRDDLUURUULRDDLUULDLURULL",
+    "isValidated": true
   },
   {
     "id": "t03-02",
     "tier": 3,
     "number": 22,
-    "name": "圧力回路 確認",
-    "briefing": "スイッチでドアを維持する手順を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 3,
-    "mechanics": [
-      "push",
-      "switch"
-    ],
+    "name": "倉庫の分岐",
+    "difficulty": 8,
     "map": [
-      "##########",
-      "#E..#GCP.#",
-      "#...D.C..#",
-      "#...#....#",
-      "#...#.S..#",
-      "##########"
+      "###########",
+      "#   ..    #",
+      "#. ## ##$ #",
+      "#   #  #  #",
+      "#     #   #",
+      "#  ##     #",
+      "# #  ##   #",
+      "#$#  ##$# #",
+      "#      @  #",
+      "###########"
     ],
-    "legend": {
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "RLLDDULLLULL"
+    "boxCount": 3,
+    "minMoves": null,
+    "minPushes": 20,
+    "concept": "分岐した通路を使い分ける",
+    "solution": "RRUUUUULURULLLLDDDDRRDRRDDLLLLLLLLUUUUUDDDDDRRRRRRUURUUUUULLLDDDDRRDRUUUURULLL",
+    "isValidated": true
   },
   {
     "id": "t03-03",
     "tier": 3,
     "number": 23,
-    "name": "圧力回路 分岐",
-    "briefing": "スイッチでドアを維持する手順を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 3,
-    "mechanics": [
-      "push",
-      "switch"
-    ],
+    "name": "戻せない一手",
+    "difficulty": 8,
     "map": [
-      "##########",
-      "#..S.#...#",
-      "#....#...#",
-      "#..C.D...#",
-      "#.PCG#..E#",
-      "##########"
+      "###########",
+      "#         #",
+      "#    ## # #",
+      "# # . ### #",
+      "#   ##    #",
+      "# #@    # #",
+      "# .$    $ #",
+      "# .  # #$ #",
+      "#         #",
+      "###########"
     ],
-    "legend": {
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "LRRUUDRRRDRR"
+    "boxCount": 3,
+    "minMoves": null,
+    "minPushes": 20,
+    "concept": "不可逆な押下を見極める",
+    "solution": "RRRURRRDDLLRRDDLURULDDLLUUDDRRUULLLRRULLDRDDLLULLULUURRDDLDDRRRRUULLLRRULDLUUUDLLUURRURDLDDDDRDL",
+    "isValidated": true
   },
   {
     "id": "t03-04",
     "tier": 3,
     "number": 24,
-    "name": "圧力回路 反転",
-    "briefing": "スイッチでドアを維持する手順を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 3,
-    "mechanics": [
-      "push",
-      "switch"
-    ],
+    "name": "壁沿いの搬送",
+    "difficulty": 8,
     "map": [
-      "##########",
-      "#...#.S..#",
-      "#...#...P#",
-      "#...D.C..#",
-      "#E..#GC..#",
-      "##########"
+      "###########",
+      "#      @  #",
+      "#  ## #$  #",
+      "#   * #   #",
+      "#  # #    #",
+      "# ## #  # #",
+      "#.##      #",
+      "#  .    $ #",
+      "###########"
     ],
-    "legend": {
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "DDLLUUDLLLDLL"
+    "boxCount": 3,
+    "minMoves": null,
+    "minPushes": 21,
+    "concept": "壁沿いの箱を安全な列へ移す",
+    "solution": "LLDDLLLULDDDUURRRDDDRRRRRDLLLLLUUUURUURRDDDDURRDDLLLLDLUUU",
+    "isValidated": true
   },
   {
     "id": "t03-05",
     "tier": 3,
     "number": 25,
-    "name": "圧力回路 迂回",
-    "briefing": "スイッチでドアを維持する手順を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 3,
-    "mechanics": [
-      "push",
-      "switch"
-    ],
+    "name": "中央の渋滞",
+    "difficulty": 9,
     "map": [
-      "############",
-      "############",
-      "##..CG#..E##",
-      "##..C.D...##",
-      "##.P..#...##",
-      "##..S.#...##",
-      "############",
-      "############"
+      "###########",
+      "#  $@   . #",
+      "#   ###   #",
+      "# #    ##.#",
+      "#    ## . #",
+      "# $   ##  #",
+      "#  ##  #  #",
+      "#       $ #",
+      "#         #",
+      "###########"
     ],
-    "legend": {
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "UULRRDDURRRURR"
+    "boxCount": 3,
+    "minMoves": null,
+    "minPushes": 21,
+    "concept": "中央の箱を退避して渋滞を解く",
+    "solution": "RRRDRRDDDDDDLUUUDDLLULULULLDDLDRRRRRRRDRUUUUDDDLLLULULUULULURRRRR",
+    "isValidated": true
   },
   {
     "id": "t03-06",
     "tier": 3,
     "number": 26,
-    "name": "圧力回路 連鎖",
-    "briefing": "スイッチでドアを維持する手順を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 3,
-    "mechanics": [
-      "push",
-      "switch"
-    ],
+    "name": "箱を迂回させる",
+    "difficulty": 9,
     "map": [
-      "############",
-      "############",
-      "##E..#GC..##",
-      "##...D.C..##",
-      "##...#....##",
-      "##...#.S.P##",
-      "############",
-      "############"
+      "###########",
+      "# $    .  #",
+      "#     ## .#",
+      "# # ##    #",
+      "#   ##@ # #",
+      "# ## #$   #",
+      "#         #",
+      "# $##   . #",
+      "#         #",
+      "###########"
     ],
-    "legend": {
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "UUULLDDULLLULL"
+    "boxCount": 3,
+    "minMoves": null,
+    "minPushes": 21,
+    "concept": "箱を大きく迂回させる",
+    "solution": "URRUULLLDLLLLURRRRRLDLLDDLLDDDDRULURRRRRDRUUULURRLDDRRUULLDLDDLDRR",
+    "isValidated": true
   },
   {
     "id": "t03-07",
     "tier": 3,
     "number": 27,
-    "name": "圧力回路 交差",
-    "briefing": "スイッチでドアを維持する手順を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 3,
-    "mechanics": [
-      "push",
-      "switch"
-    ],
+    "name": "三段階の退避",
+    "difficulty": 9,
     "map": [
-      "############",
-      "############",
-      "##.PS.#...##",
-      "##....#...##",
-      "##..C.D...##",
-      "##..CG#..E##",
-      "############",
-      "############"
+      "###########",
+      "#    .  $ #",
+      "# .   ### #",
+      "# ##   ## #",
+      "#    # $  #",
+      "#     $@# #",
+      "# # #  ## #",
+      "# #    #  #",
+      "# .       #",
+      "###########"
     ],
-    "legend": {
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "DDDLRRUUDRRRDRR"
+    "boxCount": 3,
+    "minMoves": null,
+    "minPushes": 21,
+    "concept": "複数回の一時退避を組み合わせる",
+    "solution": "LDDDRRURUUUUUULLLRRRDDDLLDLDDLLLUUURURRDDDDUUURRRDDDDLLLLLLURRURULLRDDLLUULURDRUURULL",
+    "isValidated": true
   },
   {
     "id": "t03-08",
     "tier": 3,
     "number": 28,
-    "name": "圧力回路 収束",
-    "briefing": "スイッチでドアを維持する手順を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 3,
-    "mechanics": [
-      "push",
-      "switch"
-    ],
+    "name": "奥行きの罠",
+    "difficulty": 10,
     "map": [
-      "############",
-      "############",
-      "##...#.S..##",
-      "##...#P...##",
-      "##...D.C..##",
-      "##E..#GC..##",
-      "############",
-      "############"
+      "###########",
+      "#         #",
+      "# # ##  # #",
+      "#   ##  #.#",
+      "# @       #",
+      "# $ ## $  #",
+      "#  ## ##  #",
+      "#  .. ##$ #",
+      "#         #",
+      "###########"
     ],
-    "legend": {
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "RRDDRLLUUDLLLDLL"
+    "boxCount": 3,
+    "minMoves": null,
+    "minPushes": 21,
+    "concept": "奥の指定位置から逆算する",
+    "solution": "LDDDDRRRRRRRUUURULLLLLRRDRURRDDLULURDRULLUUULLLLDDLDDUURUURRRDDDLLLDLDULUURDDLDDRRLLUURDLDR",
+    "isValidated": true
   },
   {
     "id": "t03-09",
     "tier": 3,
     "number": 29,
-    "name": "圧力回路 難問",
-    "briefing": "スイッチでドアを維持する手順を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 3,
-    "mechanics": [
-      "push",
-      "switch"
-    ],
+    "name": "依存関係",
+    "difficulty": 10,
     "map": [
-      "##############",
-      "##############",
-      "##############",
-      "###..CG#..E###",
-      "###..CPD...###",
-      "###....#...###",
-      "###..S.#...###",
-      "##############",
-      "##############",
-      "##############"
+      "###########",
+      "#         #",
+      "#     # $.#",
+      "# #   ##  #",
+      "# # $   # #",
+      "# # @#    #",
+      "#. #   ## #",
+      "#.#  $ ## #",
+      "#         #",
+      "###########"
     ],
-    "legend": {
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "DLLUULRRDDURRRURR"
+    "boxCount": 3,
+    "minMoves": null,
+    "minPushes": 24,
+    "concept": "三箱の押下順序を組み立てる",
+    "solution": "LUUUURRRRDRDRDDDDDLLLLURULDLURRUULLRRDDLLUUURULLLULDDDDDUUUURRDRDDLUURULLULDDDD",
+    "isValidated": true
   },
   {
     "id": "t03-10",
     "tier": 3,
     "number": 30,
-    "name": "圧力回路 総合",
-    "briefing": "スイッチでドアを維持する手順を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 3,
-    "mechanics": [
-      "push",
-      "switch"
-    ],
-    "map": [
-      "##############",
-      "##############",
-      "##############",
-      "###E..#GC..###",
-      "###...D.C..###",
-      "###...#....###",
-      "###...#PS..###",
-      "##############",
-      "##############",
-      "##############"
-    ],
-    "legend": {
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "URRUURLLDDULLLULL"
-  },
-  {
-    "id": "t04-01",
-    "tier": 4,
-    "number": 31,
-    "name": "連動制御 導入",
-    "briefing": "箱の役割分担とドア制御を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 4,
-    "mechanics": [
-      "push",
-      "switch"
-    ],
+    "name": "倉庫番総合",
+    "difficulty": 10,
     "map": [
       "###########",
-      "#P..C.G#..#",
-      "#.C.S..D.E#",
-      "#......#..#",
+      "#         #",
+      "#     # $.#",
+      "# #   ##  #",
+      "# # $   # #",
+      "# # @#    #",
+      "#. #   ## #",
+      "#.#  $ ## #",
+      "#         #",
       "###########"
     ],
-    "legend": {
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "DRRURRDRRRR"
-  },
-  {
-    "id": "t04-02",
-    "tier": 4,
-    "number": 32,
-    "name": "連動制御 確認",
-    "briefing": "箱の役割分担とドア制御を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 4,
-    "mechanics": [
-      "push",
-      "switch"
-    ],
-    "map": [
-      "###########",
-      "#..#G.C.P.#",
-      "#E.D..S.C.#",
-      "#..#......#",
-      "###########"
-    ],
-    "legend": {
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "RDLLULLDLLLL"
-  },
-  {
-    "id": "t04-03",
-    "tier": 4,
-    "number": 33,
-    "name": "連動制御 分岐",
-    "briefing": "箱の役割分担とドア制御を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 4,
-    "mechanics": [
-      "push",
-      "switch"
-    ],
-    "map": [
-      "###########",
-      "#......#..#",
-      "#.C.S..D.E#",
-      "#.P.C.G#..#",
-      "###########"
-    ],
-    "legend": {
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "LURRDRRURRRR"
-  },
-  {
-    "id": "t04-04",
-    "tier": 4,
-    "number": 34,
-    "name": "連動制御 反転",
-    "briefing": "箱の役割分担とドア制御を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 4,
-    "mechanics": [
-      "push",
-      "switch"
-    ],
-    "map": [
-      "###########",
-      "#..#......#",
-      "#E.D..S.C.#",
-      "#..#G.CP..#",
-      "###########"
-    ],
-    "legend": {
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "RRULLDLLULLLL"
-  },
-  {
-    "id": "t04-05",
-    "tier": 4,
-    "number": 35,
-    "name": "連動制御 迂回",
-    "briefing": "箱の役割分担とドア制御を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 4,
-    "mechanics": [
-      "push",
-      "switch"
-    ],
-    "map": [
-      "#############",
-      "#############",
-      "##...C.G#..##",
-      "##.CPS..D.E##",
-      "##......#..##",
-      "#############",
-      "#############"
-    ],
-    "legend": {
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "ULLDRRURRDRRRR"
-  },
-  {
-    "id": "t04-06",
-    "tier": 4,
-    "number": 36,
-    "name": "連動制御 連鎖",
-    "briefing": "箱の役割分担とドア制御を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 4,
-    "mechanics": [
-      "push",
-      "switch"
-    ],
-    "map": [
-      "#############",
-      "#############",
-      "##..#G.C...##",
-      "##E.D..S.C.##",
-      "##..#...P..##",
-      "#############",
-      "#############"
-    ],
-    "legend": {
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "UURRDLLULLDLLLL"
-  },
-  {
-    "id": "t04-07",
-    "tier": 4,
-    "number": 37,
-    "name": "連動制御 交差",
-    "briefing": "箱の役割分担とドア制御を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 4,
-    "mechanics": [
-      "push",
-      "switch"
-    ],
-    "map": [
-      "#############",
-      "#############",
-      "##....P.#..##",
-      "##.C.S..D.E##",
-      "##...C.G#..##",
-      "#############",
-      "#############"
-    ],
-    "legend": {
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "LLDDLLURRDRRURRRR"
-  },
-  {
-    "id": "t04-08",
-    "tier": 4,
-    "number": 38,
-    "name": "連動制御 収束",
-    "briefing": "箱の役割分担とドア制御を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 4,
-    "mechanics": [
-      "push",
-      "switch"
-    ],
-    "map": [
-      "#############",
-      "#############",
-      "##..#P.....##",
-      "##E.D..S.C.##",
-      "##..#G.C...##",
-      "#############",
-      "#############"
-    ],
-    "legend": {
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "RRRDDRRULLDLLULLLL"
-  },
-  {
-    "id": "t04-09",
-    "tier": 4,
-    "number": 39,
-    "name": "連動制御 難問",
-    "briefing": "箱の役割分担とドア制御を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 4,
-    "mechanics": [
-      "push",
-      "switch"
-    ],
-    "map": [
-      "###############",
-      "###############",
-      "###############",
-      "###...CPG#..###",
-      "###.C.S..D.E###",
-      "###......#..###",
-      "###############",
-      "###############",
-      "###############"
-    ],
-    "legend": {
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "DDLLUULLDRRURRDRRRR"
-  },
-  {
-    "id": "t04-10",
-    "tier": 4,
-    "number": 40,
-    "name": "連動制御 総合",
-    "briefing": "箱の役割分担とドア制御を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 4,
-    "mechanics": [
-      "push",
-      "switch"
-    ],
-    "map": [
-      "###############",
-      "###############",
-      "###############",
-      "###..#G.C...###",
-      "###E.DP.S.C.###",
-      "###..#......###",
-      "###############",
-      "###############",
-      "###############"
-    ],
-    "legend": {
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "DRRRUURRDLLULLDLLLL"
-  },
-  {
-    "id": "t05-01",
-    "tier": 5,
-    "number": 41,
-    "name": "一方通行 導入",
-    "briefing": "戻れない経路の先読みを扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 5,
-    "mechanics": [
-      "push",
-      "oneWay"
-    ],
-    "map": [
-      "##########",
-      "#P.CG#...#",
-      "#....>>>E#",
-      "#....#...#",
-      "##########"
-    ],
-    "legend": {},
-    "solution": "RRDRRRRR"
-  },
-  {
-    "id": "t05-02",
-    "tier": 5,
-    "number": 42,
-    "name": "一方通行 確認",
-    "briefing": "戻れない経路の先読みを扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 5,
-    "mechanics": [
-      "push",
-      "oneWay"
-    ],
-    "map": [
-      "##########",
-      "#...#GCP.#",
-      "#E<<<....#",
-      "#...#....#",
-      "##########"
-    ],
-    "legend": {},
-    "solution": "RLLDLLLLL"
-  },
-  {
-    "id": "t05-03",
-    "tier": 5,
-    "number": 43,
-    "name": "一方通行 分岐",
-    "briefing": "戻れない経路の先読みを扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 5,
-    "mechanics": [
-      "push",
-      "oneWay"
-    ],
-    "map": [
-      "##########",
-      "#....#...#",
-      "#....>>>E#",
-      "#.PCG#...#",
-      "##########"
-    ],
-    "legend": {},
-    "solution": "LRRURRRRR"
-  },
-  {
-    "id": "t05-04",
-    "tier": 5,
-    "number": 44,
-    "name": "一方通行 反転",
-    "briefing": "戻れない経路の先読みを扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 5,
-    "mechanics": [
-      "push",
-      "oneWay"
-    ],
-    "map": [
-      "##########",
-      "#...#...P#",
-      "#E<<<....#",
-      "#...#GC..#",
-      "##########"
-    ],
-    "legend": {},
-    "solution": "DDLLULLLLL"
-  },
-  {
-    "id": "t05-05",
-    "tier": 5,
-    "number": 45,
-    "name": "一方通行 迂回",
-    "briefing": "戻れない経路の先読みを扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 5,
-    "mechanics": [
-      "push",
-      "oneWay"
-    ],
-    "map": [
-      "##############",
-      "##############",
-      "##...C..G#..##",
-      "##...#..>...##",
-      "##...#..#E..##",
-      "##...P......##",
-      "##############",
-      "##############"
-    ],
-    "legend": {},
-    "solution": "LUUULLRRRRRDRRD"
-  },
-  {
-    "id": "t05-06",
-    "tier": 5,
-    "number": 46,
-    "name": "一方通行 連鎖",
-    "briefing": "戻れない経路の先読みを扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 5,
-    "mechanics": [
-      "push",
-      "oneWay"
-    ],
-    "map": [
-      "##############",
-      "##############",
-      "##..#G..C...##",
-      "##...<.P#...##",
-      "##..E#..#...##",
-      "##..........##",
-      "##############",
-      "##############"
-    ],
-    "legend": {},
-    "solution": "DDRRUUURRLLLLLDLLD"
-  },
-  {
-    "id": "t05-07",
-    "tier": 5,
-    "number": 47,
-    "name": "一方通行 交差",
-    "briefing": "戻れない経路の先読みを扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 5,
-    "mechanics": [
-      "push",
-      "oneWay"
-    ],
-    "map": [
-      "##############",
-      "##############",
-      "##..........##",
-      "##...#..#E..##",
-      "##...#.P>...##",
-      "##...C..G#..##",
-      "##############",
-      "##############"
-    ],
-    "legend": {},
-    "solution": "UULLLDDDLLRRRRRURRU"
-  },
-  {
-    "id": "t05-08",
-    "tier": 5,
-    "number": 48,
-    "name": "一方通行 収束",
-    "briefing": "戻れない経路の先読みを扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 5,
-    "mechanics": [
-      "push",
-      "oneWay"
-    ],
-    "map": [
-      "##############",
-      "##############",
-      "##P.........##",
-      "##..E#..#...##",
-      "##...<..#...##",
-      "##..#G..C...##",
-      "##############",
-      "##############"
-    ],
-    "legend": {},
-    "solution": "RRRRRRRDDDRRLLLLLULLU"
-  },
-  {
-    "id": "t05-09",
-    "tier": 5,
-    "number": 49,
-    "name": "一方通行 難問",
-    "briefing": "戻れない経路の先読みを扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 5,
-    "mechanics": [
-      "push",
-      "oneWay"
-    ],
-    "map": [
-      "################",
-      "################",
-      "################",
-      "###...C..G#P.###",
-      "###...#..>...###",
-      "###...#..#E..###",
-      "###..........###",
-      "################",
-      "################",
-      "################"
-    ],
-    "legend": {},
-    "solution": "DDDLLLLLLUUULLRRRRRDRRD"
-  },
-  {
-    "id": "t05-10",
-    "tier": 5,
-    "number": 50,
-    "name": "一方通行 総合",
-    "briefing": "戻れない経路の先読みを扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 5,
-    "mechanics": [
-      "push",
-      "oneWay"
-    ],
-    "map": [
-      "################",
-      "################",
-      "################",
-      "###P.#G..C...###",
-      "###...<..#...###",
-      "###..E#..#...###",
-      "###..........###",
-      "################",
-      "################",
-      "################"
-    ],
-    "legend": {},
-    "solution": "DDDRRRRRRRUUURRLLLLLDLLD"
-  },
-  {
-    "id": "t06-01",
-    "tier": 6,
-    "number": 51,
-    "name": "空間転送 導入",
-    "briefing": "プレイヤーと箱の転送経路を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 6,
-    "mechanics": [
-      "push",
-      "warp"
-    ],
-    "map": [
-      "##########",
-      "#P.C1#..E#",
-      "#...##...#",
-      "#..1.G...#",
-      "#........#",
-      "##########"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      }
-    },
-    "solution": "RRDLDRLRRDRRUUURR"
-  },
-  {
-    "id": "t06-02",
-    "tier": 6,
-    "number": 52,
-    "name": "空間転送 確認",
-    "briefing": "プレイヤーと箱の転送経路を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 6,
-    "mechanics": [
-      "push",
-      "warp"
-    ],
-    "map": [
-      "##########",
-      "#E..#1CP.#",
-      "#...##...#",
-      "#...G.1..#",
-      "#........#",
-      "##########"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      }
-    },
-    "solution": "RLLDRDLRLLDLLUUULL"
-  },
-  {
-    "id": "t06-03",
-    "tier": 6,
-    "number": 53,
-    "name": "空間転送 分岐",
-    "briefing": "プレイヤーと箱の転送経路を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 6,
-    "mechanics": [
-      "push",
-      "warp"
-    ],
-    "map": [
-      "##########",
-      "#........#",
-      "#P.1.G...#",
-      "#...##...#",
-      "#..C1#..E#",
-      "##########"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      }
-    },
-    "solution": "DDRRULURLRRURRDDDRR"
-  },
-  {
-    "id": "t06-04",
-    "tier": 6,
-    "number": 54,
-    "name": "空間転送 反転",
-    "briefing": "プレイヤーと箱の転送経路を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 6,
-    "mechanics": [
-      "push",
-      "warp"
-    ],
-    "map": [
-      "##########",
-      "#........#",
-      "#...G.1P.#",
-      "#...##...#",
-      "#E..#1C..#",
-      "##########"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      }
-    },
-    "solution": "DDRLLURULRLLULLDDDLL"
-  },
-  {
-    "id": "t06-05",
-    "tier": 6,
-    "number": 55,
-    "name": "空間転送 迂回",
-    "briefing": "プレイヤーと箱の転送経路を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 6,
-    "mechanics": [
-      "push",
-      "warp"
-    ],
-    "map": [
-      "##############",
-      "##############",
-      "##...C1#..GE##",
-      "##....##....##",
-      "##..1PC.G...##",
-      "##..........##",
-      "##############",
-      "##############"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      }
-    },
-    "solution": "ULULLRRRDDRRRRDLLLLLLURLRRRRDRRRUURU"
-  },
-  {
-    "id": "t06-06",
-    "tier": 6,
-    "number": 56,
-    "name": "空間転送 連鎖",
-    "briefing": "プレイヤーと箱の転送経路を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 6,
-    "mechanics": [
-      "push",
-      "warp"
-    ],
-    "map": [
-      "##############",
-      "##############",
-      "##EG..#1C...##",
-      "##....##....##",
-      "##...G.C.1..##",
-      "##....P.....##",
-      "##############",
-      "##############"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      }
-    },
-    "solution": "RRUURURRLLLDDLLLLDRRRRRRULRLLLLDLLLUULU"
-  },
-  {
-    "id": "t06-07",
-    "tier": 6,
-    "number": 57,
-    "name": "空間転送 交差",
-    "briefing": "プレイヤーと箱の転送経路を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 6,
-    "mechanics": [
-      "push",
-      "warp"
-    ],
-    "map": [
-      "##############",
-      "##############",
-      "##........P.##",
-      "##..1.C.G...##",
-      "##....##....##",
-      "##...C1#..GE##",
-      "##############",
-      "##############"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      }
-    },
-    "solution": "LLLLLDDLDLLRRRUURRRRULLLLLLDRLRRRRURRRDDRD"
-  },
-  {
-    "id": "t06-08",
-    "tier": 6,
-    "number": 58,
-    "name": "空間転送 収束",
-    "briefing": "プレイヤーと箱の転送経路を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 6,
-    "mechanics": [
-      "push",
-      "warp"
-    ],
-    "map": [
-      "##############",
-      "##############",
-      "##..........##",
-      "##.P.G.C.1..##",
-      "##....##....##",
-      "##EG..#1C...##",
-      "##############",
-      "##############"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      }
-    },
-    "solution": "URRRRRDDRDRRLLLUULLLLURRRRRRDLRLLLLULLLDDLD"
-  },
-  {
-    "id": "t06-09",
-    "tier": 6,
-    "number": 59,
-    "name": "空間転送 難問",
-    "briefing": "プレイヤーと箱の転送経路を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 6,
-    "mechanics": [
-      "push",
-      "warp"
-    ],
-    "map": [
-      "################",
-      "################",
-      "################",
-      "###...C1#..GE###",
-      "###....##..P.###",
-      "###..1.C.G...###",
-      "###..........###",
-      "################",
-      "################",
-      "################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      }
-    },
-    "solution": "DDLLLLLUULULLRRRDDRRRRDLLLLLLURLRRRRDRRRUURU"
-  },
-  {
-    "id": "t06-10",
-    "tier": 6,
-    "number": 60,
-    "name": "空間転送 総合",
-    "briefing": "プレイヤーと箱の転送経路を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 6,
-    "mechanics": [
-      "push",
-      "warp"
-    ],
-    "map": [
-      "################",
-      "################",
-      "################",
-      "###EG..#1C...###",
-      "###P...##....###",
-      "###...G.C.1..###",
-      "###..........###",
-      "################",
-      "################",
-      "################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      }
-    },
-    "solution": "DDRRRRRRUURURRLLLDDLLLLDRRRRRRULRLLLLDLLLUULU"
-  },
-  {
-    "id": "t07-01",
-    "tier": 7,
-    "number": 61,
-    "name": "氷床制御 導入",
-    "briefing": "停止位置から逆算する移動を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 7,
-    "mechanics": [
-      "push",
-      "ice"
-    ],
-    "map": [
-      "############",
-      "#P..CIII.GE#",
-      "#..........#",
-      "############"
-    ],
-    "legend": {},
-    "solution": "RRRRDRRU"
-  },
-  {
-    "id": "t07-02",
-    "tier": 7,
-    "number": 62,
-    "name": "氷床制御 確認",
-    "briefing": "停止位置から逆算する移動を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 7,
-    "mechanics": [
-      "push",
-      "ice"
-    ],
-    "map": [
-      "############",
-      "#EG.IIIC.P.#",
-      "#..........#",
-      "############"
-    ],
-    "legend": {},
-    "solution": "RLLLLDLLU"
-  },
-  {
-    "id": "t07-03",
-    "tier": 7,
-    "number": 63,
-    "name": "氷床制御 分岐",
-    "briefing": "停止位置から逆算する移動を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 7,
-    "mechanics": [
-      "push",
-      "ice"
-    ],
-    "map": [
-      "############",
-      "#..........#",
-      "#.P.CIII.GE#",
-      "############"
-    ],
-    "legend": {},
-    "solution": "LRRRRURRD"
-  },
-  {
-    "id": "t07-04",
-    "tier": 7,
-    "number": 64,
-    "name": "氷床制御 反転",
-    "briefing": "停止位置から逆算する移動を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 7,
-    "mechanics": [
-      "push",
-      "ice"
-    ],
-    "map": [
-      "############",
-      "#..........#",
-      "#EG.IIICP..#",
-      "############"
-    ],
-    "legend": {},
-    "solution": "RRLLLLULLD"
-  },
-  {
-    "id": "t07-05",
-    "tier": 7,
-    "number": 65,
-    "name": "氷床制御 迂回",
-    "briefing": "停止位置から逆算する移動を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 7,
-    "mechanics": [
-      "push",
-      "ice"
-    ],
-    "map": [
-      "##############",
-      "##############",
-      "##...CIII.GE##",
-      "##..P.......##",
-      "##############",
-      "##############"
-    ],
-    "legend": {},
-    "solution": "ULLRRRRDRRU"
-  },
-  {
-    "id": "t07-06",
-    "tier": 7,
-    "number": 66,
-    "name": "氷床制御 連鎖",
-    "briefing": "停止位置から逆算する移動を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 7,
-    "mechanics": [
-      "push",
-      "ice"
-    ],
-    "map": [
-      "##############",
-      "##############",
-      "##EG.IIIC...##",
-      "##.....P....##",
-      "##############",
-      "##############"
-    ],
-    "legend": {},
-    "solution": "RRURRLLLLDLLU"
-  },
-  {
-    "id": "t07-07",
-    "tier": 7,
-    "number": 67,
-    "name": "氷床制御 交差",
-    "briefing": "停止位置から逆算する移動を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 7,
-    "mechanics": [
-      "push",
-      "ice"
-    ],
-    "map": [
-      "##############",
-      "##############",
-      "##......P...##",
-      "##...CIII.GE##",
-      "##############",
-      "##############"
-    ],
-    "legend": {},
-    "solution": "LLLLDLLRRRRURRD"
-  },
-  {
-    "id": "t07-08",
-    "tier": 7,
-    "number": 68,
-    "name": "氷床制御 収束",
-    "briefing": "停止位置から逆算する移動を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 7,
-    "mechanics": [
-      "push",
-      "ice"
-    ],
-    "map": [
-      "##############",
-      "##############",
-      "##..P.......##",
-      "##EG.IIIC...##",
-      "##############",
-      "##############"
-    ],
-    "legend": {},
-    "solution": "RRRRRDRRLLLLULLD"
-  },
-  {
-    "id": "t07-09",
-    "tier": 7,
-    "number": 69,
-    "name": "氷床制御 難問",
-    "briefing": "停止位置から逆算する移動を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 7,
-    "mechanics": [
-      "push",
-      "ice"
-    ],
-    "map": [
-      "################",
-      "################",
-      "################",
-      "###...CIII.GE###",
-      "###........P.###",
-      "################",
-      "################",
-      "################"
-    ],
-    "legend": {},
-    "solution": "LLLLLLULLRRRRDRRU"
-  },
-  {
-    "id": "t07-10",
-    "tier": 7,
-    "number": 70,
-    "name": "氷床制御 総合",
-    "briefing": "停止位置から逆算する移動を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 7,
-    "mechanics": [
-      "push",
-      "ice"
-    ],
-    "map": [
-      "################",
-      "################",
-      "################",
-      "###EG.IIIC...###",
-      "###P.........###",
-      "################",
-      "################",
-      "################"
-    ],
-    "legend": {},
-    "solution": "RRRRRRRURRLLLLDLLU"
-  },
-  {
-    "id": "t08-01",
-    "tier": 8,
-    "number": 71,
-    "name": "二重機構 導入",
-    "briefing": "複数ギミックの接続関係を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 8,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#P.CG..#...#...E#",
-      "#..C.S.D>..#....#",
-      "#......#..##....#",
-      "#......#.I1#1...#",
-      "#......#..##....#",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "RRLDRRDRRURRRDLDRUUURRR"
-  },
-  {
-    "id": "t08-02",
-    "tier": 8,
-    "number": 72,
-    "name": "二重機構 確認",
-    "briefing": "複数ギミックの接続関係を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 8,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#E...#...#..GCP.#",
-      "#....#..<D.S.C..#",
-      "#....##..#......#",
-      "#...1#1I.#......#",
-      "#....##..#......#",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "RLLRDLLDLLULLLDRDLUUULLL"
-  },
-  {
-    "id": "t08-03",
-    "tier": 8,
-    "number": 73,
-    "name": "二重機構 分岐",
-    "briefing": "複数ギミックの接続関係を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 8,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#......#..##....#",
-      "#......#.I1#1...#",
-      "#......#..##....#",
-      "#.PC.S.D>..#....#",
-      "#..CG..#...#...E#",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "DLRRLURRURRDRRRULURDDDRRR"
-  },
-  {
-    "id": "t08-04",
-    "tier": 8,
-    "number": 74,
-    "name": "二重機構 反転",
-    "briefing": "複数ギミックの接続関係を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 8,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#....##..#.....P#",
-      "#...1#1I.#......#",
-      "#....##..#......#",
-      "#....#..<D.S.C..#",
-      "#E...#...#..GC..#",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "DDDDLLRULLULLDLLLURULDDDLLL"
-  },
-  {
-    "id": "t08-05",
-    "tier": 8,
-    "number": 75,
-    "name": "二重機構 迂回",
-    "briefing": "複数ギミックの接続関係を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 8,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#################",
-      "#..CG..#...#...E#",
-      "#..C.S.D>..#....#",
-      "#...P..#..##....#",
-      "#......#.I1#1...#",
-      "#......#..##....#",
-      "#################",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "LLUULRRLDRRDRRURRRDLDRUUURRR"
-  },
-  {
-    "id": "t08-06",
-    "tier": 8,
-    "number": 76,
-    "name": "二重機構 連鎖",
-    "briefing": "複数ギミックの接続関係を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 8,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#################",
-      "#E...#...#..GC..#",
-      "#....#..<D.SPC..#",
-      "#....##..#......#",
-      "#...1#1I.#......#",
-      "#....##..#......#",
-      "#################",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "DRRUURLLRDLLDLLULLLDRDLUUULLL"
-  },
-  {
-    "id": "t08-07",
-    "tier": 8,
-    "number": 77,
-    "name": "二重機構 交差",
-    "briefing": "複数ギミックの接続関係を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 8,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#################",
-      "#......#..##....#",
-      "#......#.I1#1...#",
-      "#......#..##....#",
-      "#..CPS.D>..#....#",
-      "#..CG..#...#...E#",
-      "#################",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "ULLDDLRRLURRURRDRRRULURDDDRRR"
-  },
-  {
-    "id": "t08-08",
-    "tier": 8,
-    "number": 78,
-    "name": "二重機構 収束",
-    "briefing": "複数ギミックの接続関係を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 8,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#################",
-      "#....##..#......#",
-      "#...1#1I.#......#",
-      "#....##..#P.....#",
-      "#....#..<D.S.C..#",
-      "#E...#...#..GC..#",
-      "#################",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "RRRRDDRLLRULLULLDLLLURULDDDLLL"
-  },
-  {
-    "id": "t08-09",
-    "tier": 8,
-    "number": 79,
-    "name": "二重機構 難問",
-    "briefing": "複数ギミックの接続関係を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 8,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#################",
-      "#################",
-      "#..CG..#...#...E#",
-      "#..C.S.D>..#....#",
-      "#......#..##....#",
-      "#......#.I1#1...#",
-      "#....P.#..##....#",
-      "#################",
-      "#################",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "UULLLUULRRLDRRDRRURRRDLDRUUURRR"
-  },
-  {
-    "id": "t08-10",
-    "tier": 8,
-    "number": 80,
-    "name": "二重機構 総合",
-    "briefing": "複数ギミックの接続関係を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 8,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#################",
-      "#################",
-      "#E...#...#.PGC..#",
-      "#....#..<D.S.C..#",
-      "#....##..#......#",
-      "#...1#1I.#......#",
-      "#....##..#......#",
-      "#################",
-      "#################",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "LDDRRRRUURLLRDLLDLLULLLDRDLUUULLL"
-  },
-  {
-    "id": "t09-01",
-    "tier": 9,
-    "number": 81,
-    "name": "複合回路 導入",
-    "briefing": "不可逆操作を含む複合問題を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 9,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#P.CG..#...#...E#",
-      "#..C.S.D>..#....#",
-      "#......#..##....#",
-      "#......#.I1#1...#",
-      "#......#..##....#",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "RRLDRRDRRURRRDLDRUUURRR"
-  },
-  {
-    "id": "t09-02",
-    "tier": 9,
-    "number": 82,
-    "name": "複合回路 確認",
-    "briefing": "不可逆操作を含む複合問題を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 9,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#E...#...#..GCP.#",
-      "#....#..<D.S.C..#",
-      "#....##..#......#",
-      "#...1#1I.#......#",
-      "#....##..#......#",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "RLLRDLLDLLULLLDRDLUUULLL"
-  },
-  {
-    "id": "t09-03",
-    "tier": 9,
-    "number": 83,
-    "name": "複合回路 分岐",
-    "briefing": "不可逆操作を含む複合問題を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 9,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#......#..##....#",
-      "#......#.I1#1...#",
-      "#......#..##....#",
-      "#.PC.S.D>..#....#",
-      "#..CG..#...#...E#",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "DLRRLURRURRDRRRULURDDDRRR"
-  },
-  {
-    "id": "t09-04",
-    "tier": 9,
-    "number": 84,
-    "name": "複合回路 反転",
-    "briefing": "不可逆操作を含む複合問題を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 9,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#....##..#.....P#",
-      "#...1#1I.#......#",
-      "#....##..#......#",
-      "#....#..<D.S.C..#",
-      "#E...#...#..GC..#",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "DDDDLLRULLULLDLLLURULDDDLLL"
-  },
-  {
-    "id": "t09-05",
-    "tier": 9,
-    "number": 85,
-    "name": "複合回路 迂回",
-    "briefing": "不可逆操作を含む複合問題を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 9,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#################",
-      "#..CG..#...#...E#",
-      "#..C.S.D>..#....#",
-      "#...P..#..##....#",
-      "#......#.I1#1...#",
-      "#......#..##....#",
-      "#################",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "LLUULRRLDRRDRRURRRDLDRUUURRR"
-  },
-  {
-    "id": "t09-06",
-    "tier": 9,
-    "number": 86,
-    "name": "複合回路 連鎖",
-    "briefing": "不可逆操作を含む複合問題を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 9,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#################",
-      "#E...#...#..GC..#",
-      "#....#..<D.SPC..#",
-      "#....##..#......#",
-      "#...1#1I.#......#",
-      "#....##..#......#",
-      "#################",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "DRRUURLLRDLLDLLULLLDRDLUUULLL"
-  },
-  {
-    "id": "t09-07",
-    "tier": 9,
-    "number": 87,
-    "name": "複合回路 交差",
-    "briefing": "不可逆操作を含む複合問題を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 9,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#################",
-      "#......#..##....#",
-      "#......#.I1#1...#",
-      "#......#..##....#",
-      "#..CPS.D>..#....#",
-      "#..CG..#...#...E#",
-      "#################",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "ULLDDLRRLURRURRDRRRULURDDDRRR"
-  },
-  {
-    "id": "t09-08",
-    "tier": 9,
-    "number": 88,
-    "name": "複合回路 収束",
-    "briefing": "不可逆操作を含む複合問題を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 9,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#################",
-      "#....##..#......#",
-      "#...1#1I.#......#",
-      "#....##..#P.....#",
-      "#....#..<D.S.C..#",
-      "#E...#...#..GC..#",
-      "#################",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "RRRRDDRLLRULLULLDLLLURULDDDLLL"
-  },
-  {
-    "id": "t09-09",
-    "tier": 9,
-    "number": 89,
-    "name": "複合回路 難問",
-    "briefing": "不可逆操作を含む複合問題を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 9,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#################",
-      "#################",
-      "#..CG..#...#...E#",
-      "#..C.S.D>..#....#",
-      "#......#..##....#",
-      "#......#.I1#1...#",
-      "#....P.#..##....#",
-      "#################",
-      "#################",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "UULLLUULRRLDRRDRRURRRDLDRUUURRR"
-  },
-  {
-    "id": "t09-10",
-    "tier": 9,
-    "number": 90,
-    "name": "複合回路 総合",
-    "briefing": "不可逆操作を含む複合問題を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 9,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#################",
-      "#################",
-      "#E...#...#.PGC..#",
-      "#....#..<D.S.C..#",
-      "#....##..#......#",
-      "#...1#1I.#......#",
-      "#....##..#......#",
-      "#################",
-      "#################",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "LDDRRRRUURLLRDLLDLLULLLDRDLUUULLL"
-  },
-  {
-    "id": "t10-01",
-    "tier": 10,
-    "number": 91,
-    "name": "最終試験 導入",
-    "briefing": "全ギミックを通した盤面読解を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 10,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#P.CG..#...#...E#",
-      "#..C.S.D>..#....#",
-      "#......#..##....#",
-      "#......#.I1#1...#",
-      "#......#..##....#",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "RRLDRRDRRURRRDLDRUUURRR"
-  },
-  {
-    "id": "t10-02",
-    "tier": 10,
-    "number": 92,
-    "name": "最終試験 確認",
-    "briefing": "全ギミックを通した盤面読解を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 10,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#E...#...#..GCP.#",
-      "#....#..<D.S.C..#",
-      "#....##..#......#",
-      "#...1#1I.#......#",
-      "#....##..#......#",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "RLLRDLLDLLULLLDRDLUUULLL"
-  },
-  {
-    "id": "t10-03",
-    "tier": 10,
-    "number": 93,
-    "name": "最終試験 分岐",
-    "briefing": "全ギミックを通した盤面読解を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 10,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#......#..##....#",
-      "#......#.I1#1...#",
-      "#......#..##....#",
-      "#.PC.S.D>..#....#",
-      "#..CG..#...#...E#",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "DLRRLURRURRDRRRULURDDDRRR"
-  },
-  {
-    "id": "t10-04",
-    "tier": 10,
-    "number": 94,
-    "name": "最終試験 反転",
-    "briefing": "全ギミックを通した盤面読解を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 10,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#....##..#.....P#",
-      "#...1#1I.#......#",
-      "#....##..#......#",
-      "#....#..<D.S.C..#",
-      "#E...#...#..GC..#",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "DDDDLLRULLULLDLLLURULDDDLLL"
-  },
-  {
-    "id": "t10-05",
-    "tier": 10,
-    "number": 95,
-    "name": "最終試験 迂回",
-    "briefing": "全ギミックを通した盤面読解を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 10,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#################",
-      "#..CG..#...#...E#",
-      "#..C.S.D>..#....#",
-      "#...P..#..##....#",
-      "#......#.I1#1...#",
-      "#......#..##....#",
-      "#################",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "LLUULRRLDRRDRRURRRDLDRUUURRR"
-  },
-  {
-    "id": "t10-06",
-    "tier": 10,
-    "number": 96,
-    "name": "最終試験 連鎖",
-    "briefing": "全ギミックを通した盤面読解を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 10,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#################",
-      "#E...#...#..GC..#",
-      "#....#..<D.SPC..#",
-      "#....##..#......#",
-      "#...1#1I.#......#",
-      "#....##..#......#",
-      "#################",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "DRRUURLLRDLLDLLULLLDRDLUUULLL"
-  },
-  {
-    "id": "t10-07",
-    "tier": 10,
-    "number": 97,
-    "name": "最終試験 交差",
-    "briefing": "全ギミックを通した盤面読解を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 10,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#################",
-      "#......#..##....#",
-      "#......#.I1#1...#",
-      "#......#..##....#",
-      "#..CPS.D>..#....#",
-      "#..CG..#...#...E#",
-      "#################",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "ULLDDLRRLURRURRDRRRULURDDDRRR"
-  },
-  {
-    "id": "t10-08",
-    "tier": 10,
-    "number": 98,
-    "name": "最終試験 収束",
-    "briefing": "全ギミックを通した盤面読解を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 10,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#################",
-      "#....##..#......#",
-      "#...1#1I.#......#",
-      "#....##..#P.....#",
-      "#....#..<D.S.C..#",
-      "#E...#...#..GC..#",
-      "#################",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "RRRRDDRLLRULLULLDLLLURULDDDLLL"
-  },
-  {
-    "id": "t10-09",
-    "tier": 10,
-    "number": 99,
-    "name": "最終試験 難問",
-    "briefing": "全ギミックを通した盤面読解を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 10,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#################",
-      "#################",
-      "#..CG..#...#...E#",
-      "#..C.S.D>..#....#",
-      "#......#..##....#",
-      "#......#.I1#1...#",
-      "#....P.#..##....#",
-      "#################",
-      "#################",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "UULLLUULRRLDRRDRRURRRDLDRUUURRR"
-  },
-  {
-    "id": "t10-10",
-    "tier": 10,
-    "number": 100,
-    "name": "最終試験 総合",
-    "briefing": "全ギミックを通した盤面読解を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-    "difficulty": 10,
-    "mechanics": [
-      "push",
-      "switch",
-      "oneWay",
-      "warp",
-      "ice"
-    ],
-    "map": [
-      "#################",
-      "#################",
-      "#################",
-      "#E...#...#.PGC..#",
-      "#....#..<D.S.C..#",
-      "#....##..#......#",
-      "#...1#1I.#......#",
-      "#....##..#......#",
-      "#################",
-      "#################",
-      "#################"
-    ],
-    "legend": {
-      "1": {
-        "kind": "warp",
-        "channel": "alpha"
-      },
-      "S": {
-        "kind": "switch",
-        "channel": "alpha",
-        "goal": true
-      },
-      "D": {
-        "kind": "door",
-        "channel": "alpha"
-      }
-    },
-    "solution": "LDDRRRRUURLLRDLLDLLULLLDRDLUUULLL"
+    "boxCount": 3,
+    "minMoves": null,
+    "minPushes": 24,
+    "concept": "退避・順序・壁際を総合する",
+    "solution": "LUUUURRRRDRDRDDDDDLLLLURULDLURRUULLRRDDLLUUURULLLULDDDDDUUUURRDRDDLUURULLULDDDD",
+    "isValidated": true
   }
 ] as const;

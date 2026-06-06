@@ -2,31 +2,24 @@
   "id": "t03-02",
   "tier": 3,
   "number": 22,
-  "name": "圧力回路 確認",
-  "briefing": "スイッチでドアを維持する手順を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-  "difficulty": 3,
-  "mechanics": [
-    "push",
-    "switch"
-  ],
+  "name": "倉庫の分岐",
+  "difficulty": 8,
   "map": [
-    "##########",
-    "#E..#GCP.#",
-    "#...D.C..#",
-    "#...#....#",
-    "#...#.S..#",
-    "##########"
+    "###########",
+    "#   ..    #",
+    "#. ## ##$ #",
+    "#   #  #  #",
+    "#     #   #",
+    "#  ##     #",
+    "# #  ##   #",
+    "#$#  ##$# #",
+    "#      @  #",
+    "###########"
   ],
-  "legend": {
-    "S": {
-      "kind": "switch",
-      "channel": "alpha",
-      "goal": true
-    },
-    "D": {
-      "kind": "door",
-      "channel": "alpha"
-    }
-  },
-  "solution": "RLLDDULLLULL"
+  "boxCount": 3,
+  "minMoves": null,
+  "minPushes": 20,
+  "concept": "分岐した通路を使い分ける",
+  "solution": "RRUUUUULURULLLLDDDDRRDRRDDLLLLLLLLUUUUUDDDDDRRRRRRUURUUUUULLLDDDDRRDRUUUURULLL",
+  "isValidated": true
 }

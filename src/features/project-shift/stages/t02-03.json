@@ -2,20 +2,23 @@
   "id": "t02-03",
   "tier": 2,
   "number": 13,
-  "name": "複数搬送 分岐",
-  "briefing": "複数の箱とデッドロック回避を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-  "difficulty": 2,
-  "mechanics": [
-    "push"
-  ],
+  "name": "一時退避",
+  "difficulty": 5,
   "map": [
-    "########",
-    "#......#",
-    "#PC.G.E#",
-    "#.C.G..#",
-    "#......#",
-    "########"
+    "##########",
+    "#        #",
+    "#  # ##  #",
+    "# @$  #  #",
+    "# ##  ## #",
+    "#    ##  #",
+    "#.  # $$ #",
+    "#  ..    #",
+    "##########"
   ],
-  "legend": {},
-  "solution": "DDURRLLURRURRDR"
+  "boxCount": 3,
+  "minMoves": null,
+  "minPushes": 15,
+  "concept": "箱を指定位置から遠ざけて退避する",
+  "solution": "UURRRRRDDRDDLDURUUUULLLLDDDDLDDRRURDLLLUURUUUURRRDDRDDDDLLRRUULDLDLURRRDLULLDLRURRDLLURRURUUUULLLLDDLLULDDD",
+  "isValidated": true
 }

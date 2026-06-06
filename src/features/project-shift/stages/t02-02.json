@@ -2,20 +2,22 @@
   "id": "t02-02",
   "tier": 2,
   "number": 12,
-  "name": "複数搬送 確認",
-  "briefing": "複数の箱とデッドロック回避を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-  "difficulty": 2,
-  "mechanics": [
-    "push"
-  ],
+  "name": "中央を空ける",
+  "difficulty": 4,
   "map": [
-    "########",
-    "#....P.#",
-    "#..G.C.#",
-    "#E.G.C.#",
-    "#......#",
-    "########"
+    "#########",
+    "# .   .@#",
+    "# #    $#",
+    "#     # #",
+    "# $  ##.#",
+    "#  #$## #",
+    "#       #",
+    "#########"
   ],
-  "legend": {},
-  "solution": "RDLLRRDLLDLLUL"
+  "boxCount": 3,
+  "minMoves": null,
+  "minPushes": 13,
+  "concept": "中央の作業場所を確保する",
+  "solution": "LDLDLLLLDDDRRRUUUULURDDDDDLLUULURDRUURULDRRRURDLLLURDRRD",
+  "isValidated": true
 }

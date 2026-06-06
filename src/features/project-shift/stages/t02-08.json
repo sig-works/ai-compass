@@ -2,22 +2,24 @@
   "id": "t02-08",
   "tier": 2,
   "number": 18,
-  "name": "複数搬送 収束",
-  "briefing": "複数の箱とデッドロック回避を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-  "difficulty": 2,
-  "mechanics": [
-    "push"
-  ],
+  "name": "通路の共有",
+  "difficulty": 6,
   "map": [
     "##########",
-    "##########",
-    "##..P...##",
-    "##E.G.C.##",
-    "##..G.C.##",
-    "##......##",
-    "##########",
+    "# @      #",
+    "# *      #",
+    "#    #   #",
+    "#  # ### #",
+    "#     ## #",
+    "# $##$ # #",
+    "#  .   #.#",
+    "#        #",
     "##########"
   ],
-  "legend": {},
-  "solution": "RDDDRRULLRRULLULLDL"
+  "boxCount": 3,
+  "minMoves": null,
+  "minPushes": 18,
+  "concept": "二つの箱で同じ通路を使う",
+  "solution": "LDDDDDDRUUULURRLDDRRUULURRRURDLDRURDDDDUUUULLLLDDDRDRDLL",
+  "isValidated": true
 }

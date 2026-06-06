@@ -2,33 +2,24 @@
   "id": "t03-05",
   "tier": 3,
   "number": 25,
-  "name": "圧力回路 迂回",
-  "briefing": "スイッチでドアを維持する手順を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-  "difficulty": 3,
-  "mechanics": [
-    "push",
-    "switch"
-  ],
+  "name": "中央の渋滞",
+  "difficulty": 9,
   "map": [
-    "############",
-    "############",
-    "##..CG#..E##",
-    "##..C.D...##",
-    "##.P..#...##",
-    "##..S.#...##",
-    "############",
-    "############"
+    "###########",
+    "#  $@   . #",
+    "#   ###   #",
+    "# #    ##.#",
+    "#    ## . #",
+    "# $   ##  #",
+    "#  ##  #  #",
+    "#       $ #",
+    "#         #",
+    "###########"
   ],
-  "legend": {
-    "S": {
-      "kind": "switch",
-      "channel": "alpha",
-      "goal": true
-    },
-    "D": {
-      "kind": "door",
-      "channel": "alpha"
-    }
-  },
-  "solution": "UULRRDDURRRURR"
+  "boxCount": 3,
+  "minMoves": null,
+  "minPushes": 21,
+  "concept": "中央の箱を退避して渋滞を解く",
+  "solution": "RRRDRRDDDDDDLUUUDDLLULULULLDDLDRRRRRRRDRUUUUDDDLLLULULUULULURRRRR",
+  "isValidated": true
 }

@@ -3,40 +3,13 @@ export const projectShiftAssetSpecs = [
     'characters/player-astronaut',
     'characters/player-drone',
     'characters/player-explorer',
-    'characters/player-geometric',
-    'entities/cube',
-    'entities/cube-powered',
+    'characters/player-geometric'
+  ].map((path) => ({ path, format: 'raster', width: 512, height: 512 })),
+  ...[
+    'entities/box',
+    'entities/box-on-target',
     'tiles/floor',
     'tiles/wall',
-    'tiles/goal',
-    'tiles/goal-active',
-    'tiles/exit-closed',
-    'tiles/exit-open',
-    'tiles/switch-off',
-    'tiles/switch-on',
-    'tiles/door-closed',
-    'tiles/door-open',
-    'tiles/warp',
-    'tiles/ice',
-    'tiles/one-way-up',
-    'tiles/one-way-right',
-    'tiles/one-way-down',
-    'tiles/one-way-left'
-  ].map((path) => ({ path, width: 512, height: 512, alpha: true })),
-  ...[
-    'ui/undo',
-    'ui/redo',
-    'ui/restart',
-    'ui/help',
-    'ui/stages',
-    'ui/back',
-    'ui/check',
-    'ui/arrow',
-    'ui/lock',
-    'ui/direction-up',
-    'ui/direction-right',
-    'ui/direction-down',
-    'ui/direction-left'
-  ].map((path) => ({ path, width: 96, height: 96, alpha: true })),
-  { path: 'backgrounds/game-surface', width: 1920, height: 1080, alpha: false }
+    'tiles/target'
+  ].map((path) => ({ path, format: 'svg', viewBox: '0 0 64 64' }))
 ];

@@ -6,8 +6,8 @@ const stageDirectory = join(root, 'src', 'features', 'project-shift', 'stages');
 const output = join(root, 'src', 'features', 'project-shift', 'stage-data.generated.ts');
 const files = readdirSync(stageDirectory).filter((file) => /^t\d{2}-\d{2}\.json$/.test(file)).sort();
 
-if (files.length !== 100) {
-  throw new Error(`Project SHIFT requires 100 stage JSON files; found ${files.length}.`);
+if (files.length !== 30) {
+  throw new Error(`Project SHIFT requires 30 stage JSON files; found ${files.length}.`);
 }
 
 const sources = files.map((file) => JSON.parse(readFileSync(join(stageDirectory, file), 'utf8')));

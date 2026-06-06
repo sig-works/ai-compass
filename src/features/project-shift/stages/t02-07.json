@@ -2,22 +2,23 @@
   "id": "t02-07",
   "tier": 2,
   "number": 17,
-  "name": "複数搬送 交差",
-  "briefing": "複数の箱とデッドロック回避を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-  "difficulty": 2,
-  "mechanics": [
-    "push"
-  ],
+  "name": "先に遠ざける",
+  "difficulty": 6,
   "map": [
     "##########",
-    "##########",
-    "##......##",
-    "##.C.G.E##",
-    "##.C.GP.##",
-    "##......##",
-    "##########",
+    "#        #",
+    "#.# $  . #",
+    "# # #  $ #",
+    "# #$#    #",
+    "# #@ # # #",
+    "#.   ### #",
+    "#        #",
     "##########"
   ],
-  "legend": {},
-  "solution": "DLLLLURRLLURRURRDR"
+  "boxCount": 3,
+  "minMoves": null,
+  "minPushes": 16,
+  "concept": "先に逆方向へ押して経路を作る",
+  "solution": "DDRRRRRUUULULUULLLDDDDUUUURRDLULDDDUUULLDDDDDDRRRULLDRRRRRRUUUULLULLLDDDRDLDLLUUUUDDDDRRUL",
+  "isValidated": true
 }

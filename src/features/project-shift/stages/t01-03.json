@@ -2,20 +2,22 @@
   "id": "t01-03",
   "tier": 1,
   "number": 3,
-  "name": "基礎搬送 分岐",
-  "briefing": "箱を押す順序と回り込みを扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
+  "name": "角の手前",
   "difficulty": 1,
-  "mechanics": [
-    "push"
-  ],
   "map": [
     "########",
-    "#......#",
-    "#...P..#",
-    "#.C....#",
-    "#...G.E#",
+    "# .    #",
+    "#  #   #",
+    "# ##   #",
+    "#  ##  #",
+    "# #@$  #",
+    "#      #",
     "########"
   ],
-  "legend": {},
-  "solution": "LLDLDRRURRDR"
+  "boxCount": 1,
+  "minMoves": null,
+  "minPushes": 8,
+  "concept": "角へ押す前に停止位置を考える",
+  "solution": "RDRUUUURULLL",
+  "isValidated": true
 }

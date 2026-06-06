@@ -2,33 +2,24 @@
   "id": "t03-07",
   "tier": 3,
   "number": 27,
-  "name": "圧力回路 交差",
-  "briefing": "スイッチでドアを維持する手順を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-  "difficulty": 3,
-  "mechanics": [
-    "push",
-    "switch"
-  ],
+  "name": "三段階の退避",
+  "difficulty": 9,
   "map": [
-    "############",
-    "############",
-    "##.PS.#...##",
-    "##....#...##",
-    "##..C.D...##",
-    "##..CG#..E##",
-    "############",
-    "############"
+    "###########",
+    "#    .  $ #",
+    "# .   ### #",
+    "# ##   ## #",
+    "#    # $  #",
+    "#     $@# #",
+    "# # #  ## #",
+    "# #    #  #",
+    "# .       #",
+    "###########"
   ],
-  "legend": {
-    "S": {
-      "kind": "switch",
-      "channel": "alpha",
-      "goal": true
-    },
-    "D": {
-      "kind": "door",
-      "channel": "alpha"
-    }
-  },
-  "solution": "DDDLRRUUDRRRDRR"
+  "boxCount": 3,
+  "minMoves": null,
+  "minPushes": 21,
+  "concept": "複数回の一時退避を組み合わせる",
+  "solution": "LDDDRRURUUUUUULLLRRRDDDLLDLDDLLLUUURURRDDDDUUURRRDDDDLLLLLLURRURULLRDDLLUULURDRUURULL",
+  "isValidated": true
 }

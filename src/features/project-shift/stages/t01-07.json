@@ -2,22 +2,22 @@
   "id": "t01-07",
   "tier": 1,
   "number": 7,
-  "name": "基礎搬送 交差",
-  "briefing": "箱を押す順序と回り込みを扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-  "difficulty": 1,
-  "mechanics": [
-    "push"
-  ],
+  "name": "押す順序",
+  "difficulty": 3,
   "map": [
-    "##########",
-    "##########",
-    "##......##",
-    "##.....P##",
-    "##.C....##",
-    "##...G.E##",
-    "##########",
-    "##########"
+    "#########",
+    "#       #",
+    "# ####  #",
+    "# @$   .#",
+    "#  $ #  #",
+    "# # # #.#",
+    "#       #",
+    "#########"
   ],
-  "legend": {},
-  "solution": "LLLLDLDRRURRDR"
+  "boxCount": 2,
+  "minMoves": null,
+  "minPushes": 11,
+  "concept": "奥の指定位置から埋める",
+  "solution": "RRLLDLDDRRUURURRLLDLLURRRLLLLUURRRRRDRDDUUULLLLLLDDRRRRR",
+  "isValidated": true
 }

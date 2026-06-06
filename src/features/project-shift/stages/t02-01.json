@@ -2,20 +2,23 @@
   "id": "t02-01",
   "tier": 2,
   "number": 11,
-  "name": "複数搬送 導入",
-  "briefing": "複数の箱とデッドロック回避を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-  "difficulty": 2,
-  "mechanics": [
-    "push"
-  ],
+  "name": "奥から手前へ",
+  "difficulty": 4,
   "map": [
-    "########",
-    "#P.....#",
-    "#.C.G..#",
-    "#.C.G.E#",
-    "#......#",
-    "########"
+    "##########",
+    "#        #",
+    "#     $  #",
+    "#    ##  #",
+    "# ##$ #  #",
+    "# ##@##  #",
+    "#   # #. #",
+    "#    .   #",
+    "##########"
   ],
-  "legend": {},
-  "solution": "DRRLLDRRDRRUR"
+  "boxCount": 2,
+  "minMoves": null,
+  "minPushes": 17,
+  "concept": "奥側の箱を先に処理する",
+  "solution": "UULUURRDRURDDDDDRDLLRUUUUUULLLLDRRRURDDDD",
+  "isValidated": true
 }

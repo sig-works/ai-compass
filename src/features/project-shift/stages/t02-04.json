@@ -2,20 +2,23 @@
   "id": "t02-04",
   "tier": 2,
   "number": 14,
-  "name": "複数搬送 反転",
-  "briefing": "複数の箱とデッドロック回避を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-  "difficulty": 2,
-  "mechanics": [
-    "push"
-  ],
+  "name": "壁際の判断",
+  "difficulty": 5,
   "map": [
-    "########",
-    "#.....P#",
-    "#E.G.C.#",
-    "#..G.C.#",
-    "#......#",
-    "########"
+    "#########",
+    "#       #",
+    "# $ #  .#",
+    "# #  ## #",
+    "#   # # #",
+    "#@$     #",
+    "# # ##$ #",
+    "#  . .  #",
+    "#########"
   ],
-  "legend": {},
-  "solution": "DDDULLRRULLULLDL"
+  "boxCount": 3,
+  "minMoves": null,
+  "minPushes": 16,
+  "concept": "壁際で押せる方向を制限する",
+  "solution": "UUURURDDDDDUULLDDDRRRLUURRRRDDLURUUUUULLLLDDDDRRRDRUUUDDLLLLULLDRURDD",
+  "isValidated": true
 }

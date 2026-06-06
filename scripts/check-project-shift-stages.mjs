@@ -1,16 +1,18 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-const FILE_PATTERN = /^t(\d{2})-(\d{2})\.json$/;
-const BUILT_IN_SYMBOLS = new Set(['#', '.', 'P', 'C', 'G', 'E', 'I', '>', '<', '^', 'v']);
+import { findStageWarnings, validateStageSource } from '../src/features/project-shift/stage-source.ts';
+
+const FILE_PATTERN = /^t(0[1-3])-(\d{2})\.json$/;
 
 export function validateProjectShiftStages(root) {
   const errors = [];
+  const warnings = [];
   const directory = join(root, 'src', 'features', 'project-shift', 'stages');
   if (!existsSync(directory)) return ['Project SHIFT stage directory is missing.'];
 
   const files = readdirSync(directory).filter((file) => file.endsWith('.json')).sort();
-  if (files.length !== 100) errors.push(`Project SHIFT: expected 100 stage JSON files, found ${files.length}.`);
+  if (files.length !== 30) errors.push(`Project SHIFT: expected 30 stage JSON files, found ${files.length}.`);
 
   const ids = new Set();
   for (const [index, file] of files.entries()) {
@@ -37,53 +39,25 @@ export function validateProjectShiftStages(root) {
     if (ids.has(stage.id)) errors.push(`Project SHIFT: duplicate id ${stage.id}.`);
     ids.add(stage.id);
 
-    if (!Array.isArray(stage.map) || stage.map.length < 3 || stage.map.length > 12) {
-      errors.push(`Project SHIFT: ${file} has an invalid map height.`);
-      continue;
-    }
-    const width = stage.map[0]?.length ?? 0;
-    if (width < 3 || width > 18 || !stage.map.every((row) => typeof row === 'string' && row.length === width)) {
-      errors.push(`Project SHIFT: ${file} must be a rectangular map no larger than 18x12.`);
-      continue;
-    }
-
-    const legend = stage.legend && typeof stage.legend === 'object' ? stage.legend : {};
-    const counts = new Map();
-    for (const row of stage.map) {
-      for (const symbol of row) {
-        counts.set(symbol, (counts.get(symbol) ?? 0) + 1);
-        if (!BUILT_IN_SYMBOLS.has(symbol) && !Object.hasOwn(legend, symbol)) {
-          errors.push(`Project SHIFT: ${file} uses unknown symbol "${symbol}".`);
-        }
-      }
-    }
-
-    if (counts.get('P') !== 1) errors.push(`Project SHIFT: ${file} must contain one player.`);
-    if (counts.get('E') !== 1) errors.push(`Project SHIFT: ${file} must contain one exit.`);
-    const goals = (counts.get('G') ?? 0) + Object.entries(legend).reduce(
-      (total, [symbol, entry]) => total + (entry.kind === 'switch' && entry.goal ? counts.get(symbol) ?? 0 : 0),
-      0
-    );
-    if (!counts.get('C') || counts.get('C') !== goals) errors.push(`Project SHIFT: ${file} must have equal cube and goal counts.`);
-    if (!/^[UDLR]+$/.test(stage.solution ?? '')) errors.push(`Project SHIFT: ${file} has an invalid solution.`);
-
-    const switches = new Set();
-    const doors = new Set();
-    const warps = new Map();
-    for (const [symbol, entry] of Object.entries(legend)) {
-      if (symbol.length !== 1 || BUILT_IN_SYMBOLS.has(symbol)) errors.push(`Project SHIFT: ${file} has an invalid legend symbol.`);
-      if (!entry.channel) errors.push(`Project SHIFT: ${file} has a legend entry without a channel.`);
-      if (entry.kind === 'switch') switches.add(entry.channel);
-      if (entry.kind === 'door') doors.add(entry.channel);
-      if (entry.kind === 'warp') warps.set(entry.channel, (warps.get(entry.channel) ?? 0) + (counts.get(symbol) ?? 0));
-    }
-    for (const channel of doors) {
-      if (!switches.has(channel)) errors.push(`Project SHIFT: ${file} door "${channel}" has no switch.`);
-    }
-    for (const [channel, count] of warps) {
-      if (count !== 2) errors.push(`Project SHIFT: ${file} warp "${channel}" must have two gates.`);
+    try {
+      validateStageSource(stage);
+      warnings.push(...findStageWarnings(stage));
+    } catch (error) {
+      errors.push(`Project SHIFT: ${file}: ${error instanceof Error ? error.message : 'invalid stage'}`);
     }
   }
 
+  for (const warning of warnings) {
+    console.warn(`Project SHIFT warning [${warning.code}] ${warning.stageId}: ${warning.message}`);
+  }
   return errors;
+}
+
+if (import.meta.url === `file:///${process.argv[1]?.replaceAll('\\', '/')}`) {
+  const errors = validateProjectShiftStages(process.cwd());
+  if (errors.length > 0) {
+    for (const error of errors) console.error(`- ${error}`);
+    process.exit(1);
+  }
+  console.log('Project SHIFT stage check passed.');
 }

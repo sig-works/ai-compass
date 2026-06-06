@@ -2,22 +2,23 @@
   "id": "t02-05",
   "tier": 2,
   "number": 15,
-  "name": "複数搬送 迂回",
-  "briefing": "複数の箱とデッドロック回避を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-  "difficulty": 2,
-  "mechanics": [
-    "push"
-  ],
+  "name": "交差する搬送",
+  "difficulty": 5,
   "map": [
     "##########",
-    "##########",
-    "##......##",
-    "##.C.G..##",
-    "##.C.G.E##",
-    "##P.....##",
-    "##########",
+    "#        #",
+    "#@$    # #",
+    "# # # #  #",
+    "# #    $ #",
+    "#   ###  #",
+    "#  #  #  #",
+    "#    ..* #",
     "##########"
   ],
-  "legend": {},
-  "solution": "UUUDRRLLDRRDRRUR"
+  "boxCount": 3,
+  "minMoves": null,
+  "minPushes": 16,
+  "concept": "複数の搬送経路を交差させる",
+  "solution": "URRRRRRRDDDDDDLLRUURUULDDDRDLUUULLUUULLLLDRRRURDDULLDDRRRLUUURRRDDLDDD",
+  "isValidated": true
 }

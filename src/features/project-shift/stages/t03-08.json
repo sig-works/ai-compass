@@ -2,33 +2,24 @@
   "id": "t03-08",
   "tier": 3,
   "number": 28,
-  "name": "圧力回路 収束",
-  "briefing": "スイッチでドアを維持する手順を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-  "difficulty": 3,
-  "mechanics": [
-    "push",
-    "switch"
-  ],
+  "name": "奥行きの罠",
+  "difficulty": 10,
   "map": [
-    "############",
-    "############",
-    "##...#.S..##",
-    "##...#P...##",
-    "##...D.C..##",
-    "##E..#GC..##",
-    "############",
-    "############"
+    "###########",
+    "#         #",
+    "# # ##  # #",
+    "#   ##  #.#",
+    "# @       #",
+    "# $ ## $  #",
+    "#  ## ##  #",
+    "#  .. ##$ #",
+    "#         #",
+    "###########"
   ],
-  "legend": {
-    "S": {
-      "kind": "switch",
-      "channel": "alpha",
-      "goal": true
-    },
-    "D": {
-      "kind": "door",
-      "channel": "alpha"
-    }
-  },
-  "solution": "RRDDRLLUUDLLLDLL"
+  "boxCount": 3,
+  "minMoves": null,
+  "minPushes": 21,
+  "concept": "奥の指定位置から逆算する",
+  "solution": "LDDDDRRRRRRRUUURULLLLLRRDRURRDDLULURDRULLUUULLLLDDLDDUURUURRRDDDLLLDLDULUURDDLDDRRLLUURDLDR",
+  "isValidated": true
 }

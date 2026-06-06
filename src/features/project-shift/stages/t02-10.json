@@ -2,24 +2,24 @@
   "id": "t02-10",
   "tier": 2,
   "number": 20,
-  "name": "複数搬送 総合",
-  "briefing": "複数の箱とデッドロック回避を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-  "difficulty": 2,
-  "mechanics": [
-    "push"
-  ],
+  "name": "箱同士の依存",
+  "difficulty": 7,
   "map": [
-    "############",
-    "############",
-    "############",
-    "###......###",
-    "###..G.C.###",
-    "###E.G.C.###",
-    "###P.....###",
-    "############",
-    "############",
-    "############"
+    "##########",
+    "#      @ #",
+    "#  ### $ #",
+    "#   #    #",
+    "# #      #",
+    "# #.  ## #",
+    "# #  #   #",
+    "# #.$# $ #",
+    "# .      #",
+    "##########"
   ],
-  "legend": {},
-  "solution": "RUUURRRRDLLRRDLLDLLUL"
+  "boxCount": 3,
+  "minMoves": null,
+  "minPushes": 18,
+  "concept": "箱同士の依存順序を解く",
+  "solution": "RDDDDDLDRDLLLLLRUULUURRDLULDDUURRURUURDDRDLLLLRURUULLLLDDRD",
+  "isValidated": true
 }

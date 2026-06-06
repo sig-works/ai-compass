@@ -2,24 +2,24 @@
   "id": "t02-09",
   "tier": 2,
   "number": 19,
-  "name": "複数搬送 難問",
-  "briefing": "複数の箱とデッドロック回避を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-  "difficulty": 2,
-  "mechanics": [
-    "push"
-  ],
+  "name": "押し手の確保",
+  "difficulty": 7,
   "map": [
-    "############",
-    "############",
-    "############",
-    "###......###",
-    "###.C.G..###",
-    "###.C.G.E###",
-    "###...P..###",
-    "############",
-    "############",
-    "############"
+    "##########",
+    "#      @ #",
+    "#  ### $ #",
+    "#   #    #",
+    "# #      #",
+    "# #.  ## #",
+    "# #  #   #",
+    "# #.$# $ #",
+    "# .      #",
+    "##########"
   ],
-  "legend": {},
-  "solution": "LUUULLDRRLLDRRDRRUR"
+  "boxCount": 3,
+  "minMoves": null,
+  "minPushes": 18,
+  "concept": "箱の後ろへ立つ空間を先に作る",
+  "solution": "RDDDDDLDRDLLLLLRUULUURRDLULDDUURRURUURDDRDLLLLRURUULLLLDDRD",
+  "isValidated": true
 }

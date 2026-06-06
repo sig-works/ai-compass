@@ -2,20 +2,21 @@
   "id": "t01-01",
   "tier": 1,
   "number": 1,
-  "name": "基礎搬送 導入",
-  "briefing": "箱を押す順序と回り込みを扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
+  "name": "最初の一押し",
   "difficulty": 1,
-  "mechanics": [
-    "push"
-  ],
   "map": [
-    "########",
-    "#...G.E#",
-    "#.C....#",
-    "#..P...#",
-    "#......#",
-    "########"
+    "#######",
+    "#     #",
+    "# # # #",
+    "#  #  #",
+    "# @$  #",
+    "#  .  #",
+    "#######"
   ],
-  "legend": {},
-  "solution": "LULURRDRRUR"
+  "boxCount": 1,
+  "minMoves": null,
+  "minPushes": 3,
+  "concept": "箱を押して指定位置へ置く",
+  "solution": "DRRULDLLUURDLDR",
+  "isValidated": true
 }

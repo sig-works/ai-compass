@@ -35,6 +35,19 @@ export function validateProjectShiftAssets(root) {
   const assetRoot = join(root, 'public', 'project-shift', 'assets');
 
   for (const spec of projectShiftAssetSpecs) {
+    if (spec.format === 'svg') {
+      const file = join(assetRoot, `${spec.path}.svg`);
+      if (!existsSync(file)) {
+        errors.push(`public/project-shift/assets/${spec.path}.svg: required asset is missing`);
+        continue;
+      }
+      const source = readFileSync(file, 'utf8');
+      if (!source.includes('<svg') || !source.includes(`viewBox="${spec.viewBox}"`)) {
+        errors.push(`public/project-shift/assets/${spec.path}.svg: invalid SVG or viewBox`);
+      }
+      continue;
+    }
+
     for (const extension of ['png', 'webp']) {
       const file = join(assetRoot, `${spec.path}.${extension}`);
       if (!existsSync(file)) {

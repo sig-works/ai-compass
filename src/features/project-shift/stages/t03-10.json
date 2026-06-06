@@ -2,35 +2,24 @@
   "id": "t03-10",
   "tier": 3,
   "number": 30,
-  "name": "圧力回路 総合",
-  "briefing": "スイッチでドアを維持する手順を扱うステージです。操作を確定する前に、箱を押した後の退路まで確認してください。",
-  "difficulty": 3,
-  "mechanics": [
-    "push",
-    "switch"
-  ],
+  "name": "倉庫番総合",
+  "difficulty": 10,
   "map": [
-    "##############",
-    "##############",
-    "##############",
-    "###E..#GC..###",
-    "###...D.C..###",
-    "###...#....###",
-    "###...#PS..###",
-    "##############",
-    "##############",
-    "##############"
+    "###########",
+    "#         #",
+    "#     # $.#",
+    "# #   ##  #",
+    "# # $   # #",
+    "# # @#    #",
+    "#. #   ## #",
+    "#.#  $ ## #",
+    "#         #",
+    "###########"
   ],
-  "legend": {
-    "S": {
-      "kind": "switch",
-      "channel": "alpha",
-      "goal": true
-    },
-    "D": {
-      "kind": "door",
-      "channel": "alpha"
-    }
-  },
-  "solution": "URRUURLLDDULLLULL"
+  "boxCount": 3,
+  "minMoves": null,
+  "minPushes": 24,
+  "concept": "退避・順序・壁際を総合する",
+  "solution": "LUUUURRRRDRDRDDDDDLLLLURULDLURRUULLRRDDLLUUURULLLULDDDDDUUUURRDRDDLUURULLULDDDD",
+  "isValidated": true
 }
