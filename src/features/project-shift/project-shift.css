@@ -409,7 +409,7 @@
 .ps-board {
   --ps-gap: clamp(1px, 0.16vw, 2px);
   position: relative;
-  width: 100%;
+  width: min(100%, calc(64dvh * var(--ps-cols) / var(--ps-rows)));
   aspect-ratio: var(--ps-board-ratio);
   max-height: 64dvh;
   margin: auto;
