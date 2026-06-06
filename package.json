@@ -18,7 +18,7 @@
     "update:ai-news": "node scripts/update-ai-news.mjs",
     "update:ai-videos": "node scripts/update-ai-videos.mjs",
     "update:llm-data": "node scripts/update-llm-data.mjs",
-    "check:site": "node scripts/final-check.mjs"
+    "check:site": "node --experimental-strip-types scripts/final-check.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^5.0.6",
