@@ -186,7 +186,7 @@
 .ps-direction-button,
 .ps-primary-button,
 .ps-secondary-button {
-  border: 1px solid var(--ps-line);
+  border: 1px solid var(--border);
   color: inherit;
   cursor: pointer;
   font: inherit;
@@ -200,7 +200,7 @@
   min-height: 38px;
   padding: 0 12px;
   border-radius: 9px;
-  background: var(--ps-panel);
+  background: var(--background);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -214,8 +214,8 @@
 .ps-action-button:hover:not(:disabled),
 .ps-direction-button:hover,
 .ps-secondary-button:hover {
-  border-color: color-mix(in oklch, var(--ps-cyan) 55%, var(--ps-line));
-  background: color-mix(in oklch, var(--ps-cyan) 9%, var(--ps-panel));
+  border-color: var(--border);
+  background: var(--muted);
 }
 
 .ps-icon {
@@ -1006,7 +1006,7 @@
   min-height: 36px;
   padding: 0 11px;
   border-radius: 8px;
-  background: color-mix(in oklch, var(--ps-panel) 88%, transparent);
+  background: var(--background);
   font-size: 9px;
   font-weight: 750;
   letter-spacing: 0.1em;
@@ -1037,37 +1037,28 @@
   display: grid;
   place-items: center;
   border-radius: 10px;
-  border-color: color-mix(in oklch, var(--foreground) 22%, var(--border));
-  background:
-    linear-gradient(180deg, color-mix(in oklch, var(--card) 96%, white), color-mix(in oklch, var(--card) 88%, var(--background)));
-  box-shadow:
-    0 5px 12px color-mix(in oklch, var(--foreground) 10%, transparent),
-    inset 0 1px 0 color-mix(in oklch, white 75%, transparent),
-    inset 0 -1px 0 color-mix(in oklch, var(--foreground) 14%, transparent);
+  border-color: var(--border);
+  background: var(--background);
+  box-shadow: none;
   touch-action: manipulation;
   user-select: none;
 }
 
 .ps-direction-button:hover {
-  border-color: color-mix(in oklch, var(--primary) 38%, var(--border));
-  background:
-    linear-gradient(180deg, color-mix(in oklch, var(--primary) 10%, var(--card)), color-mix(in oklch, var(--primary) 4%, var(--background)));
-  transform: translateY(-1px);
+  border-color: var(--border);
+  background: var(--muted);
+  transform: none;
 }
 
 .ps-direction-button:active {
-  transform: translateY(1px) scale(0.98);
-  background:
-    linear-gradient(180deg, color-mix(in oklch, var(--primary) 8%, var(--card)), color-mix(in oklch, var(--primary) 14%, var(--background)));
-  box-shadow:
-    inset 0 2px 6px color-mix(in oklch, var(--foreground) 16%, transparent),
-    0 1px 3px color-mix(in oklch, var(--foreground) 10%, transparent);
+  transform: scale(0.98);
+  background: color-mix(in oklch, var(--muted) 88%, var(--background));
+  box-shadow: none;
 }
 
 .ps-direction-button:disabled {
   cursor: default;
-  opacity: 0.42;
-  box-shadow: none;
+  opacity: 0.5;
 }
 
 .ps-direction-button--up {
@@ -1098,7 +1089,7 @@
   display: block;
   width: 19px;
   height: 19px;
-  color: color-mix(in oklch, var(--foreground) 78%, var(--primary));
+  color: var(--foreground);
 }
 
 .ps-overlay {
@@ -1125,6 +1116,38 @@
 
 .ps-modal--wide {
   width: min(100%, 780px);
+  border-color: var(--border);
+  background: color-mix(in oklab, var(--background) 95%, transparent);
+  box-shadow: 0 1px 3px color-mix(in oklch, black 12%, transparent), 0 1px 2px color-mix(in oklch, black 10%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+.ps-modal--wide .ps-tier-tab {
+  border-color: var(--border);
+  background: color-mix(in oklch, var(--card) 90%, var(--background));
+  color: var(--muted-foreground);
+}
+
+.ps-modal--wide .ps-tier-tab--active {
+  border-color: color-mix(in oklch, var(--primary) 38%, var(--border));
+  color: var(--foreground);
+  background: color-mix(in oklch, var(--primary) 10%, var(--card));
+}
+
+.ps-modal--wide .ps-stage-card {
+  border-color: var(--border);
+  background: color-mix(in oklch, var(--card) 88%, var(--background));
+}
+
+.ps-modal--wide .ps-stage-card:hover:not(:disabled),
+.ps-modal--wide .ps-stage-card--active {
+  border-color: color-mix(in oklch, var(--primary) 42%, var(--border));
+  background: color-mix(in oklch, var(--primary) 8%, var(--card));
+}
+
+.ps-modal--wide .ps-close-button {
+  border: 1px solid var(--border);
+  background: color-mix(in oklch, var(--card) 86%, var(--background));
 }
 
 .ps-avatar-modal {
@@ -1200,9 +1223,9 @@
   height: 36px;
   padding: 2px;
   place-items: center;
-  border: 1px solid var(--ps-line);
+  border: 1px solid var(--border);
   border-radius: 8px;
-  background: color-mix(in oklch, var(--card) 86%, transparent);
+  background: var(--background);
   color: var(--foreground);
   position: relative;
 }
@@ -1492,7 +1515,7 @@
 }
 
 .ps-tutorial-goal {
-  margin: 0;
+  margin: 2px 0 14px;
   padding: 0 8px;
   color: var(--ps-modal-muted);
   font-family: var(--font-ja);
@@ -1511,7 +1534,7 @@
 .ps-mechanic-guide {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
+  gap: 10px;
   max-height: min(52dvh, 520px);
   overflow-y: auto;
   padding-right: 4px;
@@ -1520,9 +1543,9 @@
 .ps-mechanic-guide-item {
   display: grid;
   grid-template-columns: 42px minmax(0, 1fr);
-  align-items: center;
-  gap: 10px;
-  padding: 12px;
+  align-items: start;
+  gap: 12px;
+  padding: 13px;
   border: 1px solid var(--border);
   border-radius: 10px;
   background: color-mix(in oklch, var(--card) 88%, var(--background));
@@ -1539,14 +1562,14 @@
 
 .ps-mechanic-guide-item span:last-child {
   display: grid;
-  gap: 5px;
+  gap: 6px;
 }
 
 .ps-mechanic-guide-item small {
   color: var(--muted-foreground);
   font-family: var(--font-ja);
   font-size: 11px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .ps-tutorial-step {
@@ -1581,6 +1604,7 @@
 }
 
 .ps-tutorial-modal .ps-primary-button {
+  margin-top: 14px;
   min-height: 48px;
   border-color: color-mix(in oklch, var(--primary) 68%, var(--border));
   background: var(--primary);
@@ -1589,6 +1613,13 @@
 }
 
 .ps-complete-modal {
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+  border-color: var(--border);
+  background: color-mix(in oklab, var(--background) 95%, transparent);
+  box-shadow: 0 1px 3px color-mix(in oklch, black 12%, transparent), 0 1px 2px color-mix(in oklch, black 10%, transparent);
+  backdrop-filter: blur(8px);
   text-align: center;
 }
 
@@ -1596,13 +1627,13 @@
   display: inline-grid;
   width: 58px;
   height: 58px;
-  margin-bottom: 18px;
+  margin: 0 auto 6px;
   place-items: center;
-  border: 1px solid color-mix(in oklch, var(--ps-cyan) 55%, transparent);
+  border: 1px solid color-mix(in oklch, var(--primary) 34%, var(--border));
   border-radius: 999px;
-  background: color-mix(in oklch, var(--ps-cyan) 10%, transparent);
-  color: var(--ps-cyan-strong);
-  box-shadow: 0 0 36px color-mix(in oklch, var(--ps-cyan) 20%, transparent);
+  background: color-mix(in oklch, var(--primary) 10%, var(--card));
+  color: color-mix(in oklch, var(--primary) 72%, var(--foreground));
+  box-shadow: 0 8px 24px color-mix(in oklch, var(--primary) 12%, transparent);
 }
 
 .ps-complete-mark .ps-icon {
@@ -1620,8 +1651,8 @@
 .ps-complete-stats {
   display: flex;
   justify-content: center;
-  gap: 36px;
-  margin: 24px 0;
+  gap: 32px;
+  margin: 8px 0 2px;
 }
 
 .ps-complete-stat {
@@ -1631,7 +1662,33 @@
 }
 
 .ps-complete-actions {
+  gap: 10px;
   flex-direction: column;
+}
+
+.ps-complete-modal .ps-complete-title {
+  margin: 0;
+}
+
+.ps-complete-modal .ps-complete-reason {
+  margin: 0;
+  padding: 11px 14px;
+  border-color: var(--border);
+  background: color-mix(in oklch, var(--card) 90%, var(--background));
+  color: var(--foreground);
+  line-height: 1.7;
+}
+
+.ps-complete-modal .ps-primary-button {
+  border-color: color-mix(in oklch, var(--primary) 52%, var(--border));
+  background: color-mix(in oklch, var(--primary) 80%, var(--foreground));
+  color: var(--primary-foreground);
+}
+
+.ps-complete-modal .ps-secondary-button {
+  border-color: var(--border);
+  background: color-mix(in oklch, var(--card) 88%, var(--background));
+  color: var(--foreground);
 }
 
 .ps-primary-button,
@@ -1754,9 +1811,9 @@
     height: 36px;
     padding: 2px;
     place-items: center;
-    border: 1px solid var(--ps-line);
+    border: 1px solid var(--border);
     border-radius: 8px;
-    background: color-mix(in oklch, var(--card) 86%, transparent);
+    background: var(--background);
     color: var(--foreground);
   }
 
@@ -1966,8 +2023,8 @@
   }
 
   .ps-mobile-action-bar .ps-action-button--restart {
-    border-color: color-mix(in oklch, var(--foreground) 24%, var(--ps-line));
-    background: color-mix(in oklch, var(--foreground) 5%, var(--ps-panel));
+    border-color: var(--border);
+    background: var(--background);
   }
 
   .ps-touch-controls {
@@ -1984,39 +2041,9 @@
     width: 100%;
     min-width: 0;
     min-height: 58px;
-    border-color: color-mix(in oklch, var(--foreground) 18%, var(--border));
-    background:
-      linear-gradient(180deg, color-mix(in oklch, var(--card) 98%, white), color-mix(in oklch, var(--card) 90%, var(--background)));
-    box-shadow:
-      0 7px 16px color-mix(in oklch, var(--foreground) 11%, transparent),
-      inset 0 1px 0 color-mix(in oklch, white 72%, transparent),
-      inset 0 -1px 0 color-mix(in oklch, var(--foreground) 14%, transparent);
-  }
-
-  .dark .ps-mobile-control-dock {
-    border-color: color-mix(in oklch, var(--foreground) 18%, transparent);
-    background: color-mix(in oklch, #111d27 72%, var(--card));
-    box-shadow: 0 12px 28px color-mix(in oklch, #000 38%, transparent);
-  }
-
-  .dark .ps-direction-button {
-    border-color: color-mix(in oklch, var(--foreground) 18%, transparent);
-    background:
-      linear-gradient(180deg, color-mix(in oklch, #2a3d4b 58%, var(--card)), color-mix(in oklch, #17242f 70%, var(--background)));
-    box-shadow:
-      0 8px 18px color-mix(in oklch, #000 34%, transparent),
-      inset 0 1px 0 color-mix(in oklch, white 24%, transparent),
-      inset 0 -1px 0 color-mix(in oklch, #000 28%, transparent);
-  }
-
-  .dark .ps-direction-button:hover {
-    border-color: color-mix(in oklch, var(--primary) 36%, var(--border));
-    background:
-      linear-gradient(180deg, color-mix(in oklch, var(--primary) 19%, #253846), color-mix(in oklch, var(--primary) 12%, #17222d));
-  }
-
-  .dark .ps-direction-icon {
-    color: color-mix(in oklch, var(--foreground) 72%, var(--primary));
+    border-color: var(--border);
+    background: var(--background);
+    box-shadow: none;
   }
 
   .ps-direction-icon {
@@ -2055,14 +2082,37 @@
   }
 
   .ps-tutorial-goal {
+    margin: 0 0 10px;
     padding: 0;
     font-size: 12px;
+  }
+
+  .ps-mechanic-guide {
+    gap: 8px;
+  }
+
+  .ps-tutorial-modal .ps-primary-button {
+    margin-top: 10px;
   }
 
   .ps-tutorial-step {
     grid-template-columns: 30px minmax(0, 1fr);
     gap: 8px;
     padding: 11px 0;
+  }
+
+  .ps-complete-modal {
+    gap: 10px;
+    padding: 20px 18px;
+  }
+
+  .ps-complete-stats {
+    gap: 24px;
+    margin: 6px 0 0;
+  }
+
+  .ps-complete-modal .ps-complete-reason {
+    padding: 10px 12px;
   }
 }
 
