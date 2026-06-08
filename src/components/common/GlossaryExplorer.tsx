@@ -302,7 +302,7 @@ export default function GlossaryExplorer({ sections }: Props) {
               ))}
             </div>
 
-            <p className="text-xs text-muted-foreground sm:justify-self-end" aria-live="polite">
+            <p className="hidden text-xs text-muted-foreground sm:block sm:justify-self-end" aria-live="polite">
               {filteredTerms.length} / {allTerms.length} 語
             </p>
           </div>
