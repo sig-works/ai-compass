@@ -193,13 +193,61 @@ export default function GlossaryExplorer({ sections }: Props) {
   const canSelectNext = activeTermIndex >= 0 && activeTermIndex < filteredTerms.length - 1;
   const hasResults = filteredTerms.length > 0;
 
-  const selectTermByOffset = (offset: number) => {
+  const selectTermByOffset = useCallback((offset: number) => {
     if (filteredTerms.length <= 1) return;
     const nextIndex = Math.min(Math.max(activeTermIndex + offset, 0), filteredTerms.length - 1);
     const nextTerm = filteredTerms[nextIndex];
     if (!nextTerm || termKey(nextTerm) === termKey(activeTerm)) return;
     selectTerm(nextTerm, { updateHash: true });
-  };
+  }, [activeTerm, activeTermIndex, filteredTerms, selectTerm]);
+
+  useEffect(() => {
+    const target = detailRef.current;
+    if (!target) return;
+
+    const onTouchStart = (event: TouchEvent) => {
+      if (!isPhoneViewport()) return;
+      const touch = event.touches[0];
+      if (!touch) return;
+      touchStartRef.current = { x: touch.clientX, y: touch.clientY };
+      touchDeltaRef.current = { x: 0, y: 0 };
+    };
+
+    const onTouchMove = (event: TouchEvent) => {
+      if (!isPhoneViewport()) return;
+      const touch = event.touches[0];
+      if (!touch) return;
+      const nextDelta = {
+        x: touch.clientX - touchStartRef.current.x,
+        y: touch.clientY - touchStartRef.current.y
+      };
+      touchDeltaRef.current = nextDelta;
+
+      const isHorizontalIntent = Math.abs(nextDelta.x) > 16 && Math.abs(nextDelta.x) > Math.abs(nextDelta.y) * 1.25;
+      if (isHorizontalIntent) {
+        event.preventDefault();
+      }
+    };
+
+    const onTouchEnd = (event: TouchEvent) => {
+      if (!isPhoneViewport()) return;
+      const { x, y } = touchDeltaRef.current;
+      const isHorizontalSwipe = Math.abs(x) >= 56 && Math.abs(x) > Math.abs(y) * 1.25;
+      if (!isHorizontalSwipe) return;
+      event.preventDefault();
+      selectTermByOffset(x < 0 ? 1 : -1);
+    };
+
+    target.addEventListener('touchstart', onTouchStart, { passive: true });
+    target.addEventListener('touchmove', onTouchMove, { passive: false });
+    target.addEventListener('touchend', onTouchEnd);
+
+    return () => {
+      target.removeEventListener('touchstart', onTouchStart);
+      target.removeEventListener('touchmove', onTouchMove);
+      target.removeEventListener('touchend', onTouchEnd);
+    };
+  }, [selectTermByOffset]);
 
   const selectRelatedTerm = (termName: string) => {
     const target = findTerm(termName);
@@ -217,9 +265,9 @@ export default function GlossaryExplorer({ sections }: Props) {
 
   return (
     <section className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2 xl:gap-3">
-      <div className="rounded-md border border-border bg-card p-2 shadow-sm sm:p-3">
+      <div className="sm:rounded-md sm:border sm:border-border sm:bg-card sm:p-3 sm:shadow-sm">
         <div className="grid gap-2 sm:gap-3">
-          <label className="flex min-w-0 items-center gap-2 rounded-md border border-border bg-background px-2.5 py-1.5 focus-within:ring-2 focus-within:ring-ring sm:px-3 sm:py-2">
+          <label className="hidden min-w-0 items-center gap-2 rounded-md border border-border bg-background px-2.5 py-1.5 focus-within:ring-2 focus-within:ring-ring sm:flex sm:px-3 sm:py-2">
             <Search className="h-4 w-4 shrink-0 text-muted-foreground" />
             <span className="sr-only">AI用語を検索</span>
             <input
@@ -364,34 +412,6 @@ export default function GlossaryExplorer({ sections }: Props) {
         <article
           ref={detailRef}
           className="min-h-0 min-w-0 scroll-mt-3 touch-pan-y overflow-hidden rounded-md border border-border bg-card shadow-sm"
-          onTouchStart={(event) => {
-            const touch = event.touches[0];
-            if (!touch) return;
-            touchStartRef.current = { x: touch.clientX, y: touch.clientY };
-            touchDeltaRef.current = { x: 0, y: 0 };
-          }}
-          onTouchMove={(event) => {
-            const touch = event.touches[0];
-            if (!touch) return;
-            const nextDelta = {
-              x: touch.clientX - touchStartRef.current.x,
-              y: touch.clientY - touchStartRef.current.y
-            };
-            touchDeltaRef.current = nextDelta;
-
-            const isHorizontalIntent = Math.abs(nextDelta.x) > 16 && Math.abs(nextDelta.x) > Math.abs(nextDelta.y) * 1.25;
-            if (isPhoneViewport() && isHorizontalIntent) {
-              event.preventDefault();
-            }
-          }}
-          onTouchEnd={(event) => {
-            if (!isPhoneViewport()) return;
-            const { x, y } = touchDeltaRef.current;
-            const isHorizontalSwipe = Math.abs(x) >= 56 && Math.abs(x) > Math.abs(y) * 1.25;
-            if (!isHorizontalSwipe) return;
-            event.preventDefault();
-            selectTermByOffset(x < 0 ? 1 : -1);
-          }}
         >
           {!hasResults ? (
             <div className="p-4">
