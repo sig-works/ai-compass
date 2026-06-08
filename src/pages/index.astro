@@ -5,7 +5,7 @@ import Layout from '@/layouts/Layout.astro';
 import aiNews from '@/data/ai-news.json';
 import { SITE_NAME } from '@/lib/content';
 import { navUrl } from '@/lib/navigation';
-import { BookOpen, BrainCircuit, Library, Newspaper, PlaySquare, Route, ShieldCheck } from 'lucide-react';
+import { BookOpen, BrainCircuit, Library, Newspaper, Route, ShieldCheck } from 'lucide-react';
 
 const featuredRead = [
   {
@@ -220,10 +220,6 @@ const globalNewsTotal = newsItems.filter((item) => item.regionId === 'global').l
 
 					<div class="flex justify-end">
 						<div class="flex flex-wrap justify-end gap-2">
-							<a href={navUrl('/videos/')} class="inline-flex h-8 items-center gap-1.5 rounded-md border border-border bg-background px-3 text-xs font-medium text-foreground no-underline transition-colors hover:bg-muted">
-								<PlaySquare className="h-3.5 w-3.5 text-primary" />
-								AI動画を見る
-							</a>
 							<a href={navUrl('/topics/')} class="inline-flex h-8 items-center rounded-md border border-border bg-background px-3 text-xs font-medium text-foreground no-underline transition-colors hover:bg-muted">
 								AI Newsをもっと見る
 							</a>

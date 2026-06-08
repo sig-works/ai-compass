@@ -2,7 +2,7 @@
 
 AI Compass は、AI をこれから学ぶ人から実務で使いたい人までを対象にした、公開向けの AI 知識ハブです。
 
-AI の基本、用語、プロンプト例、LLM の比較、AI 関連ニュースや動画を、PC とスマートフォンのどちらでも読みやすいドキュメント形式で整理しています。
+AI の基本、用語、プロンプト例、LLM の比較、AI 関連ニュースを、PC とスマートフォンのどちらでも読みやすいドキュメント形式で整理しています。
 
 ## 公開サイト
 
@@ -15,7 +15,6 @@ https://sig-works.github.io/ai-compass/
 - プロンプトパターンと実用例
 - LLM の選び方とモデル別情報
 - AI 関連ニュース
-- AI 関連動画
 - チャットボット利用ガイド
 
 ## 特徴
@@ -80,11 +79,10 @@ GitHub Pages の公開元は、リポジトリ設定で GitHub Actions を使用
 
 ## データ更新
 
-ニュース、動画、LLM データはスクリプトと GitHub Actions で更新します。
+ニュース、LLM データはスクリプトと GitHub Actions で更新します。
 
 ```sh
 npm run update:ai-news
-npm run update:ai-videos
 npm run update:llm-data
 ```
 
@@ -99,7 +97,7 @@ npm run update:llm-data
 ├── scripts/            データ更新とサイト確認用スクリプト
 ├── src/
 │   ├── components/     UI コンポーネント
-│   ├── data/           ニュース・動画などのサイト内データ
+│   ├── data/           ニュースなどのサイト内データ
 │   ├── layouts/        ページレイアウト
 │   ├── lib/            共通ロジック
 │   ├── pages/          Astro のページ
