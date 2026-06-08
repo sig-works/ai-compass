@@ -126,7 +126,7 @@ const globalTotal = items.filter((item) => item.regionId === 'global').length;
 			</div>
 		</div>
 
-		<div class="mt-3 grid gap-3 lg:mt-4">
+		<div class="mt-3 grid gap-3 touch-pan-y lg:mt-4" data-news-swipe>
 			{regions.map((region) =>
 				categories.map((category) => {
 					const categoryItems = items.filter((item) => item.regionId === region.id && item.categoryId === category.id);
@@ -195,9 +195,18 @@ const globalTotal = items.filter((item) => item.regionId === 'global').length;
 			const tabs = [...document.querySelectorAll('[data-news-tab]')];
 			const panels = [...document.querySelectorAll('[data-news-panel]')];
 			const counts = [...document.querySelectorAll('[data-tab-count]')];
+			const swipeTarget = document.querySelector('[data-news-swipe]');
 			const categoryAliases = { anthropic: 'official', claude: 'official', copilot: 'official', gemini: 'official', google: 'official', openai: 'official' };
 			let activeRegion = defaultRegion;
 			let activeCategory = defaultCategory;
+			let activeIndex = Math.max(
+				0,
+				tabs.findIndex((tab) => tab.dataset.newsRegion === defaultRegion && tab.dataset.newsTab === defaultCategory)
+			);
+			let touchStartX = 0;
+			let touchStartY = 0;
+			let touchDeltaX = 0;
+			let touchDeltaY = 0;
 
 			function countFor(regionId, categoryId) {
 				return panels.find((panel) => panel.dataset.panelRegion === regionId && panel.dataset.panelCategory === categoryId)?.querySelector('article')
@@ -227,6 +236,10 @@ const globalTotal = items.filter((item) => item.regionId === 'global').length;
 					tab.classList.toggle('text-muted-foreground', !active);
 					tab.classList.toggle('hover:bg-muted', !active);
 					tab.classList.toggle('hover:text-foreground', !active);
+					if (active) {
+						activeIndex = tabs.indexOf(tab);
+						tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+					}
 				});
 
 				panels.forEach((panel) => {
@@ -244,11 +257,54 @@ const globalTotal = items.filter((item) => item.regionId === 'global').length;
 				}
 			}
 
+			function setActiveByIndex(index) {
+				const nextIndex = Math.min(Math.max(index, 0), tabs.length - 1);
+				const tab = tabs[nextIndex];
+				if (!tab || nextIndex === activeIndex) return;
+				setActive(tab.dataset.newsRegion || defaultRegion, tab.dataset.newsTab || defaultCategory);
+			}
+
 			tabs.forEach((tab) => {
 				tab.addEventListener('click', () => {
 					setActive(tab.dataset.newsRegion || defaultRegion, tab.dataset.newsTab || defaultCategory);
 				});
 			});
+
+			if (swipeTarget && tabs.length > 1) {
+				swipeTarget.addEventListener(
+					'touchstart',
+					(event) => {
+						const touch = event.touches[0];
+						if (!touch) return;
+						touchStartX = touch.clientX;
+						touchStartY = touch.clientY;
+						touchDeltaX = 0;
+						touchDeltaY = 0;
+					},
+					{ passive: true }
+				);
+
+				swipeTarget.addEventListener(
+					'touchmove',
+					(event) => {
+						const touch = event.touches[0];
+						if (!touch) return;
+						touchDeltaX = touch.clientX - touchStartX;
+						touchDeltaY = touch.clientY - touchStartY;
+						if (Math.abs(touchDeltaX) > 16 && Math.abs(touchDeltaX) > Math.abs(touchDeltaY) * 1.25) {
+							event.preventDefault();
+						}
+					},
+					{ passive: false }
+				);
+
+				swipeTarget.addEventListener('touchend', (event) => {
+					const isHorizontalSwipe = Math.abs(touchDeltaX) >= 56 && Math.abs(touchDeltaX) > Math.abs(touchDeltaY) * 1.25;
+					if (!isHorizontalSwipe) return;
+					event.preventDefault();
+					setActiveByIndex(activeIndex + (touchDeltaX < 0 ? 1 : -1));
+				});
+			}
 
 			const hashCategory = location.hash ? location.hash.slice(1) : defaultCategory;
 			const initialCategory = categoryAliases[hashCategory] || hashCategory;
