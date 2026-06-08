@@ -8,6 +8,7 @@ interface Props {
 }
 
 const ALL_SECTIONS = 'all';
+const PHONE_MEDIA_QUERY = '(max-width: 639px)';
 
 function flattenTerms(sections: GlossarySection[]) {
   return sections.flatMap((section) => section.terms);
@@ -28,6 +29,10 @@ function decodeHash(hash: string) {
   } catch {
     return hash.replace(/^#/, '');
   }
+}
+
+function isPhoneViewport() {
+  return typeof window !== 'undefined' && window.matchMedia(PHONE_MEDIA_QUERY).matches;
 }
 
 function searchableText(term: GlossaryTerm) {
@@ -368,15 +373,23 @@ export default function GlossaryExplorer({ sections }: Props) {
           onTouchMove={(event) => {
             const touch = event.touches[0];
             if (!touch) return;
-            touchDeltaRef.current = {
+            const nextDelta = {
               x: touch.clientX - touchStartRef.current.x,
               y: touch.clientY - touchStartRef.current.y
             };
+            touchDeltaRef.current = nextDelta;
+
+            const isHorizontalIntent = Math.abs(nextDelta.x) > 16 && Math.abs(nextDelta.x) > Math.abs(nextDelta.y) * 1.25;
+            if (isPhoneViewport() && isHorizontalIntent) {
+              event.preventDefault();
+            }
           }}
-          onTouchEnd={() => {
+          onTouchEnd={(event) => {
+            if (!isPhoneViewport()) return;
             const { x, y } = touchDeltaRef.current;
             const isHorizontalSwipe = Math.abs(x) >= 56 && Math.abs(x) > Math.abs(y) * 1.25;
             if (!isHorizontalSwipe) return;
+            event.preventDefault();
             selectTermByOffset(x < 0 ? 1 : -1);
           }}
         >
