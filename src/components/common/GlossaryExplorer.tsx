@@ -439,8 +439,8 @@ export default function GlossaryExplorer({ sections }: Props) {
                   </div>
                 </header>
 
-                <div className="grid gap-2 p-3 sm:gap-3 sm:p-4">
-                  <section className="rounded-md border border-border bg-background p-3 sm:p-4">
+                <div className="grid gap-0 px-3 py-3 sm:px-5 sm:py-4">
+                  <section className="pb-4">
                     <h3 className="flex items-center gap-2 text-sm font-semibold">
                       <BookOpenText className="h-4 w-4 text-primary" />
                       意味
@@ -449,7 +449,7 @@ export default function GlossaryExplorer({ sections }: Props) {
                     <TermSupplement term={activeTerm} />
                   </section>
 
-                  <section className="rounded-md border border-border bg-background p-3 sm:p-4">
+                  <section className="border-t border-border py-4">
                     <h3 className="flex items-center gap-2 text-sm font-semibold">
                       <AlertTriangle className="h-4 w-4 text-primary" />
                       注意点
@@ -457,7 +457,7 @@ export default function GlossaryExplorer({ sections }: Props) {
                     <p className="mt-2 text-sm leading-7 text-muted-foreground">{activeTerm.misconception}</p>
                   </section>
 
-                  <section className="rounded-md border border-border bg-background p-3 sm:p-4">
+                  <section className="border-t border-border py-4">
                     <h3 className="flex items-center gap-2 text-sm font-semibold">
                       <Workflow className="h-4 w-4 text-primary" />
                       AIでどう使われるか
@@ -475,7 +475,7 @@ export default function GlossaryExplorer({ sections }: Props) {
                     </div>
                   </section>
 
-                  <section className="rounded-md border border-border bg-background p-3 sm:p-4">
+                  <section className="border-t border-border py-4">
                     <h3 className="flex items-center gap-2 text-sm font-semibold">
                       <CircleDot className="h-4 w-4 text-primary" />
                       具体例
@@ -483,7 +483,7 @@ export default function GlossaryExplorer({ sections }: Props) {
                     <p className="mt-2 whitespace-pre-line text-sm leading-7 text-muted-foreground">{activeTerm.example}</p>
                   </section>
 
-                  <section className="rounded-md border border-border bg-muted/40 p-3 sm:p-4">
+                  <section className="mt-1 rounded-md border border-border bg-muted/35 p-3 sm:p-4">
                     <h3 className="text-sm font-semibold">関連用語</h3>
                     <div className="mt-2 flex flex-wrap gap-1.5">
                       {activeTerm.relatedTerms.map((termName) => {
