@@ -215,6 +215,11 @@ function GlossaryResult({ term }: { term: GlossaryTerm }) {
       <div>
         <p className="text-[10px] font-semibold tracking-[0.08em] text-muted-foreground">{term.category}</p>
         <h2 className="mt-1 text-base font-bold leading-6 text-foreground">{term.term}</h2>
+        {((term.reading && term.reading !== term.term) || term.fullName) && (
+          <p className="mt-1 break-words text-xs leading-5 text-muted-foreground">
+            {[term.reading && term.reading !== term.term ? term.reading : null, term.fullName].filter(Boolean).join(' / ')}
+          </p>
+        )}
         <p className="mt-1 text-sm leading-6 text-foreground">{term.plainSummary}</p>
       </div>
 
