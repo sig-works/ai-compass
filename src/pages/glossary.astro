@@ -20,11 +20,43 @@ const termCount = GLOSSARY_SECTIONS.reduce((sum, section) => sum + section.terms
 					</div>
 				</div>
 				<p class="hidden max-w-2xl text-sm leading-6 text-muted-foreground sm:block">
-					AIに関する重要な言葉を、初心者向けに分かりやすく解説します。読み方が分からない用語も、カタカナ表記と正式名称を確認できます。
+					AIに関する重要な言葉を、初心者向けに分かりやすく整理します。英語や略語は別名と正式名称も合わせて確認できます。
 				</p>
 			</div>
 		</header>
 
 		<GlossaryExplorer client:load sections={GLOSSARY_SECTIONS} />
 	</section>
+
+	<details class="mt-3 rounded-md border border-border bg-card px-3 py-2 text-sm shadow-sm">
+		<summary class="cursor-pointer font-semibold">全{termCount}語の静的本文</summary>
+		<section class="mt-3 grid gap-4" aria-label="AI用語集の静的本文">
+			<h2 class="sr-only">AI用語集 静的本文</h2>
+			<p class="text-muted-foreground">このページの正本は {termCount} 語、{GLOSSARY_SECTIONS.length} カテゴリです。</p>
+		{GLOSSARY_SECTIONS.map((section) => (
+			<section id={`glossary-static-${section.id}`} class="grid gap-2">
+				<h3 class="text-base font-semibold">{section.title}</h3>
+				<p class="text-muted-foreground">{section.description}</p>
+				<div class="grid gap-2 md:grid-cols-2 xl:grid-cols-3">
+				{section.terms.map((term) => (
+					<article id={`glossary-static-${term.id ?? term.term}`} class="rounded-md border border-border bg-background p-3">
+						<h4 class="font-semibold">{term.term}</h4>
+						{term.fullName && <p class="mt-1 text-xs text-muted-foreground">正式名称: {term.fullName}</p>}
+						{term.aliases && term.aliases.length > 0 && <p class="mt-1 text-xs text-muted-foreground">別名: {term.aliases.join(' / ')}</p>}
+						<p class="mt-2">要約: {term.plainSummary}</p>
+						<p class="mt-2 text-muted-foreground">意味: {term.meaning}</p>
+						<p class="mt-2 text-muted-foreground">注意点: {term.misconception}</p>
+						<p class="mt-2 text-muted-foreground">AIでの使われ方: {term.usageInAi}</p>
+						<ul class="mt-2 list-disc space-y-1 pl-5 text-muted-foreground">
+							{term.workflow.map((step) => <li>{step}</li>)}
+						</ul>
+						<p class="mt-2 text-muted-foreground">具体例: {term.example}</p>
+						<p class="mt-2 text-muted-foreground">関連用語: {term.relatedTerms.join(' / ')}</p>
+					</article>
+				))}
+				</div>
+			</section>
+		))}
+		</section>
+	</details>
 </Layout>

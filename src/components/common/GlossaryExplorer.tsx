@@ -94,6 +94,16 @@ function TermSupplement({ term }: { term: GlossaryTerm }) {
   );
 }
 
+function japaneseAlias(term: GlossaryTerm) {
+  return (term.aliases ?? []).find((alias) => /[ぁ-んァ-ヶ一-龠]/.test(alias) && alias !== term.term);
+}
+
+function termListLabel(term: GlossaryTerm) {
+  const alias = japaneseAlias(term);
+  if (!alias || !/[A-Za-z]/.test(term.term)) return term.term;
+  return `${term.term}（${alias}）`;
+}
+
 export default function GlossaryExplorer({ sections }: Props) {
   const allTerms = useMemo(() => flattenTerms(sections), [sections]);
   const termIndex = useMemo(() => {
@@ -310,7 +320,7 @@ export default function GlossaryExplorer({ sections }: Props) {
                   >
                     {filteredTerms.map((term) => (
                       <option key={termKey(term)} value={termKey(term)}>
-                        {term.term}
+                        {termListLabel(term)}
                       </option>
                     ))}
                   </select>
@@ -387,7 +397,7 @@ export default function GlossaryExplorer({ sections }: Props) {
                           {term.reading && term.reading !== term.term && (
                             <span className="block min-w-0 truncate text-[9px] font-medium leading-3 text-muted-foreground">{term.reading}</span>
                           )}
-                          <span className="block min-w-0 truncate text-sm font-semibold leading-5">{term.term}</span>
+                          <span className="block min-w-0 truncate text-sm font-semibold leading-5">{termListLabel(term)}</span>
                         </span>
                         <span className="flex shrink-0 items-center gap-1">
                           {selected && (
