@@ -2,31 +2,96 @@
 import CodeConsole from '@/components/common/CodeConsole.astro';
 import TermTooltip from '@/components/common/TermTooltip.astro';
 import Layout from '@/layouts/Layout.astro';
-import { BookOpen } from 'lucide-react';
+import { BookOpen, CheckCircle2, ClipboardCheck, Compass, FileText, ShieldCheck, Sparkles, TriangleAlert } from 'lucide-react';
+
+const quickStart = [
+	{
+		label: '任せやすい',
+		title: '材料がある作業',
+		description: '要約、下書き、分類、比較、言い換えのように、人が確認できる材料から形を作る作業。',
+	},
+	{
+		label: '注意する',
+		title: '根拠が必要な答え',
+		description: '数字、固有名詞、最新情報、仕様、引用は、AIの文章ではなく一次情報で確かめる。',
+	},
+	{
+		label: '最初に試す',
+		title: '戻しやすい小仕事',
+		description: '自分が内容を理解している文章で、要点整理、確認質問、表現調整から始める。',
+	},
+];
+
+const usefulTasks = [
+	{
+		icon: FileText,
+		title: '読む量を減らす',
+		description: '長い文章を要点、未決事項、次の作業に分けます。全部を読まないためではなく、読む順番を決めるために使います。',
+	},
+	{
+		icon: Sparkles,
+		title: '書き出しを作る',
+		description: 'メール、説明文、README、提案書のたたき台を作ります。最初の空白を埋め、あとから人が整える用途に向いています。',
+	},
+	{
+		icon: Compass,
+		title: '観点を増やす',
+		description: 'テスト観点、レビュー観点、リスク、確認質問を出してもらいます。抜け漏れを減らす補助として使えます。',
+	},
+	{
+		icon: ClipboardCheck,
+		title: '言い換える',
+		description: '硬い文章を読みやすくする、短くする、相手に合わせた表現に直す、といった文章調整に向いています。',
+	},
+];
+
+const checks = [
+	'数字や固有名詞は、公式ページや手元の資料で照合する。',
+	'コードは実行し、テストやレビューを通してから使う。',
+	'重要な判断は、AIの答えではなく確認済みの根拠で決める。',
+	'不明点は「何を根拠にしたか」「自信が低い点はどこか」と聞き返す。',
+];
+
+const starterSteps = [
+	'自分が内容を理解している文章を選ぶ',
+	'要約、観点出し、言い換えのどれか1つに絞る',
+	'断定できないことを「要確認」として残させる',
+	'出てきた答えを元資料と見比べて直す',
+];
 ---
 
 <Layout title="AI入門 | AI Compass" description="AIでできること、苦手なこと、最初の試し方をまとめた記事。" currentPath="/articles/ai/ai-glossary/">
 	<article class="article-shell">
 		<div class="article-prose">
-			<p class="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.08em] text-muted-foreground">
-				<BookOpen className="h-3.5 w-3.5" />
-				基礎ガイド
-			</p>
-			<h1>AI入門</h1>
-			<p class="article-lead">
-				AIは、人の代わりにすべてを決めるものではなく、調べる、整理する、書き出す、見直す作業を速くするための道具です。
-				まずは「何を任せやすいか」「どこで間違いやすいか」「どう確かめるか」を押さえると、使い始めやすくなります。
-			</p>
+			<header class="grid gap-5 lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-end">
+				<div>
+					<p class="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.08em] text-muted-foreground">
+						<BookOpen className="h-3.5 w-3.5" />
+						基礎ガイド
+					</p>
+					<h1>AI入門</h1>
+					<p class="article-lead">
+						AIは、人の代わりにすべてを決めるものではなく、調べる、整理する、書き出す、見直す作業を速くするための道具です。
+						まずは「任せやすい作業」「間違いやすい場所」「確かめ方」を分けて考えると、使い始めやすくなります。
+					</p>
+				</div>
+				<aside class="rounded-md border border-primary/20 bg-secondary/60 p-4 text-sm leading-6 text-secondary-foreground shadow-sm">
+					<p class="mt-0 text-xs font-semibold text-foreground">最初の結論</p>
+					<p class="mt-2">
+						AIは答えを確定する相手ではなく、確認前の材料を早く出す相手です。
+					</p>
+				</aside>
+			</header>
 
-			<div class="note-box">
-				<p class="mt-0 font-medium text-foreground">このページで押さえること</p>
-				<ul>
-					<li>AIは、文章や画像などをもとに答えを作る道具であること。</li>
-					<li>得意なのは、下書き、要約、比較、観点出し、言い換えなどの作業。</li>
-					<li>苦手なのは、正確な事実確認、最新情報、責任ある最終判断。</li>
-					<li>最初は小さな作業から試し、人が確認してから使うこと。</li>
-				</ul>
-			</div>
+			<section class="not-prose mt-6 grid gap-3 md:grid-cols-3">
+				{quickStart.map((item) => (
+					<div class="rounded-md border border-border bg-background p-3 shadow-sm">
+						<p class="mt-0 text-[11px] font-semibold text-primary">{item.label}</p>
+						<p class="mt-2 text-base font-bold text-foreground">{item.title}</p>
+						<p class="mt-2 text-sm leading-6 text-muted-foreground">{item.description}</p>
+					</div>
+				))}
+			</section>
 
 			<h2>AIは何を助けるものか</h2>
 			<p>
@@ -40,31 +105,20 @@ import { BookOpen } from 'lucide-react';
 			</p>
 
 			<h2>最初に任せやすい作業</h2>
-			<div class="mt-4 grid gap-3 md:grid-cols-2">
-				<div class="rounded-md border border-border bg-background p-3 shadow-sm">
-					<h3 class="mt-0 text-sm font-semibold text-foreground">読む量を減らす</h3>
-					<p class="mt-2 text-sm leading-6 text-muted-foreground">
-						長い文章を要約し、重要な点、未決事項、次の作業に分けてもらいます。全部を読まないためではなく、読む順番を決めるために使います。
-					</p>
-				</div>
-				<div class="rounded-md border border-border bg-background p-3 shadow-sm">
-					<h3 class="mt-0 text-sm font-semibold text-foreground">書き出しを作る</h3>
-					<p class="mt-2 text-sm leading-6 text-muted-foreground">
-						メール、説明文、README、提案書のたたき台を作ります。最初の空白を埋める用途に向いています。
-					</p>
-				</div>
-				<div class="rounded-md border border-border bg-background p-3 shadow-sm">
-					<h3 class="mt-0 text-sm font-semibold text-foreground">観点を増やす</h3>
-					<p class="mt-2 text-sm leading-6 text-muted-foreground">
-						テスト観点、レビュー観点、リスク、確認質問を出してもらいます。抜け漏れを減らす補助として使えます。
-					</p>
-				</div>
-				<div class="rounded-md border border-border bg-background p-3 shadow-sm">
-					<h3 class="mt-0 text-sm font-semibold text-foreground">言い換える</h3>
-					<p class="mt-2 text-sm leading-6 text-muted-foreground">
-						硬い文章を読みやすくする、短くする、相手に合わせた表現に直す、といった文章調整に向いています。
-					</p>
-				</div>
+			<div class="not-prose mt-4 grid gap-3 md:grid-cols-2">
+				{usefulTasks.map((task) => (
+					<div class="rounded-md border border-border bg-background p-4 shadow-sm">
+						<div class="flex items-start gap-3">
+							<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-card text-primary">
+								<task.icon className="h-4 w-4" />
+							</span>
+							<div class="min-w-0">
+								<p class="mt-0 text-sm font-semibold text-foreground">{task.title}</p>
+								<p class="mt-2 text-sm leading-6 text-muted-foreground">{task.description}</p>
+							</div>
+						</div>
+					</div>
+				))}
 			</div>
 
 			<h2>苦手なことと確認方法</h2>
@@ -72,20 +126,47 @@ import { BookOpen } from 'lucide-react';
 				AIは自然な文章を作れるため、正しそうに見える誤りを出すことがあります。これは <TermTooltip term="幻覚" label="ハルシネーション" /> と呼ばれます。
 				特に、最新情報、数字、引用、仕様、固有名詞はそのまま採用せず、一次情報や手元の資料で確認します。
 			</p>
-			<div class="note-box">
-				<ul>
-					<li>数字や固有名詞は、公式ページや社内資料で照合する。</li>
-					<li>コードは実行し、テストやレビューを通してから使う。</li>
-					<li>重要な判断は、AIの答えではなく確認済みの根拠で決める。</li>
-					<li>不明点は「何を根拠にしたか」「自信が低い点はどこか」と聞き返す。</li>
-				</ul>
+			<div class="not-prose mt-4 grid gap-3 lg:grid-cols-[16rem_minmax(0,1fr)]">
+				<div class="rounded-md border border-destructive/25 bg-background p-4 shadow-sm">
+					<div class="flex items-center gap-2 text-sm font-semibold text-foreground">
+						<TriangleAlert className="h-4 w-4 text-destructive" />
+						そのまま採用しない
+					</div>
+					<p class="mt-2 text-sm leading-6 text-muted-foreground">
+						文章が自然でも、根拠が正しいとは限りません。影響が大きいものほど確認の手順を先に決めます。
+					</p>
+				</div>
+				<div class="rounded-md border border-border bg-background p-4 shadow-sm">
+					<div class="flex items-center gap-2 text-sm font-semibold text-foreground">
+						<ShieldCheck className="h-4 w-4 text-primary" />
+						確認チェック
+					</div>
+					<ul class="mt-3 grid gap-2 pl-0">
+						{checks.map((check) => (
+							<li class="flex gap-2 text-sm leading-6 text-muted-foreground">
+								<CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-primary" />
+								<span>{check}</span>
+							</li>
+						))}
+					</ul>
+				</div>
 			</div>
 
 			<h2>最初の試し方</h2>
 			<p>
 				最初から大きな業務を任せるより、失敗しても戻しやすい作業で試すのが安全です。
-				まずは、すでに自分が内容を理解している文章を使い、要約、観点出し、言い換えを比べるのが安全です。
+				すでに自分が内容を理解している文章を使い、要約、観点出し、言い換えを比べると、AIの得意不得意を判断しやすくなります。
 			</p>
+			<ol class="not-prose mt-4 grid gap-2 pl-0">
+				{starterSteps.map((step, index) => (
+					<li class="flex items-center gap-3 rounded-md border border-border bg-background px-3 py-2 text-sm leading-6 text-muted-foreground shadow-sm">
+						<span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-border bg-card text-xs font-semibold text-foreground">
+							{index + 1}
+						</span>
+						<span>{step}</span>
+					</li>
+				))}
+			</ol>
 
 			<CodeConsole title="最初に試す依頼文" language="text" tone="prompt">
 {`次の文章を、仕事で確認しやすい形に整理してください。
@@ -101,10 +182,16 @@ import { BookOpen } from 'lucide-react';
 			</CodeConsole>
 
 			<h2>次に読むページ</h2>
-			<p>
-				言葉で頼むAIの仕組みと選び方を知りたい場合は <a href="/articles/ai/llm-basics/">LLMとは？</a>、
-				入力してよい情報や確認ルールを決めたい場合は <a href="/articles/ai/safety-guide/">安全なAI活用</a> を先に読むとつながります。
-			</p>
+			<div class="not-prose mt-4 grid gap-3 md:grid-cols-2">
+				<a class="rounded-md border border-border bg-background p-4 text-foreground no-underline shadow-sm hover:bg-muted" href="/articles/ai/llm-basics/">
+					<p class="mt-0 text-sm font-semibold">LLMとは？</p>
+					<p class="mt-2 text-sm leading-6 text-muted-foreground">言葉で頼むAIの仕組み、依頼文の基本、モデル選びの目安を確認します。</p>
+				</a>
+				<a class="rounded-md border border-border bg-background p-4 text-foreground no-underline shadow-sm hover:bg-muted" href="/articles/ai/safety-guide/">
+					<p class="mt-0 text-sm font-semibold">安全なAI活用</p>
+					<p class="mt-2 text-sm leading-6 text-muted-foreground">入力してよい情報、答えの確認、共有前チェックを決めます。</p>
+				</a>
+			</div>
 
 			<h2>参考資料</h2>
 			<div class="source-list">

@@ -1,0 +1,174 @@
+{
+  "categories": [
+    {
+      "id": "desk-tools",
+      "label": "デスクまわり",
+      "description": "買い替えながら長く使っている入力デバイス。"
+    }
+  ],
+  "items": [
+    {
+      "id": "ergo-m575sp",
+      "categoryId": "desk-tools",
+      "name": "Logicool ERGO M575SP",
+      "type": "トラックボールマウス",
+      "affiliateId": "amazon-ergo-m575sp",
+      "usage": "2代目",
+      "image": {
+        "src": "https://resource.logitech.com/w_544%2Ch_466%2Car_7%3A6%2Cc_pad%2Cq_auto%2Cf_auto%2Cdpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m575s-ergo-wireless-trackball/gallery/ergo-m575s-m575sp-black-blue-ball-gallery-1.png",
+        "alt": "Logicool ERGO M575SP"
+      },
+      "summary": "机の上で本体を動かさずに使える親指操作のトラックボール。省スペースで、普通のマウスに戻りにくくなるおすすめ品です。",
+      "body": [
+        "トラックボールは2代目。慣れるまでは少し違和感がありますが、慣れると手首を動かさずに済む楽さが大きいです。",
+        "狭い机でも使いやすく、本体を持ち上げたり動かしたりしなくていいのが気に入っています。クリック感も普段使いでは十分です。",
+        "普通のマウスを動かすスペースを考えなくてよくなるので、作業スペースが狭い人ほど良さを感じやすいと思います。"
+      ],
+      "goodPoints": [
+        "本体を動かさず使える",
+        "狭い机に強い",
+        "手首が楽",
+        "電池持ちを気にしにくい"
+      ],
+      "watchPoints": [
+        "慣れるまで時間がかかる",
+        "細かいドラッグ操作は普通のマウスの方が楽な場合がある"
+      ]
+    },
+    {
+      "id": "ergotron-lx-arm",
+      "categoryId": "desk-tools",
+      "name": "Ergotron LX デスクモニターアーム",
+      "type": "モニターアーム",
+      "affiliateId": "amazon-ergotron-lx-arm",
+      "usage": "",
+      "image": {
+        "src": "https://m.media-amazon.com/images/I/610HqQsInRL._AC_SY300_SX300_QL70_ML2_.jpg",
+        "alt": "Ergotron LX デスクモニターアーム"
+      },
+      "summary": "机の快適さを一気に変えてくれるおすすめモニターアーム。作業環境の自由度が大きく上がります。",
+      "body": [
+        "モニター下のスペースが空くので、机の上がかなり使いやすくなります。位置を細かく動かせるだけで、作業中の姿勢も整えやすいです。",
+        "安いアームより価格は高いですが、動きの軽さと止まってほしい位置で止まる安定感が大きいです。毎日使う部分なので、ここに投資する価値はあります。",
+        "直置きから変えると、世界が変わるくらい快適です。"
+      ],
+      "goodPoints": [
+        "机の上が広くなる",
+        "モニター位置を調整しやすい",
+        "動きがなめらか",
+        "長く使える安定感がある"
+      ],
+      "watchPoints": [
+        "価格は高め",
+        "机の天板や設置スペースとの相性確認は必要"
+      ]
+    },
+    {
+      "id": "mx-keys-s",
+      "categoryId": "desk-tools",
+      "name": "Logicool MX Keys S",
+      "type": "キーボード",
+      "affiliateId": "amazon-mx-keys-s",
+      "usage": "4代目",
+      "image": {
+        "src": "https://resource.logitech.com/w_544%2Ch_466%2Car_7%3A6%2Cc_pad%2Cq_auto%2Cf_auto%2Cdpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-keys-s/migration-assets-for-delorean-2025/gallery/mx-keys-s-top-view-graphite-us.png",
+        "alt": "Logicool MX Keys S"
+      },
+      "summary": "薄型で静かめ、テンキー付きで普段使いしやすいフルサイズキーボード。派手さより、毎日そのまま使える安定感で選んでいます。",
+      "body": [
+        "このシリーズは4代目。大きく感動するタイプではないけれど、戻ってきたくなる打ちやすさがあります。",
+        "キーが浅めで、強く打ち込まなくても入力しやすいところが好みです。テンキー付きなので、数字入力や管理画面の作業でも迷いません。"
+      ],
+      "goodPoints": [
+        "薄型で打ちやすい",
+        "静かめで夜でも使いやすい",
+        "テンキー付き",
+        "複数端末の切り替えが楽"
+      ],
+      "watchPoints": [
+        "角度調整はできない",
+        "メカニカルの深い打鍵感が好きな人向けではない"
+      ]
+    },
+    {
+      "id": "msi-g274qpf-e2",
+      "categoryId": "desk-tools",
+      "name": "MSI G274QPF E2",
+      "type": "モニター",
+      "affiliateId": "amazon-msi-g274qpf-e2",
+      "usage": "",
+      "image": {
+        "src": "https://storage-asset.msi.com/global/picture/image/feature/monitor/G274QPF-E2/kv-mnt.png",
+        "alt": "MSI G274QPF E2"
+      },
+      "summary": "メインモニタとして使っている27インチWQHDモニター。作業領域とゲーム用途のバランスが取りやすいサイズです。",
+      "body": [
+        "27インチのWQHDなので、フルHDより作業領域に余裕があります。ブラウザや管理画面を並べても窮屈になりにくいところがメイン向きです。",
+        "180Hz対応のRapid IPSなので、ゲームでも普段のカーソル移動でもなめらかに感じます。作業用とゲーム用を分けずに使いやすいです。",
+        "高さ調整や縦横回転に対応しているので、机や姿勢に合わせやすいのも助かります。最終的にはアーム運用でも、スタンドの自由度があるのは安心です。"
+      ],
+      "goodPoints": [
+        "27インチWQHDで作業しやすい",
+        "180Hz対応",
+        "Rapid IPSで見やすい",
+        "高さ調整と回転に対応"
+      ],
+      "watchPoints": [
+        "4Kではない",
+        "27インチなので机の奥行きはある程度ほしい"
+      ]
+    },
+    {
+      "id": "benq-ex240n",
+      "categoryId": "desk-tools",
+      "name": "BenQ MOBIUZ EX240N",
+      "type": "モニター",
+      "affiliateId": "amazon-benq-ex240n",
+      "usage": "",
+      "image": {
+        "src": "https://image.benq.com/is/image/benqco/ex240n-right45",
+        "alt": "BenQ MOBIUZ EX240N"
+      },
+      "summary": "ゲーム用のサブモニタとして使いやすい、23.8インチのフルHDゲーミングモニター。大きすぎないサイズで置きやすい一台です。",
+      "body": [
+        "165Hz対応なので、ゲーム用のサブモニタとして十分ななめらかさがあります。机の上で圧迫感が出にくいサイズ感なのも使いやすいところです。",
+        "内蔵スピーカーがあるので、とりあえず音を出したい時に外部スピーカーを用意しなくても済みます。音に強くこだわらない用途なら気軽です。",
+        "ブライトネスインテリジェンスプラスやブルーライト軽減など、長時間見る前提の機能が入っているのも選びやすい理由です。"
+      ],
+      "goodPoints": [
+        "23.8インチで置きやすい",
+        "フルHD 165Hz対応",
+        "内蔵スピーカー付き",
+        "目に配慮した機能がある"
+      ],
+      "watchPoints": [
+        "高さ調整はできない",
+        "VAパネルなので色味や残像感の好みは分かれる"
+      ]
+    },
+    {
+      "id": "peripro-303",
+      "categoryId": "desk-tools",
+      "name": "PERIPRO-303 34mm 交換用トラックボール",
+      "type": "交換用ボール",
+      "affiliateId": "amazon-peripro-303",
+      "usage": "即交換して使用",
+      "image": {
+        "src": "https://perixx.co.jp/cdn/shop/products/trackballThumbnailimage_a45045f6-65ea-44c9-b627-b85e2e2bee19_800x.png?v=1744639262",
+        "alt": "PERIPRO-303 34mm 交換用トラックボール"
+      },
+      "summary": "トラックボールマウスの純正ボールから交換して使っている34mmボール。個人的には純正よりこちらの方が合っています。",
+      "body": [
+        "M575SPは買ったらすぐこのボールに交換しています。自分の環境では、純正より転がりが軽く感じます。",
+        "トラックボールは本体よりボールの感触で印象が変わります。少しでも引っかかりが気になるなら、交換パーツとして試す価値があります。",
+        "自分はM575SPを買ったら、このボールに交換する前提で使っています。"
+      ],
+      "goodPoints": [
+        "転がりを変えられる",
+        "34mm対応機種で使いやすい",
+        "色で見た目も変えられる"
+      ],
+      "watchPoints": []
+    }
+  ]
+}

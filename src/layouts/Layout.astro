@@ -3,8 +3,9 @@ import ThemeToggle from '@/components/common/ThemeToggle';
 import { Card } from '@/components/ui/card';
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from '@/components/ui/navigation-menu';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { AFFILIATE_DISCLOSURE, AFFILIATE_POLICY_PATH } from '@/lib/affiliate';
 import { SITE_DESCRIPTION, SITE_NAME } from '@/lib/content';
-import { CORE_PAGES, GUIDE_PAGES, REFERENCE_PAGES, navUrl } from '@/lib/navigation';
+import { CORE_PAGES, GUIDE_PAGES, OTHER_PAGES, REFERENCE_PAGES, navUrl } from '@/lib/navigation';
 import { Menu } from 'lucide-react';
 import '../styles/global.css';
 
@@ -227,6 +228,24 @@ const isActive = (href: string) => {
 												))}
 											</div>
 										</div>
+
+										<div class="border-t border-border pt-2">
+											<p class="px-2 pb-1 text-[11px] font-semibold tracking-[0.08em] text-muted-foreground">その他</p>
+											<div class="grid gap-0.5">
+												{OTHER_PAGES.map((item) => (
+													<a
+														href={navUrl(item.href)}
+														class={[
+															'rounded-md border border-transparent px-3 py-2 text-sm no-underline transition-colors hover:border-border hover:bg-muted hover:text-foreground',
+															isActive(item.href) ? 'border-primary/30 bg-secondary text-secondary-foreground' : 'text-muted-foreground'
+														].filter(Boolean).join(' ')}
+													>
+														<span class="block font-medium">{item.label}</span>
+														<span class="mt-0.5 block text-xs text-muted-foreground">{item.description}</span>
+													</a>
+												))}
+											</div>
+										</div>
 									</div>
 								</nav>
 							</div>
@@ -339,13 +358,40 @@ const isActive = (href: string) => {
 										))}
 									</NavigationMenuList>
 								</div>
+
+								<div class="mt-3 border-t border-border pt-3">
+									<p class="px-2 text-[11px] font-semibold tracking-[0.08em] text-muted-foreground">その他</p>
+									<NavigationMenuList className="mt-2 gap-0.5">
+										{OTHER_PAGES.map((item) => (
+											<NavigationMenuItem>
+												<NavigationMenuLink
+													href={navUrl(item.href)}
+													className={['py-1.5', isActive(item.href) ? 'bg-secondary text-secondary-foreground' : ''].filter(Boolean).join(' ')}
+												>
+													<span class="block font-medium">{item.label}</span>
+													<span class="mt-0.5 block text-xs text-muted-foreground">{item.description}</span>
+												</NavigationMenuLink>
+											</NavigationMenuItem>
+										))}
+									</NavigationMenuList>
+								</div>
 							</NavigationMenu>
+							<div class="mt-3 border-t border-border px-2 pt-3 text-[11px] leading-5 text-muted-foreground">
+								{AFFILIATE_DISCLOSURE}
+								<a href={navUrl(AFFILIATE_POLICY_PATH)} class="ml-1 text-muted-foreground underline underline-offset-4 hover:text-primary">広告ポリシー</a>
+							</div>
 						</ScrollArea>
 					</Card>
 				</aside>}
 
 				<main class="min-w-0 pb-12">
 					<slot />
+					{!immersive && (
+						<div class="mt-6 rounded-md border border-border/70 px-3 py-2 text-[11px] leading-5 text-muted-foreground lg:hidden">
+							{AFFILIATE_DISCLOSURE}
+							<a href={navUrl(AFFILIATE_POLICY_PATH)} class="ml-1 text-muted-foreground underline underline-offset-4 hover:text-primary">広告ポリシー</a>
+						</div>
+					)}
 				</main>
 			</div>
 		</div>

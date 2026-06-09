@@ -1,0 +1,34 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { AFFILIATE_DISCLOSURE } from '@/lib/affiliate';
+
+const title = '広告ポリシー | AI Compass';
+const description = 'AI Compass の広告リンク・アフィリエイトリンクに関する表示方針。';
+---
+
+<Layout title={title} description={description} currentPath="/affiliate-policy/">
+	<article class="article-shell">
+		<div class="article-prose">
+			<p class="text-[11px] font-semibold tracking-[0.12em] text-muted-foreground">Policy</p>
+			<h1>広告ポリシー</h1>
+			<p class="article-lead">{AFFILIATE_DISCLOSURE}</p>
+
+			<h2>掲載方針</h2>
+			<p>
+				AI Compass は、AI ツールや学習情報を選ぶときの判断材料を整理するサイトです。広告リンクの有無にかかわらず、公式情報、仕様、料金、利用条件を確認し、読者が比較しやすい形に再構成します。
+			</p>
+
+			<h2>リンクの扱い</h2>
+			<ul>
+				<li>広告リンクやアフィリエイトリンクを含む場合があります。</li>
+				<li>リンク先で申し込みや購入が発生した場合、AI Compass が報酬を受け取ることがあります。</li>
+				<li>価格、提供範囲、キャンペーン、利用条件は変更されるため、最終判断の前に公式ページを確認してください。</li>
+			</ul>
+
+			<h2>編集上の優先順位</h2>
+			<p>
+				紹介する内容は、初心者と実務利用者が安全に比較・検討できることを優先します。報酬の有無だけで、根拠の薄い推奨、過度な断定、古い情報の掲載を行わない方針です。
+			</p>
+		</div>
+	</article>
+</Layout>

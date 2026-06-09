@@ -17,7 +17,6 @@ export interface NavItem {
 
 export const CORE_PAGES: NavItem[] = [
   { href: '/', label: 'ホーム', description: 'トップページ' },
-  { href: '/project-shift/', label: 'Game', description: '倉庫番パズル' },
   { href: '/topics/', label: 'AI News', description: '国内ニュースと海外公式を確認' },
   { href: '/chatbot/', label: 'チャットボット', description: 'AIに相談する画面' }
 ];
@@ -35,7 +34,12 @@ export const REFERENCE_PAGES: NavItem[] = [
   { href: '/llms/catalog/', label: 'LLM紹介', description: 'モデル別の特徴を読む', children: LLM_PROFILE_NAV }
 ];
 
-export const STATIC_PAGES = [...CORE_PAGES, ...GUIDE_PAGES, ...REFERENCE_PAGES].map(({ children, ...item }) => item);
+export const OTHER_PAGES: NavItem[] = [
+  { href: '/project-shift/', label: 'Game', description: '倉庫番パズル' },
+  { href: '/gear/', label: 'Myデバイス', description: '長く使っている愛用品' }
+];
+
+export const STATIC_PAGES = [...CORE_PAGES, ...GUIDE_PAGES, ...REFERENCE_PAGES, ...OTHER_PAGES].map(({ children, ...item }) => item);
 
 export function navUrl(path: string) {
   return withBase(path);

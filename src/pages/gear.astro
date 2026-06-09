@@ -1,0 +1,143 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import gearData from '@/data/gear.json';
+import { AFFILIATE_LINKS, affiliateUrl } from '@/lib/affiliate';
+import { CheckCircle2, ExternalLink, Keyboard, Monitor, MousePointer2, PackageCheck, SlidersHorizontal, TriangleAlert } from 'lucide-react';
+
+const title = 'Myデバイス | AI Compass';
+const description = '長く使っているキーボード、モニター、モニターアーム、トラックボールマウス、交換用トラックボールの紹介。';
+
+const iconByType = {
+  マウス: MousePointer2,
+  キーボード: Keyboard,
+  モニター: Monitor,
+  モニターアーム: Monitor,
+  トラックボールマウス: MousePointer2,
+  交換用ボール: PackageCheck
+};
+
+const affiliateClickScript = `(function () {
+  document.addEventListener('click', function (event) {
+    const link = event.target.closest && event.target.closest('[data-affiliate-link]');
+    if (!link || typeof window.gtag !== 'function') return;
+
+    window.gtag('event', 'affiliate_click', {
+      affiliate_id: link.getAttribute('data-affiliate-id'),
+      affiliate_provider: link.getAttribute('data-affiliate-provider'),
+      affiliate_category: link.getAttribute('data-affiliate-category'),
+      link_url: link.getAttribute('href'),
+      page_path: window.location.pathname
+    });
+  });
+})();`;
+
+const gearItems = gearData.items;
+---
+
+<Layout title={title} description={description} currentPath="/gear/">
+	<section class="space-y-4">
+		<section class="rounded-md border border-border bg-card p-4 shadow-sm">
+			<div class="grid gap-4">
+				<div>
+					<p class="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.12em] text-muted-foreground">
+						<SlidersHorizontal className="h-3.5 w-3.5" />
+						Favorite gear
+					</p>
+					<h1 class="mt-1 text-2xl font-semibold tracking-tight">Myデバイス</h1>
+					<p class="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
+						買い替えながら長く使っているキーボード、モニター、モニターアーム、トラックボールまわりの紹介です。スペック比較より、実際に使い続けている理由を中心にまとめます。
+					</p>
+				</div>
+				<div class="rounded-md border border-border bg-background px-3 py-2 text-sm leading-6 text-muted-foreground">
+					<p class="font-semibold text-foreground">掲載基準</p>
+					<p class="mt-1">自分で使っていて、買い替えてもまた選んでいるものだけ載せます。</p>
+				</div>
+			</div>
+		</section>
+
+		<div class="grid gap-4 xl:grid-cols-2">
+						{gearItems.map((item) => {
+							const Icon = iconByType[item.type] ?? PackageCheck;
+							const affiliate = AFFILIATE_LINKS[item.affiliateId];
+
+							return (
+								<article id={item.id} class="scroll-mt-24 rounded-md border border-border bg-background p-4 shadow-sm">
+									<div class="grid gap-4">
+										<div class="min-w-0">
+											<div class="flex items-start gap-3">
+												<span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-border bg-card text-primary">
+													<Icon className="h-5 w-5" />
+												</span>
+												<div class="min-w-0">
+													<p class="text-[11px] font-semibold tracking-[0.12em] text-muted-foreground">{item.type}</p>
+													<h3 class="mt-0.5 text-lg font-semibold leading-6 tracking-tight">{item.name}</h3>
+												</div>
+											</div>
+
+											<div class="mt-4 overflow-hidden rounded-md border border-border bg-card">
+												<img src={item.image.src} alt={item.image.alt} loading="lazy" referrerpolicy="no-referrer" class="aspect-[4/3] h-full w-full object-contain p-3" />
+											</div>
+
+											<div class="mt-3">
+												<a
+													href={affiliateUrl(item.affiliateId, '#')}
+													target="_blank"
+													rel="nofollow sponsored noopener noreferrer"
+													data-affiliate-link
+													data-affiliate-id={item.affiliateId}
+													data-affiliate-provider={affiliate?.provider ?? 'Amazon'}
+													data-affiliate-category={affiliate?.category ?? 'device'}
+													class="inline-flex h-9 w-full items-center justify-center gap-2 rounded-md border border-border bg-foreground px-3 text-sm font-medium text-background no-underline transition-colors hover:bg-foreground/90"
+												>
+													Amazonで詳細を見る
+													<ExternalLink className="h-4 w-4" />
+												</a>
+											</div>
+										</div>
+
+										<div class="min-w-0">
+											<p class="text-sm leading-5 text-muted-foreground">{item.summary}</p>
+
+											<div class="mt-3 grid gap-1.5">
+												{item.body.map((paragraph) => (
+													<p class="text-sm leading-5 text-muted-foreground">{paragraph}</p>
+												))}
+											</div>
+
+											<div class="mt-3 grid gap-2.5 border-t border-border pt-3">
+												<div>
+													<p class="flex items-center gap-2 text-sm font-semibold text-foreground">
+														<CheckCircle2 className="h-4 w-4 text-primary" />
+														良いところ
+													</p>
+													<ul class="mt-1.5 grid gap-1">
+														{item.goodPoints.map((point) => (
+															<li class="text-sm leading-5 text-muted-foreground">・{point}</li>
+														))}
+													</ul>
+												</div>
+												{item.watchPoints.length > 0 && (
+													<div>
+														<p class="flex items-center gap-2 text-sm font-semibold text-foreground">
+															<TriangleAlert className="h-4 w-4 text-muted-foreground" />
+															注意点
+														</p>
+														<ul class="mt-1.5 grid gap-1">
+															{item.watchPoints.map((point) => (
+																<li class="text-sm leading-5 text-muted-foreground">・{point}</li>
+															))}
+														</ul>
+													</div>
+												)}
+											</div>
+
+										</div>
+									</div>
+								</article>
+							);
+						})}
+		</div>
+	</section>
+
+	<script is:inline set:html={affiliateClickScript}></script>
+</Layout>
