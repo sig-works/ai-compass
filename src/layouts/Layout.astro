@@ -89,6 +89,9 @@ const isActive = (href: string) => {
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href={navUrl('/favicon.svg')} />
+		<link rel="apple-touch-icon" sizes="180x180" href={navUrl('/apple-touch-icon.png')} />
+		<link rel="manifest" href={navUrl('/site.webmanifest')} />
+		<meta name="theme-color" content="#0ea5b7" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
 		{canonical && <link rel="canonical" href={canonical} />}
