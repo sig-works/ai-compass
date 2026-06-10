@@ -22,6 +22,20 @@ function normalize(value: string) {
   return value.trim().toLowerCase();
 }
 
+function hasVisibleText(value?: string) {
+  if (!value) return false;
+  const text = value.trim();
+  return text.length > 0;
+}
+
+function visibleWorkflow(workflow: string[]) {
+  return workflow.filter((step) => hasVisibleText(step));
+}
+
+function visibleRelatedTerms(relatedTerms: string[]) {
+  return relatedTerms.filter((term) => hasVisibleText(term));
+}
+
 function decodeHash(hash: string) {
   if (!hash) return '';
   try {
@@ -36,6 +50,8 @@ function isPhoneViewport() {
 }
 
 function searchableText(term: GlossaryTerm) {
+  const workflow = visibleWorkflow(term.workflow);
+  const relatedTerms = visibleRelatedTerms(term.relatedTerms);
   return [
     term.id,
     term.term,
@@ -44,12 +60,12 @@ function searchableText(term: GlossaryTerm) {
     term.fullName,
     term.plainSummary,
     term.meaning,
-    term.usageInAi,
-    term.example,
-    term.misconception,
-    ...term.workflow,
+    hasVisibleText(term.usageInAi) ? term.usageInAi : '',
+    hasVisibleText(term.example) ? term.example : '',
+    hasVisibleText(term.misconception) ? term.misconception : '',
+    ...workflow,
     ...term.sourceNames,
-    ...term.relatedTerms,
+    ...relatedTerms,
     ...(term.aliases ?? []),
     ...(term.keywords ?? [])
   ]
@@ -74,19 +90,20 @@ function termMatches(term: GlossaryTerm, value: string) {
 }
 
 function TermSupplement({ term }: { term: GlossaryTerm }) {
-  const aliases = (term.aliases ?? []).filter((alias) => alias !== term.fullName);
-  if (!term.fullName && aliases.length === 0) return null;
+  const fullName = hasVisibleText(term.fullName) ? term.fullName : null;
+  const aliases = (term.aliases ?? []).filter((alias) => hasVisibleText(alias) && alias !== fullName);
+  if (!fullName && aliases.length === 0) return null;
 
   return (
     <p className="mt-2 text-xs leading-5 text-muted-foreground">
-      {term.fullName && (
+      {fullName && (
         <span>
-          <span className="font-medium text-foreground/70">正式名称:</span> {term.fullName}
+          <span className="font-medium text-foreground/70">正式名称:</span> {fullName}
         </span>
       )}
       {aliases.length > 0 && (
         <span>
-          {term.fullName && <span className="px-1.5 text-border">|</span>}
+          {fullName && <span className="px-1.5 text-border">|</span>}
           <span className="font-medium text-foreground/70">別名:</span> {aliases.join(' / ')}
         </span>
       )}
@@ -272,6 +289,12 @@ export default function GlossaryExplorer({ sections }: Props) {
   };
 
   if (!activeTerm) return null;
+
+  const displayMisconception = hasVisibleText(activeTerm.misconception) ? activeTerm.misconception : null;
+  const displayUsageInAi = hasVisibleText(activeTerm.usageInAi) ? activeTerm.usageInAi : null;
+  const displayWorkflow = visibleWorkflow(activeTerm.workflow);
+  const displayExample = hasVisibleText(activeTerm.example) ? activeTerm.example : null;
+  const displayRelatedTerms = visibleRelatedTerms(activeTerm.relatedTerms);
 
   return (
     <section className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2 xl:gap-3">
@@ -479,61 +502,71 @@ export default function GlossaryExplorer({ sections }: Props) {
                     <TermSupplement term={activeTerm} />
                   </section>
 
-                  <section className="border-t border-border py-4">
-                    <h3 className="flex items-center gap-2 text-sm font-semibold">
-                      <AlertTriangle className="h-4 w-4 text-primary" />
-                      注意点
-                    </h3>
-                    <p className="mt-2 text-sm leading-7 text-muted-foreground">{activeTerm.misconception}</p>
-                  </section>
+                  {displayMisconception && (
+                    <section className="border-t border-border py-4">
+                      <h3 className="flex items-center gap-2 text-sm font-semibold">
+                        <AlertTriangle className="h-4 w-4 text-primary" />
+                        注意点
+                      </h3>
+                      <p className="mt-2 text-sm leading-7 text-muted-foreground">{displayMisconception}</p>
+                    </section>
+                  )}
 
-                  <section className="border-t border-border py-4">
-                    <h3 className="flex items-center gap-2 text-sm font-semibold">
-                      <Workflow className="h-4 w-4 text-primary" />
-                      AIでどう使われるか
-                    </h3>
-                    <p className="mt-2 text-sm leading-7 text-muted-foreground">{activeTerm.usageInAi}</p>
-                    <div className="mt-3 grid gap-1.5 sm:grid-cols-3">
-                      {activeTerm.workflow.map((step, index) => (
-                        <div key={`${termKey(activeTerm)}-${step}`} className="flex items-center gap-2 rounded-md border border-border bg-card px-2.5 py-2 text-xs text-muted-foreground">
-                          <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-secondary text-[10px] font-semibold text-secondary-foreground">
-                            {index + 1}
-                          </span>
-                          <span>{step}</span>
+                  {(displayUsageInAi || displayWorkflow.length > 0) && (
+                    <section className="border-t border-border py-4">
+                      <h3 className="flex items-center gap-2 text-sm font-semibold">
+                        <Workflow className="h-4 w-4 text-primary" />
+                        AIでどう使われるか
+                      </h3>
+                      {displayUsageInAi && <p className="mt-2 text-sm leading-7 text-muted-foreground">{displayUsageInAi}</p>}
+                      {displayWorkflow.length > 0 && (
+                        <div className="mt-3 grid gap-1.5 sm:grid-cols-3">
+                          {displayWorkflow.map((step, index) => (
+                            <div key={`${termKey(activeTerm)}-${step}`} className="flex items-center gap-2 rounded-md border border-border bg-card px-2.5 py-2 text-xs text-muted-foreground">
+                              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-secondary text-[10px] font-semibold text-secondary-foreground">
+                                {index + 1}
+                              </span>
+                              <span>{step}</span>
+                            </div>
+                          ))}
                         </div>
-                      ))}
-                    </div>
-                  </section>
+                      )}
+                    </section>
+                  )}
 
-                  <section className="border-t border-border py-4">
-                    <h3 className="flex items-center gap-2 text-sm font-semibold">
-                      <CircleDot className="h-4 w-4 text-primary" />
-                      具体例
-                    </h3>
-                    <p className="mt-2 whitespace-pre-line text-sm leading-7 text-muted-foreground">{activeTerm.example}</p>
-                  </section>
+                  {displayExample && (
+                    <section className="border-t border-border py-4">
+                      <h3 className="flex items-center gap-2 text-sm font-semibold">
+                        <CircleDot className="h-4 w-4 text-primary" />
+                        具体例
+                      </h3>
+                      <p className="mt-2 whitespace-pre-line text-sm leading-7 text-muted-foreground">{displayExample}</p>
+                    </section>
+                  )}
 
-                  <section className="mt-1 rounded-md border border-border bg-muted/35 p-3 sm:p-4">
-                    <h3 className="text-sm font-semibold">関連用語</h3>
-                    <div className="mt-2 flex flex-wrap gap-1.5">
-                      {activeTerm.relatedTerms.map((termName) => {
-                        const target = findTerm(termName);
+                  {displayRelatedTerms.length > 0 && (
+                    <section className="mt-1 rounded-md border border-border bg-muted/35 p-3 sm:p-4">
+                      <h3 className="text-sm font-semibold">関連用語</h3>
+                      <div className="mt-2 flex flex-wrap gap-1.5">
+                        {displayRelatedTerms.map((termName) => {
+                          const target = findTerm(termName);
 
-                        return (
-                          <button
-                            key={termName}
-                            type="button"
-                            onClick={() => selectRelatedTerm(termName)}
-                            disabled={!target}
-                            className="inline-flex min-h-8 cursor-pointer items-center gap-1 rounded-md border border-border bg-card px-2.5 py-1 text-xs font-medium text-foreground transition-colors hover:bg-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                          >
-                            {target?.term ?? termName}
-                            <ArrowRight className="h-3 w-3 text-muted-foreground" />
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </section>
+                          return (
+                            <button
+                              key={termName}
+                              type="button"
+                              onClick={() => selectRelatedTerm(termName)}
+                              disabled={!target}
+                              className="inline-flex min-h-8 cursor-pointer items-center gap-1 rounded-md border border-border bg-card px-2.5 py-1 text-xs font-medium text-foreground transition-colors hover:bg-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                            >
+                              {target?.term ?? termName}
+                              <ArrowRight className="h-3 w-3 text-muted-foreground" />
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </section>
+                  )}
                 </div>
               </div>
             </>

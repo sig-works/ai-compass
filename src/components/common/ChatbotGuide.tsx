@@ -29,6 +29,20 @@ const todayTopic =
   newsItems[0];
 const fallbackNewsImage = '/images/news-fallback.png';
 
+function hasVisibleText(value?: string) {
+  if (!value) return false;
+  const text = value.trim();
+  return text.length > 0;
+}
+
+function visibleWorkflow(workflow: string[]) {
+  return workflow.filter((step) => hasVisibleText(step));
+}
+
+function visibleRelatedTerms(relatedTerms: string[]) {
+  return relatedTerms.filter((term) => hasVisibleText(term));
+}
+
 function formatNewsDate(value?: string) {
   if (!value) return '日付未確認';
 
@@ -210,14 +224,21 @@ function PromptResult({ pattern }: { pattern: PromptPattern }) {
 }
 
 function GlossaryResult({ term }: { term: GlossaryTerm }) {
+  const displayUsageInAi = hasVisibleText(term.usageInAi) ? term.usageInAi : null;
+  const displayWorkflow = visibleWorkflow(term.workflow);
+  const displayExample = hasVisibleText(term.example) ? term.example : null;
+  const displayMisconception = hasVisibleText(term.misconception) ? term.misconception : null;
+  const displayFullName = hasVisibleText(term.fullName) ? term.fullName : null;
+  const displayRelatedTerms = visibleRelatedTerms(term.relatedTerms);
+
   return (
     <div className="grid gap-3">
       <div>
         <p className="text-[10px] font-semibold tracking-[0.08em] text-muted-foreground">{term.category}</p>
         <h2 className="mt-1 text-base font-bold leading-6 text-foreground">{term.term}</h2>
-        {((term.reading && term.reading !== term.term) || term.fullName) && (
+        {((term.reading && term.reading !== term.term) || displayFullName) && (
           <p className="mt-1 break-words text-xs leading-5 text-muted-foreground">
-            {[term.reading && term.reading !== term.term ? term.reading : null, term.fullName].filter(Boolean).join(' / ')}
+            {[term.reading && term.reading !== term.term ? term.reading : null, displayFullName].filter(Boolean).join(' / ')}
           </p>
         )}
         <p className="mt-1 text-sm leading-6 text-foreground">{term.plainSummary}</p>
@@ -228,39 +249,51 @@ function GlossaryResult({ term }: { term: GlossaryTerm }) {
         <p className="mt-1 text-sm leading-7 text-muted-foreground">{term.meaning}</p>
       </section>
 
-      <section className="rounded-md border border-border bg-card p-3">
-        <h3 className="text-sm font-semibold text-foreground">AIでどう使われるか</h3>
-        <p className="mt-1 text-sm leading-7 text-muted-foreground">{term.usageInAi}</p>
-        <div className="mt-2 grid gap-1.5">
-          {term.workflow.map((step, index) => (
-            <div key={step} className="flex items-center gap-2 rounded-md border border-border bg-background px-2.5 py-2 text-xs text-muted-foreground">
-              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-secondary text-[10px] font-semibold text-secondary-foreground">
-                {index + 1}
-              </span>
-              <span>{step}</span>
+      {(displayUsageInAi || displayWorkflow.length > 0) && (
+        <section className="rounded-md border border-border bg-card p-3">
+          <h3 className="text-sm font-semibold text-foreground">AIでどう使われるか</h3>
+          {displayUsageInAi && <p className="mt-1 text-sm leading-7 text-muted-foreground">{displayUsageInAi}</p>}
+          {displayWorkflow.length > 0 && (
+            <div className="mt-2 grid gap-1.5">
+              {displayWorkflow.map((step, index) => (
+                <div key={step} className="flex items-center gap-2 rounded-md border border-border bg-background px-2.5 py-2 text-xs text-muted-foreground">
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-secondary text-[10px] font-semibold text-secondary-foreground">
+                    {index + 1}
+                  </span>
+                  <span>{step}</span>
+                </div>
+              ))}
             </div>
+          )}
+        </section>
+      )}
+
+      {(displayExample || displayMisconception) && (
+        <div className="grid gap-2 md:grid-cols-2">
+          {displayExample && (
+            <section className="rounded-md border border-border bg-card p-3">
+              <h3 className="text-sm font-semibold text-foreground">具体例</h3>
+              <p className="mt-1 text-sm leading-6 text-muted-foreground">{displayExample}</p>
+            </section>
+          )}
+          {displayMisconception && (
+            <section className="rounded-md border border-border bg-card p-3">
+              <h3 className="text-sm font-semibold text-foreground">注意点</h3>
+              <p className="mt-1 text-sm leading-6 text-muted-foreground">{displayMisconception}</p>
+            </section>
+          )}
+        </div>
+      )}
+
+      {displayRelatedTerms.length > 0 && (
+        <div className="flex flex-wrap gap-1.5">
+          {displayRelatedTerms.map((related) => (
+            <span key={related} className="rounded-md border border-border bg-background px-2 py-0.5 text-xs text-muted-foreground">
+              {related}
+            </span>
           ))}
         </div>
-      </section>
-
-      <div className="grid gap-2 md:grid-cols-2">
-        <section className="rounded-md border border-border bg-card p-3">
-          <h3 className="text-sm font-semibold text-foreground">具体例</h3>
-          <p className="mt-1 text-sm leading-6 text-muted-foreground">{term.example}</p>
-        </section>
-        <section className="rounded-md border border-border bg-card p-3">
-          <h3 className="text-sm font-semibold text-foreground">注意点</h3>
-          <p className="mt-1 text-sm leading-6 text-muted-foreground">{term.misconception}</p>
-        </section>
-      </div>
-
-      <div className="flex flex-wrap gap-1.5">
-        {term.relatedTerms.map((related) => (
-          <span key={related} className="rounded-md border border-border bg-background px-2 py-0.5 text-xs text-muted-foreground">
-            {related}
-          </span>
-        ))}
-      </div>
+      )}
     </div>
   );
 }
