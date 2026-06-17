@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-06-17T04:37:26.848Z",
-  "updateStatus": "partial-failure",
-  "updateMessage": "一部のニュース取得に失敗しました: Qiita AI: HTTP 403 / Qiita LLM: HTTP 403 / Qiita 生成AI: HTTP 403",
+  "generatedAt": "2026-06-17T10:38:49.732Z",
+  "updateStatus": "ok",
+  "updateMessage": "AIニュースを更新しました。",
   "policy": "link-summary-only-with-official-and-trusted-japanese-sources",
   "regions": [
     {
       "id": "domestic",
       "label": "国内",
       "description": "日本語公式情報と国内AIメディアを中心に確認します。",
-      "count": 23
+      "count": 31
     },
     {
       "id": "global",
@@ -22,16 +22,16 @@
       "id": "ai-news",
       "label": "国内ニュース",
       "description": "国内向けの日本語AIニュースと日本語公式情報。",
-      "count": 23,
-      "domesticCount": 23,
+      "count": 24,
+      "domesticCount": 24,
       "globalCount": 0
     },
     {
       "id": "tech-articles",
       "label": "技術記事",
       "description": "実装者向けの日本語AI技術記事。",
-      "count": 0,
-      "domesticCount": 0,
+      "count": 7,
+      "domesticCount": 7,
       "globalCount": 0
     },
     {
@@ -296,6 +296,156 @@
   ],
   "items": [
     {
+      "title": "Gemma 4 が Amazon Bedrock に来たので、OpenAI 互換 API で呼んで、Nova 2 Lite・Claude Haiku と精度を比べてみた",
+      "url": "https://qiita.com/leomarokun/items/80c6aa6ce0d34983076e",
+      "categoryId": "tech-articles",
+      "category": "技術記事",
+      "regionId": "domestic",
+      "region": "国内",
+      "source": "Qiita 生成AI",
+      "sourceId": "qiita-generative-ai",
+      "sourceType": "domestic-media",
+      "language": "ja",
+      "publishedAt": "2026-06-17T09:57:55.000Z",
+      "imageUrl": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1pbWFnZS1zdG9yZSUyRjAlMkYyODA5MjklMkZiYjU3OGNhYjU3NDRlYzc3NGE1ZWM4MjM4YzNmN2NhYzcyZmU4NjcyJTJGeF9sYXJnZS5wbmclM0YxNzU1NDI0OTA5P2l4bGliPXJiLTQuMS4xJmFyPTElM0ExJmZpdD1jcm9wJm1hc2s9ZWxsaXBzZSZiZz1GRkZGRkYmZm09cG5nMzImcz04OTNiZjQzODEzYjFjM2ZjN2JkYzU5M2FiYmY2ODc2Zg%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D09833edc7f7311021a5bc14555297812?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9R2VtbWElMjA0JTIwJUUzJTgxJThDJTIwQW1hem9uJTIwQmVkcm9jayUyMCVFMyU4MSVBQiVFNiU5RCVBNSVFMyU4MSU5RiVFMyU4MSVBRSVFMyU4MSVBNyVFMyU4MCU4MU9wZW5BSSUyMCVFNCVCQSU5MiVFNiU4RiU5QiUyMEFQSSUyMCVFMyU4MSVBNyVFNSU5MSVCQyVFMyU4MiU5MyVFMyU4MSVBNyVFMyU4MCU4MU5vdmElMjAyJTIwTGl0ZSVFMyU4MyVCQkNsYXVkZSUyMEhhaSVFMiU4MCVBNiZ0eHQtYWxpZ249bGVmdCUyQ3RvcCZ0eHQtY29sb3I9JTIzMUUyMTIxJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTU2JnR4dC1wYWQ9MCZzPTUxZjliN2NkMWViNjU5NDM5NGI4Zjc2NDkxYTg1OTc1&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBsZW9tYXJva3VuJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9OThhZmMwZWI4NTdiNjBkOWNiZTllMmY5OTQ3NDEyMDU&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=48e84a96e14a72db5eb47dfd86fbdb01",
+      "excerpt": ""
+    },
+    {
+      "title": "Gemma4に曜日を聞いたら1日ずれた",
+      "url": "https://qiita.com/sskki/items/9bafbd9a891f7f896297",
+      "categoryId": "tech-articles",
+      "category": "技術記事",
+      "regionId": "domestic",
+      "region": "国内",
+      "source": "Qiita AI",
+      "sourceId": "qiita-ai",
+      "sourceType": "domestic-media",
+      "language": "ja",
+      "publishedAt": "2026-06-17T09:49:04.000Z",
+      "imageUrl": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Ftech-festa-ogp-background-4b5015b2c518c7e6b9062a7c9f5f5e90.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnFpaXRhLWltYWdlLXN0b3JlLnMzLmFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkYwJTJGNjAyNTI2JTJGcHJvZmlsZS1pbWFnZXMlMkYxNjEyNjY5NjkxP2l4bGliPXJiLTQuMS4xJmFyPTElM0ExJmZpdD1jcm9wJm1hc2s9ZWxsaXBzZSZiZz1GRkZGRkYmZm09cG5nMzImcz0wN2FmMGEyNGFmNDdhYjM0ZTRlMWUxYWViMzJiZGNmNQ%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3Dab368cfb87ed0b84a8bde4a18cef6d0c?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9R2VtbWE0JUUzJTgxJUFCJUU2JTlCJTlDJUU2JTk3JUE1JUUzJTgyJTkyJUU4JTgxJTlFJUUzJTgxJTg0JUUzJTgxJTlGJUUzJTgyJTg5MSVFNiU5NyVBNSVFMyU4MSU5QSVFMyU4MiU4QyVFMyU4MSU5RiZ0eHQtYWxpZ249bGVmdCUyQ3RvcCZ0eHQtY29sb3I9JTIzRkZGRkZGJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTU2JnR4dC1wYWQ9MCZzPTJiNWRjN2RiYjYzOWVhNTI1NWMyMzc0Y2IzZTc1NDE4&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBzc2traSZ0eHQtY29sb3I9JTIzRkZGRkZGJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTM2JnR4dC1wYWQ9MCZzPTIyMzQzMWI1ZDE4NmE5ZDY2MDRmODAyNmM1OGQ1ZjQ4&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=b6e4562b56ccae9cea828108288c3355",
+      "excerpt": ""
+    },
+    {
+      "title": "Headroomのインストール手順",
+      "url": "https://qiita.com/keyhole0/items/540fc26c8bd235d44899",
+      "categoryId": "tech-articles",
+      "category": "技術記事",
+      "regionId": "domestic",
+      "region": "国内",
+      "source": "Qiita AI",
+      "sourceId": "qiita-ai",
+      "sourceType": "domestic-media",
+      "language": "ja",
+      "publishedAt": "2026-06-17T09:00:48.000Z",
+      "imageUrl": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnFpaXRhLWltYWdlLXN0b3JlLnMzLmFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkYwJTJGNTMxMDczJTJGcHJvZmlsZS1pbWFnZXMlMkYxNjA3NzY4NzU3P2l4bGliPXJiLTQuMS4xJmFyPTElM0ExJmZpdD1jcm9wJm1hc2s9ZWxsaXBzZSZiZz1GRkZGRkYmZm09cG5nMzImcz0wNjQ1YWVkZWE4ZWNmMWMwYWE1ODIwMDljYTM3Y2MyYQ%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D113292a61b54f19c0585ff02102aea2e?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9SGVhZHJvb20lRTMlODElQUUlRTMlODIlQTQlRTMlODMlQjMlRTMlODIlQjklRTMlODMlODglRTMlODMlQkMlRTMlODMlQUIlRTYlODklOEIlRTklQTAlODYmdHh0LWFsaWduPWxlZnQlMkN0b3AmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT01NiZ0eHQtcGFkPTAmcz00MzIzYWFhMGQ0MGU5YjI3MWE0NGJiOGJhMjQxMjdmYg&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBrZXlob2xlMCZ0eHQtY29sb3I9JTIzMUUyMTIxJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTM2JnR4dC1wYWQ9MCZzPWNkNmE3ZTI2MjVlMTUwYTIxNzNkMGJjOTllN2JmN2E1&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=5911557c60f08682aacae9c61f97906f",
+      "excerpt": ""
+    },
+    {
+      "title": "（火の車編）AI居酒屋：LLMと愚痴りながら学習しよう",
+      "url": "https://qiita.com/taimonya/items/7778db3d8493033cd024",
+      "categoryId": "tech-articles",
+      "category": "技術記事",
+      "regionId": "domestic",
+      "region": "国内",
+      "source": "Qiita AI",
+      "sourceId": "qiita-ai",
+      "sourceType": "domestic-media",
+      "language": "ja",
+      "publishedAt": "2026-06-17T08:51:38.000Z",
+      "imageUrl": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1pbWFnZS1zdG9yZSUyRjAlMkY0NDQ3MzM3JTJGZDY3ZWNhYWMzZjZlYTY2ZGZiNWEzMzgxZGM4MzkwOTI4Y2M2MGZhZSUyRnhfbGFyZ2UucG5nJTNGMTc4MTQzNDYxND9peGxpYj1yYi00LjEuMSZhcj0xJTNBMSZmaXQ9Y3JvcCZtYXNrPWVsbGlwc2UmYmc9RkZGRkZGJmZtPXBuZzMyJnM9MzMzOWQ5Y2IyMzQ2YmEyYjkyYTc2MmI4ZjhiOWFhOTY%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D41cc1ecbbe92f3a9c76f192d77124e11?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9JUVGJUJDJTg4JUU3JTgxJUFCJUUzJTgxJUFFJUU4JUJCJThBJUU3JUI3JUE4JUVGJUJDJTg5QUklRTUlQjElODUlRTklODUlOTIlRTUlQjElOEIlRUYlQkMlOUFMTE0lRTMlODElQTglRTYlODQlOUElRTclOTclQjQlRTMlODIlOEElRTMlODElQUElRTMlODElOEMlRTMlODIlODklRTUlQUQlQTYlRTclQkYlOTIlRTMlODElOTclRTMlODIlODglRTMlODElODYmdHh0LWFsaWduPWxlZnQlMkN0b3AmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT01NiZ0eHQtcGFkPTAmcz01N2YzN2IwZjQxMzg0MDJhMjA1Y2E2OTdiMTFhYTg5YQ&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDB0YWltb255YSZ0eHQtY29sb3I9JTIzMUUyMTIxJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTM2JnR4dC1wYWQ9MCZzPWJlNDgwMDg4NDJlZDg2OGFiZmFkNGMxYWNiMGRmMWQ2&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=12f2b9dbdd457848d1aaed9daec88763",
+      "excerpt": ""
+    },
+    {
+      "title": "Cursor、Gitホスティング「Origin」発表 SpaceXによる買収発表直後に",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2606/17/2000000100/",
+      "categoryId": "ai-news",
+      "category": "国内ニュース",
+      "regionId": "domestic",
+      "region": "国内",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-ai-plus",
+      "sourceType": "domestic-media",
+      "language": "ja",
+      "publishedAt": "2026-06-17T08:51:12.000Z",
+      "imageUrl": "https://www.itmedia.co.jp/aiplus/article/ogp/2606/17/2000000100/10000521/2048",
+      "excerpt": "「GitHub」に対抗する狙いがありそうだ。"
+    },
+    {
+      "title": "SpaceX、AIコーディング「Cursor」を9.6兆円で買収 「近く大幅な改善」へ",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2606/17/2000000096/",
+      "categoryId": "ai-news",
+      "category": "国内ニュース",
+      "regionId": "domestic",
+      "region": "国内",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-ai-plus",
+      "sourceType": "domestic-media",
+      "language": "ja",
+      "publishedAt": "2026-06-17T08:44:24.000Z",
+      "imageUrl": "https://www.itmedia.co.jp/aiplus/article/ogp/2606/17/2000000096/10000503/2048",
+      "excerpt": "Corsorは公式Xで、「近く大幅な改善が行われる予定だ」と述べた。"
+    },
+    {
+      "title": "Claude Code のカスタムスキル(Skills)の作り方 — 「毎回の指示」を再利用できる部品にする",
+      "url": "https://qiita.com/StreamSolty/items/f437d4373b8b390800b4",
+      "categoryId": "tech-articles",
+      "category": "技術記事",
+      "regionId": "domestic",
+      "region": "国内",
+      "source": "Qiita AI",
+      "sourceId": "qiita-ai",
+      "sourceType": "domestic-media",
+      "language": "ja",
+      "publishedAt": "2026-06-17T08:35:12.000Z",
+      "imageUrl": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnFpaXRhLWltYWdlLXN0b3JlLnMzLmFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkYwJTJGNDQzODQ4OCUyRnByb2ZpbGUtaW1hZ2VzJTJGMTc4MTUyMDg2MT9peGxpYj1yYi00LjEuMSZhcj0xJTNBMSZmaXQ9Y3JvcCZtYXNrPWVsbGlwc2UmYmc9RkZGRkZGJmZtPXBuZzMyJnM9ODRjNTk2YWRhN2ZlY2VjNmUwNjRhM2Q5NjVlMTAyNDc%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D4f6c8253272e5703f03118ec74fd4a3a?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9Q2xhdWRlJTIwQ29kZSUyMCVFMyU4MSVBRSVFMyU4MiVBQiVFMyU4MiVCOSVFMyU4MiVCRiVFMyU4MyVBMCVFMyU4MiVCOSVFMyU4MiVBRCVFMyU4MyVBQiUyOFNraWxscyUyOSVFMyU4MSVBRSVFNCVCRCU5QyVFMyU4MiU4QSVFNiU5NiVCOSUyMCVFMiU4MCU5NCUyMCVFMyU4MCU4QyVFNiVBRiU4RSVFNSU5QiU5RSVFMyU4MSVBRSVFNiU4QyU4NyVFNyVBNCVCQSVFMyU4MCU4RCVFMyU4MiU5MiVFNSU4NiU4RCVFNSU4OCVBOSVFNyU5NCVBOCVFMyU4MSVBNyVFMyU4MSU4RCVFMyU4MiU4QiVFOSU4MyVBOCVFNSU5MyU4MSVFMyU4MSVBQiVFMyU4MSU5OSVFMyU4MiU4QiZ0eHQtYWxpZ249bGVmdCUyQ3RvcCZ0eHQtY29sb3I9JTIzMUUyMTIxJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTU2JnR4dC1wYWQ9MCZzPWM1ZGViOTNiYjQyM2Q0NGI4OWYzNGRhYzhkYTVjYmQ2&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBTdHJlYW1Tb2x0eSZ0eHQtY29sb3I9JTIzMUUyMTIxJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTM2JnR4dC1wYWQ9MCZzPWE0M2E4OTY0M2Y5Y2NlOGRmMDlkMzg1MTFhOTUzM2Rj&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=0f753c8fd72f61176fc48efc139ef0d0",
+      "excerpt": ""
+    },
+    {
+      "title": "AI #8. 社内データをLLMに繋ぐ「RAG」とは？仕組みからベクトルDBの選び方まで徹底解説",
+      "url": "https://qiita.com/infranowolf/items/62d012a11c1479b264b0",
+      "categoryId": "tech-articles",
+      "category": "技術記事",
+      "regionId": "domestic",
+      "region": "国内",
+      "source": "Qiita LLM",
+      "sourceId": "qiita-llm",
+      "sourceType": "domestic-media",
+      "language": "ja",
+      "publishedAt": "2026-06-17T08:14:21.000Z",
+      "imageUrl": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRmxoMy5nb29nbGV1c2VyY29udGVudC5jb20lMkZhJTJGQUNnOG9jSVBYVlR3d1VhaVB5dEpnMjVOZ2p3bVJvTFNWTjM2eERLbXh3WjV1dzJwRUw1bWtRJTNEczk2LWM_aXhsaWI9cmItNC4xLjEmYXI9MSUzQTEmZml0PWNyb3AmbWFzaz1lbGxpcHNlJmJnPUZGRkZGRiZmbT1wbmczMiZzPWM4ODA4ZDQ0ZGI0NWU0YWFlOGVlYWE1MjhjOGZjZDc4%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3Dcf0058f22f9c68c5afb085f690709df3?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9QUklMjAlMjM4LiUyMCVFNyVBNCVCRSVFNSU4NiU4NSVFMyU4MyU4NyVFMyU4MyVCQyVFMyU4MiVCRiVFMyU4MiU5MkxMTSVFMyU4MSVBQiVFNyVCOSU4QiVFMyU4MSU5MCVFMyU4MCU4Q1JBRyVFMyU4MCU4RCVFMyU4MSVBOCVFMyU4MSVBRiVFRiVCQyU5RiVFNCVCQiU5NSVFNyVCNSU4NCVFMyU4MSVCRiVFMyU4MSU4QiVFMyU4MiU4OSVFMyU4MyU5OSVFMyU4MiVBRiVFMyU4MyU4OCVFMyU4MyVBQkRCJUUzJTgxJUFFJUU5JTgxJUI4JUUzJTgxJUIzJUU2JTk2JUI5JUUzJTgxJUJFJUUzJTgxJUE3JUU1JUJFJUI5JUU1JUJBJTk1JUU4JUE3JUEzJUU4JUFBJUFDJnR4dC1hbGlnbj1sZWZ0JTJDdG9wJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9NTYmdHh0LXBhZD0wJnM9MTM0N2Q2OWM1MTkxYTc4MGI3MTdiY2M2OWRmZGVmZTE&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBpbmZyYW5vd29sZiZ0eHQtY29sb3I9JTIzMUUyMTIxJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTM2JnR4dC1wYWQ9MCZzPTExNTY0YWE2MzIyYWQyZmQxNWU5YTJjMWE4MTJmMzY2&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=836f51bde346b44dfd758e6003f30c90",
+      "excerpt": ""
+    },
+    {
+      "title": "OpenAI創業者、巨大モデルのアップデート作業は「大きな苦痛だった」――月イチ更新を可能にした体制とデータの重要性",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2606/17/2000000099/",
+      "categoryId": "ai-news",
+      "category": "国内ニュース",
+      "regionId": "domestic",
+      "region": "国内",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-ai-plus",
+      "sourceType": "domestic-media",
+      "language": "ja",
+      "publishedAt": "2026-06-17T07:43:26.000Z",
+      "imageUrl": "https://www.itmedia.co.jp/aiplus/article/ogp/2606/17/2000000099/10000517/2048",
+      "excerpt": "Databricksの年次イベントにOpenAI共同創業者のグレッグ・ブロックマン氏が登壇。AIモデル開発の難しさと、その土台となる「データ」の重要性を語った。"
+    },
+    {
+      "title": "MCP仕様2026-07-28リリース候補：ステートレス化・MCP Apps・Tasks拡張で何が変わり、何を直すか",
+      "url": "https://qiita.com/YushiYamamoto/items/382cb9c5b18fd95e5775",
+      "categoryId": "tech-articles",
+      "category": "技術記事",
+      "regionId": "domestic",
+      "region": "国内",
+      "source": "Qiita LLM",
+      "sourceId": "qiita-llm",
+      "sourceType": "domestic-media",
+      "language": "ja",
+      "publishedAt": "2026-06-17T07:20:57.000Z",
+      "imageUrl": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Ftech-festa-ogp-background-4b5015b2c518c7e6b9062a7c9f5f5e90.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnFpaXRhLWltYWdlLXN0b3JlLnMzLmFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkYwJTJGMzYzNzg2NCUyRnByb2ZpbGUtaW1hZ2VzJTJGMTczOTg1MzA1Mj9peGxpYj1yYi00LjEuMSZhcj0xJTNBMSZmaXQ9Y3JvcCZtYXNrPWVsbGlwc2UmYmc9RkZGRkZGJmZtPXBuZzMyJnM9YjYwYjgxNTFiNzhmMjE0MDY2NmU2OTk2YmM5OWU5YmQ%26blend-x%3D120%26blend-y%3D462%26blend-w%3D90%26blend-h%3D90%26blend-mode%3Dnormal%26mark64%3DaHR0cHM6Ly9xaWl0YS1vcmdhbml6YXRpb24taW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1vcmdhbml6YXRpb24taW1hZ2UlMkY0NDU4MzY0NzVkY2U5YTU3ODAyZWE3ZWY1ODI4ZmIwNzNhYjUwZjFkJTJGb3JpZ2luYWwuanBnJTNGMTc1MzY5NTk5OT9peGxpYj1yYi00LjEuMSZ3PTQ0Jmg9NDQmZml0PWNyb3AmbWFzaz1jb3JuZXJzJmNvcm5lci1yYWRpdXM9OCZiZz1GRkZGRkYmYm9yZGVyPTIlMkNGRkZGRkYmZm09cG5nMzImcz02NGVlYWI5NDE4MzU2NjVmMmRkYzc4MGIyNDJkYWVjOQ%26mark-x%3D186%26mark-y%3D515%26mark-w%3D40%26mark-h%3D40%26s%3D3c84b47963a36de4cd722246c530ebae?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9TUNQJUU0JUJCJTk1JUU2JUE3JTk4MjAyNi0wNy0yOCVFMyU4MyVBQSVFMyU4MyVBQSVFMyU4MyVCQyVFMyU4MiVCOSVFNSU4MCU5OSVFOCVBMyU5QyVFRiVCQyU5QSVFMyU4MiVCOSVFMyU4MyU4NiVFMyU4MyVCQyVFMyU4MyU4OCVFMyU4MyVBQyVFMyU4MiVCOSVFNSU4QyU5NiVFMyU4MyVCQk1DUCUyMEFwcHMlRTMlODMlQkJUYXNrcyVFNiU4QiVBMSVFNSVCQyVCNSVFMyU4MSVBNyVFNCVCRCU5NSVFMyU4MSU4QyVFNSVBNCU4OSVFMyU4MiU4RiVFMyU4MiU4QSVFMyU4MCU4MSVFNCVCRCU5NSVFMyU4MiU5MiVFNyU5QiVCNCVFMiU4MCVBNiZ0eHQtYWxpZ249bGVmdCUyQ3RvcCZ0eHQtY29sb3I9JTIzRkZGRkZGJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTU2JnR4dC1wYWQ9MCZzPTU1MWJkZmJlODA3NWZmMjc3ZjhmNmJiNDJiZGExNzg1&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBZdXNoaVlhbWFtb3RvJnR4dC1jb2xvcj0lMjNGRkZGRkYmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9YjMwYTliYTlkMDI5NGNiMWFkMWQ2MmFhYTRhZjY5ZTM&blend-x=242&blend-y=454&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&txt64=5qCq5byP5Lya56S-44OX44Ot44OJ44Km44Ks&txt-x=242&txt-y=539&txt-width=838&txt-clip=end%2Cellipsis&txt-color=%23FFFFFF&txt-font=Hiragino%20Sans%20W6&txt-size=28&s=bc91413a8025b528cbd266a42387bf6d",
+      "excerpt": ""
+    },
+    {
       "title": "日立、OpenAIとの連携を本格化 「Codex」でレガシーシステム刷新、サイバー防衛も",
       "url": "https://www.itmedia.co.jp/aiplus/article/2606/17/2000000097/",
       "categoryId": "ai-news",
@@ -326,21 +476,6 @@
       "excerpt": "チェスや将棋と異なり、相手の手札が見えない「不完全情報ゲーム」にAIがどこまで対応できるかが試される。"
     },
     {
-      "title": "SpaceX、AIコーディング「Cursor」を9.6兆円で買収 「近く大幅な改善」へ",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2606/17/2000000096/",
-      "categoryId": "ai-news",
-      "category": "国内ニュース",
-      "regionId": "domestic",
-      "region": "国内",
-      "source": "ITmedia AI+",
-      "sourceId": "itmedia-ai-plus",
-      "sourceType": "domestic-media",
-      "language": "ja",
-      "publishedAt": "2026-06-17T03:14:00.000Z",
-      "imageUrl": "https://www.itmedia.co.jp/aiplus/article/ogp/2606/17/2000000096/10000503/2048",
-      "excerpt": "Corsorは公式Xで、「近く大幅な改善が行われる予定だ」と述べた。"
-    },
-    {
       "title": "村田製作所、Synopsysの電磁界／熱解析ツールを介したシミュレーションモデル提供",
       "url": "https://monoist.itmedia.co.jp/mn/articles/2606/17/news046.html",
       "categoryId": "ai-news",
@@ -356,34 +491,34 @@
       "excerpt": "村田製作所は、Synopsysが提供するシミュレーションツールを介したシミュレーションモデルの提供を開始した。3D電磁界解析ツール「Ansys HFSS」と熱解析ツール「Ansys Icepak」を対象とする。ユーザーはシミュレーションツールから村田製作所のWebサイトにアクセスし、対応モデルをダ..."
     },
     {
-      "title": "「生成AIは大手なら安心」とは限らない？ 突然の提供停止が招くリスク顕在化",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2606/17/news041.html",
+      "title": "SpaceX、AIコーディングツール「Cursor」運営会社を600億ドルで買収へ 上場直後の大型AI投資",
+      "url": "https://ledge.ai/articles/spacex_cursor_acquisition_ai_investment",
       "categoryId": "ai-news",
       "category": "国内ニュース",
       "regionId": "domestic",
       "region": "国内",
-      "source": "ITmedia AI+",
-      "sourceId": "itmedia-ai-plus",
+      "source": "Ledge.ai",
+      "sourceId": "ledge-ai",
       "sourceType": "domestic-media",
       "language": "ja",
-      "publishedAt": "2026-06-16T23:00:00.000Z",
-      "imageUrl": "https://image.itmedia.co.jp/ait/articles/2606/17/cover_news041.jpg",
-      "excerpt": "米政府の輸出管理指令によるAnthropicの最新AIモデル提供停止を受け、生成AIが事前の通知なしに突然使えなくなるリスクが顕在化した。Forresterは、単一のAIモデル依存の危うさを指摘し、ポータビリティ確保をはじめとする4つの対策を推奨している。"
+      "publishedAt": "2026-06-17T00:00:00.000Z",
+      "imageUrl": "https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/Chat_GPT_Image_2026_6_17_13_47_57_9730e50fdf/Chat_GPT_Image_2026_6_17_13_47_57_9730e50fdf.jpg",
+      "excerpt": "SpaceX、AIコーディングツール「Cursor」運営会社を600億ドルで買収へ 上場直後の大型AI投資"
     },
     {
-      "title": "財務諸表だけでは勝てない ブルームバーグ日本トップが語る「非構造化データ」の重要性",
-      "url": "https://www.itmedia.co.jp/business/articles/2606/16/news016.html",
+      "title": "Google「AIによる概要」に責任認める判決 ドイツ裁判所、企業への虚偽表示で差止め",
+      "url": "https://ledge.ai/articles/google_ai_overviews_germany_court_ruling",
       "categoryId": "ai-news",
       "category": "国内ニュース",
       "regionId": "domestic",
       "region": "国内",
-      "source": "ITmedia AI+",
-      "sourceId": "itmedia-ai-plus",
+      "source": "Ledge.ai",
+      "sourceId": "ledge-ai",
       "sourceType": "domestic-media",
       "language": "ja",
-      "publishedAt": "2026-06-16T22:45:00.000Z",
-      "imageUrl": "https://image.itmedia.co.jp/business/articles/2606/16/cover_news016.jpg",
-      "excerpt": "デフレからインフレへ経済の潮目が激変した日本市場。もはや過去の数値（財務諸表）を眺めるだけのデータ経営では勝てない。情報の洪水におぼれず、気象や音声などの「非構造化データ」をいかに素早く選別し、リアルタイムの決断に生かすか。金融情報インフラを支えるブルームバーグの日本トップに、情報過多を突破するデ..."
+      "publishedAt": "2026-06-17T00:00:00.000Z",
+      "imageUrl": "https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/Chat_GPT_Image_2026_6_16_18_14_09_baba81fac9/Chat_GPT_Image_2026_6_16_18_14_09_baba81fac9.jpg",
+      "excerpt": "Google「AIによる概要」に責任認める判決 ドイツ裁判所、企業への虚偽表示で差止め"
     },
     {
       "title": "What are git worktrees, and why should I use them?",
@@ -416,21 +551,6 @@
       "excerpt": "Get new screen recording feature, text-to-video tools with Gemini Omni, and better multitasking on your Pixel devices."
     },
     {
-      "title": "Copilot Cowork is now generally available",
-      "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/",
-      "categoryId": "official",
-      "category": "公式",
-      "regionId": "global",
-      "region": "海外",
-      "source": "Microsoft 365 Blog",
-      "sourceId": "microsoft-365-blog",
-      "sourceType": "official",
-      "language": "en",
-      "publishedAt": "2026-06-16T15:00:00.000Z",
-      "imageUrl": "https://www.microsoft.com/en-us/microsoft-365/blog/wp-content/uploads/sites/2/2026/06/Copilot-Cowork-scaled_1920.png",
-      "excerpt": "Cowork is the fastest growing feature in the history of our Frontier program, and Cowork has among the highest user satisfaction of any Copilot or ag..."
-    },
-    {
       "title": "6 月の Pixel Drop：クリエイター向けの新機能、Gemini のアップグレードなど",
       "url": "https://blog.google/intl/ja-jp/products/devices-services/june-2026-pixel-drop/",
       "categoryId": "ai-news",
@@ -459,6 +579,21 @@
       "publishedAt": "2026-06-16T00:00:00.000Z",
       "imageUrl": "/images/news-fallback.png",
       "excerpt": "OpenAI introduces Deployment Simulation, a method to predict AI model behavior before deployment using real conversation data to improve safety and e..."
+    },
+    {
+      "title": "Google Cloud、AIエージェント向け知識共有フォーマット「OKF v0.1」発表 社内ナレッジをMarkdownで扱いやすく",
+      "url": "https://ledge.ai/articles/google_cloud_open_knowledge_format_okf",
+      "categoryId": "ai-news",
+      "category": "国内ニュース",
+      "regionId": "domestic",
+      "region": "国内",
+      "source": "Ledge.ai",
+      "sourceId": "ledge-ai",
+      "sourceType": "domestic-media",
+      "language": "ja",
+      "publishedAt": "2026-06-16T00:00:00.000Z",
+      "imageUrl": "https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/Chat_GPT_Image_2026_6_16_18_21_20_a0e04158d7/Chat_GPT_Image_2026_6_16_18_21_20_a0e04158d7.jpg",
+      "excerpt": "Google Cloud、AIエージェント向け知識共有フォーマット「OKF v0.1」発表 社内ナレッジをMarkdownで扱いやすく"
     },
     {
       "title": "Copilot usage metrics now include more of your active users",
@@ -519,36 +654,6 @@
       "publishedAt": "2026-06-14T00:00:00.000Z",
       "imageUrl": "https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/01_1280x720_7843490c30/01_1280x720_7843490c30.jpg",
       "excerpt": "【アーカイブ公開】THE AI 2026 ── AI誕生70年の“現在地”を映した全セッションを、期間限定で配信"
-    },
-    {
-      "title": "Google DeepMind、拡散モデルでテキスト生成を最大4倍高速化 オープンモデル「DiffusionGemma」を公開",
-      "url": "https://ledge.ai/articles/google_deepmind_diffusiongemma_text_diffusion",
-      "categoryId": "ai-news",
-      "category": "国内ニュース",
-      "regionId": "domestic",
-      "region": "国内",
-      "source": "Ledge.ai",
-      "sourceId": "ledge-ai",
-      "sourceType": "domestic-media",
-      "language": "ja",
-      "publishedAt": "2026-06-14T00:00:00.000Z",
-      "imageUrl": "https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/Hero_Visual_width_2200_format_webp_d6dc70401b/Hero_Visual_width_2200_format_webp_d6dc70401b.jpg",
-      "excerpt": "Google DeepMind、拡散モデルでテキスト生成を最大4倍高速化 オープンモデル「DiffusionGemma」を公開"
-    },
-    {
-      "title": "NTT、約800億円規模の「IOWN AI Fund」組成へ AIインフラ関連スタートアップに投資",
-      "url": "https://ledge.ai/articles/iown_ai_fund_startup_investment",
-      "categoryId": "ai-news",
-      "category": "国内ニュース",
-      "regionId": "domestic",
-      "region": "国内",
-      "source": "Ledge.ai",
-      "sourceId": "ledge-ai",
-      "sourceType": "domestic-media",
-      "language": "ja",
-      "publishedAt": "2026-06-14T00:00:00.000Z",
-      "imageUrl": "https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/iown_ai_fund_d69bc53003/iown_ai_fund_d69bc53003.jpg",
-      "excerpt": "NTT、約800億円規模の「IOWN AI Fund」組成へ AIインフラ関連スタートアップに投資"
     },
     {
       "title": "Claude Fable 5とMythos 5、提供開始から3日で停止 Anthropic「米政府が外国籍者のアクセス停止を指示」と説明",
@@ -731,21 +836,6 @@
       "excerpt": "Discover how astrophysicist Chi-kwan Chan uses Codex to build black hole simulations, helping scientists study extreme physics and test Einstein’s th..."
     },
     {
-      "title": "OpenAI to acquire Ona",
-      "url": "https://openai.com/index/openai-to-acquire-ona",
-      "categoryId": "official",
-      "category": "公式",
-      "regionId": "global",
-      "region": "海外",
-      "source": "OpenAI News",
-      "sourceId": "openai-news",
-      "sourceType": "official",
-      "language": "en",
-      "publishedAt": "2026-06-11T00:00:00.000Z",
-      "imageUrl": "/images/news-fallback.png",
-      "excerpt": "OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows."
-    },
-    {
       "title": "BBVA puts AI at the core of banking with OpenAI",
       "url": "https://openai.com/index/bbva",
       "categoryId": "official",
@@ -759,6 +849,21 @@
       "publishedAt": "2026-06-11T00:00:00.000Z",
       "imageUrl": "/images/news-fallback.png",
       "excerpt": "Learn how BBVA scaled ChatGPT Enterprise to 100,000 employees and partnered with OpenAI to accelerate AI-powered banking transformation worldwide."
+    },
+    {
+      "title": "OpenAI to acquire Ona",
+      "url": "https://openai.com/index/openai-to-acquire-ona",
+      "categoryId": "official",
+      "category": "公式",
+      "regionId": "global",
+      "region": "海外",
+      "source": "OpenAI News",
+      "sourceId": "openai-news",
+      "sourceType": "official",
+      "language": "en",
+      "publishedAt": "2026-06-11T00:00:00.000Z",
+      "imageUrl": "/images/news-fallback.png",
+      "excerpt": "OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows."
     },
     {
       "title": "Supporting Europe’s work in ensuring a trustworthy AI ecosystem",
@@ -834,6 +939,21 @@
       "publishedAt": "2026-06-10T20:00:00.000Z",
       "imageUrl": "/images/news-fallback.png",
       "excerpt": "Access OpenAI models and Codex through Oracle Cloud, using existing commitments to build and deploy AI with enterprise security and governance."
+    },
+    {
+      "title": "Give GitHub Copilot CLI real code intelligence with language servers",
+      "url": "https://github.blog/ai-and-ml/github-copilot/give-github-copilot-cli-real-code-intelligence-with-language-servers/",
+      "categoryId": "official",
+      "category": "公式",
+      "regionId": "global",
+      "region": "海外",
+      "source": "GitHub Blog Copilot",
+      "sourceId": "github-blog-copilot",
+      "sourceType": "official",
+      "language": "en",
+      "publishedAt": "2026-06-10T16:00:00.000Z",
+      "imageUrl": "https://github.blog/wp-content/uploads/2026/01/CLIBanner_BlogHeader_01.jpg?fit=2400%2C1260",
+      "excerpt": "Install and configure LSP servers for GitHub Copilot CLI, replacing brute-force grep/decompile with real code intelligence. The post Give GitHub Copi..."
     },
     {
       "title": "AI 時代における学びの未来",
@@ -982,7 +1102,7 @@
       "sourceType": "official",
       "language": "ja",
       "publishedAt": "2025-07-31T11:22:41.000Z",
-      "imageUrl": "https://msftstories.thesourcemediaassets.com/sites/47/2025/07/Blog-Hero-1600x818.png",
+      "imageUrl": "/images/news-fallback.png",
       "excerpt": "ショーン リンダーセイ（Sean Lyndersay） ※本ブログは、米国時間 2025 年 7月 28 日に公開された “ Introducing Copilot Mode in Edge: A new way to browse the web – Microsoft Edge Blog “ ..."
     },
     {
@@ -997,7 +1117,7 @@
       "sourceType": "official",
       "language": "ja",
       "publishedAt": "2025-06-25T08:36:18.000Z",
-      "imageUrl": "https://msftstories.thesourcemediaassets.com/sites/47/2025/06/WIN25_C2_AgnosticRender_HeroBlue_16x9_1920-1600x900-1.jpg",
+      "imageUrl": "/images/news-fallback.png",
       "excerpt": "ユスフ メディ (Yusuf Mehdi) エグゼクティブ バイスプレジデント兼コンシューマー チーフ マーケティング オフィサー ※本ブログは、米国時間 2025 年 6 月 24 日に公開された “Stay secure with Windows 11, Copilot+ PCs and Wi..."
     }
   ]
