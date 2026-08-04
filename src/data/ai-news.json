@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-04T04:05:24.876Z",
+  "generatedAt": "2026-08-04T09:57:18.152Z",
   "updateStatus": "partial-failure",
   "updateMessage": "一部のニュース取得に失敗しました: AI-SCHOLAR: fetch failed",
   "policy": "link-summary-only-with-official-and-trusted-japanese-sources",
@@ -8,7 +8,7 @@
       "id": "domestic",
       "label": "国内",
       "description": "日本語公式情報と国内AIメディアを中心に確認します。",
-      "count": 27
+      "count": 26
     },
     {
       "id": "global",
@@ -30,8 +30,8 @@
       "id": "tech-articles",
       "label": "技術記事",
       "description": "実装者向けの日本語AI技術記事。",
-      "count": 10,
-      "domesticCount": 10,
+      "count": 9,
+      "domesticCount": 9,
       "globalCount": 0
     },
     {
@@ -296,8 +296,8 @@
   ],
   "items": [
     {
-      "title": "Go判定を変えたのは新機能ではなく運用条件だった",
-      "url": "https://qiita.com/boraemon2000/items/f88b9574368719f7bbd2",
+      "title": "AIによるデザインレビューが確率的なので決定的に検知する仕組みを試してみた",
+      "url": "https://qiita.com/spin_atop/items/d29be53f638441357897",
       "categoryId": "tech-articles",
       "category": "技術記事",
       "regionId": "domestic",
@@ -306,13 +306,28 @@
       "sourceId": "qiita-ai",
       "sourceType": "domestic-media",
       "language": "ja",
-      "publishedAt": "2026-08-04T03:37:31.000Z",
-      "imageUrl": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRmF2YXRhcnMuZ2l0aHVidXNlcmNvbnRlbnQuY29tJTJGdSUyRjEwODA0OTIwNCUzRnYlM0Q0P2l4bGliPXJiLTQuMS4xJmFyPTElM0ExJmZpdD1jcm9wJm1hc2s9ZWxsaXBzZSZiZz1GRkZGRkYmZm09cG5nMzImcz0yNTk0YTRlM2EyZDkwZTI2ZjQyNGM2YjYyMjg4NWUyYQ%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D38661b7aa9d09e44e2d7bbfb30b83755?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9R28lRTUlODglQTQlRTUlQUUlOUElRTMlODIlOTIlRTUlQTQlODklRTMlODElODglRTMlODElOUYlRTMlODElQUUlRTMlODElQUYlRTYlOTYlQjAlRTYlQTklOUYlRTglODMlQkQlRTMlODElQTclRTMlODElQUYlRTMlODElQUElRTMlODElOEYlRTklODElOEIlRTclOTQlQTglRTYlOUQlQTElRTQlQkIlQjYlRTMlODElQTAlRTMlODElQTMlRTMlODElOUYmdHh0LWFsaWduPWxlZnQlMkN0b3AmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT01NiZ0eHQtcGFkPTAmcz0zMzI5ODkyNzYxOTc2OTllZTZmOTFmY2Q4ZDQ5MmZhMg&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBib3JhZW1vbjIwMDAmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT0zNiZ0eHQtcGFkPTAmcz01ZDMzMzJkZTE5MTkwZDJiNjJhMThhZGZmOGE5Yjc4OQ&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=16950479f2a04e18724e84111fc355ec",
+      "publishedAt": "2026-08-04T09:45:49.000Z",
+      "imageUrl": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnBicy50d2ltZy5jb20lMkZwcm9maWxlX2ltYWdlcyUyRjk4NjU4MDE3NTE4MDYwNzQ4OSUyRkJ2TTNoUmh6X2JpZ2dlci5qcGc_aXhsaWI9cmItNC4xLjEmYXI9MSUzQTEmZml0PWNyb3AmbWFzaz1lbGxpcHNlJmJnPUZGRkZGRiZmbT1wbmczMiZzPTNiOWYxMGY4YzQzOTA2MTFjMzdkMDk4YWE2YWQzMmQ2%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D6fa8ca7c433d15b3831e7de29c66f152?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9QUklRTMlODElQUIlRTMlODIlODglRTMlODIlOEIlRTMlODMlODclRTMlODIlQjYlRTMlODIlQTQlRTMlODMlQjMlRTMlODMlQUMlRTMlODMlOTMlRTMlODMlQTUlRTMlODMlQkMlRTMlODElOEMlRTclQTIlQkElRTclOEUlODclRTclOUElODQlRTMlODElQUElRTMlODElQUUlRTMlODElQTclRTYlQjElQkElRTUlQUUlOUElRTclOUElODQlRTMlODElQUIlRTYlQTQlOUMlRTclOUYlQTUlRTMlODElOTklRTMlODIlOEIlRTQlQkIlOTUlRTclQjUlODQlRTMlODElQkYlRTMlODIlOTIlRTglQTklQTYlRTMlODElOTclRTMlODElQTYlRTMlODElQkYlRTMlODElOUYmdHh0LWFsaWduPWxlZnQlMkN0b3AmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT01NiZ0eHQtcGFkPTAmcz01NDU3OGRhNjI4MzI5MGQ2NjlhMzkzZTRjNTA1YmVkMA&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBzcGluX2F0b3AmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT0zNiZ0eHQtcGFkPTAmcz1jZTY5ZmI2Y2MzODhkYjg3MzAyODJjYjQzYjdkMmE2Yg&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=9df0258c59d9330fc058183aba74789f",
       "excerpt": ""
     },
     {
-      "title": "ブラウザ多言語TTSが86%で止まる原因と、WebGPU・WASM・キャッシュ設計で解決した話",
-      "url": "https://qiita.com/MartinDelophy/items/f46c806e74e605fb982b",
+      "title": "【前編】AI駆動開発、用語で挫折していませんか？ ——歴史をたどれば「Skills」も「Hooks」も一本の線でつながる",
+      "url": "https://qiita.com/shou-dev19/items/e1583af614a573e4b245",
+      "categoryId": "tech-articles",
+      "category": "技術記事",
+      "regionId": "domestic",
+      "region": "国内",
+      "source": "Qiita LLM",
+      "sourceId": "qiita-llm",
+      "sourceType": "domestic-media",
+      "language": "ja",
+      "publishedAt": "2026-08-04T09:31:30.000Z",
+      "imageUrl": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnFpaXRhLWltYWdlLXN0b3JlLnMzLmFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkYwJTJGNDEyMzM0MSUyRnByb2ZpbGUtaW1hZ2VzJTJGMTc1NzI1NzQyMz9peGxpYj1yYi00LjEuMSZhcj0xJTNBMSZmaXQ9Y3JvcCZtYXNrPWVsbGlwc2UmYmc9RkZGRkZGJmZtPXBuZzMyJnM9ZjU3MTU1YTdkNWM1OTk3NWI0MzVlM2IyNDJjYjBlNjU%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3De8644e386ce623804783eff9ba63ff6f?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9JUUzJTgwJTkwJUU1JTg5JThEJUU3JUI3JUE4JUUzJTgwJTkxQUklRTklQTclODYlRTUlOEIlOTUlRTklOTYlOEIlRTclOTklQkElRTMlODAlODElRTclOTQlQTglRTglQUElOUUlRTMlODElQTclRTYlOEMlQUIlRTYlOEElOTglRTMlODElOTclRTMlODElQTYlRTMlODElODQlRTMlODElQkUlRTMlODElOUIlRTMlODIlOTMlRTMlODElOEIlRUYlQkMlOUYlMjAlRTIlODAlOTQlRTIlODAlOTQlRTYlQUQlQjQlRTUlOEYlQjIlRTMlODIlOTIlRTMlODElOUYlRTMlODElQTklRTMlODIlOEMlRTMlODElQjAlRTMlODAlOENTa2lsbHMlRTMlODAlOEQlRTMlODIlODIlRTMlODAlOENIb29rcyVFMyU4MCU4RCVFMyU4MiU4MiVFNCVCOCU4MCVFNiU5QyVBQyVFMyU4MSVBRSVFMiU4MCVBNiZ0eHQtYWxpZ249bGVmdCUyQ3RvcCZ0eHQtY29sb3I9JTIzMUUyMTIxJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTU2JnR4dC1wYWQ9MCZzPTE4OWVhZmVkOWJkMjM2NjhjMGVmNTg2NzM1ZTVmOWY2&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBzaG91LWRldjE5JnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9NzlhMGZiZjE2YjE5NWEzNjIyZTJhZDFkYTRhNDA5Mjg&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=a56e89da52f5aecc1deb4b1ab4339602",
+      "excerpt": ""
+    },
+    {
+      "title": "建築士1人の「夏休みの自由研究」が、45.8万回AIを動かす公共工事SaaSになった",
+      "url": "https://qiita.com/architectJapan/items/a1d10f36baae5e358a09",
       "categoryId": "tech-articles",
       "category": "技術記事",
       "regionId": "domestic",
@@ -321,13 +336,13 @@
       "sourceId": "qiita-ai",
       "sourceType": "domestic-media",
       "language": "ja",
-      "publishedAt": "2026-08-04T03:30:41.000Z",
-      "imageUrl": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRmF2YXRhcnMuZ2l0aHVidXNlcmNvbnRlbnQuY29tJTJGdSUyRjExMDg2Nzg1JTNGdiUzRDQ_aXhsaWI9cmItNC4xLjEmYXI9MSUzQTEmZml0PWNyb3AmbWFzaz1lbGxpcHNlJmJnPUZGRkZGRiZmbT1wbmczMiZzPTM3NzgzNzEwMDkzMzdmODk5M2RkMDQwZDYxYjU4YWVi%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D80440b399c87f743ef5ea69ef4edbd73?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9JUUzJTgzJTk2JUUzJTgzJUE5JUUzJTgyJUE2JUUzJTgyJUI2JUU1JUE0JTlBJUU4JUE4JTgwJUU4JUFBJTlFVFRTJUUzJTgxJThDODYlMjUlRTMlODElQTclRTYlQUQlQTIlRTMlODElQkUlRTMlODIlOEIlRTUlOEUlOUYlRTUlOUIlQTAlRTMlODElQTglRTMlODAlODFXZWJHUFUlRTMlODMlQkJXQVNNJUUzJTgzJUJCJUUzJTgyJUFEJUUzJTgzJUEzJUUzJTgzJTgzJUUzJTgyJUI3JUUzJTgzJUE1JUU4JUE4JUFEJUU4JUE4JTg4JUUzJTgxJUE3JUU4JUE3JUEzJUU2JUIxJUJBJUUzJTgxJTk3JUUzJTgxJTlGJUU4JUE5JUIxJnR4dC1hbGlnbj1sZWZ0JTJDdG9wJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9NTYmdHh0LXBhZD0wJnM9ZjE0NTExMzg3NjE1MjkwYWY4ZWM0YTZjYThiYzY3YTE&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBNYXJ0aW5EZWxvcGh5JnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9NmQwMWY1YTRhZWNkNmJiNjAxNjU2NTlmZTdjMTdlYzA&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=bcd49cf52439eec1ba288a787dde70e4",
+      "publishedAt": "2026-08-04T09:28:57.000Z",
+      "imageUrl": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1pbWFnZS1zdG9yZSUyRjAlMkY0MzI2MzE0JTJGZTFmYjNlNDc0Y2FlNGUyMjMxYjEyOGZkYjUzYTAyM2IwNWU4ODk2ZSUyRmxhcmdlLnBuZyUzRjE3Njc1NjUxNTQ_aXhsaWI9cmItNC4xLjEmYXI9MSUzQTEmZml0PWNyb3AmbWFzaz1lbGxpcHNlJmJnPUZGRkZGRiZmbT1wbmczMiZzPWE5M2E0YjAzNjlkZWEzMDAyYmZmMThlYWJkMjg0NmZk%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D9a1c020bef3c87d372a6973b0b5b1b89?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9JUU1JUJCJUJBJUU3JUFGJTg5JUU1JUEzJUFCMSVFNCVCQSVCQSVFMyU4MSVBRSVFMyU4MCU4QyVFNSVBNCU4RiVFNCVCQyU5MSVFMyU4MSVCRiVFMyU4MSVBRSVFOCU4NyVBQSVFNyU5NCVCMSVFNyVBMCU5NCVFNyVBOSVCNiVFMyU4MCU4RCVFMyU4MSU4QyVFMyU4MCU4MTQ1LjglRTQlQjglODclRTUlOUIlOUVBSSVFMyU4MiU5MiVFNSU4QiU5NSVFMyU4MSU4QiVFMyU4MSU5OSVFNSU4NSVBQyVFNSU4NSVCMSVFNSVCNyVBNSVFNCVCQSU4QlNhYVMlRTMlODElQUIlRTMlODElQUElRTMlODElQTMlRTMlODElOUYmdHh0LWFsaWduPWxlZnQlMkN0b3AmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT01NiZ0eHQtcGFkPTAmcz0yOGQxN2U5YTBjNjEzZDE1OTA3ZmRmNDRlM2JhZjgyMQ&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBhcmNoaXRlY3RKYXBhbiZ0eHQtY29sb3I9JTIzMUUyMTIxJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTM2JnR4dC1wYWQ9MCZzPTYxN2EzMTk0ZWI2YzQ4MmM4MWFhMmNmNzFkYWRiMjM5&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=30cce74142df587441bc4f6a3f1d24a8",
       "excerpt": ""
     },
     {
-      "title": "GPT-Live時代の暫定文字起こしを商談メモに混ぜないPython",
-      "url": "https://qiita.com/eiri_ai/items/e07d881e68114d959e6f",
+      "title": "文系東大生がGPT型モデルをフルスクラッチで開発する話 番外編１【株式会社ハイレゾ協力】",
+      "url": "https://qiita.com/uaokit0905/items/bb0d84e801e088692f05",
       "categoryId": "tech-articles",
       "category": "技術記事",
       "regionId": "domestic",
@@ -336,13 +351,13 @@
       "sourceId": "qiita-ai",
       "sourceType": "domestic-media",
       "language": "ja",
-      "publishedAt": "2026-08-04T03:26:15.000Z",
-      "imageUrl": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1pbWFnZS1zdG9yZSUyRjAlMkY0NDQ0ODIxJTJGMDNmMjMzNjgyOTNjYmFhOGVhMTczOTdhMmU4ZDg3MTA4Y2E5ZmM3NCUyRnhfbGFyZ2UucG5nJTNGMTc4MDg4NTk1Nj9peGxpYj1yYi00LjEuMSZhcj0xJTNBMSZmaXQ9Y3JvcCZtYXNrPWVsbGlwc2UmYmc9RkZGRkZGJmZtPXBuZzMyJnM9NzU5NWM2OWJhNzZjZTM0ZGZhYmI4NGNjZWIyOWYxMWM%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D4f9e2f6bfc7ce90ffcefefd8d26bd3b0?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9R1BULUxpdmUlRTYlOTklODIlRTQlQkIlQTMlRTMlODElQUUlRTYlOUElQUIlRTUlQUUlOUElRTYlOTYlODclRTUlQUQlOTclRTglQjUlQjclRTMlODElOTMlRTMlODElOTclRTMlODIlOTIlRTUlOTUlODYlRTglQUIlODclRTMlODMlQTElRTMlODMlQTIlRTMlODElQUIlRTYlQjclQjclRTMlODElOUMlRTMlODElQUElRTMlODElODRQeXRob24mdHh0LWFsaWduPWxlZnQlMkN0b3AmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT01NiZ0eHQtcGFkPTAmcz00MmU5Y2U1MmRiZWMwYWE4MmFjYjQ1YjU4NjlhNjZiYQ&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBlaXJpX2FpJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9MTEzOWIzZTE5MjJhOWZmMjM0OTk2MjkxMjdjZTg1MWE&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=45b72229757ea14ccb5267a6a61c18cc",
+      "publishedAt": "2026-08-04T09:19:08.000Z",
+      "imageUrl": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRmxoMy5nb29nbGV1c2VyY29udGVudC5jb20lMkZhJTJGQUNnOG9jTE5sUnFQczF2czlCMVpxYWRjdWlBSmlyYzJzVFVmcWJWemtiZTlaN1M1bkFNTXJERTQlM0RzOTYtYz9peGxpYj1yYi00LjEuMSZhcj0xJTNBMSZmaXQ9Y3JvcCZtYXNrPWVsbGlwc2UmYmc9RkZGRkZGJmZtPXBuZzMyJnM9MDY1ZjU3ZDI3NzlkOWUxMGNmMDM3MzMxMDMyNzhkNGY%26blend-x%3D120%26blend-y%3D462%26blend-w%3D90%26blend-h%3D90%26blend-mode%3Dnormal%26mark64%3DaHR0cHM6Ly9xaWl0YS1vcmdhbml6YXRpb24taW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1vcmdhbml6YXRpb24taW1hZ2UlMkZiNDcyNWU1NzMwNTQ5MjAwMDIxYjIwNTNkMmFiMDVlZDlkYjc3ZDkzJTJGb3JpZ2luYWwuanBnJTNGMTc3OTQxMzcwNj9peGxpYj1yYi00LjEuMSZ3PTQ0Jmg9NDQmZml0PWNyb3AmbWFzaz1jb3JuZXJzJmNvcm5lci1yYWRpdXM9OCZiZz1GRkZGRkYmYm9yZGVyPTIlMkNGRkZGRkYmZm09cG5nMzImcz0wY2UxZWEwMGQ4NTVlNjc2OWZmMmNkZjU0ODE3MTQ4OQ%26mark-x%3D186%26mark-y%3D515%26mark-w%3D40%26mark-h%3D40%26s%3D324a6d480d56d58b190c4e30c5ed334e?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9JUU2JTk2JTg3JUU3JUIzJUJCJUU2JTlEJUIxJUU1JUE0JUE3JUU3JTk0JTlGJUUzJTgxJThDR1BUJUU1JTlFJThCJUUzJTgzJUEyJUUzJTgzJTg3JUUzJTgzJUFCJUUzJTgyJTkyJUUzJTgzJTk1JUUzJTgzJUFCJUUzJTgyJUI5JUUzJTgyJUFGJUUzJTgzJUE5JUUzJTgzJTgzJUUzJTgzJTgxJUUzJTgxJUE3JUU5JTk2JThCJUU3JTk5JUJBJUUzJTgxJTk5JUUzJTgyJThCJUU4JUE5JUIxJTIwJUU3JTk1JUFBJUU1JUE0JTk2JUU3JUI3JUE4JUVGJUJDJTkxJUUzJTgwJTkwJUU2JUEwJUFBJUU1JUJDJThGJUU0JUJDJTlBJUU3JUE0JUJFJUUzJTgzJThGJUUzJTgyJUE0JUUzJTgzJUFDJUUzJTgyJUJFJUU1JThEJTk0JUU1JThBJTlCJUUzJTgwJTkxJnR4dC1hbGlnbj1sZWZ0JTJDdG9wJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9NTYmdHh0LXBhZD0wJnM9ZjlhOTcwMDU1MGQ3MDBiOTY0ZTk2NThlMGI1ZjY5OWY&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDB1YW9raXQwOTA1JnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9ZjY1MTc4NDdkYjUxNjEwMTJkYjg4ZmYwNGI4NTk3ODI&blend-x=242&blend-y=454&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&txt64=5p2x5aSnQUnnoJTnqbbkvJo&txt-x=242&txt-y=539&txt-width=838&txt-clip=end%2Cellipsis&txt-color=%231E2121&txt-font=Hiragino%20Sans%20W6&txt-size=28&s=f0bb269f5769ea98d4ea29dde72ce8c3",
       "excerpt": ""
     },
     {
-      "title": "AI時代にフリーランスエンジニアが生き残る3つの戦略",
-      "url": "https://qiita.com/mune_engineer/items/9f1573f47904b3788389",
+      "title": "【Amazon Connect × Salesforce】AIエージェントのツール定義とSalesforce連携のポイント",
+      "url": "https://qiita.com/Reikun/items/2f48fc3a02ba7e51eff2",
       "categoryId": "tech-articles",
       "category": "技術記事",
       "regionId": "domestic",
@@ -351,13 +366,13 @@
       "sourceId": "qiita-ai",
       "sourceType": "domestic-media",
       "language": "ja",
-      "publishedAt": "2026-08-04T03:03:00.000Z",
-      "imageUrl": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1pbWFnZS1zdG9yZSUyRjAlMkY0NDcyMDMxJTJGM2UwZTk3NjliZmM0YzYyZmJlNjg1Yjc0NzMyOGNlYTc5YTFkOTkyYyUyRnhfbGFyZ2UucG5nJTNGMTc4NDcxMzE2MT9peGxpYj1yYi00LjEuMSZhcj0xJTNBMSZmaXQ9Y3JvcCZtYXNrPWVsbGlwc2UmYmc9RkZGRkZGJmZtPXBuZzMyJnM9NGYwOWMwMDA0MzYxODAzYTZmODYxNWVlMjc0MzU4NjI%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3Dd0715eac1a2bcd50cc7bdd68394a0863?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9QUklRTYlOTklODIlRTQlQkIlQTMlRTMlODElQUIlRTMlODMlOTUlRTMlODMlQUElRTMlODMlQkMlRTMlODMlQTklRTMlODMlQjMlRTMlODIlQjklRTMlODIlQTglRTMlODMlQjMlRTMlODIlQjglRTMlODMlOEIlRTMlODIlQTIlRTMlODElOEMlRTclOTQlOUYlRTMlODElOEQlRTYlQUUlOEIlRTMlODIlOEIzJUUzJTgxJUE0JUUzJTgxJUFFJUU2JTg4JUE2JUU3JTk1JUE1JnR4dC1hbGlnbj1sZWZ0JTJDdG9wJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9NTYmdHh0LXBhZD0wJnM9MDY4YzY2YmFmZTI3ODk2MThmZjcyOGVmYmI4Y2Q1NmU&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBtdW5lX2VuZ2luZWVyJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9YTgyODg0OTc4YjI0YTNiNjJkNWU3ZTE5NzA4OGMxMTY&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=b86855b2296abf8e5244435338e67479",
+      "publishedAt": "2026-08-04T09:05:26.000Z",
+      "imageUrl": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1pbWFnZS1zdG9yZSUyRjAlMkY0NDc1NzQ5JTJGNjkzNDZjZmZlNTY4MjA0NDAzNDY0ZjdlMTZmZWJmMWY4OWQ5ZTZmMiUyRnhfbGFyZ2UucG5nJTNGMTc4NTgxNjQzND9peGxpYj1yYi00LjEuMSZhcj0xJTNBMSZmaXQ9Y3JvcCZtYXNrPWVsbGlwc2UmYmc9RkZGRkZGJmZtPXBuZzMyJnM9NGVhMzYzZWExNmZiMWRhNjlkMjNhZTFmZDQxYjEyZGQ%26blend-x%3D120%26blend-y%3D462%26blend-w%3D90%26blend-h%3D90%26blend-mode%3Dnormal%26mark64%3DaHR0cHM6Ly9xaWl0YS1vcmdhbml6YXRpb24taW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1vcmdhbml6YXRpb24taW1hZ2UlMkYzYWEzMjE0N2NiYWJkYjQ4OTA3OTJjYzZiOGE5OTIyODUzNDE1YWRmJTJGb3JpZ2luYWwuanBnJTNGMTczMjUyODg3Nj9peGxpYj1yYi00LjEuMSZ3PTQ0Jmg9NDQmZml0PWNyb3AmbWFzaz1jb3JuZXJzJmNvcm5lci1yYWRpdXM9OCZiZz1GRkZGRkYmYm9yZGVyPTIlMkNGRkZGRkYmZm09cG5nMzImcz1hZmJhZjYzN2NkOTYyNGMzOTUwMmJiZjAxZDg4NDUyMg%26mark-x%3D186%26mark-y%3D515%26mark-w%3D40%26mark-h%3D40%26s%3Db4259975cad0de9e296d26c1515a5bf2?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9JUUzJTgwJTkwQW1hem9uJTIwQ29ubmVjdCUyMCVDMyU5NyUyMFNhbGVzZm9yY2UlRTMlODAlOTFBSSVFMyU4MiVBOCVFMyU4MyVCQyVFMyU4MiVCOCVFMyU4MiVBNyVFMyU4MyVCMyVFMyU4MyU4OCVFMyU4MSVBRSVFMyU4MyU4NCVFMyU4MyVCQyVFMyU4MyVBQiVFNSVBRSU5QSVFNyVCRSVBOSVFMyU4MSVBOFNhbGVzZm9yY2UlRTklODAlQTMlRTYlOTAlQkElRTMlODElQUUlRTMlODMlOUQlRTMlODIlQTQlRTMlODMlQjMlRTMlODMlODgmdHh0LWFsaWduPWxlZnQlMkN0b3AmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT01NiZ0eHQtcGFkPTAmcz02ODFjMDU0ZGY2ZWYwN2ZmODRkMTMzYzI5ZmY0YWI5Yw&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBSZWlrdW4mdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT0zNiZ0eHQtcGFkPTAmcz1jOTQzOGU0ZTE1OTA1ZTVhNjQwMTdiNGYzYmUwNTQ5OQ&blend-x=242&blend-y=454&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&txt64=5qCq5byP5Lya56S-44Km44OV44Or&txt-x=242&txt-y=539&txt-width=838&txt-clip=end%2Cellipsis&txt-color=%231E2121&txt-font=Hiragino%20Sans%20W6&txt-size=28&s=63d9227e2743163f8f536b290ff69b56",
       "excerpt": ""
     },
     {
-      "title": "【レジェンド級・米国エンジニア思考法】 AI時代に求められるエンジニア生存戦略",
-      "url": "https://qiita.com/mune_engineer/items/0cbb255ee53644387d2d",
+      "title": "日本の生成AI利用率・普及率は世界最下位レベルで大半が使用予定無し（2026年）",
+      "url": "https://qiita.com/mnoda/items/0ca8916cfe8078b4c75e",
       "categoryId": "tech-articles",
       "category": "技術記事",
       "regionId": "domestic",
@@ -366,13 +381,13 @@
       "sourceId": "qiita-generative-ai",
       "sourceType": "domestic-media",
       "language": "ja",
-      "publishedAt": "2026-08-04T03:00:36.000Z",
-      "imageUrl": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1pbWFnZS1zdG9yZSUyRjAlMkY0NDcyMDMxJTJGM2UwZTk3NjliZmM0YzYyZmJlNjg1Yjc0NzMyOGNlYTc5YTFkOTkyYyUyRnhfbGFyZ2UucG5nJTNGMTc4NDcxMzE2MT9peGxpYj1yYi00LjEuMSZhcj0xJTNBMSZmaXQ9Y3JvcCZtYXNrPWVsbGlwc2UmYmc9RkZGRkZGJmZtPXBuZzMyJnM9NGYwOWMwMDA0MzYxODAzYTZmODYxNWVlMjc0MzU4NjI%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3Dd0715eac1a2bcd50cc7bdd68394a0863?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9JUUzJTgwJTkwJUUzJTgzJUFDJUUzJTgyJUI4JUUzJTgyJUE3JUUzJTgzJUIzJUUzJTgzJTg5JUU3JUI0JTlBJUUzJTgzJUJCJUU3JUIxJUIzJUU1JTlCJUJEJUUzJTgyJUE4JUUzJTgzJUIzJUUzJTgyJUI4JUUzJTgzJThCJUUzJTgyJUEyJUU2JTgwJTlEJUU4JTgwJTgzJUU2JUIzJTk1JUUzJTgwJTkxJUUzJTgwJTgwQUklRTYlOTklODIlRTQlQkIlQTMlRTMlODElQUIlRTYlQjElODIlRTMlODIlODElRTMlODIlODklRTMlODIlOEMlRTMlODIlOEIlRTMlODIlQTglRTMlODMlQjMlRTMlODIlQjglRTMlODMlOEIlRTMlODIlQTIlRTclOTQlOUYlRTUlQUQlOTglRTYlODglQTYlRTclOTUlQTUmdHh0LWFsaWduPWxlZnQlMkN0b3AmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT01NiZ0eHQtcGFkPTAmcz01ZWVhN2FjNWEwYTIxZTlmMjU3MTg4MzEyNGVmOWQ5MA&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBtdW5lX2VuZ2luZWVyJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9YTgyODg0OTc4YjI0YTNiNjJkNWU3ZTE5NzA4OGMxMTY&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=9ce1203f5d9262628d19b403a8a13de7",
+      "publishedAt": "2026-08-04T08:36:57.000Z",
+      "imageUrl": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1pbWFnZS1zdG9yZSUyRjAlMkY1MTgzODklMkZlNzJmMmE4NjM2ZTk0MDI4Y2UxMTRlY2E4NThhOWY1YWRjMmE3MjBmJTJGbGFyZ2UucG5nJTNGMTY3ODUyODM4ND9peGxpYj1yYi00LjEuMSZhcj0xJTNBMSZmaXQ9Y3JvcCZtYXNrPWVsbGlwc2UmYmc9RkZGRkZGJmZtPXBuZzMyJnM9NjIyMTM1OTVkNmUxMzk0ZmYzNTU4N2FjZTdiODAzNTg%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D578325def68172f1c203c82142eb9f04?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9JUU2JTk3JUE1JUU2JTlDJUFDJUUzJTgxJUFFJUU3JTk0JTlGJUU2JTg4JTkwQUklRTUlODglQTklRTclOTQlQTglRTclOEUlODclRTMlODMlQkIlRTYlOTklQUUlRTUlOEYlOEElRTclOEUlODclRTMlODElQUYlRTQlQjglOTYlRTclOTUlOEMlRTYlOUMlODAlRTQlQjglOEIlRTQlQkQlOEQlRTMlODMlQUMlRTMlODMlOTklRTMlODMlQUIlRTMlODElQTclRTUlQTQlQTclRTUlOEQlOEElRTMlODElOEMlRTQlQkQlQkYlRTclOTQlQTglRTQlQkElODglRTUlQUUlOUElRTclODQlQTElRTMlODElOTclRUYlQkMlODgyMDI2JUU1JUI5JUI0JUVGJUJDJTg5JnR4dC1hbGlnbj1sZWZ0JTJDdG9wJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9NTYmdHh0LXBhZD0wJnM9ZmRjOWVhOTJkZjQyNGFiMmFhZmQ1YjZmYzg4ZmZiYzQ&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBtbm9kYSZ0eHQtY29sb3I9JTIzMUUyMTIxJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTM2JnR4dC1wYWQ9MCZzPWIwNDEwNmRkZjRhMTY5MjQ5OTcwZDI1YWFiMTA3YjIw&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=e917da706295caa0bdae05fa4c63311d",
       "excerpt": ""
     },
     {
-      "title": "Claude CodeのPreToolUseフック活用ガイド——AIの操作を「実行される前に」検査する",
-      "url": "https://qiita.com/tri-ponte/items/72c7159c639011ccdf86",
+      "title": "SLMをローカルPCで動かしてみた",
+      "url": "https://qiita.com/hirotaka_s/items/33a7f41c2244a5ef62ea",
       "categoryId": "tech-articles",
       "category": "技術記事",
       "regionId": "domestic",
@@ -381,13 +396,13 @@
       "sourceId": "qiita-generative-ai",
       "sourceType": "domestic-media",
       "language": "ja",
-      "publishedAt": "2026-08-04T02:57:02.000Z",
-      "imageUrl": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1pbWFnZS1zdG9yZSUyRjAlMkY0NDc4MTUwJTJGMjNkNzIwNTljNGM5MTczNjY2ZWZkNmVmMzZhMzIxYzY5NTY2ZWIwMyUyRmxhcmdlLnBuZyUzRjE3ODU2NTM3NDE_aXhsaWI9cmItNC4xLjEmYXI9MSUzQTEmZml0PWNyb3AmbWFzaz1lbGxpcHNlJmJnPUZGRkZGRiZmbT1wbmczMiZzPWIxNGJlZTdmZGZiMTM0N2MyYmY2ZDJmMGIwOTdkNTMz%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D0c97026988125adebcee1364448c0dc1?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9Q2xhdWRlJTIwQ29kZSVFMyU4MSVBRVByZVRvb2xVc2UlRTMlODMlOTUlRTMlODMlODMlRTMlODIlQUYlRTYlQjQlQkIlRTclOTQlQTglRTMlODIlQUMlRTMlODIlQTQlRTMlODMlODklRTIlODAlOTQlRTIlODAlOTRBSSVFMyU4MSVBRSVFNiU5MyU4RCVFNCVCRCU5QyVFMyU4MiU5MiVFMyU4MCU4QyVFNSVBRSU5RiVFOCVBMSU4QyVFMyU4MSU5NSVFMyU4MiU4QyVFMyU4MiU4QiVFNSU4OSU4RCVFMyU4MSVBQiVFMyU4MCU4RCVFNiVBNCU5QyVFNiU5RiVCQiVFMyU4MSU5OSVFMyU4MiU4QiZ0eHQtYWxpZ249bGVmdCUyQ3RvcCZ0eHQtY29sb3I9JTIzMUUyMTIxJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTU2JnR4dC1wYWQ9MCZzPTcyNzQ3YmI2YjQ1NTg4MjA0NWNmN2I1NTgxNTk4NGVj&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDB0cmktcG9udGUmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT0zNiZ0eHQtcGFkPTAmcz0xNTE5MDM1OWVkMjE1NTg0OGFmODkxNzE3Y2JmM2M5ZA&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=a85c5bcce5a931057e40a3db097adb71",
+      "publishedAt": "2026-08-04T07:53:09.000Z",
+      "imageUrl": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1pbWFnZS1zdG9yZSUyRjAlMkYyNDgwOTc0JTJGMmQwNWIzZmEyNjZlZDg4MTY5ZTdkMGEwZDMyMzliZTJmOGMxNDkxNyUyRnhfbGFyZ2UucG5nJTNGMTc2NzUwMjAzMz9peGxpYj1yYi00LjEuMSZhcj0xJTNBMSZmaXQ9Y3JvcCZtYXNrPWVsbGlwc2UmYmc9RkZGRkZGJmZtPXBuZzMyJnM9ZjdkY2NhYTE5MTI4MmYwMGE0YmMxMDk4YTg2NzllNTA%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3Da2cc3e3193e0a2fc2d1fbe821249a464?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9U0xNJUUzJTgyJTkyJUUzJTgzJUFEJUUzJTgzJUJDJUUzJTgyJUFCJUUzJTgzJUFCUEMlRTMlODElQTclRTUlOEIlOTUlRTMlODElOEIlRTMlODElOTclRTMlODElQTYlRTMlODElQkYlRTMlODElOUYmdHh0LWFsaWduPWxlZnQlMkN0b3AmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT01NiZ0eHQtcGFkPTAmcz1lZjJiMzExOWExMzY2MjMxM2Q0NGJiNWQ1YmNkOTkwMA&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBoaXJvdGFrYV9zJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9NDE2NGRiNDU3YThkMjAwMTQ2OWI3N2M3OGY3MGRjM2M&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=4f2b0fd6a2107b21a7fb597f034dbdd2",
       "excerpt": ""
     },
     {
-      "title": "Role Promptは本当に効果があるのか？ローカルLLMで比較検証してみた",
-      "url": "https://qiita.com/au_753/items/5f5f5fede46c87824065",
+      "title": "自前でAIを持って、E2Eを約500ms→120ms・コストを1/3〜1/10にした",
+      "url": "https://qiita.com/lyr/items/3da846a4e7a7d9173a8d",
       "categoryId": "tech-articles",
       "category": "技術記事",
       "regionId": "domestic",
@@ -396,13 +411,13 @@
       "sourceId": "qiita-llm",
       "sourceType": "domestic-media",
       "language": "ja",
-      "publishedAt": "2026-08-04T02:52:44.000Z",
-      "imageUrl": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1pbWFnZS1zdG9yZSUyRjAlMkY0NDI2OTk0JTJGZjhmZjVmZTdjZTgzNWFmNGFkMjQyYTRmM2FkY2NlMzkzZjE3YmE2MCUyRnhfbGFyZ2UucG5nJTNGMTc4MTIzODQwOT9peGxpYj1yYi00LjEuMSZhcj0xJTNBMSZmaXQ9Y3JvcCZtYXNrPWVsbGlwc2UmYmc9RkZGRkZGJmZtPXBuZzMyJnM9YzkzMDZkYjgzYTQxMGY5ZDZiMzk0YTkzOTJmN2Q4Nzg%26blend-x%3D120%26blend-y%3D462%26blend-w%3D90%26blend-h%3D90%26blend-mode%3Dnormal%26mark64%3DaHR0cHM6Ly9xaWl0YS1vcmdhbml6YXRpb24taW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1vcmdhbml6YXRpb24taW1hZ2UlMkYwMzhkMDQ0NDc0MjkxYWY5YzVmYjU2NmNlYzYxMTRiY2U3ZmQzOWFiJTJGb3JpZ2luYWwuanBnJTNGMTc2MzQzNDA3MT9peGxpYj1yYi00LjEuMSZ3PTQ0Jmg9NDQmZml0PWNyb3AmbWFzaz1jb3JuZXJzJmNvcm5lci1yYWRpdXM9OCZiZz1GRkZGRkYmYm9yZGVyPTIlMkNGRkZGRkYmZm09cG5nMzImcz0zZjJhMjZiMTlmZWE0ZjEyM2Y3YjZjNjY1Njk2MGMxZg%26mark-x%3D186%26mark-y%3D515%26mark-w%3D40%26mark-h%3D40%26s%3Dce7cb23df6342abd23268172a925ba3b?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9Um9sZSUyMFByb21wdCVFMyU4MSVBRiVFNiU5QyVBQyVFNSVCRCU5MyVFMyU4MSVBQiVFNSU4QSVCOSVFNiU5RSU5QyVFMyU4MSU4QyVFMyU4MSU4MiVFMyU4MiU4QiVFMyU4MSVBRSVFMyU4MSU4QiVFRiVCQyU5RiVFMyU4MyVBRCVFMyU4MyVCQyVFMyU4MiVBQiVFMyU4MyVBQkxMTSVFMyU4MSVBNyVFNiVBRiU5NCVFOCVCQyU4MyVFNiVBNCU5QyVFOCVBOCVCQyVFMyU4MSU5NyVFMyU4MSVBNiVFMyU4MSVCRiVFMyU4MSU5RiZ0eHQtYWxpZ249bGVmdCUyQ3RvcCZ0eHQtY29sb3I9JTIzMUUyMTIxJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTU2JnR4dC1wYWQ9MCZzPTU2ZjJjZDExZWVjNzQ0ZTkxYTY5MGEwMGU2ZGE5OGU1&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBhdV83NTMmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT0zNiZ0eHQtcGFkPTAmcz1kZjI0N2Q5ODY3NmQzMDdjOTA0ODhmNTEyMTI2YmRmZQ&blend-x=242&blend-y=454&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&txt64=5qCq5byP5Lya56S-QUJJIOaKgOihk-mdqeaWsOmDqA&txt-x=242&txt-y=539&txt-width=838&txt-clip=end%2Cellipsis&txt-color=%231E2121&txt-font=Hiragino%20Sans%20W6&txt-size=28&s=6f01ec79489d94a8239f92fb3233a631",
+      "publishedAt": "2026-08-04T07:42:57.000Z",
+      "imageUrl": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnFpaXRhLWltYWdlLXN0b3JlLnMzLmFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkYwJTJGNDQ3ODM5NCUyRnByb2ZpbGUtaW1hZ2VzJTJGMTc4NTcxMDE2NT9peGxpYj1yYi00LjEuMSZhcj0xJTNBMSZmaXQ9Y3JvcCZtYXNrPWVsbGlwc2UmYmc9RkZGRkZGJmZtPXBuZzMyJnM9YzdkMmEyYjlhMTliM2MzOWRmNDZjNTM2NDczNTBlMzM%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3Dc837535ac3b0ce77b05a3c74c3da250d?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9JUU4JTg3JUFBJUU1JTg5JThEJUUzJTgxJUE3QUklRTMlODIlOTIlRTYlOEMlODElRTMlODElQTMlRTMlODElQTYlRTMlODAlODFFMkUlRTMlODIlOTIlRTclQjQlODQ1MDBtcyVFMiU4NiU5MjEyMG1zJUUzJTgzJUJCJUUzJTgyJUIzJUUzJTgyJUI5JUUzJTgzJTg4JUUzJTgyJTkyMSUyRjMlRTMlODAlOUMxJTJGMTAlRTMlODElQUIlRTMlODElOTclRTMlODElOUYmdHh0LWFsaWduPWxlZnQlMkN0b3AmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT01NiZ0eHQtcGFkPTAmcz05M2M0Y2MzMTVlODM1Y2RiMDk5NTRkMTVmODZlNzIzNA&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBseXImdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT0zNiZ0eHQtcGFkPTAmcz0zMzNlMmUyNjlmMzkyNTY3NGNmYzAwYTZlYzM5NjVjYw&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=cb990bcb5742e9711c38c562562c186c",
       "excerpt": ""
     },
     {
-      "title": "Pythonで業務用語の定義漏れをCIで止める",
-      "url": "https://qiita.com/hironakamura_ai/items/0dd905e4c1710b0c7cfb",
+      "title": "AIエンジニアとして本番システムを作れるようになるための厳選5冊【2026年版】",
+      "url": "https://qiita.com/koukyo/items/f6c33c337719564855d7",
       "categoryId": "tech-articles",
       "category": "技術記事",
       "regionId": "domestic",
@@ -411,39 +426,24 @@
       "sourceId": "qiita-llm",
       "sourceType": "domestic-media",
       "language": "ja",
-      "publishedAt": "2026-08-04T02:22:11.000Z",
-      "imageUrl": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1pbWFnZS1zdG9yZSUyRjAlMkY0NDQ0NzcyJTJGNzA5NTAxOWUyOWVhMzY3ZWI2NzZiYmEyMzdlMjAyYjczZmM0Y2FiOCUyRnhfbGFyZ2UucG5nJTNGMTc4MDg3NzY4NT9peGxpYj1yYi00LjEuMSZhcj0xJTNBMSZmaXQ9Y3JvcCZtYXNrPWVsbGlwc2UmYmc9RkZGRkZGJmZtPXBuZzMyJnM9MDRkN2ViYjlhY2U5MzE3MWUxYTdiNTA4ZmU4NDI1N2Y%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D7fd777bd4a540d788ced16e3c534f20f?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9UHl0aG9uJUUzJTgxJUE3JUU2JUE1JUFEJUU1JThCJTk5JUU3JTk0JUE4JUU4JUFBJTlFJUUzJTgxJUFFJUU1JUFFJTlBJUU3JUJFJUE5JUU2JUJDJThGJUUzJTgyJThDJUUzJTgyJTkyQ0klRTMlODElQTclRTYlQUQlQTIlRTMlODIlODElRTMlODIlOEImdHh0LWFsaWduPWxlZnQlMkN0b3AmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT01NiZ0eHQtcGFkPTAmcz02MzVjNmMyZWNmZDkyYzc3NzIzNTQ3YWU4MDkxNzAyMQ&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBoaXJvbmFrYW11cmFfYWkmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT0zNiZ0eHQtcGFkPTAmcz1lMmFlNTIxYjY4MGYyYzYzYzA1MmRmMDY3NjBkMjhkOQ&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=4d4e5b1b997f6379cf25edfdde555d3d",
+      "publishedAt": "2026-08-04T05:51:01.000Z",
+      "imageUrl": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1pbWFnZS1zdG9yZSUyRjAlMkY0MTc0ODk0JTJGMzQ5NjFmZjRhNmU3ZDJlMDA1MTNmYmY0MGZhNThlNDZmNThmZjhkNSUyRnhfbGFyZ2UucG5nJTNGMTc3NDE2NjIzMT9peGxpYj1yYi00LjEuMSZhcj0xJTNBMSZmaXQ9Y3JvcCZtYXNrPWVsbGlwc2UmYmc9RkZGRkZGJmZtPXBuZzMyJnM9NDU5OTU0NjJjMzUyMzM2YTdjYzJlMjRjOWZkZDQzNjE%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3Ddf5f0b201bdb4e8f7dca8512763c4830?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9QUklRTMlODIlQTglRTMlODMlQjMlRTMlODIlQjglRTMlODMlOEIlRTMlODIlQTIlRTMlODElQTglRTMlODElOTclRTMlODElQTYlRTYlOUMlQUMlRTclOTUlQUElRTMlODIlQjclRTMlODIlQjklRTMlODMlODYlRTMlODMlQTAlRTMlODIlOTIlRTQlQkQlOUMlRTMlODIlOEMlRTMlODIlOEIlRTMlODIlODglRTMlODElODYlRTMlODElQUIlRTMlODElQUElRTMlODIlOEIlRTMlODElOUYlRTMlODIlODElRTMlODElQUUlRTUlOEUlQjMlRTklODElQjg1JUU1JTg2JThBJUUzJTgwJTkwMjAyNiVFNSVCOSVCNCVFNyU4OSU4OCVFMyU4MCU5MSZ0eHQtYWxpZ249bGVmdCUyQ3RvcCZ0eHQtY29sb3I9JTIzMUUyMTIxJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTU2JnR4dC1wYWQ9MCZzPTIwMTY5NzkzNzk4NTE2MWQ5MjRiNWQzMmQ1ZTVhNDI2&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBrb3VreW8mdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT0zNiZ0eHQtcGFkPTAmcz02Y2ViMzY5MjE5MDJhYTAyYjBjODUxYzQwMGFlYTlkNg&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=af8e0f087541f6e7f694596cf7dc1297",
       "excerpt": ""
     },
     {
-      "title": "Google「Gemini Robotics 2」を一次資料で整理。全身制御・新双腕機体適応200例未満・一般公開はER 2のみ",
-      "url": "https://qiita.com/quotidia/items/9d0a524e412872c8144c",
-      "categoryId": "tech-articles",
-      "category": "技術記事",
+      "title": "AI予算の7割を食う「ITインフラ」、中でも予算超過しやすいのは？ 医療機関調査",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/04/news040.html",
+      "categoryId": "ai-news",
+      "category": "国内ニュース",
       "regionId": "domestic",
       "region": "国内",
-      "source": "Qiita LLM",
-      "sourceId": "qiita-llm",
+      "source": "ITmedia AI+",
+      "sourceId": "itmedia-ai-plus",
       "sourceType": "domestic-media",
       "language": "ja",
-      "publishedAt": "2026-08-04T02:10:42.000Z",
-      "imageUrl": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnFpaXRhLWltYWdlLXN0b3JlLnMzLmFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkYwJTJGNDQzMzI3MSUyRnByb2ZpbGUtaW1hZ2VzJTJGMTc3OTAwNzIzNT9peGxpYj1yYi00LjEuMSZhcj0xJTNBMSZmaXQ9Y3JvcCZtYXNrPWVsbGlwc2UmYmc9RkZGRkZGJmZtPXBuZzMyJnM9YWY5NDIyNzdmMjZlOGJhMzVmYmZlY2IwOGU2ZWQ2NTA%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3Df59d4b48280797c581d3f62880665fc3?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9R29vZ2xlJUUzJTgwJThDR2VtaW5pJTIwUm9ib3RpY3MlMjAyJUUzJTgwJThEJUUzJTgyJTkyJUU0JUI4JTgwJUU2JUFDJUExJUU4JUIzJTg3JUU2JTk2JTk5JUUzJTgxJUE3JUU2JTk1JUI0JUU3JTkwJTg2JUUzJTgwJTgyJUU1JTg1JUE4JUU4JUJBJUFCJUU1JTg4JUI2JUU1JUJFJUExJUUzJTgzJUJCJUU2JTk2JUIwJUU1JThGJThDJUU4JTg1JTk1JUU2JUE5JTlGJUU0JUJEJTkzJUU5JTgxJUE5JUU1JUJGJTlDMjAwJUU0JUJFJThCJUU2JTlDJUFBJUU2JUJBJTgwJUUzJTgzJUJCJUU0JUI4JTgwJUU4JTg4JUFDJUU1JTg1JUFDJUU5JTk2JThCJUUzJTgxJUFGRVIlMjAlRTIlODAlQTYmdHh0LWFsaWduPWxlZnQlMkN0b3AmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT01NiZ0eHQtcGFkPTAmcz1lNzM1OTdmMTIyOThiOGQ2YzQyOGZjNjMyYjg4NTAzOA&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBxdW90aWRpYSZ0eHQtY29sb3I9JTIzMUUyMTIxJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTM2JnR4dC1wYWQ9MCZzPTRhNjI0NjUzMTU4ODhjZWUzZDIxNjI0N2Q4Y2JjZDY2&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=9115a149c33657ec4c88342ecf7e3cba",
-      "excerpt": ""
-    },
-    {
-      "title": "近畿大が総合型選抜で生成AI利用を明文化。東京農工大など先行例との違いを一次資料から整理",
-      "url": "https://qiita.com/quotidia/items/3243d41ffa367564d46b",
-      "categoryId": "tech-articles",
-      "category": "技術記事",
-      "regionId": "domestic",
-      "region": "国内",
-      "source": "Qiita LLM",
-      "sourceId": "qiita-llm",
-      "sourceType": "domestic-media",
-      "language": "ja",
-      "publishedAt": "2026-08-04T02:08:53.000Z",
-      "imageUrl": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnFpaXRhLWltYWdlLXN0b3JlLnMzLmFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkYwJTJGNDQzMzI3MSUyRnByb2ZpbGUtaW1hZ2VzJTJGMTc3OTAwNzIzNT9peGxpYj1yYi00LjEuMSZhcj0xJTNBMSZmaXQ9Y3JvcCZtYXNrPWVsbGlwc2UmYmc9RkZGRkZGJmZtPXBuZzMyJnM9YWY5NDIyNzdmMjZlOGJhMzVmYmZlY2IwOGU2ZWQ2NTA%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3Df59d4b48280797c581d3f62880665fc3?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9JUU4JUJGJTkxJUU3JTk1JUJGJUU1JUE0JUE3JUUzJTgxJThDJUU3JUI3JThGJUU1JTkwJTg4JUU1JTlFJThCJUU5JTgxJUI4JUU2JThBJTlDJUUzJTgxJUE3JUU3JTk0JTlGJUU2JTg4JTkwQUklRTUlODglQTklRTclOTQlQTglRTMlODIlOTIlRTYlOTglOEUlRTYlOTYlODclRTUlOEMlOTYlRTMlODAlODIlRTYlOUQlQjElRTQlQkElQUMlRTglQkUlQjIlRTUlQjclQTUlRTUlQTQlQTclRTMlODElQUElRTMlODElQTklRTUlODUlODglRTglQTElOEMlRTQlQkUlOEIlRTMlODElQTglRTMlODElQUUlRTklODElOTUlRTMlODElODQlRTMlODIlOTIlRTQlQjglODAlRTYlQUMlQTElRTglQjMlODclRTYlOTYlOTklRTMlODElOEIlRTMlODIlODklRTYlOTUlQjQlRTclOTAlODYmdHh0LWFsaWduPWxlZnQlMkN0b3AmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT01NiZ0eHQtcGFkPTAmcz04YmI5MWFlMzdkNTEwZTAzMmU3YzI5ZDk2YTQ4MTRhZQ&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBxdW90aWRpYSZ0eHQtY29sb3I9JTIzMUUyMTIxJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTM2JnR4dC1wYWQ9MCZzPTRhNjI0NjUzMTU4ODhjZWUzZDIxNjI0N2Q4Y2JjZDY2&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=876d09826db67c4821f3a27afc242fa3",
-      "excerpt": ""
+      "publishedAt": "2026-08-04T04:00:00.000Z",
+      "imageUrl": "https://image.itmedia.co.jp/ait/articles/2608/04/cover_news040.jpg",
+      "excerpt": "Wasabi Technologiesは、医療機関におけるAI活用に関する調査結果を発表した。AI予算の多くを占めるITインフラでは、どのような課題が生じているのか。調査結果から背景を探る。"
     },
     {
       "title": "塩野義製薬、生成AIの正答率を50→90％に 膨大な機密データをどう最適化した？",
@@ -566,6 +566,21 @@
       "excerpt": "Enterprise administrators can now customize managed settings by targeting enterprise teams with itemized configuration files. Large enterprises can s..."
     },
     {
+      "title": "Apple is getting this wrong",
+      "url": "https://openai.com/index/apple-is-getting-this-wrong",
+      "categoryId": "official",
+      "category": "公式",
+      "regionId": "global",
+      "region": "海外",
+      "source": "OpenAI News",
+      "sourceId": "openai-news",
+      "sourceType": "official",
+      "language": "en",
+      "publishedAt": "2026-08-03T22:00:00.000Z",
+      "imageUrl": "/images/news-fallback.png",
+      "excerpt": "OpenAI addresses Apple’s baseless lawsuit, corrects claims about its employees, and shares messages documenting what happened."
+    },
+    {
       "title": "AI活用を「個人の効率化」で終わらせるな セールスフォース流「4つの組織改革術」",
       "url": "https://www.itmedia.co.jp/business/articles/2608/04/news027.html",
       "categoryId": "ai-news",
@@ -579,21 +594,6 @@
       "publishedAt": "2026-08-03T22:00:00.000Z",
       "imageUrl": "https://image.itmedia.co.jp/business/articles/2608/04/cover_news027.jpg",
       "excerpt": "生成AIを全社活用できている企業が11％にとどまる中、セールスフォース・ジャパンの社内では300ものAIエージェントが自律稼働している。同社はなぜ「個人の業務効率化」で止めず、全社変革（AX）へ導けるのか。管理不能な「野良エージェント」を防ぐ線引きや、組織と人員を再構築する「4R」のフレームワーク..."
-    },
-    {
-      "title": "「融資」現場にAIの足音、資金調達どう変わる？ カネを借りられる企業の条件、専修大教授に聞く",
-      "url": "https://www.itmedia.co.jp/business/articles/2608/04/news005.html",
-      "categoryId": "ai-news",
-      "category": "国内ニュース",
-      "regionId": "domestic",
-      "region": "国内",
-      "source": "ITmedia AI+",
-      "sourceId": "itmedia-ai-plus",
-      "sourceType": "domestic-media",
-      "language": "ja",
-      "publishedAt": "2026-08-03T22:00:00.000Z",
-      "imageUrl": "https://image.itmedia.co.jp/business/articles/2608/04/cover_news005.jpg",
-      "excerpt": "融資の審査にAIを使う動きがある。資金を調達する企業にとっての「審査が遅い」などの課題を解決できのか。逆に、借りる側に変化はあるのか。専修大学の尾木研三教授に聞いた。"
     },
     {
       "title": "Trigger Copilot automations with comments",
@@ -851,6 +851,21 @@
       "excerpt": "Learn how I modernized an old codebase of mine using stacked sessions and pull requests in the GitHub Copilot app. The post Stacked sessions and pull..."
     },
     {
+      "title": "Gemini Robotics 2 が実現するロボットの全身知能",
+      "url": "https://blog.google/intl/ja-jp/company-news/technology/gemini-robotics-2/",
+      "categoryId": "ai-news",
+      "category": "国内ニュース",
+      "regionId": "domestic",
+      "region": "国内",
+      "source": "Google Japan Blog",
+      "sourceId": "google-japan-blog-ai-news",
+      "sourceType": "official",
+      "language": "ja",
+      "publishedAt": "2026-07-30T17:25:00.000Z",
+      "imageUrl": "https://blog.google/static/blogv2/images/google-1000x1000.png?version=pr20260729-1718",
+      "excerpt": "足から指先まで — ロボットに高度な全身制御、器用さ、そしてチームワークを学習させ、幅広い複雑なタスクの完遂を目指して何十年もの間、私たちはロボットが日常生活に自然に溶け込み、私たちの手助けをしてくれる未来を夢見てきました。そして今、そのビジョンは大きく前進しようとしています。多くのロボットは、限..."
+    },
+    {
       "title": "GitHub Copilot in Visual Studio — July update",
       "url": "https://github.blog/changelog/2026-07-30-github-copilot-in-visual-studio-july-update",
       "categoryId": "official",
@@ -941,21 +956,6 @@
       "excerpt": "Explore lower GPT‑5.6 pricing for Luna and Terra—and how OpenAI’s more efficient models help enterprises deploy AI workflows at scale."
     },
     {
-      "title": "GitHub Copilot in Visual Studio Code, July 2026 releases",
-      "url": "https://github.blog/changelog/2026-07-30-github-copilot-in-visual-studio-code-july-2026-releases",
-      "categoryId": "official",
-      "category": "公式",
-      "regionId": "global",
-      "region": "海外",
-      "source": "GitHub Changelog Copilot",
-      "sourceId": "github-changelog-copilot",
-      "sourceType": "official",
-      "language": "en",
-      "publishedAt": "2026-07-30T08:00:00.000Z",
-      "imageUrl": "https://github.blog/wp-content/uploads/2026/07/628608517-4b89beb1-61bf-4f7b-ac2c-c9da60f73312.jpeg",
-      "excerpt": "This changelog covers VS Code v1.127 through v1.131, shipped throughout July 2026. These releases improve how you work with agents, review changes, u..."
-    },
-    {
       "title": "「Gemini Spark」： 24 時間 365 日対応する自分だけの AI エージェントが日本のPro ユーザーにも拡大",
       "url": "https://blog.google/intl/ja-jp/company-news/technology/gemini-spark-comes-to-japan/",
       "categoryId": "ai-news",
@@ -1014,21 +1014,6 @@
       "publishedAt": "2026-06-17T22:00:00.000Z",
       "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/image_global_HS_2025Q4_Porcelai.max-600x600.format-webp.webp",
       "excerpt": "Gemini for Home 音声アシスタント向けに開発された初のデバイス、Google Home スピーカー。直感的なサポートと没入感のあるオーディオを毎日お届けしながら、あなたのプライバシーも安全に守ります。"
-    },
-    {
-      "title": "6 月の Pixel Drop：クリエイター向けの新機能、Gemini のアップグレードなど",
-      "url": "https://blog.google/intl/ja-jp/products/devices-services/june-2026-pixel-drop/",
-      "categoryId": "ai-news",
-      "category": "国内ニュース",
-      "regionId": "domestic",
-      "region": "国内",
-      "source": "Google Japan Blog",
-      "sourceId": "google-japan-blog-ai-news",
-      "sourceType": "official",
-      "language": "ja",
-      "publishedAt": "2026-06-16T01:52:00.000Z",
-      "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Month_PD_Thumnail_16_9.max-600x600.format-webp.webp",
-      "excerpt": "スクリーン リアクションや、Gemini のアップグレード、新しい通話機能の代わりに聞いててなど、Google Pixel の最新機能をご紹介します。"
     },
     {
       "title": "Edge の Copilot Mode のご紹介：新しいウェブ閲覧体験",
